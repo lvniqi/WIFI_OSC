@@ -1,0 +1,87 @@
+Added Component: Designator=C126(PCBComponent_1)
+Added Component: Designator=C129(PCBComponent_1)
+Added Component: Designator=C130(PCBComponent_1)
+Added Component: Designator=C132(PCBComponent_1)
+Added Component: Designator=C135(PCBComponent_1)
+Added Component: Designator=C?(C1206)
+Added Component: Designator=D1(PCBComponent_1)
+Added Component: Designator=D2(PCBComponent_1)
+Added Component: Designator=EPCS4(PCBComponent_1)
+Added Component: Designator=J1(KLD-0202)
+Added Component: Designator=Q100(PCBComponent_1)
+Added Component: Designator=R100(PCBComponent_1)
+Added Component: Designator=R101(PCBComponent_1)
+Added Component: Designator=R102(PCBComponent_1)
+Added Component: Designator=R103(PCBComponent_1)
+Added Component: Designator=R104(PCBComponent_1)
+Added Component: Designator=Y1(PCBComponent_1)
+Added Pin To Net: NetName=VCC3.3 Pin=C126-1
+Added Pin To Net: NetName=GND Pin=C126-2
+Added Pin To Net: NetName=VCC3.3 Pin=C129-1
+Added Pin To Net: NetName=GND Pin=C129-2
+Added Pin To Net: NetName=VCC1.2 Pin=C130-1
+Added Pin To Net: NetName=GND Pin=C130-2
+Added Pin To Net: NetName=VCC2.5 Pin=C132-1
+Added Pin To Net: NetName=GND Pin=C132-2
+Added Pin To Net: NetName=GND Pin=C135-1
+Added Pin To Net: NetName=RESET Pin=C135-2
+Added Pin To Net: NetName=5V Pin=D1-1
+Added Pin To Net: NetName=NetD1_2 Pin=D1-2
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=NetD2_2 Pin=D2-2
+Added Pin To Net: NetName=NCSO Pin=EPCS4-1
+Added Pin To Net: NetName=DATA0 Pin=EPCS4-2
+Added Pin To Net: NetName=VCC3.3 Pin=EPCS4-3
+Added Pin To Net: NetName=GND Pin=EPCS4-4
+Added Pin To Net: NetName=ASDO Pin=EPCS4-5
+Added Pin To Net: NetName=DCLK Pin=EPCS4-6
+Added Pin To Net: NetName=VCC3.3 Pin=EPCS4-7
+Added Pin To Net: NetName=VCC3.3 Pin=EPCS4-8
+Added Pin To Net: NetName=5V Pin=J1-1A
+Added Pin To Net: NetName=5V Pin=J1-1B
+Added Pin To Net: NetName=5V Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2A
+Added Pin To Net: NetName=GND Pin=J1-2B
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J1-3A
+Added Pin To Net: NetName=GND Pin=J1-3B
+Added Pin To Net: NetName=GND Pin=J1-3
+Added Pin To Net: NetName=GND Pin=Q100-1
+Added Pin To Net: NetName=NetQ100_2 Pin=Q100-2
+Added Pin To Net: NetName=NetD2_2 Pin=Q100-3
+Added Pin To Net: NetName=VCC3.3 Pin=R100-1
+Added Pin To Net: NetName=Netep4c_92 Pin=R100-2
+Added Pin To Net: NetName=VCC3.3 Pin=R101-1
+Added Pin To Net: NetName=NetD2_1 Pin=R101-2
+Added Pin To Net: NetName=Netep4c_92 Pin=R102-1
+Added Pin To Net: NetName=NetQ100_2 Pin=R102-2
+Added Pin To Net: NetName=NetD1_2 Pin=R103-1
+Added Pin To Net: NetName=GND Pin=R103-2
+Added Pin To Net: NetName=RESET Pin=R104-1
+Added Pin To Net: NetName=VCC3.3 Pin=R104-2
+Added Pin To Net: NetName=GND Pin=Y1-2
+Added Pin To Net: NetName=CLK Pin=Y1-3
+Added Pin To Net: NetName=VCC3.3 Pin=Y1-4
+Added Member To Class: ClassName=示波器原理图7 Member=Component C126 
+Added Member To Class: ClassName=示波器原理图7 Member=Component C129 0.1u
+Added Member To Class: ClassName=示波器原理图7 Member=Component C130 0.1u
+Added Member To Class: ClassName=示波器原理图7 Member=Component C132 0.1u
+Added Member To Class: ClassName=示波器原理图7 Member=Component C135 
+Added Member To Class: ClassName=示波器原理图7 Member=Component C? Cap Semi
+Added Member To Class: ClassName=示波器原理图7 Member=Component D1 LED0
+Added Member To Class: ClassName=示波器原理图7 Member=Component D2 LED0
+Added Member To Class: ClassName=示波器原理图7 Member=Component EPCS4 
+Added Member To Class: ClassName=示波器原理图7 Member=Component J1 PWR
+Added Member To Class: ClassName=示波器原理图7 Member=Component Q100 9013
+Added Member To Class: ClassName=示波器原理图7 Member=Component R100 Res2
+Added Member To Class: ClassName=示波器原理图7 Member=Component R101 Res2
+Added Member To Class: ClassName=示波器原理图7 Member=Component R102 Res2
+Added Member To Class: ClassName=示波器原理图7 Member=Component R103 Res2
+Added Member To Class: ClassName=示波器原理图7 Member=Component R104 Res2
+Added Member To Class: ClassName=示波器原理图7 Member=Component Y1 Active crystal
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图6
+Added Room: Name=示波器原理图7
+Added Room: Name=示波器原理图

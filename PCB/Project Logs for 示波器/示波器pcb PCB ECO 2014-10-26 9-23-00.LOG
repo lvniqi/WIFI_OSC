@@ -1,0 +1,10 @@
+Change Component Footprint: Designator=RE3 Old Footprint=PCBComponent_1 New Footprint=SOP254P610X218-4N
+Change Component Comment : Designator=RE3 Old Comment=AQY210E New Comment=CPC1017N
+Added Component: Designator=RE4(PCBComponent_1)
+Added Pin To Net: NetName=5V Pin=RE4-1
+Added Pin To Net: NetName=NetC15*_1 Pin=RE4-7
+Added Pin To Net: NetName=NetR19_2 Pin=RE4-8
+Added Pin To Net: NetName=NetC14*_1 Pin=RE4-9
+Added Pin To Net: NetName=NetC14*_1 Pin=RE4-10
+Added Member To Class: ClassName=示波器原理图2 Member=Component RE4 TQ2-5V
+Added Room: Name=示波器原理图2

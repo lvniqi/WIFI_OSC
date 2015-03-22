@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=CH1_VAMP Pin=U1-1
+Removed Pin From Net: NetName=CH1_VAMP Pin=U1-2
+Removed Pin From Net: NetName=NetC37_1 Pin=U1-3
+Removed Member From Class: ClassName=示波器原理图3 Member=U1
+Removed Member From Class: ClassName=示波器原理图5 Member=U12
+Change Component Comment : Designator=U12 Old Comment= New Comment=AD5320
+Change Component Comment : Designator=U1 Old Comment=TL074D New Comment=
+Added Pin To Net: NetName=CH1_VAMP Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=AD_CH1 Pin=U1-2
+Added Pin To Net: NetName=CH1_VAMP Pin=U1-2
+Added Pin To Net: NetName=NetC27_1 Pin=U1-3
+Added Pin To Net: NetName=NetC37_1 Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U1-4
+Added Pin To Net: NetName=NetC25_1 Pin=U1-5
+Added Pin To Net: NetName=NetC25_1 Pin=U1-6
+Added Pin To Net: NetName=NetC25_1 Pin=U1-7
+Added Pin To Net: NetName=+3.3 Pin=U1-8
+Added Pin To Net: NetName=AD_S Pin=U1-9
+Added Pin To Net: NetName=NetC26_1 Pin=U1-10
+Added Pin To Net: NetName=NetRE3_3 Pin=U1-11
+Added Pin To Net: NetName=GND Pin=U1-12
+Added Pin To Net: NetName=NetC29_1 Pin=U1-13
+Added Pin To Net: NetName=NetR39_1 Pin=U1-14
+Added Member To Class: ClassName=示波器原理图3 Member=Component U12 AD5320
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图

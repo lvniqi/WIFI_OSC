@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NetC12_1 Pin=C24-1
+Removed Pin From Net: NetName=NetC12_1 Pin=R23-1
+Removed Pin From Net: NetName=NetC12_1 Pin=R24-2
+Removed Member From Class: ClassName=示波器原理图 Member=C24
+Added Pin To Net: NetName=NetC24_1 Pin=C24-1
+Added Pin To Net: NetName=NetC24_1 Pin=R23-1
+Added Pin To Net: NetName=NetC24_1 Pin=R24-2
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图

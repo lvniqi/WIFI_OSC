@@ -1,0 +1,12 @@
+Added Component: Designator=S1(PCBComponent_1)
+Added Pin To Net: NetName=GND Pin=S1-1
+Added Pin To Net: NetName=GND Pin=S1-1
+Added Pin To Net: NetName=RESET Pin=S1-2
+Added Pin To Net: NetName=RESET Pin=S1-2
+Added Member To Class: ClassName=示波器原理图7 Member=Component S1 SW-SPST
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图6
+Added Room: Name=示波器原理图7
+Added Room: Name=示波器原理图

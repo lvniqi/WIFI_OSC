@@ -1,0 +1,118 @@
+Added Component: Designator=C100(PCBComponent_1)
+Added Component: Designator=C101(PCBComponent_1)
+Added Component: Designator=C102(PCBComponent_1)
+Added Component: Designator=C103(PCBComponent_1)
+Added Component: Designator=C104(PCBComponent_1)
+Added Component: Designator=C105(PCBComponent_1)
+Added Component: Designator=C133(C1206)
+Added Component: Designator=EP1(PCBComponent_1)
+Added Component: Designator=RP1(PCBComponent_1)
+Added Component: Designator=RP2(PCBComponent_1)
+Added Pin To Net: NetName=GND Pin=C100-1
+Added Pin To Net: NetName=GND Pin=C101-1
+Added Pin To Net: NetName=GND Pin=C102-1
+Added Pin To Net: NetName=GND Pin=C103-1
+Added Pin To Net: NetName=GND Pin=C104-1
+Added Pin To Net: NetName=GND Pin=C105-1
+Added Pin To Net: NetName=GND Pin=C133-1
+Added Pin To Net: NetName=GND Pin=EP1-4
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=GND Pin=RP2-5
+Added Pin To Net: NetName=GND Pin=RP2-6
+Added Pin To Net: NetName=1 Pin=EP1-1
+Added Net: Name=1
+Added Pin To Net: NetName=2 Pin=EP1-2
+Added Net: Name=2
+Added Pin To Net: NetName=3 Pin=EP1-3
+Added Net: Name=3
+Added Pin To Net: NetName=5V Pin=P1-1
+Added Net: Name=5V
+Added Pin To Net: NetName=7 Pin=EP1-7
+Added Net: Name=7
+Added Net: Name=10
+Added Net: Name=11
+Added Net: Name=28
+Added Net: Name=30
+Added Net: Name=31
+Added Net: Name=32
+Added Net: Name=33
+Added Net: Name=34
+Added Net: Name=52
+Added Net: Name=53
+Added Net: Name=54
+Added Net: Name=55
+Added Net: Name=58
+Added Net: Name=59
+Added Net: Name=60
+Added Net: Name=64
+Added Net: Name=65
+Added Net: Name=66
+Added Net: Name=67
+Added Net: Name=68
+Added Net: Name=69
+Added Net: Name=70
+Added Net: Name=71
+Added Net: Name=72
+Added Net: Name=85
+Added Net: Name=86
+Added Net: Name=87
+Added Net: Name=98
+Added Net: Name=99
+Added Net: Name=100
+Added Net: Name=101
+Added Net: Name=103
+Added Net: Name=104
+Added Net: Name=105
+Added Net: Name=106
+Added Pin To Net: NetName=ASDO Pin=EP1-6
+Added Net: Name=ASDO
+Added Net: Name=CLK
+Added Pin To Net: NetName=DATA0 Pin=RP1-8
+Added Net: Name=DATA0
+Added Pin To Net: NetName=DCLK Pin=RP1-7
+Added Net: Name=DCLK
+Added Pin To Net: NetName=NCE Pin=RP2-3
+Added Net: Name=NCE
+Added Pin To Net: NetName=NCSO Pin=EP1-8
+Added Net: Name=NCSO
+Added Net: Name=NetD1_2
+Added Net: Name=NetD2_1
+Added Net: Name=NetD2_2
+Added Net: Name=NetEP1_92
+Added Net: Name=NetQ100_2
+Added Pin To Net: NetName=NSTATUS Pin=RP1-6
+Added Net: Name=NSTATUS
+Added Net: Name=RESET
+Added Pin To Net: NetName=TCK Pin=RP2-4
+Added Net: Name=TCK
+Added Pin To Net: NetName=TDI Pin=RP2-1
+Added Net: Name=TDI
+Added Net: Name=TDO
+Added Pin To Net: NetName=TMS Pin=RP2-2
+Added Net: Name=TMS
+Added Pin To Net: NetName=VCC1.2 Pin=EP1-5
+Added Net: Name=VCC1.2
+Added Pin To Net: NetName=VCC2.5 Pin=C133-2
+Added Net: Name=VCC2.5
+Added Pin To Net: NetName=VCC3.3 Pin=C100-2
+Added Pin To Net: NetName=VCC3.3 Pin=C101-2
+Added Pin To Net: NetName=VCC3.3 Pin=C102-2
+Added Pin To Net: NetName=VCC3.3 Pin=C103-2
+Added Pin To Net: NetName=VCC3.3 Pin=C104-2
+Added Pin To Net: NetName=VCC3.3 Pin=C105-2
+Added Pin To Net: NetName=VCC3.3 Pin=RP1-1
+Added Pin To Net: NetName=VCC3.3 Pin=RP1-2
+Added Pin To Net: NetName=VCC3.3 Pin=RP1-3
+Added Pin To Net: NetName=VCC3.3 Pin=RP2-7
+Added Pin To Net: NetName=VCC3.3 Pin=RP2-8
+Added Net: Name=VCC3.3
+Added Class: Name=NEW_FPGA
+Added Class: Name=part_2
+Added Room: Name=NEW_FPGA
+Added Room: Name=part_2
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图

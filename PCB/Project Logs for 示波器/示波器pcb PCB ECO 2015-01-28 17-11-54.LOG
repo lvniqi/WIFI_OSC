@@ -1,0 +1,29 @@
+Added Component: Designator=C5(PCBComponent_1)
+Added Component: Designator=C6(VP32-3.2)
+Added Component: Designator=C7(PCBComponent_1)
+Added Component: Designator=C9(PCBComponent_1)
+Added Component: Designator=C10(PCBComponent_1)
+Added Component: Designator=C11(PCBComponent_1)
+Added Component: Designator=C12(PCBComponent_1)
+Added Pin To Net: NetName=+5 Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=-5 Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C6-2
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=+5 Pin=C7-2
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=-5 Pin=C9-2
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=-5 Pin=C10-2
+Added Pin To Net: NetName=GND Pin=C11-1
+Added Pin To Net: NetName=+5 Pin=C11-2
+Added Pin To Net: NetName=NetC12_1 Pin=C12-1
+Added Pin To Net: NetName=GND Pin=C12-2
+Added Member To Class: ClassName=示波器原理图 Member=Component C5 
+Added Member To Class: ClassName=示波器原理图 Member=Component C6 104
+Added Member To Class: ClassName=示波器原理图 Member=Component C7 
+Added Member To Class: ClassName=示波器原理图 Member=Component C9 
+Added Member To Class: ClassName=示波器原理图 Member=Component C10 
+Added Member To Class: ClassName=示波器原理图 Member=Component C11 
+Added Member To Class: ClassName=示波器原理图 Member=Component C12 
+Added Room: Name=示波器原理图

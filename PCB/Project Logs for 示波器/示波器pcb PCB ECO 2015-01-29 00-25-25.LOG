@@ -1,0 +1,43 @@
+Removed Pin From Net: NetName=NetC12_1 Pin=C12-1
+Removed Pin From Net: NetName=CH2_VPMS Pin=R8-1
+Removed Pin From Net: NetName=NetC23_1 Pin=R8-2
+Removed Pin From Net: NetName=NetC13_1 Pin=R13-2
+Removed Pin From Net: NetName=NetR26_2 Pin=R26-2
+Removed Pin From Net: NetName=NetR26_2 Pin=U01-1
+Removed Pin From Net: NetName=NetC13_1 Pin=U02-1
+Removed Pin From Net: NetName=NetC13_2 Pin=U02-3
+Removed Pin From Net: NetName=NetU16_1 Pin=U16-1
+Removed Pin From Net: NetName=-5 Pin=U16-2
+Removed Pin From Net: NetName=NetR19_1 Pin=U16-3
+Removed Pin From Net: NetName=NetU16_1 Pin=U16-4
+Removed Pin From Net: NetName=+5 Pin=U16-5
+Added Component: Designator=U66(SOT95P245X110-5N)
+Added Pin To Net: NetName=NetC12_1 Pin=C12-1
+Added Pin To Net: NetName=NetC12_1 Pin=C12-1
+Added Pin To Net: NetName=GND Pin=C12-2
+Added Pin To Net: NetName=CH1_VPMS Pin=R8-1
+Added Pin To Net: NetName=CH2_VPMS Pin=R8-1
+Added Pin To Net: NetName=NetC9_1 Pin=R8-2
+Added Pin To Net: NetName=NetC23_1 Pin=R8-2
+Added Pin To Net: NetName=NetR13_2 Pin=R13-2
+Added Pin To Net: NetName=NetC1_1 Pin=R26-2
+Added Pin To Net: NetName=NetC1_1 Pin=U01-1
+Added Pin To Net: NetName=NetR13_2 Pin=U02-1
+Added Pin To Net: NetName=NetC1_2 Pin=U02-3
+Added Pin To Net: NetName=NetR36_2 Pin=U16-1
+Added Pin To Net: NetName=NetR35_2 Pin=U16-2
+Added Pin To Net: NetName=GND Pin=U16-3
+Added Pin To Net: NetName=-5V Pin=U16-4
+Added Pin To Net: NetName=GND Pin=U16-5
+Added Pin To Net: NetName=NetU16_1 Pin=U66-1
+Added Pin To Net: NetName=-5 Pin=U66-2
+Added Pin To Net: NetName=NetR19_1 Pin=U66-3
+Added Pin To Net: NetName=NetU16_1 Pin=U66-4
+Added Pin To Net: NetName=+5 Pin=U66-5
+Change Net Name : Old Net Name=NetC1_1 New Net Name=NetR26_2
+Change Net Name : Old Net Name=NetR26_2 New Net Name=NetC1_1
+Change Net Name : Old Net Name=NetU16_1 New Net Name=NetU17_3
+Added Member To Class: ClassName=示波器原理图2 Member=Component U66 AD8055ART3
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图

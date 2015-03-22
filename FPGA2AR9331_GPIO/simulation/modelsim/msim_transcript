@@ -1,0 +1,131 @@
+# Reading G:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do FPGA2AR9331_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying G:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied G:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+E:/WORKSPACE/FPGA/FPGA2AR9331 {E:/WORKSPACE/FPGA/FPGA2AR9331/FPGA2AR9331.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module FPGA2AR9331
+# ** Warning: E:/WORKSPACE/FPGA/FPGA2AR9331/FPGA2AR9331.v(37): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# 
+# Top level modules:
+# 	FPGA2AR9331
+# 
+vsim +altera -do FPGA2AR9331_run_msim_rtl_verilog.do -l msim_transcript -gui work.FPGA2AR9331
+# vsim +altera -do FPGA2AR9331_run_msim_rtl_verilog.do -l msim_transcript -gui work.FPGA2AR9331 
+# Loading work.FPGA2AR9331
+# do FPGA2AR9331_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/WORKSPACE/FPGA/FPGA2AR9331 {E:/WORKSPACE/FPGA/FPGA2AR9331/FPGA2AR9331.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module FPGA2AR9331
+# ** Warning: E:/WORKSPACE/FPGA/FPGA2AR9331/FPGA2AR9331.v(37): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# 
+# Top level modules:
+# 	FPGA2AR9331
+# 
+force -freeze sim:/FPGA2AR9331/en Hi1 0
+force -freeze sim:/FPGA2AR9331/rst_n Hi1 0
+force -freeze sim:/FPGA2AR9331/clk 1 0, 0 {50 ps} -r 100
+add wave -position insertpoint  \
+sim:/FPGA2AR9331/ack
+add wave -position insertpoint  \
+sim:/FPGA2AR9331/clk_out
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/FPGA2AR9331/ack Hi1 0
+run
+run
+run
+force -freeze sim:/FPGA2AR9331/ack Hi0 0
+run
+run
+run
+run
+run
+force -freeze sim:/FPGA2AR9331/ack_save 1 0
+run
+noforce sim:/FPGA2AR9331/ack_save
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/FPGA2AR9331/ack Hi1 0
+run
+run
+run
+run
+run
+force -freeze sim:/FPGA2AR9331/ack 0 0
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/FPGA2AR9331/ack St 0
+# Invalid binary digit: S.
+# ** Error: (vsim-4011) Invalid force value: St 0.
+# 
+force -freeze sim:/FPGA2AR9331/ack St 0
+# Invalid binary digit: S.
+# ** Error: (vsim-4011) Invalid force value: St 0.
+# 
+force -freeze sim:/FPGA2AR9331/ack St1 0
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/FPGA2AR9331/len
+run
+run
+run
+run
+run
+run
+run
+restart
+# Loading work.FPGA2AR9331
+run
+force -freeze sim:/FPGA2AR9331/clk 1 0, 0 {50 ps} -r 100
+add wave -position insertpoint  \
+sim:/FPGA2AR9331/ack
+force -freeze sim:/FPGA2AR9331/en 1 0
+force -freeze sim:/FPGA2AR9331/rst_n 1 0
+add wave -position insertpoint  \
+sim:/FPGA2AR9331/clk_out
+add wave -position insertpoint  \
+sim:/FPGA2AR9331/len
+run
+run
+run
+run
+run

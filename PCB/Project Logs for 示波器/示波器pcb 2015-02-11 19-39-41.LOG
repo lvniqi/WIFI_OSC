@@ -1,0 +1,44 @@
+Removed Pin From Net: NetName=AD_DB7 Pin=EP1-120
+Removed Pin From Net: NetName=AD_DB6 Pin=EP1-121
+Removed Pin From Net: NetName=AD_DB5 Pin=EP1-124
+Removed Pin From Net: NetName=AD_DB4 Pin=EP1-125
+Removed Pin From Net: NetName=AD_DB3 Pin=EP1-126
+Removed Pin From Net: NetName=AD_DB2 Pin=EP1-127
+Removed Pin From Net: NetName=AD_DB1 Pin=EP1-128
+Removed Pin From Net: NetName=AD_DB0 Pin=EP1-129
+Removed Pin From Net: NetName=AD_DA7 Pin=EP1-135
+Removed Pin From Net: NetName=AD_DA6 Pin=EP1-136
+Removed Pin From Net: NetName=AD_DA5 Pin=EP1-137
+Removed Pin From Net: NetName=AD_DA4 Pin=EP1-138
+Removed Pin From Net: NetName=AD_DA3 Pin=EP1-141
+Removed Pin From Net: NetName=AD_DA2 Pin=EP1-142
+Removed Pin From Net: NetName=AD_DA1 Pin=EP1-143
+Removed Pin From Net: NetName=AD_DA0 Pin=EP1-144
+Removed Pin From Net: NetName=5V Pin=P1-1
+Added Pin To Net: NetName=AD_DA7 Pin=EP1-38
+Added Pin To Net: NetName=AD_DA6 Pin=EP1-39
+Added Pin To Net: NetName=AD_DA5 Pin=EP1-42
+Added Pin To Net: NetName=AD_DA4 Pin=EP1-43
+Added Pin To Net: NetName=AD_DA3 Pin=EP1-44
+Added Pin To Net: NetName=AD_DA2 Pin=EP1-46
+Added Pin To Net: NetName=AD_DA1 Pin=EP1-49
+Added Pin To Net: NetName=AD_DA0 Pin=EP1-50
+Added Pin To Net: NetName=AD_DB0 Pin=EP1-73
+Added Pin To Net: NetName=AD_DB1 Pin=EP1-74
+Added Pin To Net: NetName=AD_DB2 Pin=EP1-75
+Added Pin To Net: NetName=AD_DB3 Pin=EP1-76
+Added Pin To Net: NetName=AD_DB4 Pin=EP1-77
+Added Pin To Net: NetName=AD_DB5 Pin=EP1-80
+Added Pin To Net: NetName=AD_DB6 Pin=EP1-83
+Added Pin To Net: NetName=AD_DB7 Pin=EP1-84
+Added Pin To Net: NetName=5V Pin=P1-1
+Added Pin To Net: NetName=NetC1_1 Pin=P1-1
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Room: Name=NEW_FPGA
+Added Room: Name=part_2
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图

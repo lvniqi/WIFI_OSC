@@ -1,0 +1,6 @@
+Added Component: Designator=Q1(PCBComponent_1)
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=NetQ1_2 Pin=Q1-2
+Added Pin To Net: NetName=NetQ1_3 Pin=Q1-3
+Added Member To Class: ClassName=示波器原理图 Member=Component Q1 8050
+Added Room: Name=示波器原理图

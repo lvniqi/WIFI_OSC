@@ -1,0 +1,38 @@
+Removed Pin From Net: NetName=AD_DA7 Pin=ep4c-38
+Removed Pin From Net: NetName=AD_DA6 Pin=ep4c-39
+Removed Pin From Net: NetName=AD_DA5 Pin=ep4c-42
+Removed Pin From Net: NetName=AD_DA4 Pin=ep4c-43
+Removed Pin From Net: NetName=AD_DA3 Pin=ep4c-44
+Removed Pin From Net: NetName=AD_DA2 Pin=ep4c-46
+Removed Pin From Net: NetName=AD_DA1 Pin=ep4c-49
+Removed Pin From Net: NetName=AD_DA0 Pin=ep4c-50
+Removed Pin From Net: NetName=AD_DB0 Pin=ep4c-73
+Removed Pin From Net: NetName=AD_DB1 Pin=ep4c-74
+Removed Pin From Net: NetName=AD_DB2 Pin=ep4c-75
+Removed Pin From Net: NetName=AD_DB3 Pin=ep4c-76
+Removed Pin From Net: NetName=AD_DB4 Pin=ep4c-77
+Removed Pin From Net: NetName=AD_DB5 Pin=ep4c-80
+Removed Pin From Net: NetName=AD_DB6 Pin=ep4c-83
+Removed Pin From Net: NetName=AD_DB7 Pin=ep4c-84
+Added Pin To Net: NetName=AD_DA7 Pin=ep4c-65
+Added Pin To Net: NetName=AD_DA6 Pin=ep4c-66
+Added Pin To Net: NetName=AD_DA5 Pin=ep4c-67
+Added Pin To Net: NetName=AD_DA4 Pin=ep4c-68
+Added Pin To Net: NetName=AD_DA3 Pin=ep4c-69
+Added Pin To Net: NetName=AD_DA2 Pin=ep4c-70
+Added Pin To Net: NetName=AD_DA1 Pin=ep4c-71
+Added Pin To Net: NetName=AD_DA0 Pin=ep4c-72
+Added Pin To Net: NetName=AD_DB0 Pin=ep4c-75
+Added Pin To Net: NetName=AD_DB1 Pin=ep4c-76
+Added Pin To Net: NetName=AD_DB2 Pin=ep4c-77
+Added Pin To Net: NetName=AD_DB3 Pin=ep4c-83
+Added Pin To Net: NetName=AD_DB4 Pin=ep4c-84
+Added Pin To Net: NetName=AD_DB5 Pin=ep4c-85
+Added Pin To Net: NetName=AD_DB6 Pin=ep4c-86
+Added Pin To Net: NetName=AD_DB7 Pin=ep4c-87
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图6
+Added Room: Name=示波器原理图7
+Added Room: Name=示波器原理图

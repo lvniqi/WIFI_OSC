@@ -1,0 +1,48 @@
+Removed Pin From Net: NetName=+5 Pin=C7-1
+Removed Pin From Net: NetName=GND Pin=C7-2
+Removed Pin From Net: NetName=-5 Pin=C9-1
+Removed Pin From Net: NetName=GND Pin=C9-2
+Removed Pin From Net: NetName=-5 Pin=C10-1
+Removed Pin From Net: NetName=GND Pin=C10-2
+Removed Pin From Net: NetName=+5 Pin=C11-1
+Removed Pin From Net: NetName=GND Pin=C11-2
+Removed Pin From Net: NetName=GND Pin=C12-1
+Removed Pin From Net: NetName=NetC12_2 Pin=C12-2
+Removed Pin From Net: NetName=NetR9_1 Pin=R10-2
+Removed Pin From Net: NetName=NetR9_2 Pin=R12-1
+Removed Pin From Net: NetName=AD_CH1 Pin=R12-2
+Removed Pin From Net: NetName=NetR7_1 Pin=U2-5
+Removed Pin From Net: NetName=NetR7_2 Pin=U2-7
+Removed Pin From Net: NetName=NetR9_2 Pin=U-1
+Removed Pin From Net: NetName=NetR7_2 Pin=U-3
+Removed Pin From Net: NetName=NetR9_1 Pin=U-4
+Change Component Footprint: Designator=R7 Old Footprint=AXIAL-0.3 New Footprint=2012[0805]
+Change Component Footprint: Designator=R8 Old Footprint=AXIAL-0.3 New Footprint=2012[0805]
+Change Component Footprint: Designator=R9 Old Footprint=AXIAL-0.3 New Footprint=2012[0805]
+Change Component Footprint: Designator=R10 Old Footprint=AXIAL-0.3 New Footprint=2012[0805]
+Change Component Footprint: Designator=R11 Old Footprint=AXIAL-0.3 New Footprint=2012[0805]
+Change Component Footprint: Designator=R12 Old Footprint=AXIAL-0.3 New Footprint=2012[0805]
+Change Component Footprint: Designator=C9 Old Footprint=VP32-3.2 New Footprint=PCBComponent_1
+Change Component Footprint: Designator=C10 Old Footprint=VP32-3.2 New Footprint=PCBComponent_1
+Change Component Footprint: Designator=C11 Old Footprint=VP32-3.2 New Footprint=PCBComponent_1
+Change Component Footprint: Designator=C12 Old Footprint=VP32-3.2 New Footprint=PCBComponent_1
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=+5 Pin=C7-2
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=-5 Pin=C9-2
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=-5 Pin=C10-2
+Added Pin To Net: NetName=GND Pin=C11-1
+Added Pin To Net: NetName=+5 Pin=C11-2
+Added Pin To Net: NetName=NetC12_2 Pin=C12-1
+Added Pin To Net: NetName=GND Pin=C12-2
+Added Pin To Net: NetName=NetR9_2 Pin=R10-2
+Added Pin To Net: NetName=AD_CH1 Pin=R12-1
+Added Pin To Net: NetName=NetR9_1 Pin=R12-2
+Added Pin To Net: NetName=NetR7_2 Pin=U2-5
+Added Pin To Net: NetName=NetR7_1 Pin=U2-7
+Added Pin To Net: NetName=NetR9_1 Pin=U-1
+Added Pin To Net: NetName=NetR7_1 Pin=U-3
+Added Pin To Net: NetName=NetR9_2 Pin=U-4
+Change Net Name : Old Net Name=NetC12_2 New Net Name=NetC12_1
+Added Room: Name=Ê¾²¨Æ÷Ô­ÀíÍ¼

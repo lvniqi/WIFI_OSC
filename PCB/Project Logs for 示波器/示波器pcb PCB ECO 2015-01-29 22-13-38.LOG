@@ -1,0 +1,6 @@
+Change Net Name : Old Net Name=CH1_VPMS New Net Name=CH1_VAMP
+Change Net Name : Old Net Name=CH2_VPMS New Net Name=CH2_VAMP
+Change Net Name : Old Net Name=SPI 595M LE New Net Name=SPI 595MLE
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图

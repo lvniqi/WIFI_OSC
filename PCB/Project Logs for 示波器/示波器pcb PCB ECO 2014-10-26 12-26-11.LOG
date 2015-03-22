@@ -1,0 +1,8 @@
+Added Component: Designator=P1(HDR1X3)
+Added Pin To Net: NetName=GND Pin=P1-1
+Added Pin To Net: NetName=+5 Pin=P1-2
+Added Pin To Net: NetName=-5 Pin=P1-3
+Added Pin To Net: NetName=NetC14*_1 Pin=Q2-3
+Added Pin To Net: NetName=NetC14*_1 Pin=RE4-10
+Added Member To Class: ClassName=示波器原理图2 Member=Component P1 Header 3
+Added Room: Name=示波器原理图2

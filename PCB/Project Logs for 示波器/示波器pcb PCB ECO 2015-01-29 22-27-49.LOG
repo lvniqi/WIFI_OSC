@@ -1,0 +1,19 @@
+Added Pin To Net: NetName=+5 Pin=C32-2
+Added Pin To Net: NetName=-5 Pin=C35-2
+Added Pin To Net: NetName=+5 Pin=C36-2
+Added Pin To Net: NetName=+5 Pin=C41-1
+Added Pin To Net: NetName=-5 Pin=C42-2
+Added Pin To Net: NetName=+5 Pin=C43-1
+Added Pin To Net: NetName=-5 Pin=C44-1
+Added Pin To Net: NetName=+5 Pin=Q11-2
+Added Pin To Net: NetName=CH1_VAMP Pin=U1-1
+Added Pin To Net: NetName=CH1_VAMP Pin=U1-2
+Added Pin To Net: NetName=+5 Pin=U1-4
+Added Pin To Net: NetName=-5 Pin=U1-11
+Added Pin To Net: NetName=-5 Pin=U13-7
+Added Pin To Net: NetName=+5 Pin=U13-16
+Added Pin To Net: NetName=-5 Pin=U16-4
+Added Pin To Net: NetName=+5 Pin=U16-8
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图

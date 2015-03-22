@@ -1,0 +1,102 @@
+Removed Pin From Net: NetName=CH1_VAMP Pin=U1-1
+Removed Pin From Net: NetName=CH1_VAMP Pin=U1-2
+Removed Pin From Net: NetName=NetC37_1 Pin=U1-3
+Removed Member From Class: ClassName=示波器原理图3 Member=U1
+Removed Member From Class: ClassName=示波器原理图3 Member=U1
+Change Component Comment : Designator=U1 Old Comment=TL074D New Comment=
+Added Component: Designator=C25(C0805)
+Added Component: Designator=C26(PCBComponent_1)
+Added Component: Designator=C27(PCBComponent_1)
+Added Component: Designator=C28(C0805)
+Added Component: Designator=C29(C0805)
+Added Component: Designator=C30(PCBComponent_1)
+Added Component: Designator=C31(PCBComponent_1)
+Added Component: Designator=L(L0603)
+Added Component: Designator=Q3(PCBComponent_1)
+Added Component: Designator=R37(2012[0805])
+Added Component: Designator=R38(2012[0805])
+Added Component: Designator=R39(2012[0805])
+Added Component: Designator=RE3(PCBComponent_1)
+Added Pin To Net: NetName=GND Pin=C25-2
+Added Pin To Net: NetName=GND Pin=C26-2
+Added Pin To Net: NetName=GND Pin=C27-2
+Added Pin To Net: NetName=GND Pin=C28-2
+Added Pin To Net: NetName=GND Pin=C29-2
+Added Pin To Net: NetName=GND Pin=C30-2
+Added Pin To Net: NetName=GND Pin=C31-2
+Added Pin To Net: NetName=GND Pin=Q3-1
+Added Pin To Net: NetName=AD_S Pin=R37-1
+Added Pin To Net: NetName=+5 Pin=RE3-1
+Added Pin To Net: NetName=AD_CH2 Pin=RE3-2
+Added Pin To Net: NetName=AD_CH1 Pin=RE3-4
+Added Pin To Net: NetName=CH1_VAMP Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=AD_CH1 Pin=U1-2
+Added Pin To Net: NetName=CH1_VAMP Pin=U1-2
+Added Pin To Net: NetName=NetC37_1 Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U1-4
+Added Pin To Net: NetName=AD_S Pin=U1-9
+Added Pin To Net: NetName=GND Pin=U1-12
+Added Pin To Net: NetName=+3.3 Pin=C30-1
+Added Pin To Net: NetName=+3.3 Pin=C31-1
+Added Pin To Net: NetName=+3.3 Pin=L-1
+Added Pin To Net: NetName=+3.3 Pin=U1-8
+Added Net: Name=+3.3
+Added Pin To Net: NetName=AD_CLKA Pin=R38-2
+Added Net: Name=AD_CLKA
+Added Pin To Net: NetName=AD_CLKB Pin=R39-2
+Added Net: Name=AD_CLKB
+Added Net: Name=AD_DA0
+Added Net: Name=AD_DA1
+Added Net: Name=AD_DA2
+Added Net: Name=AD_DA3
+Added Net: Name=AD_DA4
+Added Net: Name=AD_DA5
+Added Net: Name=AD_DA6
+Added Net: Name=AD_DA7
+Added Net: Name=AD_DB0
+Added Net: Name=AD_DB1
+Added Net: Name=AD_DB2
+Added Net: Name=AD_DB3
+Added Net: Name=AD_DB4
+Added Net: Name=AD_DB5
+Added Net: Name=AD_DB6
+Added Net: Name=AD_DB7
+Added Pin To Net: NetName=NetC25_1 Pin=C25-1
+Added Pin To Net: NetName=NetC25_1 Pin=U1-5
+Added Pin To Net: NetName=NetC25_1 Pin=U1-6
+Added Pin To Net: NetName=NetC25_1 Pin=U1-7
+Added Net: Name=NetC25_1
+Added Pin To Net: NetName=NetC26_1 Pin=C26-1
+Added Pin To Net: NetName=NetC26_1 Pin=RE3-8
+Added Pin To Net: NetName=NetC26_1 Pin=U1-10
+Added Net: Name=NetC26_1
+Added Pin To Net: NetName=NetC27_1 Pin=C27-1
+Added Pin To Net: NetName=NetC27_1 Pin=RE3-7
+Added Pin To Net: NetName=NetC27_1 Pin=U1-3
+Added Net: Name=NetC27_1
+Added Pin To Net: NetName=NetC28_1 Pin=C28-1
+Added Pin To Net: NetName=NetC28_1 Pin=L-2
+Added Net: Name=NetC28_1
+Added Pin To Net: NetName=NetC29_1 Pin=C29-1
+Added Pin To Net: NetName=NetC29_1 Pin=U1-13
+Added Net: Name=NetC29_1
+Added Pin To Net: NetName=NetQ3_2 Pin=Q3-2
+Added Pin To Net: NetName=NetQ3_2 Pin=R37-2
+Added Net: Name=NetQ3_2
+Added Pin To Net: NetName=NetQ3_3 Pin=Q3-3
+Added Pin To Net: NetName=NetQ3_3 Pin=RE3-10
+Added Net: Name=NetQ3_3
+Added Pin To Net: NetName=NetR38_1 Pin=R38-1
+Added Net: Name=NetR38_1
+Added Pin To Net: NetName=NetR39_1 Pin=R39-1
+Added Pin To Net: NetName=NetR39_1 Pin=U1-14
+Added Net: Name=NetR39_1
+Added Pin To Net: NetName=NetRE3_3 Pin=RE3-3
+Added Pin To Net: NetName=NetRE3_3 Pin=U1-11
+Added Net: Name=NetRE3_3
+Added Class: Name=示波器原理图5
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图

@@ -1,0 +1,20 @@
+
+State Machine - |main|FPGA2AR9331:inst|next_state
+Name next_state.DELAY_2 next_state.DELAY_1 next_state.SEND_END next_state.SEND_ING_2 next_state.SEND_ING_1 next_state.SEND_START next_state.IDLE 
+next_state.IDLE 0 0 0 0 0 0 0 
+next_state.SEND_START 0 0 0 0 0 1 1 
+next_state.SEND_ING_1 0 0 0 0 1 0 1 
+next_state.SEND_ING_2 0 0 0 1 0 0 1 
+next_state.SEND_END 0 0 1 0 0 0 1 
+next_state.DELAY_1 0 1 0 0 0 0 1 
+next_state.DELAY_2 1 0 0 0 0 0 1 
+
+State Machine - |main|FPGA2AR9331:inst|current_state
+Name current_state.DELAY_2 current_state.DELAY_1 current_state.SEND_END current_state.SEND_ING_2 current_state.SEND_ING_1 current_state.SEND_START current_state.IDLE 
+current_state.IDLE 0 0 0 0 0 0 0 
+current_state.SEND_START 0 0 0 0 0 1 1 
+current_state.SEND_ING_1 0 0 0 0 1 0 1 
+current_state.SEND_ING_2 0 0 0 1 0 0 1 
+current_state.SEND_END 0 0 1 0 0 0 1 
+current_state.DELAY_1 0 1 0 0 0 0 1 
+current_state.DELAY_2 1 0 0 0 0 0 1 

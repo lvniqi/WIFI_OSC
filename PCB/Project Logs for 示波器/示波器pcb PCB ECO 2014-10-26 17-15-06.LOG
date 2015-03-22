@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=CH2_VPOS Pin=P3-1
+Removed Pin From Net: NetName=CH2_VPOS Pin=P3-2
+Removed Pin From Net: NetName=CH2_VPMS Pin=P6-1
+Removed Pin From Net: NetName=CH2_VPMS Pin=P6-2
+Removed Member From Class: ClassName=示波器原理图2 Member=P3
+Removed Member From Class: ClassName=示波器原理图2 Member=P6
+Added Room: Name=示波器原理图2

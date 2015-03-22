@@ -1,0 +1,10 @@
+Added Component: Designator=U12(SOT86P280X110-6N)
+Added Pin To Net: NetName=NetU12_1 Pin=U12-1
+Added Pin To Net: NetName=GND Pin=U12-2
+Added Pin To Net: NetName=NetC34_2 Pin=U12-3
+Added Pin To Net: NetName=SPI DATA Pin=U12-4
+Added Pin To Net: NetName=SPI CLK Pin=U12-5
+Added Pin To Net: NetName=SPI DA LE Pin=U12-6
+Added Member To Class: ClassName=示波器原理图3 Member=Component U12 AD5320
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图

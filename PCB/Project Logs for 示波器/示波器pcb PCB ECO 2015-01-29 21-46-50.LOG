@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NetC38_1 Pin=C39-1
+Removed Pin From Net: NetName=NetC38_1 Pin=R31-2
+Removed Pin From Net: NetName=NetC38_1 Pin=U1-10
+Added Pin To Net: NetName=NetC39_1 Pin=C39-1
+Added Pin To Net: NetName=NetC39_1 Pin=R31-2
+Added Pin To Net: NetName=NetC39_1 Pin=U1-10
+Added Net: Name=NetC39_1
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图

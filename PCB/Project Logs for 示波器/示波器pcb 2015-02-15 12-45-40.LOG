@@ -1,0 +1,148 @@
+Removed Pin From Net: NetName=1 Pin=EP1-1
+Removed Pin From Net: NetName=2 Pin=EP1-2
+Removed Pin From Net: NetName=3 Pin=EP1-3
+Removed Pin From Net: NetName=GND Pin=EP1-4
+Removed Pin From Net: NetName=VCC1.2 Pin=EP1-5
+Removed Pin From Net: NetName=ASDO Pin=EP1-6
+Removed Pin From Net: NetName=7 Pin=EP1-7
+Removed Pin From Net: NetName=NCSO Pin=EP1-8
+Removed Member From Class: ClassName=示波器原理图7 Member=EP1
+Added Component: Designator=ep4c(PCBComponent_1)
+Added Component: Designator=LM1117-1.2(PCBComponent_1)
+Added Component: Designator=LM1117-2.5(PCBComponent_1)
+Added Component: Designator=LM1117-3.3(PCBComponent_1)
+Added Pin To Net: NetName=1 Pin=ep4c-1
+Added Pin To Net: NetName=2 Pin=ep4c-2
+Added Pin To Net: NetName=3 Pin=ep4c-3
+Added Pin To Net: NetName=GND Pin=ep4c-4
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-5
+Added Pin To Net: NetName=ASDO Pin=ep4c-6
+Added Pin To Net: NetName=7 Pin=ep4c-7
+Added Pin To Net: NetName=NCSO Pin=ep4c-8
+Added Pin To Net: NetName=NSTATUS Pin=ep4c-9
+Added Pin To Net: NetName=10 Pin=ep4c-10
+Added Pin To Net: NetName=11 Pin=ep4c-11
+Added Pin To Net: NetName=DCLK Pin=ep4c-12
+Added Pin To Net: NetName=DATA0 Pin=ep4c-13
+Added Pin To Net: NetName=RESET Pin=ep4c-14
+Added Pin To Net: NetName=TDI Pin=ep4c-15
+Added Pin To Net: NetName=TCK Pin=ep4c-16
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-17
+Added Pin To Net: NetName=TMS Pin=ep4c-18
+Added Pin To Net: NetName=GND Pin=ep4c-19
+Added Pin To Net: NetName=TDO Pin=ep4c-20
+Added Pin To Net: NetName=NCE Pin=ep4c-21
+Added Pin To Net: NetName=GND Pin=ep4c-22
+Added Pin To Net: NetName=CLK Pin=ep4c-24
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-26
+Added Pin To Net: NetName=GND Pin=ep4c-27
+Added Pin To Net: NetName=28 Pin=ep4c-28
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-29
+Added Pin To Net: NetName=30 Pin=ep4c-30
+Added Pin To Net: NetName=31 Pin=ep4c-31
+Added Pin To Net: NetName=32 Pin=ep4c-32
+Added Pin To Net: NetName=33 Pin=ep4c-33
+Added Pin To Net: NetName=34 Pin=ep4c-34
+Added Pin To Net: NetName=VCC2.5 Pin=ep4c-35
+Added Pin To Net: NetName=GND Pin=ep4c-36
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-37
+Added Pin To Net: NetName=AD_DA7 Pin=ep4c-38
+Added Pin To Net: NetName=AD_DA6 Pin=ep4c-39
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-40
+Added Pin To Net: NetName=GND Pin=ep4c-41
+Added Pin To Net: NetName=AD_DA5 Pin=ep4c-42
+Added Pin To Net: NetName=AD_DA4 Pin=ep4c-43
+Added Pin To Net: NetName=AD_DA3 Pin=ep4c-44
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-45
+Added Pin To Net: NetName=AD_DA2 Pin=ep4c-46
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-47
+Added Pin To Net: NetName=GND Pin=ep4c-48
+Added Pin To Net: NetName=AD_DA1 Pin=ep4c-49
+Added Pin To Net: NetName=AD_DA0 Pin=ep4c-50
+Added Pin To Net: NetName=52 Pin=ep4c-52
+Added Pin To Net: NetName=53 Pin=ep4c-53
+Added Pin To Net: NetName=54 Pin=ep4c-54
+Added Pin To Net: NetName=55 Pin=ep4c-55
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-56
+Added Pin To Net: NetName=GND Pin=ep4c-57
+Added Pin To Net: NetName=58 Pin=ep4c-58
+Added Pin To Net: NetName=59 Pin=ep4c-59
+Added Pin To Net: NetName=60 Pin=ep4c-60
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-61
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-62
+Added Pin To Net: NetName=GND Pin=ep4c-63
+Added Pin To Net: NetName=64 Pin=ep4c-64
+Added Pin To Net: NetName=65 Pin=ep4c-65
+Added Pin To Net: NetName=66 Pin=ep4c-66
+Added Pin To Net: NetName=67 Pin=ep4c-67
+Added Pin To Net: NetName=68 Pin=ep4c-68
+Added Pin To Net: NetName=69 Pin=ep4c-69
+Added Pin To Net: NetName=70 Pin=ep4c-70
+Added Pin To Net: NetName=71 Pin=ep4c-71
+Added Pin To Net: NetName=72 Pin=ep4c-72
+Added Pin To Net: NetName=AD_DB0 Pin=ep4c-73
+Added Pin To Net: NetName=AD_DB1 Pin=ep4c-74
+Added Pin To Net: NetName=AD_DB2 Pin=ep4c-75
+Added Pin To Net: NetName=AD_DB3 Pin=ep4c-76
+Added Pin To Net: NetName=AD_DB4 Pin=ep4c-77
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-78
+Added Pin To Net: NetName=GND Pin=ep4c-79
+Added Pin To Net: NetName=AD_DB5 Pin=ep4c-80
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-81
+Added Pin To Net: NetName=GND Pin=ep4c-82
+Added Pin To Net: NetName=AD_DB6 Pin=ep4c-83
+Added Pin To Net: NetName=AD_DB7 Pin=ep4c-84
+Added Pin To Net: NetName=85 Pin=ep4c-85
+Added Pin To Net: NetName=86 Pin=ep4c-86
+Added Pin To Net: NetName=87 Pin=ep4c-87
+Added Pin To Net: NetName=NetEP1_92 Pin=ep4c-92
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-93
+Added Pin To Net: NetName=GND Pin=ep4c-94
+Added Pin To Net: NetName=GND Pin=ep4c-95
+Added Pin To Net: NetName=GND Pin=ep4c-96
+Added Pin To Net: NetName=GND Pin=ep4c-97
+Added Pin To Net: NetName=98 Pin=ep4c-98
+Added Pin To Net: NetName=99 Pin=ep4c-99
+Added Pin To Net: NetName=100 Pin=ep4c-100
+Added Pin To Net: NetName=101 Pin=ep4c-101
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-102
+Added Pin To Net: NetName=103 Pin=ep4c-103
+Added Pin To Net: NetName=104 Pin=ep4c-104
+Added Pin To Net: NetName=105 Pin=ep4c-105
+Added Pin To Net: NetName=106 Pin=ep4c-106
+Added Pin To Net: NetName=VCC2.5 Pin=ep4c-107
+Added Pin To Net: NetName=GND Pin=ep4c-108
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-109
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-116
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-117
+Added Pin To Net: NetName=GND Pin=ep4c-118
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-122
+Added Pin To Net: NetName=GND Pin=ep4c-123
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-130
+Added Pin To Net: NetName=GND Pin=ep4c-131
+Added Pin To Net: NetName=VCC1.2 Pin=ep4c-134
+Added Pin To Net: NetName=VCC3.3 Pin=ep4c-139
+Added Pin To Net: NetName=GND Pin=ep4c-140
+Added Pin To Net: NetName=GND Pin=LM1117-1.2-1
+Added Pin To Net: NetName=VCC1.2 Pin=LM1117-1.2-2
+Added Pin To Net: NetName=VCC3.3 Pin=LM1117-1.2-3
+Added Pin To Net: NetName=VCC1.2 Pin=LM1117-1.2-4
+Added Pin To Net: NetName=GND Pin=LM1117-2.5-1
+Added Pin To Net: NetName=VCC2.5 Pin=LM1117-2.5-2
+Added Pin To Net: NetName=VCC3.3 Pin=LM1117-2.5-3
+Added Pin To Net: NetName=VCC2.5 Pin=LM1117-2.5-4
+Added Pin To Net: NetName=GND Pin=LM1117-3.3-1
+Added Pin To Net: NetName=VCC3.3 Pin=LM1117-3.3-2
+Added Pin To Net: NetName=5V Pin=LM1117-3.3-3
+Added Pin To Net: NetName=VCC3.3 Pin=LM1117-3.3-4
+Change Net Name : Old Net Name=NetEP1_92 New Net Name=Netep4c_92
+Added Member To Class: ClassName=示波器原理图7 Member=Component ep4c Component_1
+Added Member To Class: ClassName=示波器原理图7 Member=Component LM1117-1.2 
+Added Member To Class: ClassName=示波器原理图7 Member=Component LM1117-2.5 
+Added Member To Class: ClassName=示波器原理图7 Member=Component LM1117-3.3 
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图6
+Added Room: Name=示波器原理图7
+Added Room: Name=示波器原理图

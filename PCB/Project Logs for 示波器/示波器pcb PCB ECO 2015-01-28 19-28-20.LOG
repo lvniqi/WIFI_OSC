@@ -1,0 +1,19 @@
+Added Component: Designator=U14(SOP127P600X175-16N)
+Added Pin To Net: NetName=NetU13_10 Pin=U14-1
+Added Pin To Net: NetName=NetU13_9 Pin=U14-2
+Added Pin To Net: NetName=CH1 ATT Pin=U14-3
+Added Pin To Net: NetName=CH1 ACDC Pin=U14-4
+Added Pin To Net: NetName=CH2 ACDC Pin=U14-5
+Added Pin To Net: NetName=CH2 ATT Pin=U14-6
+Added Pin To Net: NetName=AD_S Pin=U14-7
+Added Pin To Net: NetName=GND Pin=U14-8
+Added Pin To Net: NetName=3.3V Pin=U14-10
+Added Pin To Net: NetName=SPI CLK Pin=U14-11
+Added Pin To Net: NetName=SPI 595M LE Pin=U14-12
+Added Pin To Net: NetName=GND Pin=U14-13
+Added Pin To Net: NetName=SPI DATA Pin=U14-14
+Added Pin To Net: NetName=NetU13_11 Pin=U14-15
+Added Pin To Net: NetName=3.3V Pin=U14-16
+Added Member To Class: ClassName=示波器原理图3 Member=Component U14 SN74HC595D
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图

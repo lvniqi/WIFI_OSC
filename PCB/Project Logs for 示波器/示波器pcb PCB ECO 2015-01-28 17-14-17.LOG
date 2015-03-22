@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=C6 Old Footprint=VP32-3.2 New Footprint=PCBComponent_1
+Added Component: Designator=C2(PCBComponent_1)
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC1_2 Pin=C2-2
+Added Member To Class: ClassName=示波器原理图 Member=Component C2 
+Added Room: Name=示波器原理图

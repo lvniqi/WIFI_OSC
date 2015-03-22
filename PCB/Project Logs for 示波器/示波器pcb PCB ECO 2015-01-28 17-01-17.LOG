@@ -1,0 +1,163 @@
+Added Component: Designator=C1(PCBComponent_1)
+Added Component: Designator=C2(VP32-3.2)
+Added Component: Designator=C3(PCBComponent_1)
+Added Component: Designator=C4(PCBComponent_1)
+Added Component: Designator=C5(VP32-3.2)
+Added Component: Designator=C6(VP32-3.2)
+Added Component: Designator=C7(VP32-3.2)
+Added Component: Designator=C9(VP32-3.2)
+Added Component: Designator=C10(VP32-3.2)
+Added Component: Designator=C11(VP32-3.2)
+Added Component: Designator=C12(VP32-3.2)
+Added Component: Designator=P1(BNC_RA CON)
+Added Component: Designator=P3(HDR1X2)
+Added Component: Designator=P4(HDR1X2)
+Added Component: Designator=P5(HDR1X2)
+Added Component: Designator=P6(HDR1X2)
+Added Component: Designator=P7(HDR1X2)
+Added Component: Designator=P9(HDR1X3)
+Added Component: Designator=Q1(TO-92A)
+Added Component: Designator=R1(PCBComponent_1)
+Added Component: Designator=R2(PCBComponent_1)
+Added Component: Designator=R3(PCBComponent_1)
+Added Component: Designator=R4(2012[0805])
+Added Component: Designator=R5(PCBComponent_1)
+Added Component: Designator=R6(PCBComponent_1)
+Added Component: Designator=R7(AXIAL-0.3)
+Added Component: Designator=R8(AXIAL-0.3)
+Added Component: Designator=R9(AXIAL-0.3)
+Added Component: Designator=R10(AXIAL-0.3)
+Added Component: Designator=R11(AXIAL-0.3)
+Added Component: Designator=R12(AXIAL-0.3)
+Added Component: Designator=R13(PCBComponent_1)
+Added Component: Designator=RE1(SOP254P610X218-4N)
+Added Component: Designator=U2(SOIC127P600X175-8N)
+Added Component: Designator=U6(SOT95P245X110-5N)
+Added Component: Designator=U(SOT95P245X110-5N)
+Added Pin To Net: NetName=NetC1_1 Pin=C1-1
+Added Pin To Net: NetName=NetC1_2 Pin=C1-2
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC1_2 Pin=C2-2
+Added Pin To Net: NetName=NetC3_1 Pin=C3-1
+Added Pin To Net: NetName=NetC2_1 Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=NetC3_1 Pin=C4-2
+Added Pin To Net: NetName=+5 Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=-5 Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C6-2
+Added Pin To Net: NetName=+5 Pin=C7-1
+Added Pin To Net: NetName=GND Pin=C7-2
+Added Pin To Net: NetName=-5 Pin=C9-1
+Added Pin To Net: NetName=GND Pin=C9-2
+Added Pin To Net: NetName=-5 Pin=C10-1
+Added Pin To Net: NetName=GND Pin=C10-2
+Added Pin To Net: NetName=+5 Pin=C11-1
+Added Pin To Net: NetName=GND Pin=C11-2
+Added Pin To Net: NetName=GND Pin=C12-1
+Added Pin To Net: NetName=NetC12_2 Pin=C12-2
+Added Pin To Net: NetName=NetC1_1 Pin=P1-1
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=CH1 ATT Pin=P3-1
+Added Pin To Net: NetName=CH1 ATT Pin=P3-2
+Added Pin To Net: NetName=CH1 ACDC Pin=P4-1
+Added Pin To Net: NetName=CH1 ACDC Pin=P4-2
+Added Pin To Net: NetName=CH1_VPOS Pin=P5-1
+Added Pin To Net: NetName=CH1_VPOS Pin=P5-2
+Added Pin To Net: NetName=CH1_VPMS Pin=P6-1
+Added Pin To Net: NetName=CH1_VPMS Pin=P6-2
+Added Pin To Net: NetName=AD_CH1 Pin=P7-1
+Added Pin To Net: NetName=AD_CH1 Pin=P7-2
+Added Pin To Net: NetName=+5 Pin=P9-1
+Added Pin To Net: NetName=GND Pin=P9-2
+Added Pin To Net: NetName=-5 Pin=P9-3
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=NetQ1_2 Pin=Q1-2
+Added Pin To Net: NetName=NetQ1_3 Pin=Q1-3
+Added Pin To Net: NetName=NetC2_1 Pin=R1-1
+Added Pin To Net: NetName=NetC1_2 Pin=R1-2
+Added Pin To Net: NetName=NetR2_1 Pin=R2-1
+Added Pin To Net: NetName=NetC2_1 Pin=R2-2
+Added Pin To Net: NetName=NetC3_1 Pin=R3-1
+Added Pin To Net: NetName=NetR2_1 Pin=R3-2
+Added Pin To Net: NetName=GND Pin=R4-1
+Added Pin To Net: NetName=NetC3_1 Pin=R4-2
+Added Pin To Net: NetName=NetQ1_2 Pin=R5-1
+Added Pin To Net: NetName=CH1 ATT Pin=R5-2
+Added Pin To Net: NetName=NetR6_1 Pin=R6-1
+Added Pin To Net: NetName=NetR6_2 Pin=R6-2
+Added Pin To Net: NetName=NetR7_1 Pin=R7-1
+Added Pin To Net: NetName=NetR7_2 Pin=R7-2
+Added Pin To Net: NetName=CH1_VPMS Pin=R8-1
+Added Pin To Net: NetName=NetR8_2 Pin=R8-2
+Added Pin To Net: NetName=NetR9_1 Pin=R9-1
+Added Pin To Net: NetName=NetR9_2 Pin=R9-2
+Added Pin To Net: NetName=NetC12_2 Pin=R10-1
+Added Pin To Net: NetName=NetR9_1 Pin=R10-2
+Added Pin To Net: NetName=CH1_VPOS Pin=R11-1
+Added Pin To Net: NetName=NetC12_2 Pin=R11-2
+Added Pin To Net: NetName=NetR9_2 Pin=R12-1
+Added Pin To Net: NetName=AD_CH1 Pin=R12-2
+Added Pin To Net: NetName=CH1 ACDC Pin=R13-1
+Added Pin To Net: NetName=NetR13_2 Pin=R13-2
+Added Pin To Net: NetName=NetR13_2 Pin=RE1-1
+Added Pin To Net: NetName=GND Pin=RE1-2
+Added Pin To Net: NetName=NetC1_2 Pin=RE1-3
+Added Pin To Net: NetName=NetC1_1 Pin=RE1-4
+Added Pin To Net: NetName=NetR8_2 Pin=U2-1
+Added Pin To Net: NetName=VREF Pin=U2-2
+Added Pin To Net: NetName=NetU2_3 Pin=U2-3
+Added Pin To Net: NetName=GND Pin=U2-4
+Added Pin To Net: NetName=NetR7_1 Pin=U2-5
+Added Pin To Net: NetName=-5 Pin=U2-6
+Added Pin To Net: NetName=NetR7_2 Pin=U2-7
+Added Pin To Net: NetName=+5 Pin=U2-8
+Added Pin To Net: NetName=NetU2_3 Pin=U6-1
+Added Pin To Net: NetName=-5 Pin=U6-2
+Added Pin To Net: NetName=NetR6_1 Pin=U6-3
+Added Pin To Net: NetName=NetU2_3 Pin=U6-4
+Added Pin To Net: NetName=+5 Pin=U6-5
+Added Pin To Net: NetName=NetR9_2 Pin=U-1
+Added Pin To Net: NetName=-5 Pin=U-2
+Added Pin To Net: NetName=NetR7_2 Pin=U-3
+Added Pin To Net: NetName=NetR9_1 Pin=U-4
+Added Pin To Net: NetName=+5 Pin=U-5
+Added Member To Class: ClassName=示波器原理图 Member=Component C1 
+Added Member To Class: ClassName=示波器原理图 Member=Component C2 
+Added Member To Class: ClassName=示波器原理图 Member=Component C3 
+Added Member To Class: ClassName=示波器原理图 Member=Component C4 
+Added Member To Class: ClassName=示波器原理图 Member=Component C5 
+Added Member To Class: ClassName=示波器原理图 Member=Component C6 
+Added Member To Class: ClassName=示波器原理图 Member=Component C7 
+Added Member To Class: ClassName=示波器原理图 Member=Component C9 
+Added Member To Class: ClassName=示波器原理图 Member=Component C10 
+Added Member To Class: ClassName=示波器原理图 Member=Component C11 
+Added Member To Class: ClassName=示波器原理图 Member=Component C12 
+Added Member To Class: ClassName=示波器原理图 Member=Component P1 BNC
+Added Member To Class: ClassName=示波器原理图 Member=Component P3 Header 2
+Added Member To Class: ClassName=示波器原理图 Member=Component P4 Header 2
+Added Member To Class: ClassName=示波器原理图 Member=Component P5 Header 2
+Added Member To Class: ClassName=示波器原理图 Member=Component P6 Header 2
+Added Member To Class: ClassName=示波器原理图 Member=Component P7 Header 2
+Added Member To Class: ClassName=示波器原理图 Member=Component P9 Header 3
+Added Member To Class: ClassName=示波器原理图 Member=Component Q1 8050
+Added Member To Class: ClassName=示波器原理图 Member=Component R1 
+Added Member To Class: ClassName=示波器原理图 Member=Component R2 
+Added Member To Class: ClassName=示波器原理图 Member=Component R3 
+Added Member To Class: ClassName=示波器原理图 Member=Component R4 
+Added Member To Class: ClassName=示波器原理图 Member=Component R5 
+Added Member To Class: ClassName=示波器原理图 Member=Component R6 
+Added Member To Class: ClassName=示波器原理图 Member=Component R7 
+Added Member To Class: ClassName=示波器原理图 Member=Component R8 
+Added Member To Class: ClassName=示波器原理图 Member=Component R9 
+Added Member To Class: ClassName=示波器原理图 Member=Component R10 
+Added Member To Class: ClassName=示波器原理图 Member=Component R11 
+Added Member To Class: ClassName=示波器原理图 Member=Component R12 
+Added Member To Class: ClassName=示波器原理图 Member=Component R13 
+Added Member To Class: ClassName=示波器原理图 Member=Component RE1 CPC1017N
+Added Member To Class: ClassName=示波器原理图 Member=Component U2 AD603AR
+Added Member To Class: ClassName=示波器原理图 Member=Component U6 AD8055ART3
+Added Member To Class: ClassName=示波器原理图 Member=Component U AD8055ART
+Added Room: Name=示波器原理图

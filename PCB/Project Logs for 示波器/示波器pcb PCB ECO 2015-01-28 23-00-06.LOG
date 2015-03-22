@@ -1,0 +1,12 @@
+Added Component: Designator=U16(SOP127P600X175-8N)
+Added Pin To Net: NetName=NetR36_2 Pin=U16-1
+Added Pin To Net: NetName=NetR35_2 Pin=U16-2
+Added Pin To Net: NetName=GND Pin=U16-3
+Added Pin To Net: NetName=-5V Pin=U16-4
+Added Pin To Net: NetName=GND Pin=U16-5
+Added Pin To Net: NetName=NetR33_2 Pin=U16-6
+Added Pin To Net: NetName=CH1_VPOS Pin=U16-7
+Added Pin To Net: NetName=5V Pin=U16-8
+Added Member To Class: ClassName=示波器原理图3 Member=Component U16 TL072D
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图

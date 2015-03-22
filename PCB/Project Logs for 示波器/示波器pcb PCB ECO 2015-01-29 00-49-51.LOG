@@ -1,0 +1,12 @@
+Added Component: Designator=P16(HDR1X2)
+Added Component: Designator=Q2(PCBComponent_1)
+Added Pin To Net: NetName=CH2_VPMS Pin=P16-1
+Added Pin To Net: NetName=CH2_VPMS Pin=P16-2
+Added Pin To Net: NetName=GND Pin=Q2-1
+Added Pin To Net: NetName=NetQ2_2 Pin=Q2-2
+Added Pin To Net: NetName=NetQ2_3 Pin=Q2-3
+Added Member To Class: ClassName=示波器原理图2 Member=Component P16 Header 2
+Added Member To Class: ClassName=示波器原理图2 Member=Component Q2 8050
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图

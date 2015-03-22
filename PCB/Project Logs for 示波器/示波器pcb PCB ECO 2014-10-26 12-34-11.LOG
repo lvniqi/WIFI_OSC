@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=5V Pin=C19-1
+Removed Pin From Net: NetName=5V Pin=U9-8
+Added Pin To Net: NetName=+5 Pin=C19-1
+Added Pin To Net: NetName=+5 Pin=U9-8
+Added Room: Name=Ê¾²¨Æ÷Ô­ÀíÍ¼2

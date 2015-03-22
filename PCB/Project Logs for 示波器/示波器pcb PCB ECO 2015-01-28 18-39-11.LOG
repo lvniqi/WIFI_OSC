@@ -1,0 +1,8 @@
+Added Component: Designator=RE2(PCBComponent_1)
+Added Pin To Net: NetName=+5 Pin=RE2-1
+Added Pin To Net: NetName=NetC3_1 Pin=RE2-7
+Added Pin To Net: NetName=NetR6_2 Pin=RE2-8
+Added Pin To Net: NetName=NetC2_1 Pin=RE2-9
+Added Pin To Net: NetName=NetQ1_3 Pin=RE2-10
+Added Member To Class: ClassName=示波器原理图 Member=Component RE2 TQ2-5V
+Added Room: Name=示波器原理图

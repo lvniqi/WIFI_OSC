@@ -1,0 +1,27 @@
+Change Component Comment : Designator=C? Old Comment=Cap Semi New Comment=
+Change Component Designator: OldDesignator=C? NewDesignator=C128
+Added Component: Designator=C30(PCBComponent_1)
+Added Component: Designator=C131(C1206)
+Added Component: Designator=JTAG1(HDR2X5)
+Added Pin To Net: NetName=+3.3 Pin=C30-1
+Added Pin To Net: NetName=GND Pin=C30-2
+Added Pin To Net: NetName=GND Pin=C128-1
+Added Pin To Net: NetName=VCC3.3 Pin=C128-2
+Added Pin To Net: NetName=GND Pin=C131-1
+Added Pin To Net: NetName=VCC1.2 Pin=C131-2
+Added Pin To Net: NetName=TCK Pin=JTAG1-1
+Added Pin To Net: NetName=GND Pin=JTAG1-2
+Added Pin To Net: NetName=TDO Pin=JTAG1-3
+Added Pin To Net: NetName=VCC3.3 Pin=JTAG1-4
+Added Pin To Net: NetName=TMS Pin=JTAG1-5
+Added Pin To Net: NetName=TDI Pin=JTAG1-9
+Added Pin To Net: NetName=GND Pin=JTAG1-10
+Added Member To Class: ClassName=示波器原理图5 Member=Component C30 
+Added Member To Class: ClassName=示波器原理图7 Member=Component C131 
+Added Member To Class: ClassName=示波器原理图7 Member=Component JTAG1 
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图6
+Added Room: Name=示波器原理图7
+Added Room: Name=示波器原理图

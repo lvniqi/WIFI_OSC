@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=NetC14*_1 Pin=Q2-3
+Removed Pin From Net: NetName=NetC14*_1 Pin=RE4-10
+Added Pin To Net: NetName=NetQ2_3 Pin=Q2-3
+Added Pin To Net: NetName=NetQ2_3 Pin=RE4-10
+Added Net: Name=NetQ2_3
+Added Room: Name=Ê¾²¨Æ÷Ô­ÀíÍ¼2

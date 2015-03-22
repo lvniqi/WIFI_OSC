@@ -1,0 +1,19 @@
+Added Component: Designator=tps6300(QFN50P300X300X100-10M)
+Added Pin To Net: NetName=Netcc2_1 Pin=tps6300-1
+Added Pin To Net: NetName=Netll1_1 Pin=tps6300-2
+Added Pin To Net: NetName=GND Pin=tps6300-3
+Added Pin To Net: NetName=Netll1_2 Pin=tps6300-4
+Added Pin To Net: NetName=Netcc1_1 Pin=tps6300-5
+Added Pin To Net: NetName=Nettps6300_6 Pin=tps6300-6
+Added Pin To Net: NetName=Nettps6300_6 Pin=tps6300-7
+Added Pin To Net: NetName=Nettps6300_6 Pin=tps6300-8
+Added Pin To Net: NetName=GND Pin=tps6300-9
+Added Pin To Net: NetName=Netrr1_2 Pin=tps6300-10
+Added Member To Class: ClassName=TPS63000 Member=Component tps6300 
+Added Room: Name=TPS63000
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图6
+Added Room: Name=示波器原理图7
+Added Room: Name=示波器原理图

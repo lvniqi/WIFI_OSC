@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=NetC25_1 Pin=U17-6
+Removed Pin From Net: NetName=NetR22_1 Pin=U18-1
+Removed Pin From Net: NetName=-5 Pin=U18-2
+Removed Pin From Net: NetName=NetR20_1 Pin=U18-3
+Removed Pin From Net: NetName=NetR22_2 Pin=U18-4
+Removed Pin From Net: NetName=+5 Pin=U18-5
+Removed Member From Class: ClassName=示波器原理图5 Member=U17
+Removed Member From Class: ClassName=示波器原理图2 Member=U18
+Change Component Comment : Designator=U17 Old Comment= New Comment=AD603AR
+Change Component Comment : Designator=U18 Old Comment=AD8055ART New Comment=
+Added Pin To Net: NetName=-5 Pin=U17-6
+Added Pin To Net: NetName=GND Pin=U18-1
+Added Pin To Net: NetName=NetR22_1 Pin=U18-1
+Added Pin To Net: NetName=-5 Pin=U18-2
+Added Pin To Net: NetName=AD_CH1 Pin=U18-2
+Added Pin To Net: NetName=NetC27_1 Pin=U18-3
+Added Pin To Net: NetName=NetR20_1 Pin=U18-3
+Added Pin To Net: NetName=GND Pin=U18-4
+Added Pin To Net: NetName=NetR22_2 Pin=U18-4
+Added Pin To Net: NetName=+5 Pin=U18-5
+Added Pin To Net: NetName=NetC25_1 Pin=U18-5
+Added Member To Class: ClassName=示波器原理图2 Member=Component U17 AD603AR
+Added Member To Class: ClassName=示波器原理图5 Member=Component U18 
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图

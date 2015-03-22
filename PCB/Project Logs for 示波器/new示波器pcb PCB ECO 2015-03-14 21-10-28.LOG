@@ -1,0 +1,58 @@
+Added Component: Designator=cc1(1608[0603])
+Added Component: Designator=cc2(1608[0603])
+Added Component: Designator=cc3(1608[0603])
+Added Component: Designator=J1(KLD-0202)
+Added Component: Designator=ll1(L0603)
+Added Component: Designator=P9(HDR1X3)
+Added Component: Designator=rr1(6-0805)
+Added Component: Designator=rr2(6-0805)
+Added Component: Designator=rr3(6-0805)
+Added Component: Designator=Vin(HDR1X2)
+Added Component: Designator=Vout(HDR1X2)
+Added Pin To Net: NetName=GND Pin=cc1-2
+Added Pin To Net: NetName=GND Pin=cc2-2
+Added Pin To Net: NetName=GND Pin=cc3-2
+Added Pin To Net: NetName=+5 Pin=J1-1A
+Added Pin To Net: NetName=+5 Pin=J1-1B
+Added Pin To Net: NetName=+5 Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2A
+Added Pin To Net: NetName=GND Pin=J1-2B
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J1-3A
+Added Pin To Net: NetName=GND Pin=J1-3B
+Added Pin To Net: NetName=GND Pin=J1-3
+Added Pin To Net: NetName=+5 Pin=P9-1
+Added Pin To Net: NetName=GND Pin=P9-2
+Added Pin To Net: NetName=-5 Pin=P9-3
+Added Pin To Net: NetName=GND Pin=rr2-2
+Added Pin To Net: NetName=GND Pin=Vin-1
+Added Pin To Net: NetName=GND Pin=Vout-2
+Added Pin To Net: NetName=Netcc1_1 Pin=cc1-1
+Added Pin To Net: NetName=Netcc1_1 Pin=rr3-2
+Added Pin To Net: NetName=Netcc1_1 Pin=Vin-2
+Added Net: Name=Netcc1_1
+Added Pin To Net: NetName=Netcc2_1 Pin=cc2-1
+Added Pin To Net: NetName=Netcc2_1 Pin=rr1-1
+Added Pin To Net: NetName=Netcc2_1 Pin=Vout-1
+Added Net: Name=Netcc2_1
+Added Pin To Net: NetName=Netcc3_1 Pin=cc3-1
+Added Pin To Net: NetName=Netcc3_1 Pin=rr3-1
+Added Net: Name=Netcc3_1
+Added Pin To Net: NetName=Netll1_1 Pin=ll1-1
+Added Net: Name=Netll1_1
+Added Pin To Net: NetName=Netll1_2 Pin=ll1-2
+Added Net: Name=Netll1_2
+Added Pin To Net: NetName=Netrr1_2 Pin=rr1-2
+Added Pin To Net: NetName=Netrr1_2 Pin=rr2-1
+Added Net: Name=Netrr1_2
+Added Net: Name=Nettps6300_6
+Added Class: Name=TPS63000
+Added Member To Class: ClassName=示波器原理图7 Member=Component J1 PWR
+Added Member To Class: ClassName=示波器原理图 Member=Component P9 Header 3
+Added Room: Name=TPS63000
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图6
+Added Room: Name=示波器原理图7
+Added Room: Name=示波器原理图

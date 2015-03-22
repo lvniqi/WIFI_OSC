@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=GND Pin=C104-1
+Removed Pin From Net: NetName=VCC3.3 Pin=C104-2
+Removed Pin From Net: NetName=GND Pin=C105-1
+Removed Pin From Net: NetName=VCC3.3 Pin=C105-2
+Removed Pin From Net: NetName=GND Pin=C110-1
+Removed Pin From Net: NetName=VCC1.2 Pin=C110-2
+Removed Pin From Net: NetName=GND Pin=C111-1
+Removed Pin From Net: NetName=VCC1.2 Pin=C111-2
+Removed Member From Class: ClassName=示波器原理图6 Member=C104
+Removed Member From Class: ClassName=示波器原理图6 Member=C105
+Removed Member From Class: ClassName=示波器原理图6 Member=C110
+Removed Member From Class: ClassName=示波器原理图6 Member=C111
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图6
+Added Room: Name=示波器原理图7
+Added Room: Name=示波器原理图

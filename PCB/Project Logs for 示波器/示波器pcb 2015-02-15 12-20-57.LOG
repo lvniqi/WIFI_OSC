@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=5V Pin=P1-1
+Added Pin To Net: NetName=NetC1_1 Pin=P1-1
+Added Room: Name=NEW_FPGA
+Added Room: Name=part_2
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图

@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=CH1_VAMP Pin=U1-2
+Removed Member From Class: ClassName=示波器原理图 Member=RE3
+Added Pin To Net: NetName=CH1_VAMP Pin=U1-1
+Added Pin To Net: NetName=AD_CH1 Pin=U1-2
+Added Pin To Net: NetName=CH1_VAMP Pin=U1-2
+Added Pin To Net: NetName=NetC37_1 Pin=U1-3
+Added Pin To Net: NetName=+5 Pin=U1-4
+Added Pin To Net: NetName=NetC38_1 Pin=U1-5
+Added Pin To Net: NetName=NetR33_1 Pin=U1-6
+Added Pin To Net: NetName=NetR33_1 Pin=U1-7
+Added Pin To Net: NetName=NetR35_1 Pin=U1-8
+Added Pin To Net: NetName=NetR35_1 Pin=U1-9
+Added Pin To Net: NetName=NetC39_1 Pin=U1-10
+Added Pin To Net: NetName=-5 Pin=U1-11
+Added Pin To Net: NetName=NetC40_1 Pin=U1-12
+Added Pin To Net: NetName=NetU1_13 Pin=U1-13
+Added Pin To Net: NetName=NetU1_13 Pin=U1-14
+Added Room: Name=示波器原理图2
+Added Room: Name=示波器原理图3
+Added Room: Name=示波器原理图5
+Added Room: Name=示波器原理图

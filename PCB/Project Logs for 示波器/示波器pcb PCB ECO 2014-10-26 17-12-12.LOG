@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=GND Pin=R14-1
+Removed Pin From Net: NetName=+5 Pin=R14-2
+Removed Pin From Net: NetName=GND Pin=R15-1
+Removed Pin From Net: NetName=+5 Pin=R15-2
+Removed Pin From Net: NetName=GND Pin=R16-1
+Removed Pin From Net: NetName=+5 Pin=R16-2
+Change Component Footprint: Designator=R14 Old Footprint=VR3 New Footprint=VR5
+Change Component Footprint: Designator=R15 Old Footprint=VR3 New Footprint=VR5
+Change Component Footprint: Designator=R16 Old Footprint=VR3 New Footprint=VR5
+Change Component Comment : Designator=R16 Old Comment= New Comment=RPot
+Change Component Comment : Designator=R15 Old Comment= New Comment=RPot
+Change Component Comment : Designator=R14 Old Comment= New Comment=RPot
+Added Pin To Net: NetName=+5 Pin=R14-1
+Added Pin To Net: NetName=GND Pin=R14-2
+Added Pin To Net: NetName=+5 Pin=R15-1
+Added Pin To Net: NetName=GND Pin=R15-2
+Added Pin To Net: NetName=+5 Pin=R16-1
+Added Pin To Net: NetName=GND Pin=R16-2
+Added Room: Name=Ê¾²¨Æ÷Ô­ÀíÍ¼2
