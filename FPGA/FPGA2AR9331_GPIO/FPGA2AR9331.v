@@ -9,7 +9,7 @@ module FPGA2AR9331(input clk,input rst_n,
 					 input ack,output reg clk_out, output reg [7:0]data_out
 					 );
 	//状态
-	parameter [4:0] IDLE = 3'd0,SEND_START = 1,
+	parameter [4:0] IDLE = 3'd0,SEND_START = 1,    
 					SEND_ING_1 = 2,SEND_ING_2 = 3,SEND_END = 4,DELAY_1 = 5,DELAY_2 = 6;
 	//reg [1:0] current_state
 	reg [4:0] current_state,next_state;
