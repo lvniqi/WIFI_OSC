@@ -1,0 +1,6 @@
+Added Component: Designator=ST-LINK(HDR1X4)
+Added Pin To Net: NetName=VCC33 Pin=ST-LINK-1
+Added Pin To Net: NetName=GND Pin=ST-LINK-2
+Added Pin To Net: NetName=SWDIO Pin=ST-LINK-3
+Added Pin To Net: NetName=SWCLK Pin=ST-LINK-4
+Added Member To Class: ClassName=mcu Member=Component ST-LINK Header 4

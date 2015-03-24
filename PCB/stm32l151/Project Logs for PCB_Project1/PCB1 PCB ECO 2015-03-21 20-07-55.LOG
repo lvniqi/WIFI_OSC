@@ -1,0 +1,63 @@
+Removed Member From Class: ClassName=mcu Member=U?
+Added Component: Designator=C1(c0805)
+Added Component: Designator=C2(c0805)
+Added Component: Designator=C3(c0805)
+Added Component: Designator=C4(c0805)
+Added Component: Designator=C5(c0805)
+Added Component: Designator=C6(c0805)
+Added Component: Designator=C7(c0805)
+Added Component: Designator=C8(c0805)
+Added Component: Designator=C9(c0805)
+Added Component: Designator=R1(0805)
+Added Component: Designator=R2(0805)
+Added Component: Designator=U1(LQFP48_N)
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=VCC_3V3 Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=VCC_3V3 Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=VCC_3V3 Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=VCC_3V3 Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=VCC_3V3 Pin=C5-2
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=VCC_3V3 Pin=C6-2
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=VCC_3V3 Pin=C7-2
+Added Pin To Net: NetName=GND Pin=C8-1
+Added Pin To Net: NetName=VCC_3V3 Pin=C8-2
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=NRST Pin=C9-2
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=VCC_3V3 Pin=R2-1
+Added Pin To Net: NetName=NRST Pin=R2-2
+Added Pin To Net: NetName=NRST Pin=U1-7
+Added Pin To Net: NetName=GND Pin=U1-8
+Added Pin To Net: NetName=VCC_3V3 Pin=U1-9
+Added Pin To Net: NetName=GND Pin=U1-23
+Added Pin To Net: NetName=VCC_3V3 Pin=U1-24
+Added Pin To Net: NetName=GND Pin=U1-35
+Added Pin To Net: NetName=VCC_3V3 Pin=U1-36
+Added Pin To Net: NetName=GND Pin=U1-47
+Added Pin To Net: NetName=VCC_3V3 Pin=U1-48
+Change Net Name : Old Net Name=VCC_3V3 New Net Name=VCC33
+Added Pin To Net: NetName=NetR1_2 Pin=R1-2
+Added Pin To Net: NetName=NetR1_2 Pin=U1-44
+Added Net: Name=NetR1_2
+Added Pin To Net: NetName=SWCLK Pin=U1-37
+Added Net: Name=SWCLK
+Added Pin To Net: NetName=SWDIO Pin=U1-34
+Added Net: Name=SWDIO
+Added Member To Class: ClassName=mcu Member=Component C1 Cap
+Added Member To Class: ClassName=mcu Member=Component C2 Cap
+Added Member To Class: ClassName=mcu Member=Component C3 Cap
+Added Member To Class: ClassName=mcu Member=Component C4 Cap
+Added Member To Class: ClassName=mcu Member=Component C5 Cap
+Added Member To Class: ClassName=mcu Member=Component C6 Cap
+Added Member To Class: ClassName=mcu Member=Component C7 Cap
+Added Member To Class: ClassName=mcu Member=Component C8 Cap
+Added Member To Class: ClassName=mcu Member=Component C9 Cap
+Added Member To Class: ClassName=mcu Member=Component R1 Res2
+Added Member To Class: ClassName=mcu Member=Component R2 Res2
+Added Member To Class: ClassName=mcu Member=Component U1 STM32L151C8T6

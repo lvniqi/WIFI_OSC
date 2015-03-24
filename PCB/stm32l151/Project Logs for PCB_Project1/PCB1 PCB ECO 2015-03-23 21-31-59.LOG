@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=1.5_OR_16.6V Pin=*-1
+Removed Pin From Net: NetName=187.5V Pin=*-2
+Removed Pin From Net: NetName=625V Pin=*-4
+Removed Pin From Net: NetName=1250V Pin=*-5
+Added Pin To Net: NetName=1250V Pin=*-1
+Added Pin To Net: NetName=625V Pin=*-2
+Added Pin To Net: NetName=187.5V Pin=*-4
+Added Pin To Net: NetName=1.5_OR_16.6V Pin=*-5

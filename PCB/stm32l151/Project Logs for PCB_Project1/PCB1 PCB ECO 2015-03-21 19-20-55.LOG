@@ -1,0 +1,12 @@
+Added Component: Designator=C?(RAD-0.3)
+Added Component: Designator=R12(0805)
+Added Component: Designator=U?(LQFP48_N)
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Net: Name=GND
+Added Pin To Net: NetName=NRST Pin=C?-2
+Added Pin To Net: NetName=NRST Pin=R12-2
+Added Net: Name=NRST
+Added Pin To Net: NetName=VCC_3V3 Pin=R12-1
+Added Net: Name=VCC_3V3
+Added Class: Name=mcu
+Added Room: Name=mcu

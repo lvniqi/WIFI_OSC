@@ -1,0 +1,11 @@
+Added Component: Designator=*(SOP-16)
+Added Pin To Net: NetName=1.5_OR_16.6V Pin=*-1
+Added Pin To Net: NetName=187.5V Pin=*-2
+Added Pin To Net: NetName=625V Pin=*-4
+Added Pin To Net: NetName=1250V Pin=*-5
+Added Pin To Net: NetName=-5V Pin=*-7
+Added Pin To Net: NetName=GND Pin=*-8
+Added Pin To Net: NetName=5V Pin=*-16
+Added Pin To Net: NetName=TO_ZOOM Pin=*-3
+Added Net: Name=TO_ZOOM
+Added Member To Class: ClassName=SIGNAL Member=Component * 74HC4052

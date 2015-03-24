@@ -1,0 +1,9 @@
+Added Component: Designator=3.5MM(HDR1X4)
+Added Pin To Net: NetName=GND Pin=3.5MM-1
+Added Pin To Net: NetName=DAC_2 Pin=3.5MM-2
+Added Pin To Net: NetName=COMP2_INP Pin=3.5MM-3
+Added Pin To Net: NetName=ADC_20 Pin=U1-27
+Added Net: Name=ADC_20
+Added Pin To Net: NetName=ADC_21 Pin=U1-28
+Added Net: Name=ADC_21
+Added Member To Class: ClassName=mcu Member=Component 3.5MM Header 4

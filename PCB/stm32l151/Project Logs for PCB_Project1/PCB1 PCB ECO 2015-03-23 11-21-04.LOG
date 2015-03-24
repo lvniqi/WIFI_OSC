@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=VCC33 Pin=UART-4
+Change Component DesignItemId : Designator=UART Old DesignItemId=Header 4 New DesignItemId=Header 3
+Change Component Footprint: Designator=UART Old Footprint=HDR1X4 New Footprint=HDR1X3
+Change Component Comment : Designator=UART Old Comment=Header 4 New Comment=Header 3
