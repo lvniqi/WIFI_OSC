@@ -25,7 +25,7 @@ PowerPortNamesTakePriority=0
 PushECOToAnnotationFile=1
 
 [Document1]
-DocumentPath=..\ep4ce6\LM1117.SchLib
+DocumentPath=..\..\..\AD-winter09\Library\epcs4.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -39,76 +39,6 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
 [Document2]
-DocumentPath=D:\AD-winter09\Library\epcs4.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-
-[Document3]
-DocumentPath=..\ep4ce6\0603.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-
-[Document4]
-DocumentPath=..\ep4ce6\排阻_4.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-
-[Document5]
-DocumentPath=..\ep4ce6\EP4CE6.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-
-[Document6]
-DocumentPath=..\ep4ce6\EPCS4E6E22C8.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-
-[Document7]
 DocumentPath=AD8065.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -122,7 +52,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document8]
+[Document3]
 DocumentPath=CPC1017N.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -136,7 +66,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document9]
+[Document4]
 DocumentPath=TQ2-5V.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -150,7 +80,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document10]
+[Document5]
 DocumentPath=AQY210E.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -164,7 +94,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document11]
+[Document6]
 DocumentPath=AD8065ART.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -178,7 +108,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document12]
+[Document7]
 DocumentPath=AD603.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -192,7 +122,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document13]
+[Document8]
 DocumentPath=S1117-5V.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -206,7 +136,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document14]
+[Document9]
 DocumentPath=LM2596S-3.3
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -220,7 +150,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document15]
+[Document10]
 DocumentPath=LM2596S.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -234,8 +164,8 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document16]
-DocumentPath=D:\AD-winter09\Library\74HC595.PcbLib
+[Document11]
+DocumentPath=..\..\..\AD-winter09\Library\74HC595.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -248,8 +178,8 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document17]
-DocumentPath=D:\AD-winter09\Library\0805封装.PcbLib
+[Document12]
+DocumentPath=..\..\..\AD-winter09\Library\0805封装.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -262,7 +192,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document18]
+[Document13]
 DocumentPath=AD5320.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -276,7 +206,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document19]
+[Document14]
 DocumentPath=TL072.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -290,7 +220,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document20]
+[Document15]
 DocumentPath=AD9288.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -304,8 +234,8 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document21]
-DocumentPath=D:\AD-winter09\Library\SOP14.PcbLib
+[Document16]
+DocumentPath=..\..\..\AD-winter09\Library\SOP14.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -318,8 +248,8 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document22]
-DocumentPath=D:\AD-winter09\Library\三极管贴片.PcbLib
+[Document17]
+DocumentPath=..\..\..\AD-winter09\Library\三极管贴片.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -332,7 +262,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document23]
+[Document18]
 DocumentPath=PcbLib1.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -346,8 +276,8 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document24]
-DocumentPath=D:\AD-winter09\Library\Miscellaneous Connectors.IntLib
+[Document19]
+DocumentPath=..\..\..\AD-winter09\Library\Miscellaneous Connectors.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -360,8 +290,8 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document25]
-DocumentPath=D:\AD-winter09\Library\Miscellaneous Devices.IntLib
+[Document20]
+DocumentPath=..\..\..\AD-winter09\Library\Miscellaneous Devices.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -374,7 +304,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document26]
+[Document21]
 DocumentPath=74HC4051.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -388,7 +318,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document27]
+[Document22]
 DocumentPath=AD5320.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -402,7 +332,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document28]
+[Document23]
 DocumentPath=AD603.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -416,7 +346,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document29]
+[Document24]
 DocumentPath=示波器原理图.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -430,21 +360,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document30]
-DocumentPath=..\电源\TPS63000.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-
-[Document31]
+[Document25]
 DocumentPath=示波器原理图2.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -458,7 +374,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document32]
+[Document26]
 DocumentPath=示波器原理图6.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -472,7 +388,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document33]
+[Document27]
 DocumentPath=示波器原理图3.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -486,7 +402,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document34]
+[Document28]
 DocumentPath=AD9288.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -500,7 +416,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document35]
+[Document29]
 DocumentPath=示波器原理图7.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -514,7 +430,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document36]
+[Document30]
 DocumentPath=示波器原理图5.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -528,7 +444,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document37]
+[Document31]
 DocumentPath=呵呵\new示波器pcb.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -542,7 +458,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document38]
+[Document32]
 DocumentPath=S1.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -556,7 +472,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document39]
+[Document33]
 DocumentPath=示波器.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1

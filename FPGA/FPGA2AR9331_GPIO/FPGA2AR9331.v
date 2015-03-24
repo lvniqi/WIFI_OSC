@@ -3,7 +3,7 @@
 * module SAVE_ADDR
 * */
 module FPGA2AR9331(input clk,input rst_n,
-					 //input [7:0]data_in,
+					 //input [7:0]data_in,//tttttttttttttt
 					 input en,
 					 //input[7:0] len_in,
 					 input ack,output reg clk_out, output reg [7:0]data_out
