@@ -1,0 +1,118 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 132 02/25/2009 SJ Full Version
+# Date created = 20:21:03  March 17, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		uarter_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C5T144C8
+set_global_assignment -name TOP_LEVEL_ENTITY next_five
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:21:03  MARCH 17, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VHDL_FILE t.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE uarter.vwf
+set_global_assignment -name VHDL_FILE r.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
+set_global_assignment -name VHDL_FILE fp.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE clk.vwf
+set_global_assignment -name BDF_FILE all.bdf
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_17 -to CLK
+set_location_assignment PIN_141 -to R
+set_location_assignment PIN_142 -to T
+set_location_assignment PIN_115 -to T_com
+set_global_assignment -name VECTOR_WAVEFORM_FILE allw.vwf
+set_global_assignment -name VHDL_FILE fre2.vhd
+set_global_assignment -name VECTOR_COMPARE_TRIGGER_MODE INPUT_EDGE
+set_global_assignment -name BDF_FILE next_five.bdf
+set_global_assignment -name VERILOG_FILE shift_register.v
+set_global_assignment -name VERILOG_FILE shift_registerv2.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE shift_vw.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform22.vwf
+set_global_assignment -name BDF_FILE new_all.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE five.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE six.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ttt.vwf
+set_location_assignment PIN_79 -to O[31]
+set_location_assignment PIN_75 -to O[30]
+set_location_assignment PIN_73 -to O[29]
+set_location_assignment PIN_71 -to O[28]
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_ASDO_AFTER_CONFIGURATION "AS INPUT TRI-STATED"
+set_location_assignment PIN_69 -to O[27]
+set_location_assignment PIN_65 -to O[26]
+set_location_assignment PIN_63 -to O[25]
+set_location_assignment PIN_25 -to O[8]
+set_location_assignment PIN_30 -to O[9]
+set_location_assignment PIN_32 -to O[10]
+set_location_assignment PIN_41 -to O[11]
+set_location_assignment PIN_43 -to O[12]
+set_location_assignment PIN_45 -to O[13]
+set_location_assignment PIN_48 -to O[14]
+set_location_assignment PIN_52 -to O[15]
+set_location_assignment PIN_55 -to O[16]
+set_location_assignment PIN_58 -to O[17]
+set_location_assignment PIN_24 -to O[18]
+set_location_assignment PIN_28 -to O[19]
+set_location_assignment PIN_31 -to O[20]
+set_location_assignment PIN_40 -to O[21]
+set_location_assignment PIN_42 -to O[22]
+set_location_assignment PIN_44 -to O[23]
+set_location_assignment PIN_47 -to O[24]
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE six.vwf
+set_location_assignment PIN_60 -to test[0]
+set_location_assignment PIN_64 -to test[1]
+set_location_assignment PIN_67 -to test[2]
+set_location_assignment PIN_70 -to test[3]
+set_location_assignment PIN_72 -to test[4]
+set_location_assignment PIN_74 -to test[5]
+set_location_assignment PIN_76 -to test[6]
+set_location_assignment PIN_86 -to test[7]
+set_location_assignment PIN_119 -to dd
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_location_assignment PIN_118 -to T6
+set_location_assignment PIN_120 -to T7
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
