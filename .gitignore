@@ -74,5 +74,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-PCB/stm32l151/OPA4227.ms13
-PCB/stm32l151/OPA4227.ms13 (Security copy)
+
+#quartus
+*.vo
+*.sdo
+*.eqn
+*.rpt
+*.qsmg
