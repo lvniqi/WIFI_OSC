@@ -1,0 +1,144 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\john\Desktop\UART\simulation\modelsim
+vshift_register
+I_el^Kb10fKciJ^lBCgLnE2
+VzDF1ne6cT=BXE0QQFK<gX2
+Z1 dC:\Users\john\Desktop\UART\simulation\modelsim
+w1427899805
+8C:/Users/john/Desktop/UART/shift.v
+FC:/Users/john/Desktop/UART/shift.v
+L0 4
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/john/Desktop/UART -O0
+!i10b 1
+!s100 f;V`61W7eQ503M9DagUJo0
+!s85 0
+!s108 1427900223.210000
+!s107 C:/Users/john/Desktop/UART/shift.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/john/Desktop/UART|C:/Users/john/Desktop/UART/shift.v|
+!s101 -O0
+vshift_registerv2
+IZ?Qn2Bn`6`lXXQ?f4@@jZ2
+VBZEmhTl>SEagKPJ3=cz>I0
+R1
+w1427900006
+8C:/Users/john/Desktop/UART/shiftv2.v
+FC:/Users/john/Desktop/UART/shiftv2.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 4LT@EC7m<>im1gDHBC=Lo1
+!s85 0
+!s108 1427900223.400000
+!s107 C:/Users/john/Desktop/UART/shiftv2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/john/Desktop/UART|C:/Users/john/Desktop/UART/shiftv2.v|
+!s101 -O0
+vUART_CLK
+IWE^cNI7JYT[L0g;Bi8Q^10
+VB=DJU2IoX0ULDWZj7eLni1
+R1
+w1427739354
+8C:/Users/john/Desktop/UART/UART_BASE.v
+FC:/Users/john/Desktop/UART/UART_BASE.v
+L0 1
+R2
+r1
+31
+R3
+n@u@a@r@t_@c@l@k
+R4
+!i10b 1
+!s100 Ll7>oehzFDdMjKn:CS[nC0
+!s85 0
+!s108 1427900222.970000
+!s107 C:/Users/john/Desktop/UART/UART_BASE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/john/Desktop/UART|C:/Users/john/Desktop/UART/UART_BASE.v|
+!s101 -O0
+Euart_rxd
+Z5 w1427739384
+Z6 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z7 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z8 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z9 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R1
+Z10 8C:/Users/john/Desktop/UART/UART_RX_TX.vhd
+Z11 FC:/Users/john/Desktop/UART/UART_RX_TX.vhd
+l0
+L6
+VmZhZ;B1fSk`N5cKFF15A32
+!s100 0U7`ZTb_kBmliz`CUV^lX1
+Z12 OV;C;10.1d;51
+31
+!i10b 1
+Z13 !s108 1427900223.550000
+Z14 !s90 -reportprogress|300|-93|-work|work|C:/Users/john/Desktop/UART/UART_RX_TX.vhd|
+Z15 !s107 C:/Users/john/Desktop/UART/UART_RX_TX.vhd|
+Z16 o-93 -work work -O0
+Z17 tExplicit 1
+Abehavioral
+R6
+R7
+R8
+R9
+DEx4 work 8 uart_rxd 0 22 mZhZ;B1fSk`N5cKFF15A32
+l17
+L14
+VTH;47[@X_ETAd6K=k:FHe3
+!s100 ?:m9Af?DbGU=m8U7U[eGa2
+R12
+31
+!i10b 1
+R13
+R14
+R15
+R16
+R17
+Euart_txd
+R5
+R6
+R7
+R8
+R9
+R1
+R10
+R11
+l0
+L87
+V>6QDdOIPRgnZJ1;kb8cz>1
+!s100 :a7lj@P<c6:eRG9TOV:^Y3
+R12
+31
+!i10b 1
+R13
+R14
+R15
+R16
+R17
+Abehavioral
+R6
+R7
+R8
+R9
+DEx4 work 8 uart_txd 0 22 >6QDdOIPRgnZJ1;kb8cz>1
+l100
+L95
+VY;>DJ9^IA:m<lX_C]TIi;3
+!s100 _SAF666O>J2R83@JeEmC`1
+R12
+31
+!i10b 1
+R13
+R14
+R15
+R16
+R17

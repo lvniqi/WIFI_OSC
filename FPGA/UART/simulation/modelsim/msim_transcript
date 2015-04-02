@@ -1,0 +1,162 @@
+# Reading D:/QUARTUS/modelsim_ase/tcl/vsim/pref.tcl 
+# do UART_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\QUARTUS\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\QUARTUS\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/john/Desktop/UART {C:/Users/john/Desktop/UART/UART_BASE.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_CLK
+# 
+# Top level modules:
+# 	UART_CLK
+# vlog -vlog01compat -work work +incdir+C:/Users/john/Desktop/UART {C:/Users/john/Desktop/UART/shift.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module shift_register
+# 
+# Top level modules:
+# 	shift_register
+# vlog -vlog01compat -work work +incdir+C:/Users/john/Desktop/UART {C:/Users/john/Desktop/UART/shiftv2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module shift_registerv2
+# 
+# Top level modules:
+# 	shift_registerv2
+# vcom -93 -work work {C:/Users/john/Desktop/UART/UART_RX_TX.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity UART_RXD
+# -- Compiling architecture Behavioral of UART_RXD
+# -- Compiling entity UART_TXD
+# -- Compiling architecture Behavioral of UART_TXD
+# 
+vsim +altera -do UART_run_msim_rtl_verilog.do -l msim_transcript -gui work.shift_registerv2
+# vsim +altera -do UART_run_msim_rtl_verilog.do -l msim_transcript -gui work.shift_registerv2 
+# Loading work.shift_registerv2
+# do UART_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/john/Desktop/UART {C:/Users/john/Desktop/UART/UART_BASE.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_CLK
+# 
+# Top level modules:
+# 	UART_CLK
+# vlog -vlog01compat -work work +incdir+C:/Users/john/Desktop/UART {C:/Users/john/Desktop/UART/shift.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module shift_register
+# 
+# Top level modules:
+# 	shift_register
+# vlog -vlog01compat -work work +incdir+C:/Users/john/Desktop/UART {C:/Users/john/Desktop/UART/shiftv2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module shift_registerv2
+# 
+# Top level modules:
+# 	shift_registerv2
+# vcom -93 -work work {C:/Users/john/Desktop/UART/UART_RX_TX.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity UART_RXD
+# -- Compiling architecture Behavioral of UART_RXD
+# -- Compiling entity UART_TXD
+# -- Compiling architecture Behavioral of UART_TXD
+# 
+add wave -position insertpoint  \
+sim:/shift_registerv2/clk \
+sim:/shift_registerv2/en \
+sim:/shift_registerv2/reset \
+sim:/shift_registerv2/data_in \
+sim:/shift_registerv2/has_done \
+sim:/shift_registerv2/data_out \
+sim:/shift_registerv2/done_test \
+sim:/shift_registerv2/done \
+sim:/shift_registerv2/done_testv2
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: lvniqi  Hostname: LVNIQI  ProcessID: 4444
+# 
+#           Attempting to use alternate WLF file "./wlft3zqvyt".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft3zqvyt
+# 
+run
+force -freeze sim:/shift_registerv2/clk 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/shift_registerv2/data_in zzzzzzzzzzzzzzzz11111111110000 0
+run
+force -freeze sim:/shift_registerv2/reset 1 0
+run
+run
+run
+run
+run
+force -freeze sim:/shift_registerv2/has_done 1 0
+run
+run
+run
+run
+run
+force -freeze sim:/shift_registerv2/en 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/shift_registerv2/en St1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/shift_registerv2/next_state \
+sim:/shift_registerv2/current_state
+run
+run
+run
+run
+run

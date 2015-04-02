@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\WORKSPACE\WIFI_OSC\FPGA\UART\simulation\modelsim
+vUART_MAIN
+!i10b 1
+!s100 FHJRobZL8JJ?02czL`LfE3
+I0iC2n?eoSnABaMz@]A0^A3
+VDPa@fGjKll89nBJ68dB_M3
+Z1 dE:\WORKSPACE\WIFI_OSC\FPGA\UART\simulation\modelsim
+w1427734461
+8UART.vo
+FUART.vo
+L0 31
+OV;L;10.1e;51
+r1
+!s85 0
+31
+!s108 1427735022.172000
+!s107 UART.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|UART.vo|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+. -O0
+n@u@a@r@t_@m@a@i@n

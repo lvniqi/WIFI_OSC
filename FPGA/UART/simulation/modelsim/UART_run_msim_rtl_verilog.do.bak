@@ -1,0 +1,10 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+E:/WORKSPACE/WIFI_OSC/FPGA/UART {E:/WORKSPACE/WIFI_OSC/FPGA/UART/UART_BASE.v}
+vcom -93 -work work {E:/WORKSPACE/WIFI_OSC/FPGA/UART/UART_RX_TX.vhd}
+

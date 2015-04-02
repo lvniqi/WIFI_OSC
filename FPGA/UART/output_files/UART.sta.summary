@@ -1,0 +1,141 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLK'
+Slack : -6.831
+TNS   : -98.539
+
+Type  : Slow Model Setup 'UART_BLOCK:inst|UART_CLK:inst|bclk'
+Slack : -5.554
+TNS   : -382.122
+
+Type  : Slow Model Setup 'UART_BLOCK:inst|UART_RXD:inst5|R_ready'
+Slack : -2.436
+TNS   : -11.215
+
+Type  : Slow Model Setup 'shift_registerv2:inst5|command'
+Slack : -0.583
+TNS   : -2.044
+
+Type  : Slow Model Setup 'UART_BLOCK:inst|UART_TXD:inst4|T_done'
+Slack : 0.051
+TNS   : 0.000
+
+Type  : Slow Model Hold 'CLK'
+Slack : -2.543
+TNS   : -4.575
+
+Type  : Slow Model Hold 'UART_BLOCK:inst|UART_CLK:inst|bclk'
+Slack : -2.070
+TNS   : -5.917
+
+Type  : Slow Model Hold 'UART_BLOCK:inst|UART_TXD:inst4|T_done'
+Slack : -0.272
+TNS   : -0.483
+
+Type  : Slow Model Hold 'UART_BLOCK:inst|UART_RXD:inst5|R_ready'
+Slack : -0.022
+TNS   : -0.022
+
+Type  : Slow Model Hold 'shift_registerv2:inst5|command'
+Slack : 0.566
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'CLK'
+Slack : -5.637
+TNS   : -42.674
+
+Type  : Slow Model Removal 'CLK'
+Slack : 4.420
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLK'
+Slack : -1.941
+TNS   : -34.589
+
+Type  : Slow Model Minimum Pulse Width 'UART_BLOCK:inst|UART_CLK:inst|bclk'
+Slack : -0.742
+TNS   : -152.852
+
+Type  : Slow Model Minimum Pulse Width 'UART_BLOCK:inst|UART_RXD:inst5|R_ready'
+Slack : -0.742
+TNS   : -60.844
+
+Type  : Slow Model Minimum Pulse Width 'UART_BLOCK:inst|UART_TXD:inst4|T_done'
+Slack : -0.742
+TNS   : -47.488
+
+Type  : Slow Model Minimum Pulse Width 'shift_registerv2:inst5|command'
+Slack : -0.742
+TNS   : -11.872
+
+Type  : Fast Model Setup 'CLK'
+Slack : -1.398
+TNS   : -15.768
+
+Type  : Fast Model Setup 'UART_BLOCK:inst|UART_CLK:inst|bclk'
+Slack : -1.205
+TNS   : -61.036
+
+Type  : Fast Model Setup 'UART_BLOCK:inst|UART_RXD:inst5|R_ready'
+Slack : -0.404
+TNS   : -0.404
+
+Type  : Fast Model Setup 'shift_registerv2:inst5|command'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Fast Model Setup 'UART_BLOCK:inst|UART_TXD:inst4|T_done'
+Slack : 0.689
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLK'
+Slack : -1.346
+TNS   : -7.040
+
+Type  : Fast Model Hold 'UART_BLOCK:inst|UART_CLK:inst|bclk'
+Slack : -1.043
+TNS   : -5.677
+
+Type  : Fast Model Hold 'UART_BLOCK:inst|UART_TXD:inst4|T_done'
+Slack : -0.154
+TNS   : -0.537
+
+Type  : Fast Model Hold 'UART_BLOCK:inst|UART_RXD:inst5|R_ready'
+Slack : -0.004
+TNS   : -0.004
+
+Type  : Fast Model Hold 'shift_registerv2:inst5|command'
+Slack : 0.313
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'CLK'
+Slack : -1.339
+TNS   : -8.213
+
+Type  : Fast Model Removal 'CLK'
+Slack : 1.045
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLK'
+Slack : -1.380
+TNS   : -23.380
+
+Type  : Fast Model Minimum Pulse Width 'UART_BLOCK:inst|UART_CLK:inst|bclk'
+Slack : -0.500
+TNS   : -103.000
+
+Type  : Fast Model Minimum Pulse Width 'UART_BLOCK:inst|UART_RXD:inst5|R_ready'
+Slack : -0.500
+TNS   : -41.000
+
+Type  : Fast Model Minimum Pulse Width 'UART_BLOCK:inst|UART_TXD:inst4|T_done'
+Slack : -0.500
+TNS   : -32.000
+
+Type  : Fast Model Minimum Pulse Width 'shift_registerv2:inst5|command'
+Slack : -0.500
+TNS   : -8.000
+
+------------------------------------------------------------
