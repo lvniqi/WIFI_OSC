@@ -1,0 +1,154 @@
+Removed Pin From Net: NetName=VCC33 Pin=C1-2
+Removed Pin From Net: NetName=VCC33 Pin=C3-2
+Removed Pin From Net: NetName=VCC33 Pin=C4-2
+Removed Pin From Net: NetName=VCC33 Pin=C5-2
+Removed Pin From Net: NetName=GND Pin=C6-1
+Removed Pin From Net: NetName=VCC33 Pin=C6-2
+Removed Pin From Net: NetName=NRST Pin=C7-2
+Removed Pin From Net: NetName=NetmircoUsb_3 Pin=mircoUsb-3
+Removed Pin From Net: NetName=NetmircoUsb_4 Pin=mircoUsb-4
+Removed Pin From Net: NetName=VCC33 Pin=R1-1
+Removed Pin From Net: NetName=NRST Pin=R1-2
+Removed Pin From Net: NetName=GND Pin=R2-1
+Removed Pin From Net: NetName=NetR2_2 Pin=R2-2
+Removed Pin From Net: NetName=5V Pin=U18-4
+Removed Pin From Net: NetName=-5V Pin=U18-11
+Removed Member From Class: ClassName=mcu Member=C1
+Removed Member From Class: ClassName=mcu Member=C2
+Removed Member From Class: ClassName=mcu Member=C3
+Removed Member From Class: ClassName=mcu Member=C4
+Removed Member From Class: ClassName=mcu Member=C5
+Removed Member From Class: ClassName=mcu Member=C6
+Removed Member From Class: ClassName=mcu Member=C7
+Removed Member From Class: ClassName=mcu Member=R1
+Removed Member From Class: ClassName=mcu Member=R2
+Change Component Footprint: Designator=R1 Old Footprint=0805 New Footprint=6-0805
+Change Component Footprint: Designator=R2 Old Footprint=0805 New Footprint=6-0805
+Change Component Footprint: Designator=R3 Old Footprint=0805 New Footprint=6-0805
+Change Component Footprint: Designator=C1 Old Footprint=c0805 New Footprint=1608[0603]
+Change Component Footprint: Designator=C2 Old Footprint=c0805 New Footprint=1608[0603]
+Change Component Footprint: Designator=C3 Old Footprint=c0805 New Footprint=1608[0603]
+Change Component Footprint: Designator=C4 Old Footprint=c0805 New Footprint=1608[0603]
+Change Component Footprint: Designator=C5 Old Footprint=c0805 New Footprint=1608[0603]
+Change Component Footprint: Designator=C6 Old Footprint=c0805 New Footprint=1608[0603]
+Change Component Footprint: Designator=C7 Old Footprint=c0805 New Footprint=1608[0603]
+Change Component Comment : Designator=C7 Old Comment=Cap New Comment=
+Change Component Comment : Designator=C6 Old Comment=Cap New Comment=
+Change Component Comment : Designator=C5 Old Comment=Cap New Comment=
+Change Component Comment : Designator=C4 Old Comment=Cap New Comment=
+Change Component Comment : Designator=C3 Old Comment=Cap New Comment=
+Change Component Comment : Designator=C2 Old Comment=Cap New Comment=
+Change Component Comment : Designator=C1 Old Comment=Cap New Comment=
+Change Component Comment : Designator=U18 Old Comment=OPA2277 New Comment=OPA4277
+Change Component Comment : Designator=R2 Old Comment=Res2 New Comment=
+Change Component Comment : Designator=R1 Old Comment=Res2 New Comment=
+Added Component: Designator=BT1(BAT-2)
+Added Component: Designator=C8(1608[0603])
+Added Component: Designator=C9(1608[0603])
+Added Component: Designator=C10(1608[0603])
+Added Component: Designator=C11(1608[0603])
+Added Component: Designator=D3(DO-204AL)
+Added Component: Designator=L1(0402-A)
+Added Component: Designator=L2(2029)
+Added Component: Designator=L3(2029)
+Added Pin To Net: NetName=GND Pin=BT1-2
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=VCC33 Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=VCC33 Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=NetmircoUsb_3 Pin=C3-2
+Added Pin To Net: NetName=VCC33 Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=VCC33 Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=5V Pin=C5-2
+Added Pin To Net: NetName=VCC33 Pin=C5-2
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=NetmircoUsb_4 Pin=C6-1
+Added Pin To Net: NetName=USB_D_N Pin=C6-2
+Added Pin To Net: NetName=VCC33 Pin=C6-2
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=NRST Pin=C7-2
+Added Pin To Net: NetName=GND Pin=C8-1
+Added Pin To Net: NetName=USB_D_P Pin=C8-1
+Added Pin To Net: NetName=GND Pin=C8-2
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=GND Pin=C10-2
+Added Pin To Net: NetName=-5V Pin=C11-1
+Added Pin To Net: NetName=GND Pin=C11-2
+Added Pin To Net: NetName=-5V Pin=L3-2
+Added Pin To Net: NetName=5V Pin=R1-1
+Added Pin To Net: NetName=NetmircoUsb_3 Pin=R1-1
+Added Pin To Net: NetName=VCC33 Pin=R1-1
+Added Pin To Net: NetName=GND Pin=R1-2
+Added Pin To Net: NetName=NRST Pin=R1-2
+Added Pin To Net: NetName=GND Pin=R2-1
+Added Pin To Net: NetName=5V Pin=R2-2
+Added Pin To Net: NetName=GND Pin=R2-2
+Added Pin To Net: NetName=NetR2_2 Pin=R2-2
+Added Pin To Net: NetName=GND Pin=R3-1
+Added Pin To Net: NetName=USB_D_P Pin=R4-2
+Change Net Name : Old Net Name=NetmircoUsb_3 New Net Name=NetC3_2
+Change Net Name : Old Net Name=NetmircoUsb_4 New Net Name=NetC6_1
+Change Net Name : Old Net Name=USB_D_N New Net Name=NetC6_2
+Change Net Name : Old Net Name=USB_D_P New Net Name=NetC8_1
+Added Pin To Net: NetName=IOUT Pin=C1-1
+Added Pin To Net: NetName=IOUT Pin=C7-2
+Added Pin To Net: NetName=IOUT Pin=D3-2
+Added Net: Name=IOUT
+Added Pin To Net: NetName=NetBT1_1 Pin=BT1-1
+Added Pin To Net: NetName=NetBT1_1 Pin=C8-2
+Added Pin To Net: NetName=NetBT1_1 Pin=C9-2
+Added Pin To Net: NetName=NetBT1_1 Pin=L1-1
+Added Net: Name=NetBT1_1
+Added Pin To Net: NetName=NetC10_1 Pin=C10-1
+Added Pin To Net: NetName=NetC10_1 Pin=L3-1
+Added Pin To Net: NetName=NetC10_1 Pin=R4-1
+Added Net: Name=NetC10_1
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=D2-1
+Added Pin To Net: NetName=NetD1_1 Pin=R3-2
+Added Net: Name=NetD1_1
+Added Pin To Net: NetName=NetD1_2 Pin=D1-2
+Added Net: Name=NetD1_2
+Added Pin To Net: NetName=NetD2_2 Pin=D2-2
+Added Net: Name=NetD2_2
+Added Pin To Net: NetName=NetD3_1 Pin=D3-1
+Added Pin To Net: NetName=NetD3_1 Pin=L1-2
+Added Net: Name=NetD3_1
+Added Pin To Net: NetName=NetL1_1 Pin=L1-1
+Added Net: Name=NetL1_1
+Added Pin To Net: NetName=NetL1_2 Pin=L1-2
+Added Net: Name=NetL1_2
+Added Pin To Net: NetName=NetL2_1 Pin=L2-1
+Added Net: Name=NetL2_1
+Added Pin To Net: NetName=NetL2_2 Pin=L2-2
+Added Net: Name=NetL2_2
+Added Pin To Net: NetName=NetR2_1 Pin=R2-1
+Added Pin To Net: NetName=NetR2_1 Pin=R3-2
+Added Net: Name=NetR2_1
+Added Class: Name=NEW_POWER
+Added Member To Class: ClassName=POWER Member=Component C1 
+Added Member To Class: ClassName=POWER Member=Component C2 
+Added Member To Class: ClassName=POWER Member=Component C3 
+Added Member To Class: ClassName=POWER Member=Component C4 
+Added Member To Class: ClassName=POWER Member=Component C5 
+Added Member To Class: ClassName=POWER Member=Component C6 
+Added Member To Class: ClassName=POWER Member=Component C8 
+Added Member To Class: ClassName=POWER Member=Component C10 
+Added Member To Class: ClassName=POWER Member=Component C11 
+Added Member To Class: ClassName=POWER Member=Component L1 
+Added Member To Class: ClassName=POWER Member=Component L2 
+Added Member To Class: ClassName=POWER Member=Component L3 
+Added Member To Class: ClassName=POWER Member=Component R1 
+Added Member To Class: ClassName=POWER Member=Component R2 
+Added Member To Class: ClassName=SIGNAL Member=Component R8 Res3
+Added Room: Name=mcu
+Added Room: Name=NEW_POWER
+Added Room: Name=POWER
+Added Room: Name=SIGNAL

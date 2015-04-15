@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=C21 Old Footprint=1608[0603] New Footprint=C1210
+Change Component Footprint: Designator=C17 Old Footprint=C0805 New Footprint=3225[1210]
+Added Room: Name=mcu
+Added Room: Name=NEW_POWER
+Added Room: Name=POWER
+Added Room: Name=SIGNAL
