@@ -1,0 +1,5 @@
+Added Component: Designator=P4(POWER_PLUG)
+Added Pin To Net: NetName=5V_IN Pin=P4-1
+Added Pin To Net: NetName=GND Pin=P4-2
+Added Pin To Net: NetName=GND Pin=P4-3
+Added Member To Class: ClassName=mcu Member=Component P4 POWER

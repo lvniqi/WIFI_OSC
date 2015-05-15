@@ -1,0 +1,5 @@
+Added Component: Designator=D101(PCBComponent_1)
+Added Pin To Net: NetName=Net10K_2 Pin=D101-1
+Added Pin To Net: NetName=NetD100_1 Pin=D101-2
+Added Member To Class: ClassName=NEW_POWER Member=Component D101 
+Added Member To Class: ClassName=NEW_POWER Member=Component 

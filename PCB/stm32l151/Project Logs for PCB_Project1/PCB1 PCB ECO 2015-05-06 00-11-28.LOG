@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=VCC33 Pin=C24-2
+Removed Pin From Net: NetName=VCC33 Pin=J2-1
+Removed Pin From Net: NetName=VCC33 Pin=U3-1
+Removed Pin From Net: NetName=VCC33 Pin=U3-10
+Removed Member From Class: ClassName=mcu Member=C12
+Removed Member From Class: ClassName=mcu Member=C22
+Removed Member From Class: ClassName=mcu Member=C23
+Removed Member From Class: ClassName=mcu Member=C24
+Removed Member From Class: ClassName=mcu Member=C25
+Removed Member From Class: ClassName=mcu Member=C26
+Removed Member From Class: ClassName=mcu Member=U6
+Change Net Name : Old Net Name=VCC33 New Net Name=VCC33_MCU
+Added Pin To Net: NetName=VCC33 Pin=C24-2
+Added Pin To Net: NetName=VCC33 Pin=J2-1
+Added Pin To Net: NetName=VCC33 Pin=U3-1
+Added Pin To Net: NetName=VCC33 Pin=U3-10
+Added Net: Name=VCC33
+Added Member To Class: ClassName=mcu Member=Component C4 Cap
+Added Member To Class: ClassName=mcu Member=Component C5 Cap
+Added Member To Class: ClassName=mcu Member=Component C8 Cap Pol2
+Added Member To Class: ClassName=mcu Member=Component C9 Cap Pol2
+Added Member To Class: ClassName=mcu Member=Component C10 Cap
+Added Member To Class: ClassName=mcu Member=Component C11 Cap
+Added Member To Class: ClassName=mcu Member=Component U5 LM1117-3.3

@@ -1,0 +1,17 @@
+Added Component: Designator=C10(PCBComponent_1)
+Added Component: Designator=C11(PCBComponent_1)
+Added Component: Designator=C13(PCBComponent_1)
+Added Pin To Net: NetName=-5V Pin=C10-1
+Added Pin To Net: NetName=GND Pin=C10-2
+Added Pin To Net: NetName=5V Pin=C11-1
+Added Pin To Net: NetName=GND Pin=C11-2
+Added Pin To Net: NetName=NetC13_1 Pin=C13-1
+Added Pin To Net: NetName=NetC13_2 Pin=C13-2
+Added Member To Class: ClassName=POWER Member=Component C10 
+Added Member To Class: ClassName=POWER Member=Component C11 
+Added Member To Class: ClassName=POWER Member=Component C13 
+Added Member To Class: ClassName=NEW_POWER Member=Component 
+Added Room: Name=mcu
+Added Room: Name=NEW_POWER
+Added Room: Name=POWER
+Added Room: Name=SIGNAL

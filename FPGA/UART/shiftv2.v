@@ -56,7 +56,7 @@ module shift_registerv2(
 						next_state = WAIT;
 					end
 				WAIT_2:begin
-					if(count >= 4)
+					if(count >= 5)
 						next_state = IDLE;
 					else
 						next_state = START;
@@ -88,6 +88,8 @@ module shift_registerv2(
 							data_out <= data_cache[15:8];
 						3'b011:
 							data_out <= data_cache[7:0];
+						3'b100:
+							data_out <= 8'b1;
 						default:
 							data_out <= 8'bz;
 						endcase

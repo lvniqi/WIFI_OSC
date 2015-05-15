@@ -1,0 +1,17 @@
+Added Component: Designator=MC1(HDR1X4)
+Added Pin To Net: NetName=NetMC1_1 Pin=MC1-1
+Added Pin To Net: NetName=NetMC1_1 Pin=MC-4
+Added Pin To Net: NetName=NetMC1_1 Pin=MC-4
+Added Net: Name=NetMC1_1
+Added Pin To Net: NetName=NetMC1_2 Pin=MC1-2
+Added Pin To Net: NetName=NetMC1_2 Pin=MC-3
+Added Net: Name=NetMC1_2
+Added Pin To Net: NetName=NetMC1_3 Pin=MC1-3
+Added Pin To Net: NetName=NetMC1_3 Pin=MC-2
+Added Net: Name=NetMC1_3
+Added Pin To Net: NetName=NetMC1_4 Pin=MC1-4
+Added Pin To Net: NetName=NetMC1_4 Pin=MC-1
+Added Pin To Net: NetName=NetMC1_4 Pin=MC-1
+Added Net: Name=NetMC1_4
+Added Member To Class: ClassName=SIGNAL Member=Component MC1 Header 4
+Added Member To Class: ClassName=NEW_POWER Member=Component 

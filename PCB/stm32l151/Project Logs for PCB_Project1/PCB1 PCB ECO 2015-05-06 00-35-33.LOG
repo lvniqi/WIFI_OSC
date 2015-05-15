@@ -1,0 +1,7 @@
+Added Component: Designator=P2(HDR1X5)
+Added Pin To Net: NetName=5V_IN Pin=P2-1
+Added Pin To Net: NetName=5V_IN Pin=P2-2
+Added Pin To Net: NetName=5V_IN Pin=P2-3
+Added Pin To Net: NetName=5V_IN Pin=P2-4
+Added Pin To Net: NetName=5V_IN Pin=P2-5
+Added Member To Class: ClassName=mcu Member=Component P2 Header 5

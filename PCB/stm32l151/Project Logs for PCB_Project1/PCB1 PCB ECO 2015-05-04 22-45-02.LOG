@@ -1,0 +1,13 @@
+Added Component: Designator=L1(INDP7474X40N)
+Added Component: Designator=L3(INDP7474X40N)
+Added Pin To Net: NetName=NetL1_1 Pin=L1-1
+Added Pin To Net: NetName=NetL1_2 Pin=L1-2
+Added Pin To Net: NetName=NetL3_1 Pin=L3-1
+Added Pin To Net: NetName=NetL3_2 Pin=L3-2
+Added Member To Class: ClassName=POWER Member=Component L1 
+Added Member To Class: ClassName=POWER Member=Component L3 
+Added Member To Class: ClassName=NEW_POWER Member=Component 
+Added Room: Name=mcu
+Added Room: Name=NEW_POWER
+Added Room: Name=POWER
+Added Room: Name=SIGNAL

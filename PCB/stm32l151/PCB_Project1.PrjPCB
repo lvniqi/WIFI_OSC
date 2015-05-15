@@ -25,20 +25,6 @@ PowerPortNamesTakePriority=0
 PushECOToAnnotationFile=1
 
 [Document1]
-DocumentPath=C:\Users\john\Desktop\pcb_总\示波器pcb\屏蔽电感封装.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-
-[Document2]
 DocumentPath=SIGNAL.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -52,7 +38,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document3]
+[Document2]
 DocumentPath=SIGNAL.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -66,7 +52,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document4]
+[Document3]
 DocumentPath=ST Microcontroller 32-Bit STM32.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -80,7 +66,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document5]
+[Document4]
 DocumentPath=mcu.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -94,7 +80,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document6]
+[Document5]
 DocumentPath=PCB1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -108,7 +94,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document7]
+[Document6]
 DocumentPath=SIGNAL.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -122,7 +108,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document8]
+[Document7]
 DocumentPath=POWER.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -136,7 +122,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document9]
+[Document8]
 DocumentPath=TPS6300.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -150,7 +136,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document10]
+[Document9]
 DocumentPath=ETA9635.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -164,7 +150,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document11]
+[Document10]
 DocumentPath=TPS60403.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -178,7 +164,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document12]
+[Document11]
 DocumentPath=TPS63000.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -192,7 +178,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document13]
+[Document12]
 DocumentPath=TP5400.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -206,7 +192,7 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document14]
+[Document13]
 DocumentPath=NEW_POWER.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -220,8 +206,22 @@ ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
-[Document15]
+[Document14]
 DocumentPath=TP5400.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+
+[Document15]
+DocumentPath=vlf4012-2r2.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -263,7 +263,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
 [Document18]
-DocumentPath=SOP8.PcbLib
+DocumentPath=耳机插座.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -277,25 +277,13 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 
 [GeneratedDocument1]
-DocumentPath=PCB1.PcbDoc.htm
+DocumentPath=Output\Design Rule Check - PCB1.html
 
 [GeneratedDocument2]
-DocumentPath=C:\Users\john\AppData\Local\Temp\History\PCB1.~(9).PcbDoc.htm
+DocumentPath=PCB1.PcbDoc.htm
 
 [GeneratedDocument3]
-DocumentPath=C:\Users\john\AppData\Local\Temp\History\PCB1.~(217).PcbDoc.htm
-
-[GeneratedDocument4]
 DocumentPath=SIGNAL.PcbLib.htm
-
-[GeneratedDocument5]
-DocumentPath=C:\Users\john\Desktop\STM32_小容量\资料\STM32_Cu\STM32.PcbDoc.htm
-
-[GeneratedDocument6]
-DocumentPath=C:\Users\john\Desktop\四轴\1\四轴2.PcbDoc.htm
-
-[GeneratedDocument7]
-DocumentPath=C:\Users\john\Desktop\四轴\1\四轴.PcbDoc.htm
 
 [Configuration1]
 Name=Default Configuration

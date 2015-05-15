@@ -1,5 +1,5 @@
 Flow report for UART
-Fri Apr 03 01:04:39 2015
+Wed Apr 22 10:08:01 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Fri Apr 03 01:04:39 2015            ;
+; Flow Status                        ; Successful - Wed Apr 22 10:08:00 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; UART                                             ;
 ; Top-level Entity Name              ; UART_MAIN                                        ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C5T144C8                                      ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 277 / 4,608 ( 6 % )                              ;
-;     Total combinational functions  ; 206 / 4,608 ( 4 % )                              ;
-;     Dedicated logic registers      ; 206 / 4,608 ( 4 % )                              ;
+; Total logic elements               ; 308                                              ;
+;     Total combinational functions  ; 219                                              ;
+;     Dedicated logic registers      ; 206                                              ;
 ; Total registers                    ; 206                                              ;
-; Total pins                         ; 7 / 89 ( 8 % )                                   ;
+; Total pins                         ; 7                                                ;
 ; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 0 / 119,808 ( 0 % )                              ;
-; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                                   ;
-; Total PLLs                         ; 0 / 2 ( 0 % )                                    ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/03/2015 01:04:19 ;
+; Start date & time ; 04/22/2015 10:07:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; UART                ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                         ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+-------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 1097747406390.142799425907464 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 1097747406390.142966846822116 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                   ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)     ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                            ; --            ; --          ; --             ;
@@ -88,41 +88,29 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------+---------------+-------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                             ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 499 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:07     ; 1.2                     ; 786 MB              ; 00:00:08                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 430 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 425 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 395 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:15                           ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 494 MB              ; 00:00:04                           ;
+; Total                ; 00:00:11     ; --                      ; --                  ; 00:00:04                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
-+---------------------------+------------------+-----------+------------+----------------+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; lvniqi           ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off UART -c UART
-quartus_fit --read_settings_files=off --write_settings_files=off UART -c UART
-quartus_asm --read_settings_files=off --write_settings_files=off UART -c UART
-quartus_sta UART -c UART
-quartus_eda --read_settings_files=off --write_settings_files=off UART -c UART
 
 
 

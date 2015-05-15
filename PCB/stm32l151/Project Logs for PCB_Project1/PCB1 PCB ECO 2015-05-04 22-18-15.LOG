@@ -1,0 +1,17 @@
+Added Component: Designator=1nF(PCBComponent_1)
+Added Component: Designator=2.2nF(PCBComponent_1)
+Added Component: Designator=D101(PCBComponent_1)
+Added Component: Designator=D102(PCBComponent_1)
+Added Pin To Net: NetName=Net1nF_1 Pin=1nF-1
+Added Pin To Net: NetName=Net1nF_2 Pin=1nF-2
+Added Pin To Net: NetName=Net1nF_1 Pin=2.2nF-1
+Added Pin To Net: NetName=Net2.2nF_2 Pin=2.2nF-2
+Added Pin To Net: NetName=Net10K_2 Pin=D101-1
+Added Pin To Net: NetName=NetD100_1 Pin=D101-2
+Added Pin To Net: NetName=Net10K_2 Pin=D102-1
+Added Pin To Net: NetName=NetD102_2 Pin=D102-2
+Added Member To Class: ClassName=NEW_POWER Member=Component 1nF 
+Added Member To Class: ClassName=NEW_POWER Member=Component 2.2nF 
+Added Member To Class: ClassName=NEW_POWER Member=Component D101 
+Added Member To Class: ClassName=NEW_POWER Member=Component D102 
+Added Room: Name=POWER

@@ -1,104 +1,38 @@
 Protel Design System Design Rule Check
-PCB File : E:\WORKSPACE\PCB\stm32l151\PCB1.PcbDoc
-Date     : 2015-03-23
-Time     : 22:48:28
+PCB File : F:\stm32l151\PCB1.PcbDoc
+Date     : 2015-05-07
+Time     : 00:17:53
 
 Processing Rule : Net Antennae (Tolerance=0mil) (All)
-   Violation between Net Antennae: Track (5060mil,2380mil)(5155.472mil,2475.472mil)  Bottom Layer
-Rule Violations :1
+Rule Violations :0
 
-Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
-   Violation between Text "U18" (4759.5mil,2373.5mil)  Top Overlay and 
-                     Arc (4744.173mil,2438.661mil)  Top Overlay
-   Violation between Text "RX" (5415.011mil,2145mil)  Top Overlay and 
-                     Track (5190mil,2130mil)(5490mil,2130mil)  Top Overlay
-   Violation between Text "TX" (5310mil,2145mil)  Top Overlay and 
-                     Track (5190mil,2130mil)(5490mil,2130mil)  Top Overlay
-Rule Violations :3
+Processing Rule : Silk to Silk (Clearance=1mil) (All),(All)
+Rule Violations :0
 
-Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
-   Violation between Text "R1" (4931.5mil,2576.5mil)  Bottom Overlay and 
-                     Pad C7-2(4965mil,2564.528mil)  Bottom Layer
-   Violation between Text "C2" (5137.5mil,2496.5mil)  Bottom Overlay and 
-                     Pad C6-1(5155.472mil,2490mil)  Bottom Layer
-   Violation between Text "C2" (5137.5mil,2496.5mil)  Bottom Overlay and 
-                     Pad C6-2(5214.528mil,2490mil)  Bottom Layer
-   Violation between Text "C5" (5352.5mil,2553.5mil)  Bottom Overlay and 
-                     Pad C4-1(5334.528mil,2560mil)  Bottom Layer
-   Violation between Text "C5" (5352.5mil,2553.5mil)  Bottom Overlay and 
-                     Pad C4-2(5275.472mil,2560mil)  Bottom Layer
-   Violation between Text "C4" (5352.5mil,2623.5mil)  Bottom Overlay and 
-                     Pad C3-1(5334.528mil,2630mil)  Bottom Layer
-   Violation between Text "C4" (5352.5mil,2623.5mil)  Bottom Overlay and 
-                     Pad C3-2(5275.472mil,2630mil)  Bottom Layer
-   Violation between Text "C1" (5137.5mil,2566.5mil)  Bottom Overlay and 
-                     Pad C2-1(5155.472mil,2560mil)  Bottom Layer
-Rule Violations :8
+Processing Rule : Silk To Solder Mask (Clearance=1mil) (IsPad),(All)
+   Violation between Pad Free-0(5620mil,1335mil)  Top Layer and 
+                     Arc (5615.079mil,1387.087mil)  Top Overlay
+   Violation between Pad Free-0(8195mil,1290mil)  Top Layer and 
+                     Arc (8191.732mil,1357.087mil)  Top Overlay
+   Violation between Text "C10" (7205mil,3570mil)  Bottom Overlay and 
+                     Pad P3-2(7275mil,3600mil)  Multi-Layer
+   Violation between Track (4882.008mil,3772.834mil)(5440mil,3772.834mil)  Top Overlay and 
+                     Pad P4-2(5300mil,3765mil)  Multi-Layer
+   Violation between Track (5440mil,3775mil)(5440mil,4125mil)  Top Overlay and 
+                     Pad P4-1(5440mil,3950mil)  Multi-Layer
+Rule Violations :5
 
-Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
-   Violation between Via (5345mil,2645mil) Top Layer to Bottom Layer and 
-                     Pad U1-34(5404.449mil,2633.898mil)  Top Layer
-   Violation between Via (5345mil,2645mil) Top Layer to Bottom Layer and 
-                     Pad U1-35(5404.449mil,2653.583mil)  Top Layer
-   Violation between Via (5162.68mil,2677.32mil) Top Layer to Bottom Layer and 
-                     Pad U1-48(5136.732mil,2724.449mil)  Top Layer
-   Violation between Via (4315mil,2380mil) Top Layer to Bottom Layer and 
-                     Pad R7-2(4315mil,2335mil)  Top Layer
-   Violation between Via (4225mil,2280mil) Top Layer to Bottom Layer and 
-                     Pad R8-2(4225mil,2230mil)  Top Layer
-   Violation between Via (5215mil,2860mil) Top Layer to Bottom Layer and 
-                     Pad R2-2(5215mil,2915mil)  Bottom Layer
-   Violation between Pad C7-2(4965mil,2564.528mil)  Bottom Layer and 
-                     Pad C7-1(4965mil,2505.472mil)  Bottom Layer
-   Violation between Pad C2-1(5155.472mil,2560mil)  Bottom Layer and 
-                     Pad C6-1(5155.472mil,2490mil)  Bottom Layer
-   Violation between Pad C6-2(5214.528mil,2490mil)  Bottom Layer and 
-                     Pad C6-1(5155.472mil,2490mil)  Bottom Layer
-   Violation between Via (5154.99mil,2535.472mil) Top Layer to Bottom Layer and 
-                     Pad C6-1(5155.472mil,2490mil)  Bottom Layer
-   Violation between Pad C2-2(5214.528mil,2560mil)  Bottom Layer and 
-                     Pad C6-2(5214.528mil,2490mil)  Bottom Layer
-   Violation between Pad C5-2(5275.472mil,2490mil)  Bottom Layer and 
-                     Pad C6-2(5214.528mil,2490mil)  Bottom Layer
-   Violation between Via (5170mil,2480mil) Top Layer to Bottom Layer and 
-                     Pad C6-2(5214.528mil,2490mil)  Bottom Layer
-   Violation between Pad C4-1(5334.528mil,2560mil)  Bottom Layer and 
-                     Pad C5-1(5334.528mil,2490mil)  Bottom Layer
-   Violation between Pad C5-2(5275.472mil,2490mil)  Bottom Layer and 
-                     Pad C5-1(5334.528mil,2490mil)  Bottom Layer
-   Violation between Pad C4-2(5275.472mil,2560mil)  Bottom Layer and 
-                     Pad C5-2(5275.472mil,2490mil)  Bottom Layer
-   Violation between Via (5320mil,2480mil) Top Layer to Bottom Layer and 
-                     Pad C5-2(5275.472mil,2490mil)  Bottom Layer
-   Violation between Pad C4-2(5275.472mil,2560mil)  Bottom Layer and 
-                     Pad C4-1(5334.528mil,2560mil)  Bottom Layer
-   Violation between Pad C3-1(5334.528mil,2630mil)  Bottom Layer and 
-                     Pad C4-1(5334.528mil,2560mil)  Bottom Layer
-   Violation between Pad C2-2(5214.528mil,2560mil)  Bottom Layer and 
-                     Pad C4-2(5275.472mil,2560mil)  Bottom Layer
-   Violation between Pad C3-2(5275.472mil,2630mil)  Bottom Layer and 
-                     Pad C4-2(5275.472mil,2560mil)  Bottom Layer
-   Violation between Pad C3-2(5275.472mil,2630mil)  Bottom Layer and 
-                     Pad C3-1(5334.528mil,2630mil)  Bottom Layer
-   Violation between Pad C1-2(5214.528mil,2630mil)  Bottom Layer and 
-                     Pad C3-2(5275.472mil,2630mil)  Bottom Layer
-   Violation between Pad C1-1(5155.472mil,2630mil)  Bottom Layer and 
-                     Pad C2-1(5155.472mil,2560mil)  Bottom Layer
-   Violation between Pad C2-2(5214.528mil,2560mil)  Bottom Layer and 
-                     Pad C2-1(5155.472mil,2560mil)  Bottom Layer
-   Violation between Pad C1-2(5214.528mil,2630mil)  Bottom Layer and 
-                     Pad C2-2(5214.528mil,2560mil)  Bottom Layer
-   Violation between Pad C1-2(5214.528mil,2630mil)  Bottom Layer and 
-                     Pad C1-1(5155.472mil,2630mil)  Bottom Layer
-   Violation between Via (5162.68mil,2677.32mil) Top Layer to Bottom Layer and 
-                     Pad C1-1(5155.472mil,2630mil)  Bottom Layer
-Rule Violations :28
+Processing Rule : Minimum Solder Mask Sliver (Gap=1mil) (All),(All)
+Rule Violations :0
 
-Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Processing Rule : Hole To Hole Clearance (Gap=1mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
-Rule Violations :0
+   Violation between Hole Size Constraint (118.11mil > 100mil) : Pad P4-2(5300mil,3765mil)  Multi-Layer
+   Violation between Hole Size Constraint (118.11mil > 100mil) : Pad P4-1(5440mil,3950mil)  Multi-Layer
+   Violation between Hole Size Constraint (118.11mil > 100mil) : Pad P4-3(5165mil,3950mil)  Multi-Layer
+Rule Violations :3
 
 Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
 Rule Violations :0
@@ -113,21 +47,11 @@ Processing Rule : Clearance Constraint (Gap=6mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net GND Between Pad *-8 (5010,2318.347mil) And Track on layer Bottom Layer (5060,2380mil)
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C7-1 (4965,2505.472mil) And Pad U1-8 (5085.551,2535.472mil)
-   Violation between Un-Routed Net Constraint: Net GND Between Pad *1-2 (4739.173,2835mil) And Pad *2-2 (4744.173,2580mil)
-   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-35 (5404.449,2653.583mil) And Pad ST-LINK1-2 (5655,2730mil)
-   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-47 (5156.417,2724.449mil) And Pad R2-1 (5215,3005mil)
-   Violation between Un-Routed Net Constraint: Net GND Between Pad UART1-1 (5240,2080mil) And Pad 1-1 (5630,2105mil)
-   Violation between Un-Routed Net Constraint: Net GND Between Pad R8-1 (4315,2230mil) And Pad *2-2 (4744.173,2580mil)
-   Violation between Un-Routed Net Constraint: Net GND Between Pad *2-2 (4744.173,2580mil) And Pad C7-1 (4965,2505.472mil)
-   Violation between Un-Routed Net Constraint: Net GND Between Pad UART1-1 (5240,2080mil) And Pad U1-23 (5333.583,2405.551mil)
-   Violation between Un-Routed Net Constraint: Net 5V Between Pad D1-1 (4525,2520mil) And Track on layer Bottom Layer (4660,2170mil)
-Rule Violations :10
+Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 
-Violations Detected : 50
+Violations Detected : 8
 Time Elapsed        : 00:00:00

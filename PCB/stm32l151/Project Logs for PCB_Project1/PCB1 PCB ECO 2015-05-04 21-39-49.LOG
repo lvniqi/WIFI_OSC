@@ -1,0 +1,17 @@
+Added Component: Designator=C19(PCBComponent_1)
+Added Component: Designator=C20(PCBComponent_1)
+Added Component: Designator=D4(PCBComponent_1)
+Added Component: Designator=D5(PCBComponent_1)
+Added Pin To Net: NetName=GND Pin=C19-1
+Added Pin To Net: NetName=IOUT Pin=C19-2
+Added Pin To Net: NetName=GND Pin=C20-1
+Added Pin To Net: NetName=NetBT1_1 Pin=C20-2
+Added Pin To Net: NetName=NetD4_1 Pin=D4-1
+Added Pin To Net: NetName=NetD4_2 Pin=D4-2
+Added Pin To Net: NetName=NetD4_1 Pin=D5-1
+Added Pin To Net: NetName=NetD5_2 Pin=D5-2
+Added Member To Class: ClassName=NEW_POWER Member=Component C19 
+Added Member To Class: ClassName=NEW_POWER Member=Component C20 
+Added Member To Class: ClassName=NEW_POWER Member=Component D4 
+Added Member To Class: ClassName=NEW_POWER Member=Component D5 
+Added Room: Name=NEW_POWER

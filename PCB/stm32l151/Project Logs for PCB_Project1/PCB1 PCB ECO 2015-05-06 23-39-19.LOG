@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=GND Pin=C10-1
+Removed Pin From Net: NetName=5V_IN Pin=C10-2
+Change Component Designator: OldDesignator=5V NewDesignator=J4
+Added Component: Designator=C31(0805)
+Added Component: Designator=P3(HDR1X2)
+Added Pin To Net: NetName=VCC33_MCU Pin=1-4
+Added Pin To Net: NetName=COMP2_INP Pin=C10-1
+Added Pin To Net: NetName=GND Pin=C31-1
+Added Pin To Net: NetName=5V_IN Pin=C31-2
+Added Pin To Net: NetName=NetC10_2 Pin=C10-2
+Added Pin To Net: NetName=NetC10_2 Pin=P3-2
+Added Net: Name=NetC10_2
+Added Member To Class: ClassName=mcu Member=Component C31 Cap
+Added Member To Class: ClassName=NEW_POWER Member=Component J4 
+Added Member To Class: ClassName=mcu Member=Component P3 Header 2
