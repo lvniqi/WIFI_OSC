@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include "dso_test_user.h"
+int main(void)
+{
+	int fd;
+	int fd_mem;
+	int i,j;
+	fd = open("/dev/DSO_driver", O_RDWR|O_SYNC);
+	fd_mem = open("/dev/mem", O_RDWR|O_SYNC);
+	if(fd < 0 || fd_mem <0)//打开出错
+	{
+		perror("open");
+		return -1;
+	}
+	//void *test = mmap(NULL, PAGE_SIZE,
+	//			           PROT_READ|PROT_WRITE, MAP_SHARED,
+	//			           fd, (u32)p - PAGE_OFFSET);
+	while(1)
+	{
+		gpio_data_frame* p;
+		gpio_data_frame* p_s[5] = {0};//交换区地址组
+		
+		read(fd, (void*)(p_s), 20);//读取地址
+		for(i=0;i<5;i++)
+		{
+			p = p_s[i];			
+			if(p == 0)
+			{
+				break;
+			}				
+			//得到交换区
+			printf("\n--------------%d--------------------------\n",i);
+			
+			p = mmap(NULL, PAGE_SIZE,
+				           PROT_READ|PROT_WRITE, MAP_SHARED,
+				           fd_mem, (u32)p - PAGE_OFFSET);
+			if(p == MAP_FAILED)
+			{
+				   perror("mmap");
+			}
+			printf("%d\n",p->frame_type);
+			printf("%d\n",p->len);
+			p->frame_type = TYPE_FINISH;
+			munmap(p,PAGE_SIZE);//释放交换区
+			
+		}
+	}
+	close(fd);
+	return 0;
+}

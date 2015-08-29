@@ -1,8 +1,0 @@
-Added Component: Designator=R9(0805)
-Added Component: Designator=R16(0805)
-Added Pin To Net: NetName=-2.5V Pin=R9-1
-Added Pin To Net: NetName=-5V Pin=R9-2
-Added Pin To Net: NetName=GND Pin=R16-1
-Added Pin To Net: NetName=-2.5V Pin=R16-2
-Added Member To Class: ClassName=SIGNAL Member=Component R9 Res3
-Added Member To Class: ClassName=SIGNAL Member=Component R16 Res3

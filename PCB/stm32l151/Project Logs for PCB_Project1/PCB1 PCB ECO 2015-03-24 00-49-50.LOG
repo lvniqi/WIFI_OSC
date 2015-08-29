@@ -1,9 +1,0 @@
-Removed Pin From Net: NetName=TO_ZOOM Pin=U18-2
-Removed Pin From Net: NetName=-5V Pin=U18-4
-Removed Pin From Net: NetName=ADC_7 Pin=U18-6
-Removed Pin From Net: NetName=5V Pin=U18-7
-Change Component DesignItemId : Designator=U18 Old DesignItemId=AD8055ART New DesignItemId=OPA2277
-Change Component Footprint: Designator=U18 Old Footprint=SOP-8 New Footprint=SO-14
-Change Component Comment : Designator=U18 Old Comment=AD8055ART New Comment=OPA2277
-Added Pin To Net: NetName=5V Pin=U18-4
-Added Pin To Net: NetName=-5V Pin=U18-11

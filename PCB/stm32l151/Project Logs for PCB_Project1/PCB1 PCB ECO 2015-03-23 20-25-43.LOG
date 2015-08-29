@@ -1,8 +1,0 @@
-Removed Pin From Net: NetName=1250V Pin=R7-1
-Added Component: Designator=R8(0805)
-Added Pin To Net: NetName=1250V Pin=R8-1
-Change Net Name : Old Net Name=1250V New Net Name=GND
-Added Pin To Net: NetName=1250V Pin=R7-1
-Added Pin To Net: NetName=1250V Pin=R8-2
-Added Net: Name=1250V
-Added Member To Class: ClassName=SIGNAL Member=Component R8 Res3

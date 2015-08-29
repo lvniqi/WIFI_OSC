@@ -1,6 +1,0 @@
-Added Pin To Net: NetName=4052_A Pin=*-10
-Added Pin To Net: NetName=4052_A Pin=U1-20
-Added Net: Name=4052_A
-Added Pin To Net: NetName=4052_B Pin=*-9
-Added Pin To Net: NetName=4052_B Pin=U1-21
-Added Net: Name=4052_B

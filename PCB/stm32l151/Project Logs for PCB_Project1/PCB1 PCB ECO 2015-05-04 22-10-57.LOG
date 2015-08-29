@@ -1,6 +1,0 @@
-Removed Member From Class: ClassName=NEW_POWER Member=C13
-Added Component: Designator=(PCBComponent_1)
-Added Pin To Net: NetName=GND Pin=-1
-Added Pin To Net: NetName=Net_2 Pin=-2
-Added Member To Class: ClassName=NEW_POWER Member=Component 
-Added Room: Name=POWER

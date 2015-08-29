@@ -1,7 +1,0 @@
-Added Component: Designator=MC(PCBComponent_1)
-Added Member To Class: ClassName=SIGNAL Member=Component MC Header 4
-Added Member To Class: ClassName=NEW_POWER Member=Component 
-Added Room: Name=mcu
-Added Room: Name=NEW_POWER
-Added Room: Name=POWER
-Added Room: Name=SIGNAL

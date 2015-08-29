@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#define PAGE_SIZE (4*1024) //交换区大小
+#define PAGE_OFFSET               0x80000000
+static unsigned long p = 0;//交换区地址
+int main(void)
+{
+	int fd;
+	int fd_mem;
+	char *buf;
+	fd = open("/dev/DSO_driver", O_RDWR);
+	fd_mem = open("/dev/mem", O_RDWR);
+	if(fd < 0 || fd_mem <0)//打开出错
+	{
+		perror("open");
+		return -1;
+	}
+	read(fd, (void*)(&p), 4);//读取地址
+	printf("<1> p = 0x%08x\n",p);//显示内存地址
+	//得到交换区
+	buf = mmap(0, PAGE_SIZE,
+                   PROT_READ|PROT_WRITE, MAP_SHARED,
+                   fd_mem, p - PAGE_OFFSET);
+	
+	if(buf == MAP_FAILED)
+	{
+           perror("mmap");
+	}
+	puts(buf);//打印共享内存的内容
+	munmap(buf,PAGE_SIZE);//释放交换区
+	write(fd, buf, 20);
+	close(fd);
+	return 0;
+}

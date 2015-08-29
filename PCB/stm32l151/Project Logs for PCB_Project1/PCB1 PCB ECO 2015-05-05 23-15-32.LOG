@@ -1,6 +1,0 @@
-Added Component: Designator=U2(SO-14)
-Added Member To Class: ClassName=SIGNAL Member=Component U2 OPA4277
-Added Room: Name=mcu
-Added Room: Name=NEW_POWER
-Added Room: Name=POWER
-Added Room: Name=SIGNAL

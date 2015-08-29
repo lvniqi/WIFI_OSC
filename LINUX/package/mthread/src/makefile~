@@ -1,0 +1,12 @@
+# build mthread executable when user executes "make"
+mthread: mthread.o
+	$(CC) $(LDFLAGS)  mthread.o Sequeue.o -o mthread -lpthread
+
+mthread.o: mthread.c
+	$(CC) $(CFLAGS) -O3 -c mthread.c 
+Sequeue.o: Sequeue.c
+	$(CC) $(CFLAGS) -O3 -c Sequeue.c 
+
+# remove object files and executable when user executes "make clean"
+clean:
+	rm *.o mthread

@@ -1,6 +1,0 @@
-Change Component Footprint: Designator=L1 Old Footprint=2029 New Footprint=INDP3636X40N
-Change Component Footprint: Designator=L3 Old Footprint=2029 New Footprint=INDP3636X40N
-Added Room: Name=mcu
-Added Room: Name=NEW_POWER
-Added Room: Name=POWER
-Added Room: Name=SIGNAL

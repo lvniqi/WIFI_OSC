@@ -1,5 +1,0 @@
-Added Component: Designator=J4(HDR1X2)
-Added Pin To Net: NetName=GND_TP5400 Pin=J4-1
-Added Pin To Net: NetName=5V Pin=J4-2
-Added Pin To Net: NetName=Net2.2nF_2 Pin=J10-1
-Added Member To Class: ClassName=NEW_POWER Member=Component 

@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+static unsigned long p = 0;//交换区地址
+int main(int argc, char *argv[])
+{
+	unsigned long* v_addr;
+	unsigned long data;
+	int fd;
+	unsigned long base_address;
+	if (3 == argc )
+	{
+		base_address = strtol(argv[1],NULL,NULL);
+		data =  strtol(argv[2],NULL,NULL);
+		printf("address_real: 0x%08x\n",(unsigned long)base_address);
+		fd = open("/dev/mem", O_RDWR|O_SYNC);
+		v_addr = (int)mmap(NULL, 4096, 
+				   PROT_READ, MAP_SHARED, 
+				   fd, base_address&~0x00000fff);
+		if (v_addr == MAP_FAILED)
+		{
+			perror("errno");
+			return;
+		}
+		printf("address_virt: 0x%08x\n",(unsigned long)v_addr);//显示内存地址
+		printf("data: %d\n",*(v_addr+((base_address&0x00000fff)>>2)));
+		*(v_addr+((base_address&0x00000fff)>>2) = data;
+		printf("change data: %d\n",*(v_addr+((base_address&0x00000fff)>>2)));
+	}
+	return 0;
+}

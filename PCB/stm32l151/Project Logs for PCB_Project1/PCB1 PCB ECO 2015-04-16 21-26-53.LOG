@@ -1,5 +1,0 @@
-Change Component Footprint: Designator=D3 Old Footprint=DO-204AL New Footprint=CAPM4227X18N
-Added Room: Name=mcu
-Added Room: Name=NEW_POWER
-Added Room: Name=POWER
-Added Room: Name=SIGNAL

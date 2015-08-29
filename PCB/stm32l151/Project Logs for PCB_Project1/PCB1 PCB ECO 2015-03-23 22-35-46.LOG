@@ -1,6 +1,0 @@
-Change Component Library : Designator=U18 Old Library=AD Operational Amplifier Sch.SCHLIB New Library=SIGNAL.SchLib
-Added Pin To Net: NetName=TO_ZOOM Pin=U18-2
-Added Pin To Net: NetName=-5V Pin=U18-4
-Added Pin To Net: NetName=5V Pin=U18-7
-Added Pin To Net: NetName=TO_ADC Pin=U18-6
-Added Net: Name=TO_ADC

@@ -1,4 +1,0 @@
-Removed Pin From Net: NetName=5V Pin=D1-1
-Removed Pin From Net: NetName=1.5_OR_16.6V Pin=D1-2
-Added Pin To Net: NetName=1.5_OR_16.6V Pin=D1-1
-Added Pin To Net: NetName=5V Pin=D1-2

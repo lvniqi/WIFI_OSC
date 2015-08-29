@@ -1,0 +1,32 @@
+/*
+ *gpio  中断测试程序1 
+ *
+ */
+#include <linux/types.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/module.h>
+
+#define DRV_VERSION	"0.1.1"
+#define DRV_DESC	"TEST GPIO Interrupt"
+
+/*-------------------------------------------------------------------------*/
+static int __init gpio_interrupt_init(void)
+{
+	printk("gpio_interrupt init !\n");
+	return 0;
+}
+module_init(gpio_interrupt_init);
+
+static void __exit gpio_interrupt_exit(void)
+{
+	printk("gpio_interrupt exit !\n");
+	return 0;
+}
+module_exit(gpio_interrupt_exit);
+
+MODULE_DESCRIPTION(DRV_DESC);
+MODULE_VERSION(DRV_VERSION);
+MODULE_AUTHOR("Lvniqi <lvniqi@gmail.com>");
+MODULE_LICENSE("GPL v2");
+
