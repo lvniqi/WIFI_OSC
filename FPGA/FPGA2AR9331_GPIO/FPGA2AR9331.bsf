@@ -76,28 +76,38 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"SEND_ING_1"
+		"SEND_ING_0"
 		"00010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"SEND_ING_2"
+		"SEND_ING_1"
 		"00011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"SEND_END"
+		"SEND_ING_2"
 		"00100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"DELAY_1"
+		"SEND_END"
 		"00101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"DELAY_2"
+		"DELAY_1"
 		"00110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"DELAY_2"
+		"00111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"DELAY_3"
+		"01000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing

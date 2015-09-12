@@ -1,5 +1,5 @@
 Fitter report for FPGA2AR9331
-Sat Sep 12 18:09:48 2015
+Sat Sep 12 19:05:16 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -62,17 +62,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +------------------------------------+--------------------------------------------------+
-; Fitter Status                      ; Successful - Sat Sep 12 18:09:48 2015            ;
+; Fitter Status                      ; Successful - Sat Sep 12 19:05:16 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA2AR9331                                      ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C5T144C8                                      ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 70 / 4,608 ( 2 % )                               ;
+; Total logic elements               ; 78 / 4,608 ( 2 % )                               ;
 ;     Total combinational functions  ; 68 / 4,608 ( 1 % )                               ;
-;     Dedicated logic registers      ; 40 / 4,608 ( < 1 % )                             ;
-; Total registers                    ; 40                                               ;
+;     Dedicated logic registers      ; 58 / 4,608 ( 1 % )                               ;
+; Total registers                    ; 58                                               ;
 ; Total pins                         ; 11 / 89 ( 12 % )                                 ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0 / 119,808 ( 0 % )                              ;
@@ -140,12 +140,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.25        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
+;     Processor 2            ;  25.0%      ;
 ;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -156,8 +156,8 @@ applicable agreement for further details.
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 124 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 124 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 143 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 143 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -180,7 +180,7 @@ applicable agreement for further details.
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 121     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 140     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -191,123 +191,123 @@ applicable agreement for further details.
 The pin-out file can be found in E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/output_files/FPGA2AR9331.pin.
 
 
-+--------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                      ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-; Total logic elements                        ; 70 / 4,608 ( 2 % )   ;
-;     -- Combinational with no register       ; 30                   ;
-;     -- Register only                        ; 2                    ;
-;     -- Combinational with a register        ; 38                   ;
-;                                             ;                      ;
-; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 24                   ;
-;     -- 3 input functions                    ; 10                   ;
-;     -- <=2 input functions                  ; 34                   ;
-;     -- Register only                        ; 2                    ;
-;                                             ;                      ;
-; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 50                   ;
-;     -- arithmetic mode                      ; 18                   ;
-;                                             ;                      ;
-; Total registers*                            ; 40 / 4,851 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 40 / 4,608 ( < 1 % ) ;
-;     -- I/O registers                        ; 0 / 243 ( 0 % )      ;
-;                                             ;                      ;
-; Total LABs:  partially or completely used   ; 8 / 288 ( 3 % )      ;
-; Virtual pins                                ; 0                    ;
-; I/O pins                                    ; 11 / 89 ( 12 % )     ;
-;     -- Clock pins                           ; 2 / 4 ( 50 % )       ;
-;                                             ;                      ;
-; Global signals                              ; 1                    ;
-; M4Ks                                        ; 0 / 26 ( 0 % )       ;
-; Total block memory bits                     ; 0 / 119,808 ( 0 % )  ;
-; Total block memory implementation bits      ; 0 / 119,808 ( 0 % )  ;
-; Embedded Multiplier 9-bit elements          ; 0 / 26 ( 0 % )       ;
-; PLLs                                        ; 0 / 2 ( 0 % )        ;
-; Global clocks                               ; 1 / 8 ( 13 % )       ;
-; JTAGs                                       ; 0 / 1 ( 0 % )        ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )        ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )        ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%         ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%         ;
-; Maximum fan-out                             ; 40                   ;
-; Highest non-global fan-out                  ; 16                   ;
-; Total fan-out                               ; 308                  ;
-; Average fan-out                             ; 2.48                 ;
-+---------------------------------------------+----------------------+
++-------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                     ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Total logic elements                        ; 78 / 4,608 ( 2 % )  ;
+;     -- Combinational with no register       ; 20                  ;
+;     -- Register only                        ; 10                  ;
+;     -- Combinational with a register        ; 48                  ;
+;                                             ;                     ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 27                  ;
+;     -- 3 input functions                    ; 6                   ;
+;     -- <=2 input functions                  ; 35                  ;
+;     -- Register only                        ; 10                  ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 51                  ;
+;     -- arithmetic mode                      ; 17                  ;
+;                                             ;                     ;
+; Total registers*                            ; 58 / 4,851 ( 1 % )  ;
+;     -- Dedicated logic registers            ; 58 / 4,608 ( 1 % )  ;
+;     -- I/O registers                        ; 0 / 243 ( 0 % )     ;
+;                                             ;                     ;
+; Total LABs:  partially or completely used   ; 7 / 288 ( 2 % )     ;
+; Virtual pins                                ; 0                   ;
+; I/O pins                                    ; 11 / 89 ( 12 % )    ;
+;     -- Clock pins                           ; 2 / 4 ( 50 % )      ;
+;                                             ;                     ;
+; Global signals                              ; 2                   ;
+; M4Ks                                        ; 0 / 26 ( 0 % )      ;
+; Total block memory bits                     ; 0 / 119,808 ( 0 % ) ;
+; Total block memory implementation bits      ; 0 / 119,808 ( 0 % ) ;
+; Embedded Multiplier 9-bit elements          ; 0 / 26 ( 0 % )      ;
+; PLLs                                        ; 0 / 2 ( 0 % )       ;
+; Global clocks                               ; 2 / 8 ( 25 % )      ;
+; JTAGs                                       ; 0 / 1 ( 0 % )       ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )       ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )       ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%        ;
+; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%        ;
+; Maximum fan-out                             ; 50                  ;
+; Highest non-global fan-out                  ; 16                  ;
+; Total fan-out                               ; 349                 ;
+; Average fan-out                             ; 2.37                ;
++---------------------------------------------+---------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+----------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                        ;
-+---------------------------------------------+---------------------+--------------------------------+
-; Statistic                                   ; Top                 ; hard_block:auto_generated_inst ;
-+---------------------------------------------+---------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                 ; Low                            ;
-;                                             ;                     ;                                ;
-; Total logic elements                        ; 70 / 4608 ( 2 % )   ; 0 / 4608 ( 0 % )               ;
-;     -- Combinational with no register       ; 30                  ; 0                              ;
-;     -- Register only                        ; 2                   ; 0                              ;
-;     -- Combinational with a register        ; 38                  ; 0                              ;
-;                                             ;                     ;                                ;
-; Logic element usage by number of LUT inputs ;                     ;                                ;
-;     -- 4 input functions                    ; 24                  ; 0                              ;
-;     -- 3 input functions                    ; 10                  ; 0                              ;
-;     -- <=2 input functions                  ; 34                  ; 0                              ;
-;     -- Register only                        ; 2                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Logic elements by mode                      ;                     ;                                ;
-;     -- normal mode                          ; 50                  ; 0                              ;
-;     -- arithmetic mode                      ; 18                  ; 0                              ;
-;                                             ;                     ;                                ;
-; Total registers                             ; 40                  ; 0                              ;
-;     -- Dedicated logic registers            ; 40 / 4608 ( < 1 % ) ; 0 / 4608 ( 0 % )               ;
-;                                             ;                     ;                                ;
-; Total LABs:  partially or completely used   ; 8 / 288 ( 3 % )     ; 0 / 288 ( 0 % )                ;
-;                                             ;                     ;                                ;
-; Virtual pins                                ; 0                   ; 0                              ;
-; I/O pins                                    ; 11                  ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 26 ( 0 % )      ; 0 / 26 ( 0 % )                 ;
-; Total memory bits                           ; 0                   ; 0                              ;
-; Total RAM block bits                        ; 0                   ; 0                              ;
-; Clock control block                         ; 1 / 10 ( 10 % )     ; 0 / 10 ( 0 % )                 ;
-;                                             ;                     ;                                ;
-; Connections                                 ;                     ;                                ;
-;     -- Input Connections                    ; 0                   ; 0                              ;
-;     -- Registered Input Connections         ; 0                   ; 0                              ;
-;     -- Output Connections                   ; 0                   ; 0                              ;
-;     -- Registered Output Connections        ; 0                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Internal Connections                        ;                     ;                                ;
-;     -- Total Connections                    ; 308                 ; 0                              ;
-;     -- Registered Connections               ; 139                 ; 0                              ;
-;                                             ;                     ;                                ;
-; External Connections                        ;                     ;                                ;
-;     -- Top                                  ; 0                   ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Partition Interface                         ;                     ;                                ;
-;     -- Input Ports                          ; 2                   ; 0                              ;
-;     -- Output Ports                         ; 9                   ; 0                              ;
-;     -- Bidir Ports                          ; 0                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Registered Ports                            ;                     ;                                ;
-;     -- Registered Input Ports               ; 0                   ; 0                              ;
-;     -- Registered Output Ports              ; 0                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Port Connectivity                           ;                     ;                                ;
-;     -- Input Ports driven by GND            ; 0                   ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                   ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                   ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                   ; 0                              ;
-;     -- Input Ports with no Source           ; 0                   ; 0                              ;
-;     -- Output Ports with no Source          ; 0                   ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                   ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                   ; 0                              ;
-+---------------------------------------------+---------------------+--------------------------------+
++--------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                      ;
++---------------------------------------------+-------------------+--------------------------------+
+; Statistic                                   ; Top               ; hard_block:auto_generated_inst ;
++---------------------------------------------+-------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low               ; Low                            ;
+;                                             ;                   ;                                ;
+; Total logic elements                        ; 78 / 4608 ( 2 % ) ; 0 / 4608 ( 0 % )               ;
+;     -- Combinational with no register       ; 20                ; 0                              ;
+;     -- Register only                        ; 10                ; 0                              ;
+;     -- Combinational with a register        ; 48                ; 0                              ;
+;                                             ;                   ;                                ;
+; Logic element usage by number of LUT inputs ;                   ;                                ;
+;     -- 4 input functions                    ; 27                ; 0                              ;
+;     -- 3 input functions                    ; 6                 ; 0                              ;
+;     -- <=2 input functions                  ; 35                ; 0                              ;
+;     -- Register only                        ; 10                ; 0                              ;
+;                                             ;                   ;                                ;
+; Logic elements by mode                      ;                   ;                                ;
+;     -- normal mode                          ; 51                ; 0                              ;
+;     -- arithmetic mode                      ; 17                ; 0                              ;
+;                                             ;                   ;                                ;
+; Total registers                             ; 58                ; 0                              ;
+;     -- Dedicated logic registers            ; 58 / 4608 ( 1 % ) ; 0 / 4608 ( 0 % )               ;
+;                                             ;                   ;                                ;
+; Total LABs:  partially or completely used   ; 7 / 288 ( 2 % )   ; 0 / 288 ( 0 % )                ;
+;                                             ;                   ;                                ;
+; Virtual pins                                ; 0                 ; 0                              ;
+; I/O pins                                    ; 11                ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 26 ( 0 % )    ; 0 / 26 ( 0 % )                 ;
+; Total memory bits                           ; 0                 ; 0                              ;
+; Total RAM block bits                        ; 0                 ; 0                              ;
+; Clock control block                         ; 2 / 10 ( 20 % )   ; 0 / 10 ( 0 % )                 ;
+;                                             ;                   ;                                ;
+; Connections                                 ;                   ;                                ;
+;     -- Input Connections                    ; 0                 ; 0                              ;
+;     -- Registered Input Connections         ; 0                 ; 0                              ;
+;     -- Output Connections                   ; 0                 ; 0                              ;
+;     -- Registered Output Connections        ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Internal Connections                        ;                   ;                                ;
+;     -- Total Connections                    ; 349               ; 0                              ;
+;     -- Registered Connections               ; 144               ; 0                              ;
+;                                             ;                   ;                                ;
+; External Connections                        ;                   ;                                ;
+;     -- Top                                  ; 0                 ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Partition Interface                         ;                   ;                                ;
+;     -- Input Ports                          ; 2                 ; 0                              ;
+;     -- Output Ports                         ; 9                 ; 0                              ;
+;     -- Bidir Ports                          ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Registered Ports                            ;                   ;                                ;
+;     -- Registered Input Ports               ; 0                 ; 0                              ;
+;     -- Registered Output Ports              ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Port Connectivity                           ;                   ;                                ;
+;     -- Input Ports driven by GND            ; 0                 ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                 ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                 ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                 ; 0                              ;
+;     -- Input Ports with no Source           ; 0                 ; 0                              ;
+;     -- Output Ports with no Source          ; 0                 ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                 ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                 ; 0                              ;
++---------------------------------------------+-------------------+--------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -539,14 +539,15 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                              ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name    ; Library Name ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------+--------------+
-; |main                      ; 70 (0)      ; 40 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 11   ; 0            ; 30 (0)       ; 2 (0)             ; 38 (0)           ; |main                  ; work         ;
-;    |FPGA2AR9331:inst|      ; 70 (70)     ; 40 (40)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 2 (2)             ; 38 (38)          ; |main|FPGA2AR9331:inst ; work         ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                   ;
++-----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                        ; Library Name ;
++-----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------+--------------+
+; |main                       ; 78 (0)      ; 58 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 11   ; 0            ; 20 (0)       ; 10 (0)            ; 48 (0)           ; |main                                      ; work         ;
+;    |FPGA2AR9331:inst|       ; 78 (70)     ; 58 (50)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (20)      ; 10 (10)           ; 48 (40)          ; |main|FPGA2AR9331:inst                     ; work         ;
+;       |fifo_control:comb_3| ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |main|FPGA2AR9331:inst|fifo_control:comb_3 ; work         ;
++-----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -579,161 +580,186 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                    ;
-+----------------------------------------+------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; Name                                   ; Location         ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------------+------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; FPGA2AR9331:inst|Selector11~1          ; LCCOMB_X4_Y3_N18 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; FPGA2AR9331:inst|Selector5~4           ; LCCOMB_X5_Y2_N6  ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; FPGA2AR9331:inst|data_out[7]~en        ; LCFF_X5_Y2_N1    ; 16      ; Output enable ; no     ; --                   ; --               ; --                        ;
-; FPGA2AR9331:inst|next_state.SEND_ING_2 ; LCFF_X4_Y3_N15   ; 15      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; clk                                    ; PIN_17           ; 40      ; Clock         ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-+----------------------------------------+------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                             ;
++---------------------------------+------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; Name                            ; Location         ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------------------------+------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; FPGA2AR9331:inst|WideOr7        ; LCCOMB_X3_Y1_N28 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; FPGA2AR9331:inst|ctrl_clk       ; LCFF_X1_Y6_N29   ; 8       ; Clock         ; yes    ; Global Clock         ; GCLK1            ; --                        ;
+; FPGA2AR9331:inst|data_out[0]~en ; LCFF_X3_Y1_N1    ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; FPGA2AR9331:inst|data_out[1]~en ; LCFF_X3_Y1_N3    ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; FPGA2AR9331:inst|data_out[2]~en ; LCFF_X3_Y1_N23   ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; FPGA2AR9331:inst|data_out[3]~en ; LCFF_X3_Y1_N19   ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; FPGA2AR9331:inst|data_out[4]~en ; LCFF_X3_Y1_N13   ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; FPGA2AR9331:inst|data_out[5]~en ; LCFF_X1_Y1_N17   ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; FPGA2AR9331:inst|data_out[6]~en ; LCFF_X1_Y1_N7    ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; FPGA2AR9331:inst|data_out[7]~en ; LCFF_X1_Y1_N5    ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; FPGA2AR9331:inst|len[2]~0       ; LCCOMB_X3_Y1_N14 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; clk                             ; PIN_17           ; 50      ; Clock         ; yes    ; Global Clock         ; GCLK2            ; --                        ;
++---------------------------------+------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                     ;
-+------+----------+---------+----------------------+------------------+---------------------------+
-; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------+----------+---------+----------------------+------------------+---------------------------+
-; clk  ; PIN_17   ; 40      ; Global Clock         ; GCLK2            ; --                        ;
-+------+----------+---------+----------------------+------------------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                ;
++---------------------------+----------------+---------+----------------------+------------------+---------------------------+
+; Name                      ; Location       ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------------------+----------------+---------+----------------------+------------------+---------------------------+
+; FPGA2AR9331:inst|ctrl_clk ; LCFF_X1_Y6_N29 ; 8       ; Global Clock         ; GCLK1            ; --                        ;
+; clk                       ; PIN_17         ; 50      ; Global Clock         ; GCLK2            ; --                        ;
++---------------------------+----------------+---------+----------------------+------------------+---------------------------+
 
 
-+-----------------------------------------------------+
-; Non-Global High Fan-Out Signals                     ;
-+-------------------------------------------+---------+
-; Name                                      ; Fan-Out ;
-+-------------------------------------------+---------+
-; FPGA2AR9331:inst|data_out[7]~en           ; 16      ;
-; FPGA2AR9331:inst|next_state.SEND_ING_2    ; 15      ;
-; ack                                       ; 10      ;
-; FPGA2AR9331:inst|ack_save                 ; 10      ;
-; FPGA2AR9331:inst|Selector5~4              ; 9       ;
-; FPGA2AR9331:inst|Selector11~1             ; 8       ;
-; FPGA2AR9331:inst|next_state.DELAY_3       ; 7       ;
-; FPGA2AR9331:inst|Selector11~0             ; 6       ;
-; FPGA2AR9331:inst|WideOr6                  ; 5       ;
-; FPGA2AR9331:inst|next_state.IDLE          ; 4       ;
-; FPGA2AR9331:inst|next_state.DELAY_2       ; 4       ;
-; FPGA2AR9331:inst|next_state.SEND_END      ; 4       ;
-; FPGA2AR9331:inst|next_state.SEND_ING_1    ; 4       ;
-; FPGA2AR9331:inst|clk_out                  ; 4       ;
-; FPGA2AR9331:inst|delay_counter[1]         ; 3       ;
-; FPGA2AR9331:inst|delay_counter[2]         ; 3       ;
-; FPGA2AR9331:inst|delay_counter[3]         ; 3       ;
-; FPGA2AR9331:inst|delay_counter[4]         ; 3       ;
-; FPGA2AR9331:inst|Selector5~3              ; 3       ;
-; FPGA2AR9331:inst|len[0]                   ; 3       ;
-; FPGA2AR9331:inst|len[3]                   ; 3       ;
-; FPGA2AR9331:inst|len[4]                   ; 3       ;
-; FPGA2AR9331:inst|len[5]                   ; 3       ;
-; FPGA2AR9331:inst|len[6]                   ; 3       ;
-; FPGA2AR9331:inst|len[7]                   ; 3       ;
-; FPGA2AR9331:inst|next_state.SEND_START    ; 3       ;
-; FPGA2AR9331:inst|WideOr6~0                ; 3       ;
-; FPGA2AR9331:inst|next_state.DELAY_1       ; 3       ;
-; FPGA2AR9331:inst|delay_counter[0]         ; 2       ;
-; FPGA2AR9331:inst|Selector0~0              ; 2       ;
-; FPGA2AR9331:inst|current_state.DELAY_3    ; 2       ;
-; FPGA2AR9331:inst|current_state.DELAY_2    ; 2       ;
-; FPGA2AR9331:inst|Equal0~1                 ; 2       ;
-; FPGA2AR9331:inst|len[1]                   ; 2       ;
-; FPGA2AR9331:inst|len[2]                   ; 2       ;
-; FPGA2AR9331:inst|Equal0~0                 ; 2       ;
-; FPGA2AR9331:inst|current_state.SEND_ING_2 ; 2       ;
-; FPGA2AR9331:inst|current_state.SEND_ING_1 ; 2       ;
-; FPGA2AR9331:inst|current_state.SEND_END   ; 2       ;
-; FPGA2AR9331:inst|data_out[0]~reg0         ; 2       ;
-; FPGA2AR9331:inst|data_out[1]~reg0         ; 2       ;
-; FPGA2AR9331:inst|data_out[2]~reg0         ; 2       ;
-; FPGA2AR9331:inst|data_out[3]~reg0         ; 2       ;
-; FPGA2AR9331:inst|data_out[4]~reg0         ; 2       ;
-; FPGA2AR9331:inst|data_out[5]~reg0         ; 2       ;
-; FPGA2AR9331:inst|data_out[6]~reg0         ; 2       ;
-; FPGA2AR9331:inst|data_out[7]~reg0         ; 2       ;
-; FPGA2AR9331:inst|next_state.SEND_START~0  ; 1       ;
-; FPGA2AR9331:inst|Selector10~0             ; 1       ;
-; FPGA2AR9331:inst|Selector9~0              ; 1       ;
-; FPGA2AR9331:inst|Selector8~0              ; 1       ;
-; FPGA2AR9331:inst|Selector7~0              ; 1       ;
-; FPGA2AR9331:inst|Selector6~0              ; 1       ;
-; FPGA2AR9331:inst|Selector4~1              ; 1       ;
-; FPGA2AR9331:inst|Selector4~0              ; 1       ;
-; FPGA2AR9331:inst|Selector18~0             ; 1       ;
-; FPGA2AR9331:inst|Selector17~0             ; 1       ;
-; FPGA2AR9331:inst|Selector16~0             ; 1       ;
-; FPGA2AR9331:inst|Selector15~0             ; 1       ;
-; FPGA2AR9331:inst|Selector14~0             ; 1       ;
-; FPGA2AR9331:inst|Selector13~0             ; 1       ;
-; FPGA2AR9331:inst|Selector12~0             ; 1       ;
-; FPGA2AR9331:inst|Selector11~2             ; 1       ;
-; FPGA2AR9331:inst|data_out~40              ; 1       ;
-; FPGA2AR9331:inst|data_out[0]~23           ; 1       ;
-; FPGA2AR9331:inst|data_out[1]~22           ; 1       ;
-; FPGA2AR9331:inst|data_out[2]~21           ; 1       ;
-; FPGA2AR9331:inst|data_out[3]~20           ; 1       ;
-; FPGA2AR9331:inst|data_out[4]~19           ; 1       ;
-; FPGA2AR9331:inst|data_out[5]~18           ; 1       ;
-; FPGA2AR9331:inst|data_out[6]~17           ; 1       ;
-; FPGA2AR9331:inst|data_out[7]~16           ; 1       ;
-; FPGA2AR9331:inst|Selector0~1              ; 1       ;
-; FPGA2AR9331:inst|current_state.IDLE       ; 1       ;
-; FPGA2AR9331:inst|ack_save~0               ; 1       ;
-; FPGA2AR9331:inst|Selector5~2              ; 1       ;
-; FPGA2AR9331:inst|next_state~16            ; 1       ;
-; FPGA2AR9331:inst|Selector3~0              ; 1       ;
-; FPGA2AR9331:inst|current_state.DELAY_1    ; 1       ;
-; FPGA2AR9331:inst|Selector2~1              ; 1       ;
-; FPGA2AR9331:inst|Selector2~0              ; 1       ;
-; FPGA2AR9331:inst|Selector1~1              ; 1       ;
-; FPGA2AR9331:inst|Selector1~0              ; 1       ;
-; FPGA2AR9331:inst|current_state.SEND_START ; 1       ;
-; FPGA2AR9331:inst|next_state~15            ; 1       ;
-; FPGA2AR9331:inst|Selector19~2             ; 1       ;
-; FPGA2AR9331:inst|Selector19~1             ; 1       ;
-; FPGA2AR9331:inst|Selector19~0             ; 1       ;
-; FPGA2AR9331:inst|Add2~8                   ; 1       ;
-; FPGA2AR9331:inst|Add2~7                   ; 1       ;
-; FPGA2AR9331:inst|Add2~6                   ; 1       ;
-; FPGA2AR9331:inst|Add2~5                   ; 1       ;
-; FPGA2AR9331:inst|Add2~4                   ; 1       ;
-; FPGA2AR9331:inst|Add2~3                   ; 1       ;
-; FPGA2AR9331:inst|Add2~2                   ; 1       ;
-; FPGA2AR9331:inst|Add2~1                   ; 1       ;
-; FPGA2AR9331:inst|Add2~0                   ; 1       ;
-; FPGA2AR9331:inst|Add1~14                  ; 1       ;
-; FPGA2AR9331:inst|Add1~13                  ; 1       ;
-; FPGA2AR9331:inst|Add1~12                  ; 1       ;
-; FPGA2AR9331:inst|Add1~11                  ; 1       ;
-; FPGA2AR9331:inst|Add1~10                  ; 1       ;
-; FPGA2AR9331:inst|Add1~9                   ; 1       ;
-; FPGA2AR9331:inst|Add1~8                   ; 1       ;
-; FPGA2AR9331:inst|Add1~7                   ; 1       ;
-; FPGA2AR9331:inst|Add1~6                   ; 1       ;
-; FPGA2AR9331:inst|Add1~5                   ; 1       ;
-; FPGA2AR9331:inst|Add1~4                   ; 1       ;
-; FPGA2AR9331:inst|Add1~3                   ; 1       ;
-; FPGA2AR9331:inst|Add1~2                   ; 1       ;
-; FPGA2AR9331:inst|Add1~1                   ; 1       ;
-; FPGA2AR9331:inst|Add1~0                   ; 1       ;
-; FPGA2AR9331:inst|data_out[7]~38           ; 1       ;
-; FPGA2AR9331:inst|data_out[6]~37           ; 1       ;
-; FPGA2AR9331:inst|data_out[6]~36           ; 1       ;
-; FPGA2AR9331:inst|data_out[5]~35           ; 1       ;
-; FPGA2AR9331:inst|data_out[5]~34           ; 1       ;
-; FPGA2AR9331:inst|data_out[4]~33           ; 1       ;
-; FPGA2AR9331:inst|data_out[4]~32           ; 1       ;
-; FPGA2AR9331:inst|data_out[3]~31           ; 1       ;
-; FPGA2AR9331:inst|data_out[3]~30           ; 1       ;
-; FPGA2AR9331:inst|data_out[2]~29           ; 1       ;
-; FPGA2AR9331:inst|data_out[2]~28           ; 1       ;
-; FPGA2AR9331:inst|data_out[1]~27           ; 1       ;
-; FPGA2AR9331:inst|data_out[1]~26           ; 1       ;
-; FPGA2AR9331:inst|data_out[0]~25           ; 1       ;
-; FPGA2AR9331:inst|data_out[0]~24           ; 1       ;
-+-------------------------------------------+---------+
++-----------------------------------------------------------+
+; Non-Global High Fan-Out Signals                           ;
++-------------------------------------------------+---------+
+; Name                                            ; Fan-Out ;
++-------------------------------------------------+---------+
+; FPGA2AR9331:inst|WideOr7                        ; 16      ;
+; FPGA2AR9331:inst|next_state.SEND_ING_2          ; 15      ;
+; ack                                             ; 10      ;
+; FPGA2AR9331:inst|data_out~0                     ; 10      ;
+; FPGA2AR9331:inst|ack_save                       ; 10      ;
+; FPGA2AR9331:inst|len[2]~0                       ; 8       ;
+; FPGA2AR9331:inst|next_state.DELAY_3             ; 8       ;
+; FPGA2AR9331:inst|Selector6~1                    ; 6       ;
+; FPGA2AR9331:inst|WideOr8                        ; 5       ;
+; FPGA2AR9331:inst|next_state.SEND_ING_1          ; 4       ;
+; FPGA2AR9331:inst|next_state.SEND_ING_0          ; 4       ;
+; FPGA2AR9331:inst|next_state.SEND_START          ; 4       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[0]    ; 3       ;
+; FPGA2AR9331:inst|delay_counter[1]               ; 3       ;
+; FPGA2AR9331:inst|delay_counter[2]               ; 3       ;
+; FPGA2AR9331:inst|delay_counter[3]               ; 3       ;
+; FPGA2AR9331:inst|delay_counter[4]               ; 3       ;
+; FPGA2AR9331:inst|len[0]                         ; 3       ;
+; FPGA2AR9331:inst|len[3]                         ; 3       ;
+; FPGA2AR9331:inst|len[4]                         ; 3       ;
+; FPGA2AR9331:inst|len[5]                         ; 3       ;
+; FPGA2AR9331:inst|len[6]                         ; 3       ;
+; FPGA2AR9331:inst|len[7]                         ; 3       ;
+; FPGA2AR9331:inst|WideOr8~0                      ; 3       ;
+; FPGA2AR9331:inst|next_state.DELAY_2             ; 3       ;
+; FPGA2AR9331:inst|next_state.SEND_END            ; 3       ;
+; FPGA2AR9331:inst|next_state.IDLE                ; 3       ;
+; FPGA2AR9331:inst|clk_out                        ; 3       ;
+; FPGA2AR9331:inst|delay_counter[0]               ; 2       ;
+; FPGA2AR9331:inst|always2~0                      ; 2       ;
+; FPGA2AR9331:inst|current_state.DELAY_2          ; 2       ;
+; FPGA2AR9331:inst|current_state.SEND_END         ; 2       ;
+; FPGA2AR9331:inst|Selector0~0                    ; 2       ;
+; FPGA2AR9331:inst|current_state.DELAY_3          ; 2       ;
+; FPGA2AR9331:inst|Equal0~1                       ; 2       ;
+; FPGA2AR9331:inst|len[1]                         ; 2       ;
+; FPGA2AR9331:inst|len[2]                         ; 2       ;
+; FPGA2AR9331:inst|Equal0~0                       ; 2       ;
+; FPGA2AR9331:inst|current_state.SEND_ING_2       ; 2       ;
+; FPGA2AR9331:inst|current_state.SEND_ING_1       ; 2       ;
+; FPGA2AR9331:inst|next_state.DELAY_1             ; 2       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[1]    ; 2       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[2]    ; 2       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[3]    ; 2       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[4]    ; 2       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[5]    ; 2       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[6]    ; 2       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[7]    ; 2       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[0]~21 ; 1       ;
+; FPGA2AR9331:inst|next_state.SEND_START~0        ; 1       ;
+; FPGA2AR9331:inst|Selector21~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector11~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector5~0                    ; 1       ;
+; FPGA2AR9331:inst|ctrl_clk                       ; 1       ;
+; FPGA2AR9331:inst|Selector10~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector9~0                    ; 1       ;
+; FPGA2AR9331:inst|Selector8~0                    ; 1       ;
+; FPGA2AR9331:inst|Selector7~0                    ; 1       ;
+; FPGA2AR9331:inst|Selector19~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector18~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector17~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector16~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector15~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector14~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector13~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector12~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector22~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector24~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector25~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector26~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector27~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector28~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector29~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector31~0                   ; 1       ;
+; FPGA2AR9331:inst|Selector4~0                    ; 1       ;
+; FPGA2AR9331:inst|current_state.DELAY_1          ; 1       ;
+; FPGA2AR9331:inst|Selector3~1                    ; 1       ;
+; FPGA2AR9331:inst|Selector3~0                    ; 1       ;
+; FPGA2AR9331:inst|next_state~16                  ; 1       ;
+; FPGA2AR9331:inst|Selector0~1                    ; 1       ;
+; FPGA2AR9331:inst|Selector2~0                    ; 1       ;
+; FPGA2AR9331:inst|current_state.SEND_ING_0       ; 1       ;
+; FPGA2AR9331:inst|Selector1~0                    ; 1       ;
+; FPGA2AR9331:inst|current_state.SEND_START       ; 1       ;
+; FPGA2AR9331:inst|ack_save~0                     ; 1       ;
+; FPGA2AR9331:inst|Selector6~0                    ; 1       ;
+; FPGA2AR9331:inst|next_state~15                  ; 1       ;
+; FPGA2AR9331:inst|current_state.IDLE             ; 1       ;
+; FPGA2AR9331:inst|data_out[0]~en                 ; 1       ;
+; FPGA2AR9331:inst|data_out[0]~reg0               ; 1       ;
+; FPGA2AR9331:inst|data_out[1]~en                 ; 1       ;
+; FPGA2AR9331:inst|data_out[1]~reg0               ; 1       ;
+; FPGA2AR9331:inst|data_out[2]~en                 ; 1       ;
+; FPGA2AR9331:inst|data_out[2]~reg0               ; 1       ;
+; FPGA2AR9331:inst|data_out[3]~en                 ; 1       ;
+; FPGA2AR9331:inst|data_out[3]~reg0               ; 1       ;
+; FPGA2AR9331:inst|data_out[4]~en                 ; 1       ;
+; FPGA2AR9331:inst|data_out[4]~reg0               ; 1       ;
+; FPGA2AR9331:inst|data_out[5]~en                 ; 1       ;
+; FPGA2AR9331:inst|data_out[5]~reg0               ; 1       ;
+; FPGA2AR9331:inst|data_out[6]~en                 ; 1       ;
+; FPGA2AR9331:inst|data_out[6]~reg0               ; 1       ;
+; FPGA2AR9331:inst|data_out[7]~en                 ; 1       ;
+; FPGA2AR9331:inst|data_out[7]~reg0               ; 1       ;
+; FPGA2AR9331:inst|Selector20~2                   ; 1       ;
+; FPGA2AR9331:inst|Selector20~1                   ; 1       ;
+; FPGA2AR9331:inst|Selector20~0                   ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[7]~19 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[6]~18 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[6]~17 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[5]~16 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[5]~15 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[4]~14 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[4]~13 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[3]~12 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[3]~11 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[2]~10 ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[2]~9  ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[1]~8  ; 1       ;
+; FPGA2AR9331:inst|fifo_control:comb_3|data[1]~7  ; 1       ;
+; FPGA2AR9331:inst|Add1~8                         ; 1       ;
+; FPGA2AR9331:inst|Add1~7                         ; 1       ;
+; FPGA2AR9331:inst|Add1~6                         ; 1       ;
+; FPGA2AR9331:inst|Add1~5                         ; 1       ;
+; FPGA2AR9331:inst|Add1~4                         ; 1       ;
+; FPGA2AR9331:inst|Add1~3                         ; 1       ;
+; FPGA2AR9331:inst|Add1~2                         ; 1       ;
+; FPGA2AR9331:inst|Add1~1                         ; 1       ;
+; FPGA2AR9331:inst|Add1~0                         ; 1       ;
+; FPGA2AR9331:inst|Add0~14                        ; 1       ;
+; FPGA2AR9331:inst|Add0~13                        ; 1       ;
+; FPGA2AR9331:inst|Add0~12                        ; 1       ;
+; FPGA2AR9331:inst|Add0~11                        ; 1       ;
+; FPGA2AR9331:inst|Add0~10                        ; 1       ;
+; FPGA2AR9331:inst|Add0~9                         ; 1       ;
+; FPGA2AR9331:inst|Add0~8                         ; 1       ;
+; FPGA2AR9331:inst|Add0~7                         ; 1       ;
+; FPGA2AR9331:inst|Add0~6                         ; 1       ;
+; FPGA2AR9331:inst|Add0~5                         ; 1       ;
+; FPGA2AR9331:inst|Add0~4                         ; 1       ;
+; FPGA2AR9331:inst|Add0~3                         ; 1       ;
+; FPGA2AR9331:inst|Add0~2                         ; 1       ;
+; FPGA2AR9331:inst|Add0~1                         ; 1       ;
+; FPGA2AR9331:inst|Add0~0                         ; 1       ;
++-------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -741,63 +767,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+-----------------------+
 ; Other Routing Resource Type ; Usage                 ;
 +-----------------------------+-----------------------+
-; Block interconnects         ; 74 / 15,666 ( < 1 % ) ;
-; C16 interconnects           ; 0 / 812 ( 0 % )       ;
-; C4 interconnects            ; 26 / 11,424 ( < 1 % ) ;
-; Direct links                ; 27 / 15,666 ( < 1 % ) ;
-; Global clocks               ; 1 / 8 ( 13 % )        ;
-; Local interconnects         ; 57 / 4,608 ( 1 % )    ;
+; Block interconnects         ; 69 / 15,666 ( < 1 % ) ;
+; C16 interconnects           ; 1 / 812 ( < 1 % )     ;
+; C4 interconnects            ; 30 / 11,424 ( < 1 % ) ;
+; Direct links                ; 18 / 15,666 ( < 1 % ) ;
+; Global clocks               ; 2 / 8 ( 25 % )        ;
+; Local interconnects         ; 53 / 4,608 ( 1 % )    ;
 ; R24 interconnects           ; 1 / 652 ( < 1 % )     ;
-; R4 interconnects            ; 34 / 13,328 ( < 1 % ) ;
+; R4 interconnects            ; 42 / 13,328 ( < 1 % ) ;
 +-----------------------------+-----------------------+
 
 
-+--------------------------------------------------------------------------+
-; LAB Logic Elements                                                       ;
-+--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 8.75) ; Number of LABs  (Total = 8) ;
-+--------------------------------------------+-----------------------------+
-; 1                                          ; 1                           ;
-; 2                                          ; 2                           ;
-; 3                                          ; 0                           ;
-; 4                                          ; 0                           ;
-; 5                                          ; 1                           ;
-; 6                                          ; 0                           ;
-; 7                                          ; 0                           ;
-; 8                                          ; 0                           ;
-; 9                                          ; 0                           ;
-; 10                                         ; 0                           ;
-; 11                                         ; 0                           ;
-; 12                                         ; 1                           ;
-; 13                                         ; 0                           ;
-; 14                                         ; 0                           ;
-; 15                                         ; 0                           ;
-; 16                                         ; 3                           ;
-+--------------------------------------------+-----------------------------+
++---------------------------------------------------------------------------+
+; LAB Logic Elements                                                        ;
++---------------------------------------------+-----------------------------+
+; Number of Logic Elements  (Average = 11.14) ; Number of LABs  (Total = 7) ;
++---------------------------------------------+-----------------------------+
+; 1                                           ; 1                           ;
+; 2                                           ; 1                           ;
+; 3                                           ; 0                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 0                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 0                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 0                           ;
+; 11                                          ; 0                           ;
+; 12                                          ; 0                           ;
+; 13                                          ; 1                           ;
+; 14                                          ; 1                           ;
+; 15                                          ; 0                           ;
+; 16                                          ; 3                           ;
++---------------------------------------------+-----------------------------+
 
 
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 0.88) ; Number of LABs  (Total = 8) ;
+; LAB-wide Signals  (Average = 1.14) ; Number of LABs  (Total = 7) ;
 +------------------------------------+-----------------------------+
-; 1 Clock                            ; 6                           ;
-; 1 Sync. clear                      ; 1                           ;
+; 1 Clock                            ; 5                           ;
+; 1 Clock enable                     ; 2                           ;
+; 2 Clocks                           ; 1                           ;
 +------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 13.63) ; Number of LABs  (Total = 8) ;
+; Number of Signals Sourced  (Average = 18.71) ; Number of LABs  (Total = 7) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
-; 2                                            ; 3                           ;
+; 2                                            ; 2                           ;
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
 ; 5                                            ; 0                           ;
-; 6                                            ; 1                           ;
+; 6                                            ; 0                           ;
 ; 7                                            ; 0                           ;
 ; 8                                            ; 0                           ;
 ; 9                                            ; 0                           ;
@@ -808,61 +835,70 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 14                                           ; 0                           ;
 ; 15                                           ; 0                           ;
 ; 16                                           ; 0                           ;
-; 17                                           ; 1                           ;
+; 17                                           ; 0                           ;
 ; 18                                           ; 0                           ;
-; 19                                           ; 0                           ;
+; 19                                           ; 1                           ;
 ; 20                                           ; 0                           ;
-; 21                                           ; 0                           ;
+; 21                                           ; 1                           ;
 ; 22                                           ; 0                           ;
 ; 23                                           ; 0                           ;
 ; 24                                           ; 1                           ;
-; 25                                           ; 1                           ;
+; 25                                           ; 0                           ;
 ; 26                                           ; 0                           ;
 ; 27                                           ; 0                           ;
 ; 28                                           ; 0                           ;
 ; 29                                           ; 0                           ;
 ; 30                                           ; 0                           ;
 ; 31                                           ; 1                           ;
+; 32                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 4.63) ; Number of LABs  (Total = 8) ;
+; Number of Signals Sourced Out  (Average = 7.14) ; Number of LABs  (Total = 7) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 2                           ;
-; 2                                               ; 3                           ;
+; 1                                               ; 1                           ;
+; 2                                               ; 2                           ;
 ; 3                                               ; 0                           ;
 ; 4                                               ; 0                           ;
 ; 5                                               ; 0                           ;
 ; 6                                               ; 0                           ;
 ; 7                                               ; 0                           ;
-; 8                                               ; 1                           ;
-; 9                                               ; 1                           ;
+; 8                                               ; 2                           ;
+; 9                                               ; 0                           ;
 ; 10                                              ; 0                           ;
-; 11                                              ; 0                           ;
-; 12                                              ; 1                           ;
+; 11                                              ; 1                           ;
+; 12                                              ; 0                           ;
+; 13                                              ; 0                           ;
+; 14                                              ; 0                           ;
+; 15                                              ; 0                           ;
+; 16                                              ; 0                           ;
+; 17                                              ; 0                           ;
+; 18                                              ; 1                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 5.63) ; Number of LABs  (Total = 8) ;
+; Number of Distinct Inputs  (Average = 6.86) ; Number of LABs  (Total = 7) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
-; 2                                           ; 1                           ;
+; 2                                           ; 0                           ;
 ; 3                                           ; 1                           ;
-; 4                                           ; 1                           ;
+; 4                                           ; 2                           ;
 ; 5                                           ; 1                           ;
-; 6                                           ; 1                           ;
-; 7                                           ; 1                           ;
+; 6                                           ; 0                           ;
+; 7                                           ; 0                           ;
 ; 8                                           ; 1                           ;
 ; 9                                           ; 0                           ;
-; 10                                          ; 1                           ;
+; 10                                          ; 0                           ;
+; 11                                          ; 0                           ;
+; 12                                          ; 2                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -916,22 +952,26 @@ Info (332144): No user constrained base clocks found in the design
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node clk (placed in PIN 17 (CLK0, LVDSCLK0p, Input))
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
+Info (176353): Automatically promoted node FPGA2AR9331:inst|ctrl_clk 
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node FPGA2AR9331:inst|Selector21~0
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X0_Y0 to location X13_Y14
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.45 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.52 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 9 output pins without output pin load capacitance assignment
     Info (306007): Pin "data_out[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -946,13 +986,13 @@ Warning (306006): Found 9 output pins without output pin load capacitance assign
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/output_files/FPGA2AR9331.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 894 megabytes
-    Info: Processing ended: Sat Sep 12 18:09:49 2015
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 890 megabytes
+    Info: Processing ended: Sat Sep 12 19:05:17 2015
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +----------------------------+

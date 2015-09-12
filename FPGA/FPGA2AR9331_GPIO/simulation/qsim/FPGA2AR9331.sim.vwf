@@ -32,6 +32,16 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
+USER_TYPE("|main|FPGA2AR9331:inst|next_state")
+{
+	VALUES = "next_state.IDLE", "next_state.SEND_START", "next_state.SEND_ING_0", "next_state.SEND_ING_1", "next_state.SEND_ING_2", "next_state.SEND_END", "next_state.DELAY_1", "next_state.DELAY_2", "next_state.DELAY_3";
+}
+
+USER_TYPE("|main|FPGA2AR9331:inst|current_state")
+{
+	VALUES = "current_state.IDLE", "current_state.SEND_START", "current_state.SEND_ING_0", "current_state.SEND_ING_1", "current_state.SEND_ING_2", "current_state.SEND_END", "current_state.DELAY_1", "current_state.DELAY_2", "current_state.DELAY_3";
+}
+
 SIGNAL("ack")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -150,6 +160,118 @@ SIGNAL("data_out[0]")
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
 	PARENT = "data_out";
+}
+
+SIGNAL("FPGA2AR9331:inst|len")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("FPGA2AR9331:inst|len[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "FPGA2AR9331:inst|len";
+}
+
+SIGNAL("FPGA2AR9331:inst|len[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "FPGA2AR9331:inst|len";
+}
+
+SIGNAL("FPGA2AR9331:inst|len[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "FPGA2AR9331:inst|len";
+}
+
+SIGNAL("FPGA2AR9331:inst|len[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "FPGA2AR9331:inst|len";
+}
+
+SIGNAL("FPGA2AR9331:inst|len[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "FPGA2AR9331:inst|len";
+}
+
+SIGNAL("FPGA2AR9331:inst|len[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "FPGA2AR9331:inst|len";
+}
+
+SIGNAL("FPGA2AR9331:inst|len[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "FPGA2AR9331:inst|len";
+}
+
+SIGNAL("FPGA2AR9331:inst|len[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "FPGA2AR9331:inst|len";
+}
+
+SIGNAL("FPGA2AR9331:inst|next_state")
+{
+	VALUE_TYPE = ENUM;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+	ENUM_NAME = "|main|FPGA2AR9331:inst|next_state";
+}
+
+SIGNAL("FPGA2AR9331:inst|current_state")
+{
+	VALUE_TYPE = ENUM;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+	ENUM_NAME = "|main|FPGA2AR9331:inst|current_state";
 }
 
 TRANSITION_LIST("ack")
@@ -275,9 +397,11 @@ TRANSITION_LIST("data_out[3]")
 		LEVEL Z FOR 7.5;
 		LEVEL 0 FOR 350.0;
 		LEVEL Z FOR 70.0;
-		LEVEL 0 FOR 330.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 250.0;
 		LEVEL Z FOR 70.0;
-		LEVEL 0 FOR 172.5;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 142.5;
 	}
 }
 
@@ -290,10 +414,13 @@ TRANSITION_LIST("data_out[2]")
 		LEVEL 0 FOR 200.0;
 		LEVEL 1 FOR 150.0;
 		LEVEL Z FOR 70.0;
-		LEVEL 0 FOR 180.0;
-		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 200.0;
+		LEVEL 1 FOR 50.0;
 		LEVEL Z FOR 70.0;
-		LEVEL 0 FOR 172.5;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 142.5;
 	}
 }
 
@@ -304,15 +431,17 @@ TRANSITION_LIST("data_out[1]")
 		REPEAT = 1;
 		LEVEL Z FOR 7.5;
 		LEVEL 0 FOR 100.0;
-		NODE
-		{
-			REPEAT = 2;
-			LEVEL 1 FOR 100.0;
-			LEVEL 0 FOR 100.0;
-			LEVEL 1 FOR 50.0;
-			LEVEL Z FOR 70.0;
-			LEVEL 0 FOR 80.0;
-		}
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL Z FOR 70.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL Z FOR 70.0;
+		LEVEL 0 FOR 80.0;
 		LEVEL 1 FOR 92.5;
 	}
 }
@@ -343,6 +472,214 @@ TRANSITION_LIST("data_out[0]")
 		LEVEL 1 FOR 50.0;
 		LEVEL 0 FOR 50.0;
 		LEVEL 1 FOR 42.5;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|len[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|len[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|len[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|len[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|len[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|len[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 7.5;
+		LEVEL 1 FOR 150.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 270.0;
+			LEVEL 1 FOR 130.0;
+		}
+		LEVEL 0 FOR 42.5;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|len[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 7.5;
+		LEVEL 1 FOR 50.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 100.0;
+			LEVEL 1 FOR 100.0;
+			LEVEL 0 FOR 170.0;
+			LEVEL 1 FOR 30.0;
+		}
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 42.5;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|len[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 57.5;
+		NODE
+		{
+			REPEAT = 2;
+			NODE
+			{
+				REPEAT = 2;
+				LEVEL 1 FOR 50.0;
+				LEVEL 0 FOR 50.0;
+			}
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 150.0;
+		}
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 42.5;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|next_state")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL next_state.IDLE FOR 2.5;
+		LEVEL next_state.SEND_START FOR 10.0;
+		NODE
+		{
+			REPEAT = 6;
+			LEVEL next_state.SEND_ING_0 FOR 10.0;
+			LEVEL next_state.SEND_ING_1 FOR 30.0;
+			LEVEL next_state.SEND_ING_2 FOR 10.0;
+		}
+		LEVEL next_state.SEND_END FOR 40.0;
+		LEVEL next_state.DELAY_1 FOR 10.0;
+		LEVEL next_state.DELAY_2 FOR 40.0;
+		LEVEL next_state.DELAY_3 FOR 10.0;
+		LEVEL next_state.IDLE FOR 10.0;
+		LEVEL next_state.SEND_START FOR 10.0;
+		LEVEL next_state.SEND_ING_0 FOR 10.0;
+		LEVEL next_state.SEND_ING_1 FOR 10.0;
+		NODE
+		{
+			REPEAT = 5;
+			LEVEL next_state.SEND_ING_2 FOR 10.0;
+			LEVEL next_state.SEND_ING_0 FOR 10.0;
+			LEVEL next_state.SEND_ING_1 FOR 30.0;
+		}
+		LEVEL next_state.SEND_ING_2 FOR 10.0;
+		LEVEL next_state.SEND_END FOR 40.0;
+		LEVEL next_state.DELAY_1 FOR 10.0;
+		LEVEL next_state.DELAY_2 FOR 40.0;
+		LEVEL next_state.DELAY_3 FOR 10.0;
+		LEVEL next_state.IDLE FOR 10.0;
+		LEVEL next_state.SEND_START FOR 10.0;
+		LEVEL next_state.SEND_ING_0 FOR 10.0;
+		LEVEL next_state.SEND_ING_1 FOR 10.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL next_state.SEND_ING_2 FOR 10.0;
+			LEVEL next_state.SEND_ING_0 FOR 10.0;
+			LEVEL next_state.SEND_ING_1 FOR 30.0;
+		}
+		LEVEL next_state.SEND_ING_2 FOR 10.0;
+		LEVEL next_state.SEND_ING_0 FOR 10.0;
+		LEVEL next_state.SEND_ING_1 FOR 27.5;
+	}
+}
+
+TRANSITION_LIST("FPGA2AR9331:inst|current_state")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL current_state.IDLE FOR 7.5;
+		LEVEL current_state.SEND_START FOR 10.0;
+		NODE
+		{
+			REPEAT = 6;
+			LEVEL current_state.SEND_ING_0 FOR 10.0;
+			LEVEL current_state.SEND_ING_1 FOR 30.0;
+			LEVEL current_state.SEND_ING_2 FOR 10.0;
+		}
+		LEVEL current_state.SEND_END FOR 40.0;
+		LEVEL current_state.DELAY_1 FOR 10.0;
+		LEVEL current_state.DELAY_2 FOR 40.0;
+		LEVEL current_state.DELAY_3 FOR 10.0;
+		LEVEL current_state.IDLE FOR 10.0;
+		LEVEL current_state.SEND_START FOR 10.0;
+		LEVEL current_state.SEND_ING_0 FOR 10.0;
+		LEVEL current_state.SEND_ING_1 FOR 10.0;
+		NODE
+		{
+			REPEAT = 5;
+			LEVEL current_state.SEND_ING_2 FOR 10.0;
+			LEVEL current_state.SEND_ING_0 FOR 10.0;
+			LEVEL current_state.SEND_ING_1 FOR 30.0;
+		}
+		LEVEL current_state.SEND_ING_2 FOR 10.0;
+		LEVEL current_state.SEND_END FOR 40.0;
+		LEVEL current_state.DELAY_1 FOR 10.0;
+		LEVEL current_state.DELAY_2 FOR 40.0;
+		LEVEL current_state.DELAY_3 FOR 10.0;
+		LEVEL current_state.IDLE FOR 10.0;
+		LEVEL current_state.SEND_START FOR 10.0;
+		LEVEL current_state.SEND_ING_0 FOR 10.0;
+		LEVEL current_state.SEND_ING_1 FOR 10.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL current_state.SEND_ING_2 FOR 10.0;
+			LEVEL current_state.SEND_ING_0 FOR 10.0;
+			LEVEL current_state.SEND_ING_1 FOR 30.0;
+		}
+		LEVEL current_state.SEND_ING_2 FOR 10.0;
+		LEVEL current_state.SEND_ING_0 FOR 10.0;
+		LEVEL current_state.SEND_ING_1 FOR 22.5;
 	}
 }
 
@@ -461,6 +798,114 @@ DISPLAY_LINE
 	TREE_INDEX = 11;
 	TREE_LEVEL = 1;
 	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|len";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 0;
+	CHILDREN = 13, 14, 15, 16, 17, 18, 19, 20;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|len[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|len[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 14;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|len[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 15;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|len[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 16;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|len[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 17;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|len[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 18;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|len[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 19;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|len[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 20;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|next_state";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 21;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "FPGA2AR9331:inst|current_state";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 22;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

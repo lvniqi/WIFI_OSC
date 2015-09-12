@@ -6,4 +6,5 @@ vlib rtl_work
 vmap work rtl_work
 
 vlog -vlog01compat -work work +incdir+E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO {E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/FPGA2AR9331.v}
+vlog -vlog01compat -work work +incdir+E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO {E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/fifo.v}
 

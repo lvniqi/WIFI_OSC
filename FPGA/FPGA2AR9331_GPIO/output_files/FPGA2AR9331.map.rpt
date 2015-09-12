@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA2AR9331
-Sat Sep 12 18:09:41 2015
+Sat Sep 12 19:05:11 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -13,20 +13,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. State Machine - |main|FPGA2AR9331:inst|next_state
- 10. State Machine - |main|FPGA2AR9331:inst|current_state
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2
- 16. Source assignments for fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3
- 17. Parameter Settings for User Entity Instance: FPGA2AR9331:inst
- 18. Parameter Settings for User Entity Instance: fifo:inst1|scfifo:scfifo_component
- 19. scfifo Parameter Settings by Entity Instance
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
+  8. State Machine - |main|FPGA2AR9331:inst|next_state
+  9. State Machine - |main|FPGA2AR9331:inst|current_state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: FPGA2AR9331:inst
+ 14. Port Connectivity Checks: "FPGA2AR9331:inst|fifo_control:comb_3"
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -52,15 +47,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 12 18:09:41 2015            ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 12 19:05:11 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA2AR9331                                      ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 76                                               ;
+; Total logic elements               ; 84                                               ;
 ;     Total combinational functions  ; 68                                               ;
-;     Dedicated logic registers      ; 40                                               ;
-; Total registers                    ; 40                                               ;
+;     Dedicated logic registers      ; 58                                               ;
+; Total registers                    ; 58                                               ;
 ; Total pins                         ; 11                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
@@ -171,30 +166,14 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                       ; Library ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
-; FPGA2AR9331.v                    ; yes             ; User Verilog HDL File              ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/FPGA2AR9331.v          ;         ;
-; main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/main.bdf               ;         ;
-; fifo.v                           ; yes             ; User Wizard-Generated File         ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/fifo.v                 ;         ;
-; scfifo.tdf                       ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/scfifo.tdf       ;         ;
-; a_regfifo.inc                    ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_regfifo.inc    ;         ;
-; a_dpfifo.inc                     ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_dpfifo.inc     ;         ;
-; a_i2fifo.inc                     ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_i2fifo.inc     ;         ;
-; a_fffifo.inc                     ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_fffifo.inc     ;         ;
-; a_f2fifo.inc                     ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/a_f2fifo.inc     ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                       ; g:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc   ;         ;
-; db/scfifo_st21.tdf               ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/db/scfifo_st21.tdf     ;         ;
-; db/a_dpfifo_3431.tdf             ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/db/a_dpfifo_3431.tdf   ;         ;
-; db/a_fefifo_sae.tdf              ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/db/a_fefifo_sae.tdf    ;         ;
-; db/cntr_7l7.tdf                  ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/db/cntr_7l7.tdf        ;         ;
-; db/dpram_av01.tdf                ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/db/dpram_av01.tdf      ;         ;
-; db/altsyncram_suj1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/db/altsyncram_suj1.tdf ;         ;
-; db/altsyncram_uoc1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/db/altsyncram_uoc1.tdf ;         ;
-; db/cntr_rkb.tdf                  ; yes             ; Auto-Generated Megafunction        ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/db/cntr_rkb.tdf        ;         ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+---------+
+; FPGA2AR9331.v                    ; yes             ; User Verilog HDL File              ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/FPGA2AR9331.v ;         ;
+; main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/main.bdf      ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -202,124 +181,94 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 76    ;
+; Estimated Total logic elements              ; 84    ;
 ;                                             ;       ;
 ; Total combinational functions               ; 68    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 24    ;
-;     -- 3 input functions                    ; 10    ;
-;     -- <=2 input functions                  ; 34    ;
+;     -- 4 input functions                    ; 27    ;
+;     -- 3 input functions                    ; 6     ;
+;     -- <=2 input functions                  ; 35    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 50    ;
-;     -- arithmetic mode                      ; 18    ;
+;     -- normal mode                          ; 51    ;
+;     -- arithmetic mode                      ; 17    ;
 ;                                             ;       ;
-; Total registers                             ; 40    ;
-;     -- Dedicated logic registers            ; 40    ;
+; Total registers                             ; 58    ;
+;     -- Dedicated logic registers            ; 58    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 11    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 40    ;
-; Total fan-out                               ; 306   ;
-; Average fan-out                             ; 2.57  ;
+; Maximum fan-out                             ; 50    ;
+; Total fan-out                               ; 342   ;
+; Average fan-out                             ; 2.50  ;
 +---------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                            ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
-; |main                      ; 68 (0)            ; 40 (0)       ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |main                  ; work         ;
-;    |FPGA2AR9331:inst|      ; 68 (68)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FPGA2AR9331:inst ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
+; |main                       ; 68 (0)            ; 58 (0)       ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |main                                      ; work         ;
+;    |FPGA2AR9331:inst|       ; 68 (60)           ; 58 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FPGA2AR9331:inst                     ; work         ;
+;       |fifo_control:comb_3| ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FPGA2AR9331:inst|fifo_control:comb_3 ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                 ;
-+--------+--------------+---------+--------------+--------------+------------------+----------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance  ; IP Include File                                    ;
-+--------+--------------+---------+--------------+--------------+------------------+----------------------------------------------------+
-; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |main|fifo:inst1 ; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/fifo.v ;
-+--------+--------------+---------+--------------+--------------+------------------+----------------------------------------------------+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|FPGA2AR9331:inst|next_state                                                                                                                                                                            ;
++-----------------------+--------------------+--------------------+---------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------+--------------------+
+; Name                  ; next_state.DELAY_2 ; next_state.DELAY_1 ; next_state.SEND_END ; next_state.SEND_ING_2 ; next_state.SEND_ING_1 ; next_state.SEND_ING_0 ; next_state.SEND_START ; next_state.IDLE ; next_state.DELAY_3 ;
++-----------------------+--------------------+--------------------+---------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------+--------------------+
+; next_state.IDLE       ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                     ; 0               ; 0                  ;
+; next_state.SEND_START ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 1                     ; 1               ; 0                  ;
+; next_state.SEND_ING_0 ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 1                     ; 0                     ; 1               ; 0                  ;
+; next_state.SEND_ING_1 ; 0                  ; 0                  ; 0                   ; 0                     ; 1                     ; 0                     ; 0                     ; 1               ; 0                  ;
+; next_state.SEND_ING_2 ; 0                  ; 0                  ; 0                   ; 1                     ; 0                     ; 0                     ; 0                     ; 1               ; 0                  ;
+; next_state.SEND_END   ; 0                  ; 0                  ; 1                   ; 0                     ; 0                     ; 0                     ; 0                     ; 1               ; 0                  ;
+; next_state.DELAY_1    ; 0                  ; 1                  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                     ; 1               ; 0                  ;
+; next_state.DELAY_2    ; 1                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                     ; 1               ; 0                  ;
+; next_state.DELAY_3    ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                     ; 1               ; 1                  ;
++-----------------------+--------------------+--------------------+---------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------+--------------------+
 
 
 Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |main|FPGA2AR9331:inst|next_state                                                                                                                                                    ;
-+-----------------------+--------------------+--------------------+--------------------+---------------------+-----------------------+-----------------------+-----------------------+-----------------+
-; Name                  ; next_state.DELAY_3 ; next_state.DELAY_2 ; next_state.DELAY_1 ; next_state.SEND_END ; next_state.SEND_ING_2 ; next_state.SEND_ING_1 ; next_state.SEND_START ; next_state.IDLE ;
-+-----------------------+--------------------+--------------------+--------------------+---------------------+-----------------------+-----------------------+-----------------------+-----------------+
-; next_state.IDLE       ; 0                  ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 0               ;
-; next_state.SEND_START ; 0                  ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 1                     ; 1               ;
-; next_state.SEND_ING_1 ; 0                  ; 0                  ; 0                  ; 0                   ; 0                     ; 1                     ; 0                     ; 1               ;
-; next_state.SEND_ING_2 ; 0                  ; 0                  ; 0                  ; 0                   ; 1                     ; 0                     ; 0                     ; 1               ;
-; next_state.SEND_END   ; 0                  ; 0                  ; 0                  ; 1                   ; 0                     ; 0                     ; 0                     ; 1               ;
-; next_state.DELAY_1    ; 0                  ; 0                  ; 1                  ; 0                   ; 0                     ; 0                     ; 0                     ; 1               ;
-; next_state.DELAY_2    ; 0                  ; 1                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 1               ;
-; next_state.DELAY_3    ; 1                  ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 1               ;
-+-----------------------+--------------------+--------------------+--------------------+---------------------+-----------------------+-----------------------+-----------------------+-----------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|FPGA2AR9331:inst|current_state                                                                                                                                                                                                       ;
++--------------------------+-----------------------+-----------------------+------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------+-----------------------+
+; Name                     ; current_state.DELAY_2 ; current_state.DELAY_1 ; current_state.SEND_END ; current_state.SEND_ING_2 ; current_state.SEND_ING_1 ; current_state.SEND_ING_0 ; current_state.SEND_START ; current_state.IDLE ; current_state.DELAY_3 ;
++--------------------------+-----------------------+-----------------------+------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------+-----------------------+
+; current_state.IDLE       ; 0                     ; 0                     ; 0                      ; 0                        ; 0                        ; 0                        ; 0                        ; 0                  ; 0                     ;
+; current_state.SEND_START ; 0                     ; 0                     ; 0                      ; 0                        ; 0                        ; 0                        ; 1                        ; 1                  ; 0                     ;
+; current_state.SEND_ING_0 ; 0                     ; 0                     ; 0                      ; 0                        ; 0                        ; 1                        ; 0                        ; 1                  ; 0                     ;
+; current_state.SEND_ING_1 ; 0                     ; 0                     ; 0                      ; 0                        ; 1                        ; 0                        ; 0                        ; 1                  ; 0                     ;
+; current_state.SEND_ING_2 ; 0                     ; 0                     ; 0                      ; 1                        ; 0                        ; 0                        ; 0                        ; 1                  ; 0                     ;
+; current_state.SEND_END   ; 0                     ; 0                     ; 1                      ; 0                        ; 0                        ; 0                        ; 0                        ; 1                  ; 0                     ;
+; current_state.DELAY_1    ; 0                     ; 1                     ; 0                      ; 0                        ; 0                        ; 0                        ; 0                        ; 1                  ; 0                     ;
+; current_state.DELAY_2    ; 1                     ; 0                     ; 0                      ; 0                        ; 0                        ; 0                        ; 0                        ; 1                  ; 0                     ;
+; current_state.DELAY_3    ; 0                     ; 0                     ; 0                      ; 0                        ; 0                        ; 0                        ; 0                        ; 1                  ; 1                     ;
++--------------------------+-----------------------+-----------------------+------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------+-----------------------+
 
 
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |main|FPGA2AR9331:inst|current_state                                                                                                                                                                            ;
-+--------------------------+-----------------------+-----------------------+-----------------------+------------------------+--------------------------+--------------------------+--------------------------+--------------------+
-; Name                     ; current_state.DELAY_3 ; current_state.DELAY_2 ; current_state.DELAY_1 ; current_state.SEND_END ; current_state.SEND_ING_2 ; current_state.SEND_ING_1 ; current_state.SEND_START ; current_state.IDLE ;
-+--------------------------+-----------------------+-----------------------+-----------------------+------------------------+--------------------------+--------------------------+--------------------------+--------------------+
-; current_state.IDLE       ; 0                     ; 0                     ; 0                     ; 0                      ; 0                        ; 0                        ; 0                        ; 0                  ;
-; current_state.SEND_START ; 0                     ; 0                     ; 0                     ; 0                      ; 0                        ; 0                        ; 1                        ; 1                  ;
-; current_state.SEND_ING_1 ; 0                     ; 0                     ; 0                     ; 0                      ; 0                        ; 1                        ; 0                        ; 1                  ;
-; current_state.SEND_ING_2 ; 0                     ; 0                     ; 0                     ; 0                      ; 1                        ; 0                        ; 0                        ; 1                  ;
-; current_state.SEND_END   ; 0                     ; 0                     ; 0                     ; 1                      ; 0                        ; 0                        ; 0                        ; 1                  ;
-; current_state.DELAY_1    ; 0                     ; 0                     ; 1                     ; 0                      ; 0                        ; 0                        ; 0                        ; 1                  ;
-; current_state.DELAY_2    ; 0                     ; 1                     ; 0                     ; 0                      ; 0                        ; 0                        ; 0                        ; 1                  ;
-; current_state.DELAY_3    ; 1                     ; 0                     ; 0                     ; 0                      ; 0                        ; 0                        ; 0                        ; 1                  ;
-+--------------------------+-----------------------+-----------------------+-----------------------+------------------------+--------------------------+--------------------------+--------------------------+--------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                          ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
-; Register name                                                                                                                                 ; Reason for Removal                          ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
-; fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|cntr_rkb:wr_ptr|safe_q[0..10]                              ; Stuck at GND due to stuck port clock        ;
-; fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|cntr_rkb:rd_ptr_count|safe_q[0..10]                        ; Stuck at GND due to stuck port clock        ;
-; fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|a_fefifo_sae:fifo_state|b_full                             ; Stuck at GND due to stuck port clock        ;
-; fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|a_fefifo_sae:fifo_state|b_non_empty                        ; Stuck at GND due to stuck port clock        ;
-; fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|a_fefifo_sae:fifo_state|cntr_7l7:count_usedw|safe_q[0..10] ; Stuck at GND due to stuck port clock        ;
-; FPGA2AR9331:inst|next_state~2                                                                                                                 ; Lost fanout                                 ;
-; FPGA2AR9331:inst|next_state~3                                                                                                                 ; Lost fanout                                 ;
-; FPGA2AR9331:inst|next_state~4                                                                                                                 ; Lost fanout                                 ;
-; FPGA2AR9331:inst|next_state~5                                                                                                                 ; Lost fanout                                 ;
-; FPGA2AR9331:inst|next_state~6                                                                                                                 ; Lost fanout                                 ;
-; FPGA2AR9331:inst|current_state~4                                                                                                              ; Lost fanout                                 ;
-; FPGA2AR9331:inst|current_state~5                                                                                                              ; Lost fanout                                 ;
-; FPGA2AR9331:inst|current_state~6                                                                                                              ; Lost fanout                                 ;
-; FPGA2AR9331:inst|current_state~7                                                                                                              ; Lost fanout                                 ;
-; FPGA2AR9331:inst|current_state~8                                                                                                              ; Lost fanout                                 ;
-; FPGA2AR9331:inst|data_out[0]~en                                                                                                               ; Merged with FPGA2AR9331:inst|data_out[7]~en ;
-; FPGA2AR9331:inst|data_out[1]~en                                                                                                               ; Merged with FPGA2AR9331:inst|data_out[7]~en ;
-; FPGA2AR9331:inst|data_out[2]~en                                                                                                               ; Merged with FPGA2AR9331:inst|data_out[7]~en ;
-; FPGA2AR9331:inst|data_out[3]~en                                                                                                               ; Merged with FPGA2AR9331:inst|data_out[7]~en ;
-; FPGA2AR9331:inst|data_out[4]~en                                                                                                               ; Merged with FPGA2AR9331:inst|data_out[7]~en ;
-; FPGA2AR9331:inst|data_out[5]~en                                                                                                               ; Merged with FPGA2AR9331:inst|data_out[7]~en ;
-; FPGA2AR9331:inst|data_out[6]~en                                                                                                               ; Merged with FPGA2AR9331:inst|data_out[7]~en ;
-; Total Number of Removed Registers = 52                                                                                                        ;                                             ;
-+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                          ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------+------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                     ; Reason for Removal      ; Registers Removed due to This Register                                                                                 ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------+------------------------------------------------------------------------------------------------------------------------+
-; fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|a_fefifo_sae:fifo_state|b_full ; Stuck at GND            ; fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|a_fefifo_sae:fifo_state|b_non_empty ;
-;                                                                                                                   ; due to stuck port clock ;                                                                                                                        ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------+------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; FPGA2AR9331:inst|next_state~2         ; Lost fanout        ;
+; FPGA2AR9331:inst|next_state~3         ; Lost fanout        ;
+; FPGA2AR9331:inst|next_state~4         ; Lost fanout        ;
+; FPGA2AR9331:inst|next_state~6         ; Lost fanout        ;
+; FPGA2AR9331:inst|current_state~4      ; Lost fanout        ;
+; FPGA2AR9331:inst|current_state~5      ; Lost fanout        ;
+; FPGA2AR9331:inst|current_state~6      ; Lost fanout        ;
+; FPGA2AR9331:inst|current_state~8      ; Lost fanout        ;
+; Total Number of Removed Registers = 8 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -327,12 +276,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 40    ;
-; Number of registers using Synchronous Clear  ; 8     ;
+; Total registers                              ; 58    ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 11    ;
+; Number of registers using Clock Enable       ; 18    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -346,24 +295,6 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2 ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                         ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                          ;
-+---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3 ;
-+---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                                     ;
-+---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                      ;
-+---------------------------------+--------------------+------+------------------------------------------------------------------------------------------------------------------------+
-
-
 +---------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: FPGA2AR9331:inst ;
 +----------------+-------+--------------------------------------+
@@ -371,57 +302,24 @@ Encoding Type:  One-Hot
 +----------------+-------+--------------------------------------+
 ; IDLE           ; 00000 ; Unsigned Binary                      ;
 ; SEND_START     ; 00001 ; Unsigned Binary                      ;
-; SEND_ING_1     ; 00010 ; Unsigned Binary                      ;
-; SEND_ING_2     ; 00011 ; Unsigned Binary                      ;
-; SEND_END       ; 00100 ; Unsigned Binary                      ;
-; DELAY_1        ; 00101 ; Unsigned Binary                      ;
-; DELAY_2        ; 00110 ; Unsigned Binary                      ;
-; DELAY_3        ; 00111 ; Unsigned Binary                      ;
+; SEND_ING_0     ; 00010 ; Unsigned Binary                      ;
+; SEND_ING_1     ; 00011 ; Unsigned Binary                      ;
+; SEND_ING_2     ; 00100 ; Unsigned Binary                      ;
+; SEND_END       ; 00101 ; Unsigned Binary                      ;
+; DELAY_1        ; 00110 ; Unsigned Binary                      ;
+; DELAY_2        ; 00111 ; Unsigned Binary                      ;
+; DELAY_3        ; 01000 ; Unsigned Binary                      ;
 +----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: fifo:inst1|scfifo:scfifo_component ;
-+-------------------------+-------------+-----------------------------------------+
-; Parameter Name          ; Value       ; Type                                    ;
-+-------------------------+-------------+-----------------------------------------+
-; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                              ;
-; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                            ;
-; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                            ;
-; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                          ;
-; lpm_width               ; 8           ; Signed Integer                          ;
-; LPM_NUMWORDS            ; 2048        ; Signed Integer                          ;
-; LPM_WIDTHU              ; 11          ; Signed Integer                          ;
-; LPM_SHOWAHEAD           ; OFF         ; Untyped                                 ;
-; UNDERFLOW_CHECKING      ; ON          ; Untyped                                 ;
-; OVERFLOW_CHECKING       ; ON          ; Untyped                                 ;
-; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                 ;
-; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                 ;
-; ALMOST_FULL_VALUE       ; 0           ; Untyped                                 ;
-; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                 ;
-; USE_EAB                 ; ON          ; Untyped                                 ;
-; MAXIMIZE_SPEED          ; 5           ; Untyped                                 ;
-; DEVICE_FAMILY           ; Cyclone II  ; Untyped                                 ;
-; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                 ;
-; CBXI_PARAMETER          ; scfifo_st21 ; Untyped                                 ;
-+-------------------------+-------------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------+
-; scfifo Parameter Settings by Entity Instance                    ;
-+----------------------------+------------------------------------+
-; Name                       ; Value                              ;
-+----------------------------+------------------------------------+
-; Number of entity instances ; 1                                  ;
-; Entity Instance            ; fifo:inst1|scfifo:scfifo_component ;
-;     -- FIFO Type           ; Single Clock                       ;
-;     -- lpm_width           ; 8                                  ;
-;     -- LPM_NUMWORDS        ; 2048                               ;
-;     -- LPM_SHOWAHEAD       ; OFF                                ;
-;     -- USE_EAB             ; ON                                 ;
-+----------------------------+------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FPGA2AR9331:inst|fifo_control:comb_3"                                                                      ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; isfull ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -439,7 +337,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sat Sep 12 18:09:37 2015
+    Info: Processing started: Sat Sep 12 19:05:09 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA2AR9331 -c FPGA2AR9331
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 2 entities, in source file fpga2ar9331.v
@@ -449,80 +347,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file main.bd
     Info (12023): Found entity 1: main
 Info (12021): Found 1 design units, including 1 entities, in source file fifo.v
     Info (12023): Found entity 1: fifo
-Critical Warning (10846): Verilog HDL Instantiation warning at FPGA2AR9331.v(120): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at FPGA2AR9331.v(29): instance has no name
 Info (12127): Elaborating entity "main" for the top level hierarchy
 Info (12128): Elaborating entity "FPGA2AR9331" for hierarchy "FPGA2AR9331:inst"
-Warning (10230): Verilog HDL assignment warning at FPGA2AR9331.v(89): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at FPGA2AR9331.v(112): truncated value with size 32 to match size of target (5)
-Info (10264): Verilog HDL Case Statement information at FPGA2AR9331.v(85): all case item expressions in this case statement are onehot
-Info (12128): Elaborating entity "fifo" for hierarchy "fifo:inst1"
-Info (12128): Elaborating entity "scfifo" for hierarchy "fifo:inst1|scfifo:scfifo_component"
-Info (12130): Elaborated megafunction instantiation "fifo:inst1|scfifo:scfifo_component"
-Info (12133): Instantiated megafunction "fifo:inst1|scfifo:scfifo_component" with the following parameter:
-    Info (12134): Parameter "add_ram_output_register" = "OFF"
-    Info (12134): Parameter "intended_device_family" = "Cyclone II"
-    Info (12134): Parameter "lpm_numwords" = "2048"
-    Info (12134): Parameter "lpm_showahead" = "OFF"
-    Info (12134): Parameter "lpm_type" = "scfifo"
-    Info (12134): Parameter "lpm_width" = "8"
-    Info (12134): Parameter "lpm_widthu" = "11"
-    Info (12134): Parameter "overflow_checking" = "ON"
-    Info (12134): Parameter "underflow_checking" = "ON"
-    Info (12134): Parameter "use_eab" = "ON"
-Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_st21.tdf
-    Info (12023): Found entity 1: scfifo_st21
-Info (12128): Elaborating entity "scfifo_st21" for hierarchy "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated"
-Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_3431.tdf
-    Info (12023): Found entity 1: a_dpfifo_3431
-Info (12128): Elaborating entity "a_dpfifo_3431" for hierarchy "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo"
-Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_sae.tdf
-    Info (12023): Found entity 1: a_fefifo_sae
-Info (12128): Elaborating entity "a_fefifo_sae" for hierarchy "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|a_fefifo_sae:fifo_state"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_7l7.tdf
-    Info (12023): Found entity 1: cntr_7l7
-Info (12128): Elaborating entity "cntr_7l7" for hierarchy "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|a_fefifo_sae:fifo_state|cntr_7l7:count_usedw"
-Info (12021): Found 1 design units, including 1 entities, in source file db/dpram_av01.tdf
-    Info (12023): Found entity 1: dpram_av01
-Info (12128): Elaborating entity "dpram_av01" for hierarchy "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_suj1.tdf
-    Info (12023): Found entity 1: altsyncram_suj1
-Info (12128): Elaborating entity "altsyncram_suj1" for hierarchy "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_uoc1.tdf
-    Info (12023): Found entity 1: altsyncram_uoc1
-Info (12128): Elaborating entity "altsyncram_uoc1" for hierarchy "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_rkb.tdf
-    Info (12023): Found entity 1: cntr_rkb
-Info (12128): Elaborating entity "cntr_rkb" for hierarchy "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|cntr_rkb:rd_ptr_count"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3|q_a[0]"
-        Warning (14320): Synthesized away node "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3|q_a[1]"
-        Warning (14320): Synthesized away node "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3|q_a[2]"
-        Warning (14320): Synthesized away node "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3|q_a[3]"
-        Warning (14320): Synthesized away node "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3|q_a[4]"
-        Warning (14320): Synthesized away node "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3|q_a[5]"
-        Warning (14320): Synthesized away node "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3|q_a[6]"
-        Warning (14320): Synthesized away node "fifo:inst1|scfifo:scfifo_component|scfifo_st21:auto_generated|a_dpfifo_3431:dpfifo|dpram_av01:FIFOram|altsyncram_suj1:altsyncram2|altsyncram_uoc1:altsyncram3|q_a[7]"
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "FPGA2AR9331:inst|data_out[7]" to the node "FPGA2AR9331:inst|data_out[7]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "FPGA2AR9331:inst|data_out[6]" to the node "FPGA2AR9331:inst|data_out[6]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "FPGA2AR9331:inst|data_out[5]" to the node "FPGA2AR9331:inst|data_out[5]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "FPGA2AR9331:inst|data_out[4]" to the node "FPGA2AR9331:inst|data_out[4]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "FPGA2AR9331:inst|data_out[3]" to the node "FPGA2AR9331:inst|data_out[3]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "FPGA2AR9331:inst|data_out[2]" to the node "FPGA2AR9331:inst|data_out[2]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "FPGA2AR9331:inst|data_out[1]" to the node "FPGA2AR9331:inst|data_out[1]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "FPGA2AR9331:inst|data_out[0]" to the node "FPGA2AR9331:inst|data_out[0]" into an OR gate
-Info (17049): 10 registers lost all their fanouts during netlist optimizations.
+Warning (10230): Verilog HDL assignment warning at FPGA2AR9331.v(106): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at FPGA2AR9331.v(135): truncated value with size 32 to match size of target (5)
+Info (10264): Verilog HDL Case Statement information at FPGA2AR9331.v(102): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "fifo_control" for hierarchy "FPGA2AR9331:inst|fifo_control:comb_3"
+Warning (10230): Verilog HDL assignment warning at FPGA2AR9331.v(146): truncated value with size 32 to match size of target (8)
+Warning (10034): Output port "isfull" at FPGA2AR9331.v(144) has no driver
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 87 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 76 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 504 megabytes
-    Info: Processing ended: Sat Sep 12 18:09:41 2015
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info (21061): Implemented 85 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 499 megabytes
+    Info: Processing ended: Sat Sep 12 19:05:11 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

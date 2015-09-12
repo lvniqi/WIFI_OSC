@@ -103,76 +103,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 168 0 344 168)
-	(text "fifo" (rect 80 0 98 16)(font "Arial" (font_size 10)))
-	(text "inst1" (rect 8 152 31 164)(font "Arial" ))
-	(port
-		(pt 0 48)
-		(input)
-		(text "data[7..0]" (rect 0 0 53 14)(font "Arial" (font_size 8)))
-		(text "data[7..0]" (rect 20 41 73 55)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 72)
-		(input)
-		(text "wrreq" (rect 0 0 35 14)(font "Arial" (font_size 8)))
-		(text "wrreq" (rect 20 65 55 79)(font "Arial" (font_size 8)))
-		(line (pt 0 72)(pt 16 72))
-	)
-	(port
-		(pt 0 88)
-		(input)
-		(text "rdreq" (rect 0 0 30 14)(font "Arial" (font_size 8)))
-		(text "rdreq" (rect 20 81 50 95)(font "Arial" (font_size 8)))
-		(line (pt 0 88)(pt 16 88))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
-		(text "clock" (rect 20 105 49 119)(font "Arial" (font_size 8)))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 176 48)
-		(output)
-		(text "q[7..0]" (rect 0 0 35 14)(font "Arial" (font_size 8)))
-		(text "q[7..0]" (rect 127 41 162 55)(font "Arial" (font_size 8)))
-		(line (pt 176 48)(pt 160 48)(line_width 3))
-	)
-	(port
-		(pt 176 72)
-		(output)
-		(text "full" (rect 0 0 16 14)(font "Arial" (font_size 8)))
-		(text "full" (rect 143 65 159 79)(font "Arial" (font_size 8)))
-		(line (pt 176 72)(pt 160 72))
-	)
-	(port
-		(pt 176 88)
-		(output)
-		(text "empty" (rect 0 0 34 14)(font "Arial" (font_size 8)))
-		(text "empty" (rect 128 81 162 95)(font "Arial" (font_size 8)))
-		(line (pt 176 88)(pt 160 88))
-	)
-	(drawing
-		(text "8 bits x 2048 words" (rect 78 133 173 145)(font "Arial" ))
-		(line (pt 16 124)(pt 160 124))
-		(line (pt 16 32)(pt 160 32))
-		(line (pt 160 32)(pt 160 157))
-		(line (pt 160 157)(pt 16 157))
-		(line (pt 16 157)(pt 16 32))
-		(line (pt 0 0)(pt 177 0))
-		(line (pt 177 0)(pt 177 175))
-		(line (pt 0 175)(pt 177 175))
-		(line (pt 0 0)(pt 0 175))
-		(line (pt 0 0)(pt 0 0))
-		(line (pt 0 0)(pt 0 0))
-		(line (pt 0 0)(pt 0 0))
-		(line (pt 0 0)(pt 0 0))
-	)
-)
-(symbol
 	(rect 288 232 464 344)
 	(text "FPGA2AR9331" (rect 5 0 79 12)(font "Arial" ))
 	(text "inst" (rect 8 96 25 108)(font "Arial" ))
@@ -229,34 +159,44 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"SEND_ING_1"
+		"SEND_ING_0"
 		"00010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"SEND_ING_2"
+		"SEND_ING_1"
 		"00011"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"SEND_END"
+		"SEND_ING_2"
 		"00100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"DELAY_1"
+		"SEND_END"
 		"00101"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"DELAY_2"
+		"DELAY_1"
 		"00110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"DELAY_2"
+		"00111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"DELAY_3"
+		"01000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
 		(rectangle (rect 16 16 160 96))
 	)
-	(annotation_block (parameter)(rect 464 120 672 232))
+	(annotation_block (parameter)(rect 464 88 672 232))
 )
 (connector
 	(pt 288 296)

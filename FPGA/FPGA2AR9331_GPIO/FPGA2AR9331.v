@@ -8,17 +8,25 @@ module FPGA2AR9331(input clk,input rst_n,
 					 //input [7:0]data_in,//tttttttttttttt
 					 input en,
 					 //input[7:0] len_in,
-					 input ack,output reg clk_out, output reg [7:0]data_out
+					 input ack,
+					 output reg clk_out,
+					 output reg [7:0]data_out
+					 
 					 );
 	//状态
-	parameter [4:0] IDLE = 3'd0,SEND_START = 1,    
-					SEND_ING_1 = 2,SEND_ING_2 = 3,SEND_END = 4,
-					DELAY_1 = 5,DELAY_2 = 6,DELAY_3 = 7;
-	reg [4:0] current_state,next_state;
+	parameter [4:0] IDLE = 3'd0,SEND_START = 1,SEND_ING_0 = 2,    
+					SEND_ING_1 = 3,SEND_ING_2 = 4,SEND_END = 5,
+					DELAY_1 = 6,DELAY_2 = 7,DELAY_3 = 8;
+	reg [4:0] current_state=IDLE,next_state=IDLE;
 	reg ack_save;
 	reg [7:0] len;
 	//计数器延时
 	reg [4:0] delay_counter;
+	
+	//控制fifo时钟
+	reg ctrl_clk;
+	wire [7:0]data_in;
+	fifo_control(.clk(ctrl_clk),.data(data_in));
 	//第一个进程，同步时序always模块，用于状态转移
 	always @ (posedge clk or negedge rst_n) begin   
 		if(!rst_n) begin 
@@ -32,27 +40,36 @@ module FPGA2AR9331(input clk,input rst_n,
 	always@(posedge clk) begin
 		next_state = IDLE;
 		case (current_state)
+			//空闲状态
 			IDLE: begin 
 				if(en)
 					next_state = SEND_START;
 				else
 					next_state = IDLE;
 				end
+			//开始发送 发送状态数据
 			SEND_START: begin
+				next_state = SEND_ING_0;
+				end
+			//读取数据
+			SEND_ING_0:begin
 				next_state = SEND_ING_1;
 				end
+			//等待反馈
 			SEND_ING_1: begin
 				if(ack != ack_save)
 					next_state = SEND_ING_2;
 				else
 					next_state = SEND_ING_1;
 				end
+			//发送下一个数据
 			SEND_ING_2: begin
 				if(len == 8'b0)
 					next_state = SEND_END;
 				else
-					next_state = SEND_ING_1;
+					next_state = SEND_ING_0;
 				end
+			//发送结束
 			SEND_END: begin
 				if(ack != ack_save)
 					next_state = DELAY_1;
@@ -95,13 +112,19 @@ module FPGA2AR9331(input clk,input rst_n,
 					clk_out <= 1'b1;
 					ack_save <= ack;
 					end
+				SEND_ING_0:begin
+					ctrl_clk <= 1;
+					end
+				SEND_ING_1:begin
+					ctrl_clk <= 0;
+					end
 				SEND_ING_2:begin
 					if(ack != ack_save) begin
-						data_out <= data_out+1'b1;
 						clk_out <= !clk_out;
 						len <=  len-1'b1;
 						ack_save <= ack;
 						end
+					data_out <= data_in;
 					end
 				DELAY_1:begin
 					data_out <= 8'hzz;
@@ -116,6 +139,10 @@ module FPGA2AR9331(input clk,input rst_n,
 	end
 endmodule 
 
-module fifo_control(input clk);
-	fifo(.clock(clk));
+module fifo_control(input clk,
+						  output reg[7:0] data,
+						  output reg isfull);
+	always@(posedge clk)begin
+		data <= data+1;
+		end
 endmodule 
