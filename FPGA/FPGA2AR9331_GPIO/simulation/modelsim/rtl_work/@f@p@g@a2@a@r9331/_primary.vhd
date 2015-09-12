@@ -17,7 +17,9 @@ entity FPGA2AR9331 is
         ack             : in     vl_logic;
         clk_out         : out    vl_logic;
         data_out        : out    vl_logic_vector(7 downto 0);
-        clk_n           : out    vl_logic
+        ack_save        : out    vl_logic;
+        current_state   : out    vl_logic_vector(4 downto 0);
+        next_state      : out    vl_logic_vector(4 downto 0)
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of IDLE : constant is 2;

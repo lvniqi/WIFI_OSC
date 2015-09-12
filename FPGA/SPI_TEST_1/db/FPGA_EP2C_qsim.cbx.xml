@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="FPGA_EP2C_qsim">
+		<CBX_INST_ENTRY INSTANCE_NAME="|FPGA_EP2C|SPI_OUT:inst|lpm_mux:Mux0" CBX_FILE_NAME="mux_cqc.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

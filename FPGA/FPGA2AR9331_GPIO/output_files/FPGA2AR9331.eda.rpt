@@ -1,5 +1,5 @@
 EDA Netlist Writer report for FPGA2AR9331
-Tue Mar 17 16:42:28 2015
+Sat Sep 12 18:09:56 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Mar 17 16:42:28 2015 ;
+; EDA Netlist Writer Status ; Successful - Sat Sep 12 18:09:56 2015 ;
 ; Revision Name             ; FPGA2AR9331                           ;
 ; Top-level Entity Name     ; main                                  ;
 ; Family                    ; Cyclone II                            ;
@@ -50,8 +50,7 @@ applicable agreement for further details.
 ; Option                                                                                            ; Setting                   ;
 +---------------------------------------------------------------------------------------------------+---------------------------+
 ; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
-; Generate netlist for functional simulation only                                                   ; Off                       ;
-; Time scale                                                                                        ; 1 ps                      ;
+; Generate netlist for functional simulation only                                                   ; On                        ;
 ; Truncate long hierarchy paths                                                                     ; Off                       ;
 ; Map illegal HDL characters                                                                        ; Off                       ;
 ; Flatten buses into individual nodes                                                               ; Off                       ;
@@ -66,16 +65,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------+
-; Simulation Generated Files                                               ;
-+--------------------------------------------------------------------------+
-; Generated Files                                                          ;
-+--------------------------------------------------------------------------+
-; E:/WORKSPACE/FPGA/FPGA2AR9331/simulation/modelsim/FPGA2AR9331.vo         ;
-; E:/WORKSPACE/FPGA/FPGA2AR9331/simulation/modelsim/FPGA2AR9331_fast.vo    ;
-; E:/WORKSPACE/FPGA/FPGA2AR9331/simulation/modelsim/FPGA2AR9331_v.sdo      ;
-; E:/WORKSPACE/FPGA/FPGA2AR9331/simulation/modelsim/FPGA2AR9331_v_fast.sdo ;
-+--------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Simulation Generated Files                                                     ;
++--------------------------------------------------------------------------------+
+; Generated Files                                                                ;
++--------------------------------------------------------------------------------+
+; E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/simulation/modelsim/FPGA2AR9331.vo ;
++--------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -84,12 +80,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Mar 17 16:42:27 2015
+    Info: Processing started: Sat Sep 12 18:09:55 2015
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off FPGA2AR9331 -c FPGA2AR9331
-Info (204026): Generated files "FPGA2AR9331.vo", "FPGA2AR9331_fast.vo", "FPGA2AR9331_v.sdo" and "FPGA2AR9331_v_fast.sdo" in directory "E:/WORKSPACE/FPGA/FPGA2AR9331/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file FPGA2AR9331.vo in folder "E:/WORKSPACE/WIFI_OSC/FPGA/FPGA2AR9331_GPIO/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 404 megabytes
-    Info: Processing ended: Tue Mar 17 16:42:28 2015
+    Info: Peak virtual memory: 428 megabytes
+    Info: Processing ended: Sat Sep 12 18:09:56 2015
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
