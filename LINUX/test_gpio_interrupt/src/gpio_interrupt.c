@@ -55,31 +55,32 @@ inline void interrupt_close(void)
 * 输出 : 无
 ***********************************************************************/
 inline void receive_data(gpio_data_frame* data_cache){
-    bool clk_bit;//上次时钟
-	u8 timer;//超时定时
-	u32 data_len;//得到数据计数器
+	u32 timer;//超时定时
+	u32 data_len = 0;//得到数据计数器
 	u32 data_temp = *(GPIO_ADDR_BASE+1);// 第一个 数据
-	clk_bit = data_temp&GPIO_CLK;//记录时钟
+	u32 clk_bit = data_temp&GPIO_CLK;//记录上次时钟
 	*(GPIO_ADDR_BASE+2) ^= GPIO_ACK;//翻转ACK
     data_cache->frame_type = Gpio2Data(data_temp);//得到数据ID
-    //printk("data_id: %d\n",(data_cache->frame_type));//显示数据ID
-	while(1)
-	{
+    printk("data_id: %d\n",(data_cache->frame_type));//显示数据ID
+	while(1){
 		timer = 0;
-		while(((bool)(data_temp&GPIO_CLK) == clk_bit) && timer <200)//CLK如果翻转
-		{
+		while(((data_temp&GPIO_CLK) == clk_bit) && timer <200){//CLK如果翻转
 			data_temp = *(GPIO_ADDR_BASE+1);
 			timer++;
 		}
 		clk_bit = data_temp&GPIO_CLK;//记录时钟
-		if(timer ==200)
-		{
+		if(timer ==200){
+		    *(GPIO_ADDR_BASE+2) ^= GPIO_ACK;//翻转ACK
 			break; //超时跳出
 		}
 		*(GPIO_ADDR_BASE+2) ^= GPIO_ACK;//翻转ACK
 		(data_cache->data)[data_len++] = Gpio2Data(data_temp);
+		if(data_len>3200){
+		    printk("len: %d too long!\n",data_len);
+		    break;
+		}
 	}
-	//printk("i:%d\n",i);
+	//printk("data_cache->len:%d\n",data_len);
 	data_cache->len = data_len;
 }
 /********************************************************************
@@ -93,7 +94,7 @@ irqreturn_t irq_handler(int irqno, void *dev_id) //中断处理函数
 	if(*(GPIO_ADDR_BASE+8))
 	{
 		*(GPIO_ADDR_BASE+5) = 0;//   关闭中断
-		if((data_stream.full) == false)//如果节点未满
+		if((data_stream.full) != true)//如果节点未满
 		{
 			tasklet_schedule(&dso_tasklet);  //  调度tasklet处理程序
 		}
@@ -116,15 +117,15 @@ irqreturn_t irq_handler(int irqno, void *dev_id) //中断处理函数
 * 输出 : 无
 ***********************************************************************/
 static void tasklet_handler (unsigned long data){
+    P_DEBUG("tasklet_handler is running\n");
 	gpio_data_frame* data_real;//实际数据
     void* temp;
     temp = (void*)__get_free_pages(GFP_KERNEL,0);//得到一个虚拟地址
-    //data_real = (gpio_data_frame* )ioremap(temp,4096);
   	SetPageReserved(virt_to_page(temp));//设置标志 告诉系统 内存已占用	
     data_real = temp;
-    //data_real->real_adr = temp;    
 	Gpio_Data_Frame_Init(data_real);
 	receive_data(data_real);
+	P_DEBUG("data len: %d\n",data_real->len);
 	if(!(data_stream.end))// 尾节点为空 添加至尾部
 	{
 		data_stream.end = data_real;
@@ -141,6 +142,7 @@ static void tasklet_handler (unsigned long data){
 	{
 		(data_stream.full) = true;
 	}
+	
 	if(!(data_stream.start))//头节点为空 令头节点等于尾节点
 	{
 		data_stream.start = data_stream.end;
@@ -186,8 +188,7 @@ static void tasklet_handler (unsigned long data){
 		dso_sem.empty = 0;//设置为未读空
 		wake_up_interruptible(&(dso_sem.outq));//唤醒队列
 	}
-	*(GPIO_ADDR_BASE+5) |= GPIO_CLK;//    打开中断
-	*(GPIO_ADDR_BASE+2) ^= GPIO_ACK;//翻转ACK
+	*(GPIO_ADDR_BASE+5) |= GPIO_CLK;//    打开中断*/
 }
 /*-------------------------------------------------------------------------*/
 /********************************************************************
@@ -348,7 +349,7 @@ static int __init gpio_interrupt_init(void){
     Gpio_Data_Stream_Init(&data_stream);//初始化数据流
 	Test_Semaphore_Init(&dso_sem);// 初始化信号量
 	GPIO_ADDR_BASE = ioremap(AR71XX_GPIO_BASE,AR71XX_GPIO_SIZE);
-	P_DEBUG("%x",(unsigned int)GPIO_ADDR_BASE);
+	P_DEBUG("GPIO_ADDR_BASE:%x\n",(unsigned int)GPIO_ADDR_BASE);
 	P_DEBUG("gpio_interrupt init !\n");
 	/*********************************中断部分******************/
 	tasklet_init(&dso_tasklet, tasklet_handler, 0);  //装载任务

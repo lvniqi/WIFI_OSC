@@ -57,7 +57,6 @@ typedef struct _gpio_data_sequeue
 #define TYPE_CH2 2
 #define TYPE_FINISH 255
 #define Gpio_Data_Frame_Init(p)	{(p)->next = 0;(p)->len = 0;\
-    /*(p)->real_adr = NULL;*/\
     (p)->frame_type = TYPE_EMPTY;}
 
 //头尾指针定义
