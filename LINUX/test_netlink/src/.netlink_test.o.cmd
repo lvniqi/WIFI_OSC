@@ -3,24 +3,22 @@ cmd_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_tes
 source_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_test.o := /home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_test.c
 
 deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_test.o := \
-  include/linux/module.h \
-    $(wildcard include/config/module/stripped.h) \
-    $(wildcard include/config/sysfs.h) \
+  include/linux/init.h \
+    $(wildcard include/config/broken/rodata.h) \
+    $(wildcard include/config/lto.h) \
     $(wildcard include/config/modules.h) \
-    $(wildcard include/config/unused/symbols.h) \
-    $(wildcard include/config/module/sig.h) \
-    $(wildcard include/config/generic/bug.h) \
-    $(wildcard include/config/kallsyms.h) \
-    $(wildcard include/config/smp.h) \
-    $(wildcard include/config/tracepoints.h) \
-    $(wildcard include/config/tracing.h) \
-    $(wildcard include/config/event/tracing.h) \
-    $(wildcard include/config/ftrace/mcount/record.h) \
-    $(wildcard include/config/module/unload.h) \
-    $(wildcard include/config/constructors.h) \
-    $(wildcard include/config/debug/set/module/ronx.h) \
-  include/linux/list.h \
-    $(wildcard include/config/debug/list.h) \
+  include/linux/compiler.h \
+    $(wildcard include/config/sparse/rcu/pointer.h) \
+    $(wildcard include/config/trace/branch/profiling.h) \
+    $(wildcard include/config/profile/all/branches.h) \
+    $(wildcard include/config/enable/must/check.h) \
+    $(wildcard include/config/enable/warn/deprecated.h) \
+    $(wildcard include/config/kprobes.h) \
+  include/linux/compiler-gcc.h \
+    $(wildcard include/config/arch/supports/optimized/inlining.h) \
+    $(wildcard include/config/optimize/inlining.h) \
+  include/linux/compiler-gcc4.h \
+    $(wildcard include/config/arch/use/builtin/bswap.h) \
   include/linux/types.h \
     $(wildcard include/config/uid16.h) \
     $(wildcard include/config/lbdaf.h) \
@@ -39,24 +37,9 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
   include/uapi/linux/posix_types.h \
   include/linux/stddef.h \
   include/uapi/linux/stddef.h \
-  include/linux/compiler.h \
-    $(wildcard include/config/sparse/rcu/pointer.h) \
-    $(wildcard include/config/trace/branch/profiling.h) \
-    $(wildcard include/config/profile/all/branches.h) \
-    $(wildcard include/config/enable/must/check.h) \
-    $(wildcard include/config/enable/warn/deprecated.h) \
-    $(wildcard include/config/kprobes.h) \
-  include/linux/compiler-gcc.h \
-    $(wildcard include/config/arch/supports/optimized/inlining.h) \
-    $(wildcard include/config/optimize/inlining.h) \
-  include/linux/compiler-gcc4.h \
-    $(wildcard include/config/arch/use/builtin/bswap.h) \
   arch/mips/include/uapi/asm/posix_types.h \
   arch/mips/include/uapi/asm/sgidefs.h \
   include/uapi/asm-generic/posix_types.h \
-  include/linux/poison.h \
-    $(wildcard include/config/illegal/pointer/value.h) \
-  include/uapi/linux/const.h \
   include/linux/kernel.h \
     $(wildcard include/config/preempt/voluntary.h) \
     $(wildcard include/config/debug/atomic/sleep.h) \
@@ -64,12 +47,15 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/prove/locking.h) \
     $(wildcard include/config/panic/timeout.h) \
     $(wildcard include/config/ring/buffer.h) \
+    $(wildcard include/config/tracing.h) \
+    $(wildcard include/config/ftrace/mcount/record.h) \
   /home/lvniqi/桌面/openwrt/main/staging_dir/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/lib/gcc/mips-openwrt-linux-uclibc/4.8.3/include/stdarg.h \
   include/linux/linkage.h \
   include/linux/stringify.h \
   include/linux/export.h \
     $(wildcard include/config/have/underscore/symbol/prefix.h) \
     $(wildcard include/config/modversions.h) \
+    $(wildcard include/config/unused/symbols.h) \
   arch/mips/include/asm/linkage.h \
   include/linux/bitops.h \
   arch/mips/include/asm/bitops.h \
@@ -80,6 +66,7 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/sgi/ip28.h) \
     $(wildcard include/config/cpu/has/wb.h) \
     $(wildcard include/config/weak/ordering.h) \
+    $(wildcard include/config/smp.h) \
     $(wildcard include/config/weak/reordering/beyond/llsc.h) \
   arch/mips/include/asm/addrspace.h \
     $(wildcard include/config/cpu/r8000.h) \
@@ -87,6 +74,7 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/32bit.h) \
     $(wildcard include/config/kvm/guest.h) \
     $(wildcard include/config/dma/noncoherent.h) \
+  include/uapi/linux/const.h \
   arch/mips/include/uapi/asm/byteorder.h \
   include/linux/byteorder/big_endian.h \
   include/uapi/linux/byteorder/big_endian.h \
@@ -132,9 +120,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/early/printk.h) \
     $(wildcard include/config/printk.h) \
     $(wildcard include/config/dynamic/debug.h) \
-  include/linux/init.h \
-    $(wildcard include/config/broken/rodata.h) \
-    $(wildcard include/config/lto.h) \
   include/linux/kern_levels.h \
   include/linux/cache.h \
     $(wildcard include/config/arch/has/cache/line/size.h) \
@@ -153,6 +138,21 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
   include/uapi/asm-generic/errno-base.h \
   arch/mips/include/asm/div64.h \
   include/asm-generic/div64.h \
+  include/linux/module.h \
+    $(wildcard include/config/module/stripped.h) \
+    $(wildcard include/config/sysfs.h) \
+    $(wildcard include/config/module/sig.h) \
+    $(wildcard include/config/generic/bug.h) \
+    $(wildcard include/config/kallsyms.h) \
+    $(wildcard include/config/tracepoints.h) \
+    $(wildcard include/config/event/tracing.h) \
+    $(wildcard include/config/module/unload.h) \
+    $(wildcard include/config/constructors.h) \
+    $(wildcard include/config/debug/set/module/ronx.h) \
+  include/linux/list.h \
+    $(wildcard include/config/debug/list.h) \
+  include/linux/poison.h \
+    $(wildcard include/config/illegal/pointer/value.h) \
   include/linux/stat.h \
   arch/mips/include/uapi/asm/stat.h \
   include/uapi/linux/stat.h \
@@ -465,6 +465,130 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
   arch/mips/include/asm/uaccess.h \
     $(wildcard include/config/eva.h) \
   arch/mips/include/asm/asm-eva.h \
+  include/linux/fs.h \
+    $(wildcard include/config/fs/posix/acl.h) \
+    $(wildcard include/config/security.h) \
+    $(wildcard include/config/ima.h) \
+    $(wildcard include/config/quota.h) \
+    $(wildcard include/config/fsnotify.h) \
+    $(wildcard include/config/epoll.h) \
+    $(wildcard include/config/file/locking.h) \
+    $(wildcard include/config/auditsyscall.h) \
+    $(wildcard include/config/block.h) \
+    $(wildcard include/config/fs/xip.h) \
+    $(wildcard include/config/direct/io.h) \
+    $(wildcard include/config/migration.h) \
+  include/linux/kdev_t.h \
+  include/uapi/linux/kdev_t.h \
+  include/linux/dcache.h \
+  include/linux/rculist.h \
+  include/linux/rculist_bl.h \
+  include/linux/list_bl.h \
+  include/linux/bit_spinlock.h \
+  include/linux/lockref.h \
+    $(wildcard include/config/arch/use/cmpxchg/lockref.h) \
+  include/linux/path.h \
+  include/linux/list_lru.h \
+  include/linux/radix-tree.h \
+  include/linux/pid.h \
+  include/linux/capability.h \
+  include/uapi/linux/capability.h \
+  include/linux/semaphore.h \
+  include/uapi/linux/fiemap.h \
+  include/linux/shrinker.h \
+  include/linux/migrate_mode.h \
+  include/linux/percpu-rwsem.h \
+  include/linux/blk_types.h \
+    $(wildcard include/config/blk/cgroup.h) \
+    $(wildcard include/config/blk/dev/integrity.h) \
+  include/uapi/linux/fs.h \
+  include/uapi/linux/limits.h \
+  include/uapi/linux/ioctl.h \
+  arch/mips/include/uapi/asm/ioctl.h \
+  include/asm-generic/ioctl.h \
+  include/uapi/asm-generic/ioctl.h \
+  include/linux/quota.h \
+    $(wildcard include/config/quota/netlink/interface.h) \
+  include/linux/percpu_counter.h \
+  include/uapi/linux/dqblk_xfs.h \
+  include/linux/dqblk_v1.h \
+  include/linux/dqblk_v2.h \
+  include/linux/dqblk_qtree.h \
+  include/linux/projid.h \
+  include/uapi/linux/quota.h \
+  include/linux/nfs_fs_i.h \
+  include/linux/fcntl.h \
+  include/uapi/linux/fcntl.h \
+  arch/mips/include/uapi/asm/fcntl.h \
+  include/uapi/asm-generic/fcntl.h \
+  include/linux/vmalloc.h \
+  include/linux/uaccess.h \
+  include/linux/io.h \
+  include/linux/mm.h \
+    $(wildcard include/config/mem/soft/dirty.h) \
+    $(wildcard include/config/x86.h) \
+    $(wildcard include/config/ppc.h) \
+    $(wildcard include/config/parisc.h) \
+    $(wildcard include/config/metag.h) \
+    $(wildcard include/config/stack/growsup.h) \
+    $(wildcard include/config/transparent/hugepage.h) \
+    $(wildcard include/config/ksm.h) \
+    $(wildcard include/config/shmem.h) \
+    $(wildcard include/config/debug/vm/rb.h) \
+    $(wildcard include/config/proc/fs.h) \
+    $(wildcard include/config/debug/pagealloc.h) \
+    $(wildcard include/config/hibernation.h) \
+    $(wildcard include/config/hugetlbfs.h) \
+  include/linux/debug_locks.h \
+    $(wildcard include/config/debug/locking/api/selftests.h) \
+  include/linux/mm_types.h \
+    $(wildcard include/config/split/ptlock/cpus.h) \
+    $(wildcard include/config/arch/enable/split/pmd/ptlock.h) \
+    $(wildcard include/config/have/cmpxchg/double.h) \
+    $(wildcard include/config/have/aligned/struct/page.h) \
+    $(wildcard include/config/want/page/debug/flags.h) \
+    $(wildcard include/config/kmemcheck.h) \
+    $(wildcard include/config/aio.h) \
+    $(wildcard include/config/mmu/notifier.h) \
+  include/linux/auxvec.h \
+  include/uapi/linux/auxvec.h \
+  arch/mips/include/generated/uapi/asm/auxvec.h \
+  include/uapi/asm-generic/auxvec.h \
+  include/linux/page-debug-flags.h \
+    $(wildcard include/config/page/poisoning.h) \
+    $(wildcard include/config/page/guard.h) \
+    $(wildcard include/config/page/debug/something/else.h) \
+  include/linux/uprobes.h \
+    $(wildcard include/config/uprobes.h) \
+  arch/mips/include/asm/mmu.h \
+  include/linux/range.h \
+  include/linux/resource.h \
+  include/uapi/linux/resource.h \
+  arch/mips/include/uapi/asm/resource.h \
+  include/asm-generic/resource.h \
+  include/uapi/asm-generic/resource.h \
+  arch/mips/include/asm/pgtable.h \
+    $(wildcard include/config/cpu/supports/uncached/accelerated.h) \
+  arch/mips/include/asm/pgtable-32.h \
+  arch/mips/include/asm/fixmap.h \
+  include/asm-generic/fixmap.h \
+  include/asm-generic/pgtable-nopmd.h \
+  include/asm-generic/pgtable-nopud.h \
+  include/asm-generic/pgtable.h \
+    $(wildcard include/config/have/arch/soft/dirty.h) \
+  include/linux/page-flags.h \
+    $(wildcard include/config/pageflags/extended.h) \
+    $(wildcard include/config/arch/uses/pg/uncached.h) \
+    $(wildcard include/config/memory/failure.h) \
+    $(wildcard include/config/swap.h) \
+  include/linux/huge_mm.h \
+  include/linux/vmstat.h \
+    $(wildcard include/config/vm/event/counters.h) \
+    $(wildcard include/config/debug/tlbflush.h) \
+    $(wildcard include/config/debug/vm/vmacache.h) \
+  include/linux/vm_event_item.h \
+    $(wildcard include/config/memory/balloon.h) \
+    $(wildcard include/config/balloon/compaction.h) \
   include/net/sock.h \
     $(wildcard include/config/net.h) \
     $(wildcard include/config/net/ns.h) \
@@ -473,8 +597,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/net/rx/busy/poll.h) \
     $(wildcard include/config/xfrm.h) \
     $(wildcard include/config/cgroup/net/prio.h) \
-    $(wildcard include/config/security.h) \
-    $(wildcard include/config/proc/fs.h) \
     $(wildcard include/config/memcg/kmem.h) \
     $(wildcard include/config/inet.h) \
   include/linux/hardirq.h \
@@ -502,7 +624,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/i8259.h) \
   include/linux/irqdomain.h \
     $(wildcard include/config/irq/domain.h) \
-  include/linux/radix-tree.h \
   arch/mips/include/asm/mipsmtregs.h \
   arch/mips/include/asm/mach-ath79/irq.h \
   arch/mips/include/asm/mach-generic/irq.h \
@@ -567,7 +688,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
   include/linux/delay.h \
   arch/mips/include/asm/delay.h \
   include/linux/prefetch.h \
-  include/linux/rculist.h \
   include/linux/dmaengine.h \
     $(wildcard include/config/async/tx/enable/channel/switch.h) \
     $(wildcard include/config/dma/engine.h) \
@@ -578,73 +698,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
   include/linux/scatterlist.h \
     $(wildcard include/config/debug/sg.h) \
     $(wildcard include/config/arch/has/sg/chain.h) \
-  include/linux/mm.h \
-    $(wildcard include/config/mem/soft/dirty.h) \
-    $(wildcard include/config/x86.h) \
-    $(wildcard include/config/ppc.h) \
-    $(wildcard include/config/parisc.h) \
-    $(wildcard include/config/metag.h) \
-    $(wildcard include/config/stack/growsup.h) \
-    $(wildcard include/config/transparent/hugepage.h) \
-    $(wildcard include/config/ksm.h) \
-    $(wildcard include/config/shmem.h) \
-    $(wildcard include/config/debug/vm/rb.h) \
-    $(wildcard include/config/debug/pagealloc.h) \
-    $(wildcard include/config/hibernation.h) \
-    $(wildcard include/config/hugetlbfs.h) \
-  include/linux/debug_locks.h \
-    $(wildcard include/config/debug/locking/api/selftests.h) \
-  include/linux/mm_types.h \
-    $(wildcard include/config/split/ptlock/cpus.h) \
-    $(wildcard include/config/arch/enable/split/pmd/ptlock.h) \
-    $(wildcard include/config/have/cmpxchg/double.h) \
-    $(wildcard include/config/have/aligned/struct/page.h) \
-    $(wildcard include/config/want/page/debug/flags.h) \
-    $(wildcard include/config/kmemcheck.h) \
-    $(wildcard include/config/aio.h) \
-    $(wildcard include/config/mmu/notifier.h) \
-  include/linux/auxvec.h \
-  include/uapi/linux/auxvec.h \
-  arch/mips/include/generated/uapi/asm/auxvec.h \
-  include/uapi/asm-generic/auxvec.h \
-  include/linux/page-debug-flags.h \
-    $(wildcard include/config/page/poisoning.h) \
-    $(wildcard include/config/page/guard.h) \
-    $(wildcard include/config/page/debug/something/else.h) \
-  include/linux/uprobes.h \
-    $(wildcard include/config/uprobes.h) \
-  arch/mips/include/asm/mmu.h \
-  include/linux/range.h \
-  include/linux/bit_spinlock.h \
-  include/linux/shrinker.h \
-  include/linux/resource.h \
-  include/uapi/linux/resource.h \
-  arch/mips/include/uapi/asm/resource.h \
-  include/asm-generic/resource.h \
-  include/uapi/asm-generic/resource.h \
-  arch/mips/include/asm/pgtable.h \
-    $(wildcard include/config/cpu/supports/uncached/accelerated.h) \
-  arch/mips/include/asm/pgtable-32.h \
-  arch/mips/include/asm/fixmap.h \
-  include/asm-generic/fixmap.h \
-  include/asm-generic/pgtable-nopmd.h \
-  include/asm-generic/pgtable-nopud.h \
-  include/asm-generic/pgtable.h \
-    $(wildcard include/config/have/arch/soft/dirty.h) \
-  include/linux/page-flags.h \
-    $(wildcard include/config/pageflags/extended.h) \
-    $(wildcard include/config/arch/uses/pg/uncached.h) \
-    $(wildcard include/config/memory/failure.h) \
-    $(wildcard include/config/swap.h) \
-  include/linux/huge_mm.h \
-  include/linux/vmstat.h \
-    $(wildcard include/config/vm/event/counters.h) \
-    $(wildcard include/config/debug/tlbflush.h) \
-    $(wildcard include/config/debug/vm/vmacache.h) \
-  include/linux/vm_event_item.h \
-    $(wildcard include/config/migration.h) \
-    $(wildcard include/config/memory/balloon.h) \
-    $(wildcard include/config/balloon/compaction.h) \
   arch/mips/include/generated/asm/scatterlist.h \
   include/asm-generic/scatterlist.h \
     $(wildcard include/config/need/sg/dma/length.h) \
@@ -671,14 +724,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/arch/random.h) \
   include/uapi/linux/random.h \
     $(wildcard include/config/fips/rng.h) \
-  include/uapi/linux/ioctl.h \
-  arch/mips/include/uapi/asm/ioctl.h \
-  include/asm-generic/ioctl.h \
-  include/uapi/asm-generic/ioctl.h \
-  include/linux/fcntl.h \
-  include/uapi/linux/fcntl.h \
-  arch/mips/include/uapi/asm/fcntl.h \
-  include/uapi/asm-generic/fcntl.h \
   include/uapi/linux/net.h \
   include/linux/socket.h \
   arch/mips/include/asm/socket.h \
@@ -735,7 +780,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/cgroups.h) \
     $(wildcard include/config/inotify/user.h) \
     $(wildcard include/config/fanotify.h) \
-    $(wildcard include/config/epoll.h) \
     $(wildcard include/config/posix/mqueue.h) \
     $(wildcard include/config/keys.h) \
     $(wildcard include/config/perf/events.h) \
@@ -749,9 +793,7 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/compat/brk.h) \
     $(wildcard include/config/cc/stackprotector.h) \
     $(wildcard include/config/sysvipc.h) \
-    $(wildcard include/config/auditsyscall.h) \
     $(wildcard include/config/rt/mutexes.h) \
-    $(wildcard include/config/block.h) \
     $(wildcard include/config/task/xacct.h) \
     $(wildcard include/config/cpusets.h) \
     $(wildcard include/config/futex.h) \
@@ -763,8 +805,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
     $(wildcard include/config/no/hz/full.h) \
   include/uapi/linux/sched.h \
   include/linux/sched/prio.h \
-  include/linux/capability.h \
-  include/uapi/linux/capability.h \
   include/linux/cputime.h \
   arch/mips/include/generated/asm/cputime.h \
   include/asm-generic/cputime.h \
@@ -793,9 +833,7 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
   arch/mips/include/uapi/asm/siginfo.h \
   include/asm-generic/siginfo.h \
   include/uapi/asm-generic/siginfo.h \
-  include/linux/pid.h \
   include/linux/proportions.h \
-  include/linux/percpu_counter.h \
   include/linux/seccomp.h \
     $(wildcard include/config/seccomp.h) \
     $(wildcard include/config/have/arch/seccomp/filter.h) \
@@ -849,41 +887,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
   include/net/netns/dccp.h \
   include/net/netns/netfilter.h \
   include/linux/proc_fs.h \
-  include/linux/fs.h \
-    $(wildcard include/config/fs/posix/acl.h) \
-    $(wildcard include/config/ima.h) \
-    $(wildcard include/config/quota.h) \
-    $(wildcard include/config/fsnotify.h) \
-    $(wildcard include/config/file/locking.h) \
-    $(wildcard include/config/fs/xip.h) \
-    $(wildcard include/config/direct/io.h) \
-  include/linux/kdev_t.h \
-  include/uapi/linux/kdev_t.h \
-  include/linux/dcache.h \
-  include/linux/rculist_bl.h \
-  include/linux/list_bl.h \
-  include/linux/lockref.h \
-    $(wildcard include/config/arch/use/cmpxchg/lockref.h) \
-  include/linux/path.h \
-  include/linux/list_lru.h \
-  include/linux/semaphore.h \
-  include/uapi/linux/fiemap.h \
-  include/linux/migrate_mode.h \
-  include/linux/percpu-rwsem.h \
-  include/linux/blk_types.h \
-    $(wildcard include/config/blk/cgroup.h) \
-    $(wildcard include/config/blk/dev/integrity.h) \
-  include/uapi/linux/fs.h \
-  include/uapi/linux/limits.h \
-  include/linux/quota.h \
-    $(wildcard include/config/quota/netlink/interface.h) \
-  include/uapi/linux/dqblk_xfs.h \
-  include/linux/dqblk_v1.h \
-  include/linux/dqblk_v2.h \
-  include/linux/dqblk_qtree.h \
-  include/linux/projid.h \
-  include/uapi/linux/quota.h \
-  include/linux/nfs_fs_i.h \
   include/linux/netfilter.h \
     $(wildcard include/config/nf/nat/needed.h) \
   include/uapi/linux/if.h \
@@ -949,7 +952,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_netlink/src/netlink_te
   include/uapi/linux/if_packet.h \
   include/linux/if_link.h \
   include/uapi/linux/if_link.h \
-  include/linux/uaccess.h \
   include/linux/memcontrol.h \
     $(wildcard include/config/memcg/swap.h) \
   include/linux/res_counter.h \
