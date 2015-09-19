@@ -1,0 +1,55 @@
+#ifndef TEST_NETLINK_H_
+#define TEST_NETLINK_H_
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/mman.h>
+#define DEVICE_FILENAME "/dev/DSO_driver"
+#define SHARE_MEM_PAGE_COUNT 1
+#define SHARE_MEM_SIZE (4096*SHARE_MEM_PAGE_COUNT)
+
+#include <sys/socket.h>
+#include <linux/netlink.h>
+
+#define NETLINK_USER 31
+#define MAX_PAYLOAD 100 /* maximum payload size*/
+
+#include "Sequeue.h"
+#define GPIO_DATA_LEN_MAX 4000
+//数据帧定义
+typedef struct _gpio_data_frame
+{
+	struct _gpio_data_frame *next;//下一位置指针
+	u32 len;	//数据包长度
+	u8 frame_type;	//数据类型
+	u8 frame_num;	//数据编号
+	u8 data[GPIO_DATA_LEN_MAX];	//实际数据
+    //void * real_adr;//real address of this data
+} gpio_data_frame;
+#define Stream_Len 20
+typedef struct _frame_sequeue
+{
+	gpio_data_frame* dataspace;
+	u16 front;
+	u16 rear;
+	u16 len;
+	u16 len_max;
+}frame_sequeue;
+extern gpio_data_frame _FRAME_DATA_BASE[Stream_Len];
+#define TYPE_EMPTY 0
+#define TYPE_CH1 1
+#define TYPE_CH2 2
+#define TYPE_FINISH 255
+#define Gpio_Data_Frame_Init(p)	{(p)->next = 0;(p)->len = 0;\
+    (p)->frame_type = TYPE_EMPTY;}
+
+
+extern void netlink_send(int sock,struct msghdr* msg_send,const char* data);
+extern void netlink_send_signal(int sock,struct msghdr* msg_send,const int signal);
+extern int netlink_recv_signal(int sock,struct msghdr* msg_recv);
+extern void netlink_init(void);
+
+#endif

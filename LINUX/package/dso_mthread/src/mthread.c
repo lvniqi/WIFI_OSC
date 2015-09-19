@@ -2,25 +2,7 @@
   *author : lvniqi
   *E-mail : lvniqi@gmail.com
   */
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <signal.h>
-#include <pthread.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/time.h>
-
-#include <unistd.h>
-
-#include "Linklist.h"
-#define MAX 7
-#define UDP_IN_PORT 55554
-#define UDP_PORT 55555
-#define TCP_PORT 55556
+#include "mthread.h"
 pthread_mutex_t count_lock;//自旋锁  
 pthread_cond_t count_nonzero;//条件锁 
 unsigned count = 0;
@@ -35,13 +17,6 @@ int createUdp(int addr_in,int port){
     }
 
     return sock;
-    /*char buff[512];
-    int len = sizeof(addr);
-    while (1){
-        gets(buff);
-        sendto(sock, buff, strlen(buff),
-                0, (struct sockaddr *)&addr, sizeof(addr));
-    }*/
 }
 void sendUdp(socks* p){
     struct sockaddr_in addr;
@@ -58,12 +33,13 @@ void sendUdp(socks* p){
     sendto(p->udp, buff, LEN, 0, 
             (struct sockaddr *)&addr, sizeof(addr));
 }
-void connectTcp(socksfd socks_temp,int addr,int port){
+void connectTcp(int addr,int port){
     struct sockaddr_in sock_tcp;
     int sock_fd;
     #define MAXLINE 4096
     char buf[MAXLINE];
     char str[MAXLINE];
+    #undef MAXLINE
     int result;
     /*防止写入失败*/
     signal(SIGPIPE,SIG_IGN);
@@ -83,9 +59,7 @@ void connectTcp(socksfd socks_temp,int addr,int port){
     /*创建UDPsock*/
     int udp_sock = createUdp(addr,port);
     /* 添加sockfd*/
-    Socksfd_Add(&socks_temp,addr,soc
-
-k_fd,udp_sock);
+    Socksfd_Add(&socks_temp,addr,sock_fd,udp_sock);
 
     while(1) {
         len = recv(sock_fd,buf,200,0);
@@ -178,11 +152,9 @@ void *Udp_recvThread()  {
     pthread_cond_signal(&count_nonzero);
     pthread_mutex_unlock(&count_lock); 
 }  
-int main()
+/*int main()
 {
-        /*
-         * 测试 条件锁
-         */
+        //测试 条件锁
         Socksfd_Init(&socks_temp);
         printf("测试条件锁！\n----\n");
         pthread_t tid1, tid2;
@@ -193,4 +165,4 @@ int main()
         printf("after sleep 1 second begin exit!\n");
         pthread_exit(0);
         return 0;
-}
+}*/

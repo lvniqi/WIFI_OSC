@@ -1,0 +1,24 @@
+#ifndef TEST_NETLINK_H_
+#define TEST_NETLINK_H_
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/mman.h>
+
+#include <sys/socket.h>
+#include <linux/netlink.h>
+
+#define NETLINK_USER 31
+#define MAX_PAYLOAD 100 /* maximum payload size*/
+
+#include "Sequeue.h"
+
+extern void netlink_send(const char* data);
+extern void netlink_send_signal(const int signal);
+extern int netlink_recv_signal(int sock,struct msghdr* msg_recv);
+extern void netlink_init(void);
+
+#endif
