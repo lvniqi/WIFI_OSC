@@ -7,13 +7,216 @@
 #define DRV_DESC	"TEST GPIO Interrupt"
 
 
-u16 major =  253; //定义设备号
+#define NETLINK_USER 31
+u16 DEV_MAJOR =  253; //定义设备号
+const char* DEV_NAME = "DSO_driver";
 static test_semaphore dso_sem;//DSO信号量
 static struct tasklet_struct dso_tasklet; //DSO数据获取任务
 gpio_data_stream data_stream;//数据流
 static unsigned long* GPIO_ADDR_BASE = 0;
-char* temp_p_0 = 0;//test mmap and ioremap
-char* temp_p_1 = 0;//test mmap and ioremap
+struct class *device_class = NULL;
+
+struct sock *nl_sk = NULL;
+int send_pid = 0;
+bool hasSend = false;
+static DEFINE_SPINLOCK(w_lock);//锁初始化
+
+#define SHARE_MEM_PAGE_COUNT 64
+#define SHARE_MEM_SIZE (PAGE_SIZE*SHARE_MEM_PAGE_COUNT)
+frame_sequeue *share_memory=NULL;//test mmap
+
+/********************************************************************
+* 名称 : netlink_send_msg
+* 功能 : netlink发送数据
+* 输入 : 消息 pid
+* 输出 : 无
+***********************************************************************/
+static int netlink_send_msg(const char* msg,int send_pid){
+    int res;
+    struct sk_buff *skb_out;
+    int msg_size = strlen(msg);
+    struct nlmsghdr *nlh;
+    if(send_pid != 0){
+        skb_out = nlmsg_new(msg_size, 0);
+        if (!skb_out){
+            printk(KERN_ERR "Failed to allocate new skb\n");
+            return -1;
+        }
+        nlh = nlmsg_put(skb_out, 0, 0, NLMSG_DONE, msg_size, 0);
+        NETLINK_CB(skb_out).dst_group = 0; /* not in mcast group */
+        strncpy(nlmsg_data(nlh), msg, msg_size);
+        res = nlmsg_unicast(nl_sk, skb_out, send_pid);
+        //nlmsg_free(skb_out);
+        return res;
+    }
+    return -1;
+}
+/********************************************************************
+* 名称 : netlink_send_signal
+* 功能 : netlink发送信号
+* 输入 : 信号 pid
+* 输出 : 无
+***********************************************************************/
+static int netlink_send_signal(const int signal,int send_pid){
+    int res;
+    struct sk_buff *skb_out;
+    int msg_size = sizeof(int);
+    struct nlmsghdr *nlh;
+    if(send_pid != 0){
+        skb_out = nlmsg_new(msg_size, 0);
+        if (!skb_out){
+            printk(KERN_ERR "Failed to allocate new skb\n");
+            return -1;
+        }
+        nlh = nlmsg_put(skb_out, 0, 0, NLMSG_DONE, msg_size, 0);
+        NETLINK_CB(skb_out).dst_group = 0; /* not in mcast group */
+        *((int*)nlmsg_data(nlh)) = signal;
+        res = nlmsg_unicast(nl_sk, skb_out, send_pid);
+        //nlmsg_free(skb_out);
+        return res;
+    }
+    return -1;
+}
+/********************************************************************
+* 名称 : netlink_recv_msg
+* 功能 : netlink接收数据
+* 输入 : 无
+* 输出 : 无
+***********************************************************************/
+static void netlink_recv_msg(struct sk_buff *skb){
+    int res = 0;
+    int code = 0;
+    struct nlmsghdr *nlh;
+    //printk(KERN_INFO "Entering: %s\n", __FUNCTION__);
+    nlh = (struct nlmsghdr *)skb->data;
+    code = *(int *)nlmsg_data(nlh);
+    //printk(KERN_INFO "Netlink received signal payload:%d\n",code);
+    send_pid = nlh->nlmsg_pid; /*pid of sending process */
+    //res = netlink_send_signal(123,send_pid);
+    if(code == 0xffff){
+        //start
+        printk("code == 0xffff!\n");
+        spin_lock_bh(&w_lock);
+        hasSend = false;
+        data_stream.full = false;
+        if(data_stream.irq){
+		    data_stream.irq = false;
+		    printk("start tasklet!\n");
+		    tasklet_schedule(&dso_tasklet);
+		}
+        spin_unlock_bh(&w_lock);
+    }
+    else if(code == 0xfffe){
+        //end
+        send_pid = 0;
+    }
+    else if(code <Stream_Len){
+        //cut length
+        int front_dif = ((code+share_memory->len_max)-share_memory->front)
+            %(share_memory->len_max);
+        spin_lock_bh(&w_lock);
+        hasSend = false;
+        share_memory->front = code;
+        share_memory->len -= front_dif;
+        if(data_stream.full){
+            data_stream.full = false;
+        }
+		if(data_stream.irq){
+		    data_stream.irq = false;
+		    printk("start tasklet!\n");
+		    tasklet_schedule(&dso_tasklet);
+		}
+        spin_unlock_bh(&w_lock);
+    }
+}
+/********************************************************************
+* 名称 : netlink_init
+* 功能 : netlink初始化
+* 输入 : 无
+* 输出 : 无
+***********************************************************************/
+static int __init netlink_init(void){
+    struct netlink_kernel_cfg cfg = { .input = netlink_recv_msg,};
+    printk("Entering: %s\n", __FUNCTION__);
+    nl_sk = netlink_kernel_create(&init_net, NETLINK_USER,&cfg);
+    if (!nl_sk){
+        printk(KERN_ALERT "Error creating socket.\n");
+        return -10;
+    }
+    return 0;
+}
+/********************************************************************
+* 名称 : netlink_exit
+* 功能 : netlink退出
+* 输入 : 无
+* 输出 : 无
+***********************************************************************/
+static void __exit netlink_exit(void){
+    printk(KERN_INFO "exiting hello module\n");
+    netlink_kernel_release(nl_sk);
+}
+/********************************************************************
+* 名称 : mmap_page_init
+* 功能 : mmap_page初始化
+* 输入 : 无
+* 输出 : 无
+***********************************************************************/
+static int __init mmap_page_init(void){
+    share_memory=(void*)__get_free_pages(GFP_KERNEL,6);//得到一个虚拟地址;
+    int lp;
+    for(lp=0;lp<SHARE_MEM_PAGE_COUNT;lp++){
+        SetPageReserved(virt_to_page((char*)share_memory+PAGE_SIZE*lp));//设置标志 告诉系统 内存已占用
+    }
+    Sequeue_Set_Null(share_memory,Stream_Len);
+    /*for(lp=0;lp<SHARE_MEM_PAGE_COUNT;lp++){
+        sprintf((char*)share_memory+PAGE_SIZE*lp,"TEST %d",lp);
+    }*/
+    return 0;
+}
+/********************************************************************
+* 名称 : mmap_page_exit
+* 功能 : mmap退出
+* 输入 : 无
+* 输出 : 无
+***********************************************************************/
+static void __exit mmap_page_exit(void){
+    if(share_memory!=NULL){
+        int lp;
+        for(lp=0;lp<SHARE_MEM_PAGE_COUNT;lp++){
+            ClearPageReserved(virt_to_page((char*)share_memory+PAGE_SIZE*lp));//设置标志 告诉系统 内存已占用
+        }
+        free_pages((u32)share_memory,6);
+        share_memory = NULL;
+    }
+}
+/********************************************************************
+* 名称 : mem_mmap
+* 功能 : 实现mmap功能
+* 输入 : 无
+* 输出 : 无
+***********************************************************************/
+static int mem_mmap(struct file* file_operations,
+        struct vm_area_struct *vma){
+    //间接的控制设备
+    struct mem_dev *dev = file_operations->private_data;
+   	u32 start = (u32)vma->vm_start;
+    u32 size = (u32)(vma->vm_end - vma->vm_start);
+    
+    vma->vm_flags |= (VM_DONTEXPAND | VM_DONTDUMP);
+	printk("mmaptest_mmap called\n");
+	if(size > SHARE_MEM_SIZE)  //用户要映射的区域太大
+		return - EINVAL;
+	//vma->vm_page_prot = pgprot_noncached(vma->vm_page_prot);   //赋nocache标志
+    if(remap_pfn_range(vma,//虚拟内存区域
+        vma->vm_start, //虚拟地址的起始地址
+        virt_to_phys(share_memory)>>PAGE_SHIFT, //物理存储区的物理页号
+     	size,
+		PAGE_SHARED
+        ))
+        return -EAGAIN;
+
+    return 0;
+}
 /********************************************************************
 * 名称 : interrupt_open
 * 功能 : 打开 gpio 中断
@@ -61,7 +264,7 @@ inline void receive_data(gpio_data_frame* data_cache){
 	u32 clk_bit = data_temp&GPIO_CLK;//记录上次时钟
 	*(GPIO_ADDR_BASE+2) ^= GPIO_ACK;//翻转ACK
     data_cache->frame_type = Gpio2Data(data_temp);//得到数据ID
-    printk("data_id: %d\n",(data_cache->frame_type));//显示数据ID
+    //printk("data_id: %d\n",(data_cache->frame_type));//显示数据ID
 	while(1){
 		timer = 0;
 		while(((data_temp&GPIO_CLK) == clk_bit) && timer <200){//CLK如果翻转
@@ -75,7 +278,7 @@ inline void receive_data(gpio_data_frame* data_cache){
 		}
 		*(GPIO_ADDR_BASE+2) ^= GPIO_ACK;//翻转ACK
 		(data_cache->data)[data_len++] = Gpio2Data(data_temp);
-		if(data_len>3200){
+		if(data_len>=4000){
 		    printk("len: %d too long!\n",data_len);
 		    break;
 		}
@@ -117,78 +320,35 @@ irqreturn_t irq_handler(int irqno, void *dev_id) //中断处理函数
 * 输出 : 无
 ***********************************************************************/
 static void tasklet_handler (unsigned long data){
-    P_DEBUG("tasklet_handler is running\n");
-	gpio_data_frame* data_real;//实际数据
-    void* temp;
-    temp = (void*)__get_free_pages(GFP_KERNEL,0);//得到一个虚拟地址
-  	SetPageReserved(virt_to_page(temp));//设置标志 告诉系统 内存已占用	
-    data_real = temp;
-	Gpio_Data_Frame_Init(data_real);
-	receive_data(data_real);
-	P_DEBUG("data len: %d\n",data_real->len);
-	if(!(data_stream.end))// 尾节点为空 添加至尾部
-	{
-		data_stream.end = data_real;
-		(data_stream.len) = 1;
-	}
-	else if(data_stream.len <Stream_Len)//节点未满 继续添加
-	{
-		(data_stream.end)->next = data_real;
-		data_stream.end = data_real;
-		(data_stream.len)++;
-		//printk("data_stream.len:%d\n",data_stream.len);
-	}
-	else//节点满 停止添加 标记符号
-	{
-		(data_stream.full) = true;
-	}
-	
-	if(!(data_stream.start))//头节点为空 令头节点等于尾节点
-	{
-		data_stream.start = data_stream.end;
-		data_stream.now = data_stream.start;
-	}
-	else
-	{
-		void* p_temp;
-		while(
-				(TYPE_FINISH == (data_stream.start)->frame_type)
-				||(
-						((data_stream.start)->next)!= 0 
-						&&
-						(TYPE_FINISH ==((data_stream.start)->next)->frame_type)
-					)
-				 ||(
-						((data_stream.start)->next)!= 0 
-						&&
-						((data_stream.start)->next->next)!= 0 
-						&&
-						(TYPE_FINISH ==((data_stream.start)->next->next)->frame_type)
-					)
-				)//操作已完成
-		{
-			//p_temp = (data_stream.start)->real_adr;
-			p_temp = (data_stream.start);
-			(data_stream.start) = (data_stream.start)->next;//指向下一个节点
-			ClearPageReserved(virt_to_page((p_temp)));//清除标志 告诉系统 内存已释放
-			free_pages((u32)p_temp, 0);//释放内存
-			if((data_stream.start) == 0)//释放完 结束
-			{
-				data_stream.end =0;
-				break;
-			}
-		}
-	}
-	if(!(data_stream.now))//现有节点为空 令现有节点等于尾节点
-	{
-		data_stream.now = data_stream.end;
-	}
-	if(dso_sem.empty == 1)//如果读空
-	{
-		dso_sem.empty = 0;//设置为未读空
-		wake_up_interruptible(&(dso_sem.outq));//唤醒队列
-	}
-	*(GPIO_ADDR_BASE+5) |= GPIO_CLK;//    打开中断*/
+    gpio_data_frame* data_real;
+    int pos;
+    bool isFull;
+    //P_DEBUG("tasklet_handler is running\n");
+	spin_lock_bh(&w_lock);
+	data_real = &Sequeue_Get_Next(share_memory);//实际数据
+    pos = (share_memory)->rear;//得到位置
+    isFull = Sequeue_Full(share_memory);
+    spin_unlock_bh(&w_lock);
+    //如果数据未满
+    if(!isFull){
+        receive_data(data_real);    
+        spin_lock_bh(&w_lock);
+        (share_memory)->rear = (pos +1)%((share_memory)->len_max);
+        ((share_memory)->len)++;
+        spin_unlock_bh(&w_lock);
+    }
+    else{
+        (data_stream.full) = true;        
+    }
+    spin_lock_bh(&w_lock);
+    if(!hasSend){
+        hasSend = true;
+        netlink_send_signal(pos,send_pid);
+    }
+    spin_unlock_bh(&w_lock);
+    
+    *(GPIO_ADDR_BASE+5) |= GPIO_CLK;//    打开中断*/ 
+    
 }
 /*-------------------------------------------------------------------------*/
 /********************************************************************
@@ -201,107 +361,7 @@ int test_open(struct inode *node, struct file *filp){
 	P_DEBUG("open device\n");
 	return 0;
 }
-/********************************************************************
-* 名称 : test_read
-* 功能 : 读取设备
-* 输入 : 无
-* 输出 : 返回实际读取的字节数或错误号
-***********************************************************************/
-ssize_t test_read(struct file *filp, char __user *buf, size_t count, loff_t *offset)
-{
-	int ret;//返回值
-	int i;
-	char temp_addr[20] = {0};//暂存地址
-	if (wait_event_interruptible(dso_sem.outq, dso_sem.empty == 0))//如果没空 不阻塞
-	{
-		return - ERESTARTSYS;  //获取失败 等着
-	}
-	//down_interruptible 函数返回非零值，表示操作被中断，调用者拥有信号量失败  
-	if (down_interruptible(&(dso_sem.sem)))//获取信号量
-	{
-		return - ERESTARTSYS; //获取失败 等着
-	}
-	for(i=0;i<5 && (data_stream.now) != 0;i++)
-	{
-		((gpio_data_frame **)(temp_addr))[i] = (data_stream.now);
-		data_stream.now=(data_stream.now)->next;
-		(data_stream.len)--;
-	}
-	if( i == 0)//没读到
-	{
-		dso_sem.empty = 1;//读空
-	}
-	if(data_stream.irq)
-	{
-		tasklet_schedule(&dso_tasklet);//开启任务
-		data_stream.full = false;
-		data_stream.irq = false;
-	}
-	if (copy_to_user(buf, temp_addr, 20))//从内核复制内存地址 到用户态
-	{
-		ret = - EFAULT;
-	}
-	else
-	{
-		ret = count;
-	}
-	up(&(dso_sem.sem));//释放信号量
-	return ret; //返回实际读取的字节数或错误号
-}
-/********************************************************************
-* 名称 : test_write
-* 功能 : 写入设备
-* 输入 : 无
-* 输出 : 返回实际读取的字节数或错误号
-***********************************************************************/
-ssize_t test_write(struct file *filp, const char __user *buf, size_t count, loff_t *offset)
-{
-	char kbuf[20];
-	int ret;
-	u32 x;
-	/*if(copy_from_user(kbuf, buf, count))
-	{
-		ret = - EFAULT;
-	}
-	else
-	{
-		ret = count;
-		P_DEBUG("kbuf is [%s]\n", kbuf);
-	}
 
-	x = *(GPIO_ADDR_BASE+1);
-	P_DEBUG("GPIO is %d \n", x);*/
-	return ret; //返回实际写入的字节数或错误号
-}
-
-
-/********************************************************************
-* 名称 : mem_mmap
-* 功能 : 实现mmap功能
-* 输入 : 无
-* 输出 : 无
-***********************************************************************/
-static int mem_mmap(struct file* file_operations,
-        struct vm_area_struct *vma){
-    //间接的控制设备
-    struct mem_dev *dev = file_operations->private_data;
-   	u32 start = (u32)vma->vm_start;
-    u32 size = (u32)(vma->vm_end - vma->vm_start);
-	P_DEBUG("mmaptest_mmap called\n");
-	if(size > 4096)  //用户要映射的区域太大
-		return - EINVAL;
-
-	//vma->vm_page_prot = pgprot_noncached(vma->vm_page_prot);   //赋nocache标志
-    if(remap_pfn_range(vma,//虚拟内存区域
-        vma->vm_start, //虚拟地址的起始地址
-        virt_to_phys(temp_p_1)>>PAGE_SHIFT, //物理存储区的物理页号
-     	PAGE_SIZE,
-		PAGE_SHARED
-        ))
-        return -EAGAIN;
-
-    return 0;
-}
 /********************************************************************
 * 名称 : test_close
 * 功能 : 关闭设备
@@ -327,8 +387,6 @@ int test_close(struct inode *node, struct file *filp){
 struct file_operations test_fops = {
 .open = test_open,
 .release = test_close,
-.write = test_write,
-.read = test_read,
 .mmap = mem_mmap,
 };
 
@@ -336,16 +394,14 @@ struct file_operations test_fops = {
 static int __init gpio_interrupt_init(void){
 	int ret;
     int i;
-	register_chrdev(major, "DSO_driver", &test_fops);//注册设备
-	temp_p_0 = (char*)__get_free_pages(GFP_KERNEL, 0); //test mmap
-    P_DEBUG("virtual address: %x\n",(unsigned int)temp_p_0);
-  	SetPageReserved(virt_to_page((void *)temp_p_0));//设置标志 告诉系统 内存已占用
-	P_DEBUG("real address: %x\n",(unsigned int)virt_to_phys(temp_p_0));
-    temp_p_1 = (char*)ioremap(virt_to_phys(temp_p_0),4096);
-    for(i=0;i<4096;i++){
-        temp_p_1[i] = i;
-    }
-    P_DEBUG("real virtual address: %x\n",(unsigned int)temp_p_1);
+	register_chrdev(DEV_MAJOR, DEV_NAME, &test_fops);//注册设备
+	device_class = class_create(THIS_MODULE,DEV_NAME);
+    device_create(device_class, NULL, 
+        MKDEV(DEV_MAJOR, 0), NULL,DEV_NAME);
+    
+    netlink_init();
+    mmap_page_init();
+    
     Gpio_Data_Stream_Init(&data_stream);//初始化数据流
 	Test_Semaphore_Init(&dso_sem);// 初始化信号量
 	GPIO_ADDR_BASE = ioremap(AR71XX_GPIO_BASE,AR71XX_GPIO_SIZE);
@@ -368,9 +424,15 @@ module_init(gpio_interrupt_init);
 /**卸载*/
 static void __exit gpio_interrupt_exit(void){
 	gpio_data_frame* p_temp;
-	unregister_chrdev(major, "DSO_driver");	//卸载设备
-	ClearPageReserved(virt_to_page(temp_p_0));
-    free_pages((u32)temp_p_0,0);
+	device_destroy(device_class,MKDEV(DEV_MAJOR, 0));
+    class_destroy(device_class);
+    
+	unregister_chrdev(DEV_MAJOR, DEV_NAME);	//卸载设备
+    
+    
+    netlink_exit();
+    mmap_page_exit();
+    
     while((data_stream.start) != 0)//操作已完成
 	{
         void* temp;
@@ -396,3 +458,4 @@ MODULE_DESCRIPTION(DRV_DESC);
 MODULE_VERSION(DRV_VERSION);
 MODULE_AUTHOR("Lvniqi <lvniqi@gmail.com>");
 MODULE_LICENSE("GPL v2");
+

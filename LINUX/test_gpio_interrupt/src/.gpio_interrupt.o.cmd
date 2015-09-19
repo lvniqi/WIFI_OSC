@@ -466,6 +466,10 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_gpio_interrupt/src/gpi
   arch/mips/include/asm/uaccess.h \
     $(wildcard include/config/eva.h) \
   arch/mips/include/asm/asm-eva.h \
+  include/linux/fcntl.h \
+  include/uapi/linux/fcntl.h \
+  arch/mips/include/uapi/asm/fcntl.h \
+  include/uapi/asm-generic/fcntl.h \
   include/linux/slab.h \
     $(wildcard include/config/slab/debug.h) \
     $(wildcard include/config/kmemcheck.h) \
@@ -528,10 +532,6 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_gpio_interrupt/src/gpi
   include/linux/projid.h \
   include/uapi/linux/quota.h \
   include/linux/nfs_fs_i.h \
-  include/linux/fcntl.h \
-  include/uapi/linux/fcntl.h \
-  arch/mips/include/uapi/asm/fcntl.h \
-  include/uapi/asm-generic/fcntl.h \
   include/linux/mm.h \
     $(wildcard include/config/mem/soft/dirty.h) \
     $(wildcard include/config/x86.h) \
@@ -742,6 +742,250 @@ deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_gpio_interrupt/src/gpi
   include/linux/selinux.h \
     $(wildcard include/config/security/selinux.h) \
   include/uapi/linux/magic.h \
+  include/net/sock.h \
+    $(wildcard include/config/net.h) \
+    $(wildcard include/config/net/ns.h) \
+    $(wildcard include/config/ipv6.h) \
+    $(wildcard include/config/rps.h) \
+    $(wildcard include/config/net/rx/busy/poll.h) \
+    $(wildcard include/config/xfrm.h) \
+    $(wildcard include/config/cgroup/net/prio.h) \
+    $(wildcard include/config/inet.h) \
+  include/linux/list_nulls.h \
+  include/linux/netdevice.h \
+    $(wildcard include/config/dcb.h) \
+    $(wildcard include/config/wlan.h) \
+    $(wildcard include/config/ax25.h) \
+    $(wildcard include/config/mac80211/mesh.h) \
+    $(wildcard include/config/net/ipip.h) \
+    $(wildcard include/config/net/ipgre.h) \
+    $(wildcard include/config/ipv6/sit.h) \
+    $(wildcard include/config/ipv6/tunnel.h) \
+    $(wildcard include/config/netpoll.h) \
+    $(wildcard include/config/xps.h) \
+    $(wildcard include/config/bql.h) \
+    $(wildcard include/config/rfs/accel.h) \
+    $(wildcard include/config/fcoe.h) \
+    $(wildcard include/config/net/poll/controller.h) \
+    $(wildcard include/config/libfcoe.h) \
+    $(wildcard include/config/wireless/ext.h) \
+    $(wildcard include/config/ethernet/packet/mangle.h) \
+    $(wildcard include/config/vlan/8021q.h) \
+    $(wildcard include/config/net/dsa.h) \
+    $(wildcard include/config/tipc.h) \
+    $(wildcard include/config/net/flow/limit.h) \
+  include/linux/pm_qos.h \
+    $(wildcard include/config/pm.h) \
+    $(wildcard include/config/pm/runtime.h) \
+  include/linux/miscdevice.h \
+  include/uapi/linux/major.h \
+  include/linux/device.h \
+    $(wildcard include/config/debug/devres.h) \
+    $(wildcard include/config/acpi.h) \
+    $(wildcard include/config/pinctrl.h) \
+    $(wildcard include/config/dma/cma.h) \
+    $(wildcard include/config/devtmpfs.h) \
+    $(wildcard include/config/sysfs/deprecated.h) \
+  include/linux/ioport.h \
+  include/linux/klist.h \
+  include/linux/pinctrl/devinfo.h \
+  include/linux/pm.h \
+    $(wildcard include/config/vt/console/sleep.h) \
+    $(wildcard include/config/pm/clk.h) \
+    $(wildcard include/config/pm/generic/domains.h) \
+  include/linux/ratelimit.h \
+  arch/mips/include/asm/device.h \
+  include/linux/pm_wakeup.h \
+  include/linux/prefetch.h \
+  include/linux/dmaengine.h \
+    $(wildcard include/config/async/tx/enable/channel/switch.h) \
+    $(wildcard include/config/dma/engine.h) \
+    $(wildcard include/config/rapidio/dma/engine.h) \
+    $(wildcard include/config/async/tx/dma.h) \
+  include/linux/uio.h \
+  include/uapi/linux/uio.h \
+  include/linux/scatterlist.h \
+    $(wildcard include/config/debug/sg.h) \
+    $(wildcard include/config/arch/has/sg/chain.h) \
+  arch/mips/include/generated/asm/scatterlist.h \
+  include/asm-generic/scatterlist.h \
+    $(wildcard include/config/need/sg/dma/length.h) \
+  include/linux/dynamic_queue_limits.h \
+  include/linux/ethtool.h \
+  include/linux/compat.h \
+    $(wildcard include/config/compat/old/sigaction.h) \
+    $(wildcard include/config/odd/rt/sigaction.h) \
+  include/uapi/linux/ethtool.h \
+  include/linux/if_ether.h \
+  include/linux/skbuff.h \
+    $(wildcard include/config/nf/conntrack.h) \
+    $(wildcard include/config/bridge/netfilter.h) \
+    $(wildcard include/config/ipv6/ndisc/nodetype.h) \
+    $(wildcard include/config/net/sched.h) \
+    $(wildcard include/config/net/cls/act.h) \
+    $(wildcard include/config/network/secmark.h) \
+    $(wildcard include/config/network/phy/timestamping.h) \
+    $(wildcard include/config/netfilter/xt/target/trace.h) \
+    $(wildcard include/config/nf/tables.h) \
+  include/linux/kmemcheck.h \
+  include/linux/net.h \
+  include/linux/random.h \
+    $(wildcard include/config/arch/random.h) \
+  include/uapi/linux/random.h \
+    $(wildcard include/config/fips/rng.h) \
+  include/uapi/linux/net.h \
+  include/linux/socket.h \
+  arch/mips/include/asm/socket.h \
+  arch/mips/include/uapi/asm/socket.h \
+  arch/mips/include/uapi/asm/sockios.h \
+  include/uapi/linux/sockios.h \
+  include/uapi/linux/socket.h \
+  include/linux/textsearch.h \
+  include/net/checksum.h \
+  arch/mips/include/asm/checksum.h \
+  include/linux/in6.h \
+  include/uapi/linux/in6.h \
+  include/uapi/linux/libc-compat.h \
+  include/linux/dma-mapping.h \
+    $(wildcard include/config/has/dma.h) \
+    $(wildcard include/config/arch/has/dma/set/coherent/mask.h) \
+    $(wildcard include/config/have/dma/attrs.h) \
+    $(wildcard include/config/need/dma/map/state.h) \
+  include/linux/dma-attrs.h \
+  include/linux/dma-direction.h \
+  arch/mips/include/asm/dma-mapping.h \
+    $(wildcard include/config/sgi/ip27.h) \
+    $(wildcard include/config/sys/has/dma/ops.h) \
+  include/linux/dma-debug.h \
+    $(wildcard include/config/dma/api/debug.h) \
+  arch/mips/include/asm/dma-coherence.h \
+  include/asm-generic/dma-coherent.h \
+    $(wildcard include/config/have/generic/dma/coherent.h) \
+  arch/mips/include/asm/mach-generic/dma-coherence.h \
+    $(wildcard include/config/swiotlb.h) \
+  include/linux/netdev_features.h \
+  include/net/flow_keys.h \
+  include/uapi/linux/if_ether.h \
+  include/net/net_namespace.h \
+    $(wildcard include/config/ieee802154/6lowpan.h) \
+    $(wildcard include/config/ip/sctp.h) \
+    $(wildcard include/config/ip/dccp.h) \
+    $(wildcard include/config/netfilter.h) \
+    $(wildcard include/config/nf/defrag/ipv6.h) \
+    $(wildcard include/config/wext/core.h) \
+    $(wildcard include/config/ip/vs.h) \
+  include/net/flow.h \
+  include/net/netns/core.h \
+  include/net/netns/mib.h \
+    $(wildcard include/config/xfrm/statistics.h) \
+  include/net/snmp.h \
+  include/uapi/linux/snmp.h \
+  include/linux/u64_stats_sync.h \
+  include/net/netns/unix.h \
+  include/net/netns/packet.h \
+  include/net/netns/ipv4.h \
+    $(wildcard include/config/ip/multiple/tables.h) \
+    $(wildcard include/config/ip/route/classid.h) \
+    $(wildcard include/config/ip/mroute.h) \
+    $(wildcard include/config/ip/mroute/multiple/tables.h) \
+  include/net/inet_frag.h \
+  include/net/netns/ipv6.h \
+    $(wildcard include/config/ipv6/multiple/tables.h) \
+    $(wildcard include/config/ipv6/mroute.h) \
+    $(wildcard include/config/ipv6/mroute/multiple/tables.h) \
+  include/net/dst_ops.h \
+  include/net/netns/ieee802154_6lowpan.h \
+  include/net/netns/sctp.h \
+  include/net/netns/dccp.h \
+  include/net/netns/netfilter.h \
+  include/linux/proc_fs.h \
+  include/linux/netfilter.h \
+    $(wildcard include/config/nf/nat/needed.h) \
+  include/uapi/linux/if.h \
+  include/uapi/linux/hdlc/ioctl.h \
+  include/linux/in.h \
+  include/uapi/linux/in.h \
+  include/uapi/linux/netfilter.h \
+  include/net/netns/x_tables.h \
+    $(wildcard include/config/bridge/nf/ebtables.h) \
+  include/net/netns/conntrack.h \
+    $(wildcard include/config/nf/conntrack/proc/compat.h) \
+    $(wildcard include/config/nf/conntrack/events.h) \
+    $(wildcard include/config/nf/conntrack/labels.h) \
+  include/linux/netfilter/nf_conntrack_tcp.h \
+  include/uapi/linux/netfilter/nf_conntrack_tcp.h \
+  include/net/netns/nftables.h \
+  include/net/netns/xfrm.h \
+  include/uapi/linux/xfrm.h \
+  include/net/flowcache.h \
+  include/linux/seq_file_net.h \
+  include/linux/seq_file.h \
+  include/linux/nsproxy.h \
+  include/net/dsa.h \
+  include/linux/of.h \
+    $(wildcard include/config/sparc.h) \
+    $(wildcard include/config/of/dynamic.h) \
+    $(wildcard include/config/of.h) \
+    $(wildcard include/config/attach/node.h) \
+    $(wildcard include/config/detach/node.h) \
+    $(wildcard include/config/add/property.h) \
+    $(wildcard include/config/remove/property.h) \
+    $(wildcard include/config/update/property.h) \
+    $(wildcard include/config/of/resolve.h) \
+  include/linux/mod_devicetable.h \
+  include/linux/uuid.h \
+  include/uapi/linux/uuid.h \
+  include/linux/phy.h \
+    $(wildcard include/config/mdio/boardinfo.h) \
+  include/linux/mii.h \
+  include/uapi/linux/mii.h \
+  include/linux/phy_fixed.h \
+    $(wildcard include/config/fixed/phy.h) \
+  include/net/netprio_cgroup.h \
+  include/linux/cgroup.h \
+  include/uapi/linux/cgroupstats.h \
+  include/uapi/linux/taskstats.h \
+  include/linux/percpu-refcount.h \
+  include/uapi/linux/neighbour.h \
+  include/linux/netlink.h \
+  include/net/scm.h \
+    $(wildcard include/config/security/network.h) \
+  include/linux/security.h \
+    $(wildcard include/config/fw/loader/user/helper.h) \
+    $(wildcard include/config/security/path.h) \
+    $(wildcard include/config/security/network/xfrm.h) \
+    $(wildcard include/config/securityfs.h) \
+    $(wildcard include/config/security/yama.h) \
+  include/uapi/linux/netlink.h \
+  include/uapi/linux/netdevice.h \
+  include/uapi/linux/if_packet.h \
+  include/linux/if_link.h \
+  include/uapi/linux/if_link.h \
+  include/linux/uaccess.h \
+  include/linux/memcontrol.h \
+    $(wildcard include/config/memcg/swap.h) \
+  include/linux/res_counter.h \
+  include/linux/aio.h \
+  include/uapi/linux/aio_abi.h \
+  include/linux/filter.h \
+    $(wildcard include/config/bpf/jit.h) \
+  arch/mips/include/asm/cacheflush.h \
+  include/uapi/linux/filter.h \
+  include/uapi/linux/bpf_common.h \
+  include/uapi/linux/bpf.h \
+  include/linux/rculist_nulls.h \
+  include/linux/poll.h \
+  include/uapi/linux/poll.h \
+  arch/mips/include/uapi/asm/poll.h \
+  include/uapi/asm-generic/poll.h \
+  include/net/dst.h \
+  include/linux/rtnetlink.h \
+  include/uapi/linux/rtnetlink.h \
+  include/uapi/linux/if_addr.h \
+  include/net/neighbour.h \
+  include/net/rtnetlink.h \
+  include/net/netlink.h \
+  include/uapi/linux/net_tstamp.h \
   /home/lvniqi/桌面/openwrt/main/package/kernel/test_gpio_interrupt/src/Sequeue.h \
 
 /home/lvniqi/桌面/openwrt/main/package/kernel/test_gpio_interrupt/src/gpio_interrupt.o: $(deps_/home/lvniqi/桌面/openwrt/main/package/kernel/test_gpio_interrupt/src/gpio_interrupt.o)

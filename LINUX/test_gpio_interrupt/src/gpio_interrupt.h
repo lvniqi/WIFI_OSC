@@ -4,6 +4,10 @@
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/module.h>
+
+#include <linux/errno.h>
+#include <linux/fcntl.h>
+
 #include <linux/slab.h>   /* kmalloc() */
 #include <linux/fs.h>
 #include <asm/uaccess.h>//用于支持地址检测
@@ -17,7 +21,16 @@
 #include <linux/wait.h>  
 #include <asm/io.h>
 
+
+
 #include <linux/list.h>
+
+#include <net/sock.h>
+#include <linux/netlink.h>
+#include <linux/skbuff.h>
+#include <linux/device.h>
+
+#include <linux/spinlock.h>
 
 #include "Sequeue.h"
 //测试模式
@@ -44,14 +57,15 @@ typedef struct _gpio_data_frame
 	u8 data[GPIO_DATA_LEN_MAX];	//实际数据
     //void * real_adr;//real address of this data
 } gpio_data_frame;
-typedef struct _gpio_data_sequeue
+#define Stream_Len 64
+typedef struct _frame_sequeue
 {
-	float* dataspace;
+	gpio_data_frame dataspace[Stream_Len];
 	u16 front;
 	u16 rear;
 	u16 len;
 	u16 len_max;
-}gpio_data_sequeue;
+}frame_sequeue;
 #define TYPE_EMPTY 0
 #define TYPE_CH1 1
 #define TYPE_CH2 2
@@ -69,7 +83,6 @@ typedef struct _gpio_data_stream
 	bool full;//满标志
 	bool irq;//流已满却触发了中断
 }gpio_data_stream;
-#define Stream_Len 20
 #define Gpio_Data_Stream_Init(p) {(p)->start = NULL;(p)->now = NULL;(p)->end = NULL;(p)->len = 0;(p)->irq = false;(p)->full = false;}
 
 

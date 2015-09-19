@@ -25,9 +25,14 @@
 #define MMAPNOPAGE_DEV_NAME "mmapnopage"
 #define MMAPNOPAGE_DEV_MAJOR 240
 
-#define SHARE_MEM_PAGE_COUNT 4
+#define SHARE_MEM_PAGE_COUNT 32
 #define SHARE_MEM_SIZE (PAGE_SIZE*SHARE_MEM_PAGE_COUNT)
 char *share_memory=NULL;
+struct class *myclass = NULL;
+
+
+struct sock *nl_sk = NULL;
+int send_pid = 0;
 /********************************************************************
 * 名称 : mem_mmap
 * 功能 : 实现mmap功能
@@ -49,7 +54,7 @@ static int mem_mmap(struct file* file_operations,
     if(remap_pfn_range(vma,//虚拟内存区域
         vma->vm_start, //虚拟地址的起始地址
         virt_to_phys(share_memory)>>PAGE_SHIFT, //物理存储区的物理页号
-     	SHARE_MEM_SIZE,
+     	size,
 		PAGE_SHARED
         ))
         return -EAGAIN;
@@ -62,8 +67,7 @@ struct file_operations mmapnopage_fops={
     .owner=THIS_MODULE,
     .mmap=mem_mmap,
 };
-int mmapnopage_init(void)
-{
+int mmapnopage_init(void){
     int lp;
     int result;
     printk("Entering: %s\n", __FUNCTION__);
@@ -73,36 +77,35 @@ int mmapnopage_init(void)
     if(result<0){
         return result;
     }
+    myclass = class_create(THIS_MODULE,MMAPNOPAGE_DEV_NAME);
+    device_create(myclass, NULL, 
+        MKDEV(MMAPNOPAGE_DEV_MAJOR, 0), NULL,MMAPNOPAGE_DEV_NAME);
     
-    share_memory=(void*)__get_free_pages(GFP_KERNEL,2);//得到一个虚拟地址;
-    
-    SetPageReserved(virt_to_page(share_memory));//设置标志 告诉系统 内存已占用
-    /*for(lp=0;lp<SHARE_MEM_PAGE_COUNT;lp++){
+    share_memory=(void*)__get_free_pages(GFP_KERNEL,5);//得到一个虚拟地址;
+    for(lp=0;lp<SHARE_MEM_PAGE_COUNT;lp++){
         SetPageReserved(virt_to_page(share_memory+PAGE_SIZE*lp));//设置标志 告诉系统 内存已占用
-    }*/
+    }
     for(lp=0;lp<SHARE_MEM_PAGE_COUNT;lp++){
         sprintf(share_memory+PAGE_SIZE*lp,"TEST %d",lp);
     }
     return 0;
 }
-void mmapnopage_exit(void)
-{
+void mmapnopage_exit(void){
     printk("Exiting: %s\n", __FUNCTION__);
     if(share_memory!=NULL){
         int lp;
-        ClearPageReserved(virt_to_page(share_memory));
-        /*for(lp=0;lp<SHARE_MEM_PAGE_COUNT;lp++){
-            ClearPageReserved(virt_to_page(share_memory+PAGE_SIZE*lp));//设置标志 清除系统占用
-        }*/
-        free_pages((u32)share_memory,2);
+        for(lp=0;lp<SHARE_MEM_PAGE_COUNT;lp++){
+            ClearPageReserved(virt_to_page(share_memory+PAGE_SIZE*lp));//设置标志 告诉系统 内存已占用
+        }
+        free_pages((u32)share_memory,5);
         share_memory = NULL;
     }
+    device_destroy(myclass,MKDEV(MMAPNOPAGE_DEV_MAJOR, 0));
+    class_destroy(myclass);
     unregister_chrdev(MMAPNOPAGE_DEV_MAJOR,
             MMAPNOPAGE_DEV_NAME);
 }
 
-struct sock *nl_sk = NULL;
-int send_pid = 0;
 static int netlink_send_msg(char* msg){
     int res;
     struct sk_buff *skb_out;

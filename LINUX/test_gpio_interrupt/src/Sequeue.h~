@@ -95,10 +95,7 @@ typedef struct _float_sequeue
 	(sq)->rear = ((sq)->rear +1)%((sq)->len_max);	\
     ((sq)->len)++;						\
 }
-/*得到该插入的*/
-#define Sequeue_Get_Next(sq)	\
-	(((sq)->dataspace)[(sq)->rear])
-	
+
 /*出队 警告！ 不是POP*/
 #define Sequeue_Out_Queue(sq)	\
 {								\
