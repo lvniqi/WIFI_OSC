@@ -1,5 +1,0 @@
-config GPIO_interrupt
-	tristate "TEST GPIO INTERRUPT modules"
-	depends on TARGET_ar71xx
-	help
-	  TEST GPIO INTERRUPT modules
