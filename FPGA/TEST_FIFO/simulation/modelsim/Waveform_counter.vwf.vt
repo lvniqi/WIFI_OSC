@@ -1,0 +1,525 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "10/01/2015 17:57:17"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    fifo_counter
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module fifo_counter_vlg_sample_tst(
+	clk,
+	read,
+	rst_n,
+	sampler_tx
+);
+input  clk;
+input  read;
+input  rst_n;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(clk or read or rst_n)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module fifo_counter_vlg_check_tst (
+	counter,
+	r_en,
+	w_en,
+	sampler_rx
+);
+input [15:0] counter;
+input  r_en;
+input  w_en;
+input sampler_rx;
+
+reg [15:0] counter_expected;
+reg  r_en_expected;
+reg  w_en_expected;
+
+reg [15:0] counter_prev;
+reg  r_en_prev;
+reg  w_en_prev;
+
+reg [15:0] counter_expected_prev;
+reg  r_en_expected_prev;
+reg  w_en_expected_prev;
+
+reg [15:0] last_counter_exp;
+reg  last_r_en_exp;
+reg  last_w_en_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:3] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 3'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	counter_prev = counter;
+	r_en_prev = r_en;
+	w_en_prev = w_en;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	counter_expected_prev = counter_expected;
+	r_en_expected_prev = r_en_expected;
+	w_en_expected_prev = w_en_expected;
+end
+
+
+
+// expected r_en
+initial
+begin
+	r_en_expected = 1'bX;
+end 
+
+// expected w_en
+initial
+begin
+	w_en_expected = 1'bX;
+end 
+// expected counter[ 15 ]
+initial
+begin
+	counter_expected[15] = 1'bX;
+end 
+// expected counter[ 14 ]
+initial
+begin
+	counter_expected[14] = 1'bX;
+end 
+// expected counter[ 13 ]
+initial
+begin
+	counter_expected[13] = 1'bX;
+end 
+// expected counter[ 12 ]
+initial
+begin
+	counter_expected[12] = 1'bX;
+end 
+// expected counter[ 11 ]
+initial
+begin
+	counter_expected[11] = 1'bX;
+end 
+// expected counter[ 10 ]
+initial
+begin
+	counter_expected[10] = 1'bX;
+end 
+// expected counter[ 9 ]
+initial
+begin
+	counter_expected[9] = 1'bX;
+end 
+// expected counter[ 8 ]
+initial
+begin
+	counter_expected[8] = 1'bX;
+end 
+// expected counter[ 7 ]
+initial
+begin
+	counter_expected[7] = 1'bX;
+end 
+// expected counter[ 6 ]
+initial
+begin
+	counter_expected[6] = 1'bX;
+end 
+// expected counter[ 5 ]
+initial
+begin
+	counter_expected[5] = 1'bX;
+end 
+// expected counter[ 4 ]
+initial
+begin
+	counter_expected[4] = 1'bX;
+end 
+// expected counter[ 3 ]
+initial
+begin
+	counter_expected[3] = 1'bX;
+end 
+// expected counter[ 2 ]
+initial
+begin
+	counter_expected[2] = 1'bX;
+end 
+// expected counter[ 1 ]
+initial
+begin
+	counter_expected[1] = 1'bX;
+end 
+// expected counter[ 0 ]
+initial
+begin
+	counter_expected[0] = 1'bX;
+end 
+// generate trigger
+always @(counter_expected or counter or r_en_expected or r_en or w_en_expected or w_en)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected counter = %b | expected r_en = %b | expected w_en = %b | ",counter_expected_prev,r_en_expected_prev,w_en_expected_prev);
+	$display("| real counter = %b | real r_en = %b | real w_en = %b | ",counter_prev,r_en_prev,w_en_prev);
+`endif
+	if (
+		( counter_expected_prev[0] !== 1'bx ) && ( counter_prev[0] !== counter_expected_prev[0] )
+		&& ((counter_expected_prev[0] !== last_counter_exp[0]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[0] = counter_expected_prev[0];
+	end
+	if (
+		( counter_expected_prev[1] !== 1'bx ) && ( counter_prev[1] !== counter_expected_prev[1] )
+		&& ((counter_expected_prev[1] !== last_counter_exp[1]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[1] = counter_expected_prev[1];
+	end
+	if (
+		( counter_expected_prev[2] !== 1'bx ) && ( counter_prev[2] !== counter_expected_prev[2] )
+		&& ((counter_expected_prev[2] !== last_counter_exp[2]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[2] = counter_expected_prev[2];
+	end
+	if (
+		( counter_expected_prev[3] !== 1'bx ) && ( counter_prev[3] !== counter_expected_prev[3] )
+		&& ((counter_expected_prev[3] !== last_counter_exp[3]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[3] = counter_expected_prev[3];
+	end
+	if (
+		( counter_expected_prev[4] !== 1'bx ) && ( counter_prev[4] !== counter_expected_prev[4] )
+		&& ((counter_expected_prev[4] !== last_counter_exp[4]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[4] = counter_expected_prev[4];
+	end
+	if (
+		( counter_expected_prev[5] !== 1'bx ) && ( counter_prev[5] !== counter_expected_prev[5] )
+		&& ((counter_expected_prev[5] !== last_counter_exp[5]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[5] = counter_expected_prev[5];
+	end
+	if (
+		( counter_expected_prev[6] !== 1'bx ) && ( counter_prev[6] !== counter_expected_prev[6] )
+		&& ((counter_expected_prev[6] !== last_counter_exp[6]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[6] = counter_expected_prev[6];
+	end
+	if (
+		( counter_expected_prev[7] !== 1'bx ) && ( counter_prev[7] !== counter_expected_prev[7] )
+		&& ((counter_expected_prev[7] !== last_counter_exp[7]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[7] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[7] = counter_expected_prev[7];
+	end
+	if (
+		( counter_expected_prev[8] !== 1'bx ) && ( counter_prev[8] !== counter_expected_prev[8] )
+		&& ((counter_expected_prev[8] !== last_counter_exp[8]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[8] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[8] = counter_expected_prev[8];
+	end
+	if (
+		( counter_expected_prev[9] !== 1'bx ) && ( counter_prev[9] !== counter_expected_prev[9] )
+		&& ((counter_expected_prev[9] !== last_counter_exp[9]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[9] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[9] = counter_expected_prev[9];
+	end
+	if (
+		( counter_expected_prev[10] !== 1'bx ) && ( counter_prev[10] !== counter_expected_prev[10] )
+		&& ((counter_expected_prev[10] !== last_counter_exp[10]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[10] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[10] = counter_expected_prev[10];
+	end
+	if (
+		( counter_expected_prev[11] !== 1'bx ) && ( counter_prev[11] !== counter_expected_prev[11] )
+		&& ((counter_expected_prev[11] !== last_counter_exp[11]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[11] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[11] = counter_expected_prev[11];
+	end
+	if (
+		( counter_expected_prev[12] !== 1'bx ) && ( counter_prev[12] !== counter_expected_prev[12] )
+		&& ((counter_expected_prev[12] !== last_counter_exp[12]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[12] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[12] = counter_expected_prev[12];
+	end
+	if (
+		( counter_expected_prev[13] !== 1'bx ) && ( counter_prev[13] !== counter_expected_prev[13] )
+		&& ((counter_expected_prev[13] !== last_counter_exp[13]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[13] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[13] = counter_expected_prev[13];
+	end
+	if (
+		( counter_expected_prev[14] !== 1'bx ) && ( counter_prev[14] !== counter_expected_prev[14] )
+		&& ((counter_expected_prev[14] !== last_counter_exp[14]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[14] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[14] = counter_expected_prev[14];
+	end
+	if (
+		( counter_expected_prev[15] !== 1'bx ) && ( counter_prev[15] !== counter_expected_prev[15] )
+		&& ((counter_expected_prev[15] !== last_counter_exp[15]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port counter[15] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", counter_expected_prev);
+		$display ("     Real value = %b", counter_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_counter_exp[15] = counter_expected_prev[15];
+	end
+	if (
+		( r_en_expected_prev !== 1'bx ) && ( r_en_prev !== r_en_expected_prev )
+		&& ((r_en_expected_prev !== last_r_en_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port r_en :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", r_en_expected_prev);
+		$display ("     Real value = %b", r_en_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_r_en_exp = r_en_expected_prev;
+	end
+	if (
+		( w_en_expected_prev !== 1'bx ) && ( w_en_prev !== w_en_expected_prev )
+		&& ((w_en_expected_prev !== last_w_en_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port w_en :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", w_en_expected_prev);
+		$display ("     Real value = %b", w_en_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_w_en_exp = w_en_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module fifo_counter_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg read;
+reg rst_n;
+// wires                                               
+wire [15:0] counter;
+wire r_en;
+wire w_en;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+fifo_counter i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.counter(counter),
+	.r_en(r_en),
+	.read(read),
+	.rst_n(rst_n),
+	.w_en(w_en)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #5000 1'b1;
+	#5000;
+end 
+
+fifo_counter_vlg_sample_tst tb_sample (
+	.clk(clk),
+	.read(read),
+	.rst_n(rst_n),
+	.sampler_tx(sampler)
+);
+
+fifo_counter_vlg_check_tst tb_out(
+	.counter(counter),
+	.r_en(r_en),
+	.w_en(w_en),
+	.sampler_rx(sampler)
+);
+endmodule
+

@@ -1,0 +1,2 @@
+
+module fifo_counter(input clk,input rst_n,input )

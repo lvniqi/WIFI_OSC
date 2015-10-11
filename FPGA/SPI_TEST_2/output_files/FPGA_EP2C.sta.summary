@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Div:comb_4|clk_div'
+Slack : -3.493
+TNS   : -56.068
+
+Type  : Slow 1200mV 85C Model Setup 'DAC_POLLING:comb_5|Div:comb_4|clk_div'
+Slack : -3.390
+TNS   : -36.797
+
+Type  : Slow 1200mV 85C Model Setup 'SYS_CLK'
+Slack : -1.838
+TNS   : -13.098
+
+Type  : Slow 1200mV 85C Model Hold 'Div:comb_4|clk_div'
+Slack : -0.393
+TNS   : -0.393
+
+Type  : Slow 1200mV 85C Model Hold 'SYS_CLK'
+Slack : 0.011
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'DAC_POLLING:comb_5|Div:comb_4|clk_div'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SYS_CLK'
+Slack : -3.000
+TNS   : -17.870
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div:comb_4|clk_div'
+Slack : -1.487
+TNS   : -37.175
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DAC_POLLING:comb_5|Div:comb_4|clk_div'
+Slack : -1.487
+TNS   : -22.305
+
+Type  : Slow 1200mV 0C Model Setup 'Div:comb_4|clk_div'
+Slack : -3.149
+TNS   : -49.549
+
+Type  : Slow 1200mV 0C Model Setup 'DAC_POLLING:comb_5|Div:comb_4|clk_div'
+Slack : -3.057
+TNS   : -33.328
+
+Type  : Slow 1200mV 0C Model Setup 'SYS_CLK'
+Slack : -1.641
+TNS   : -10.946
+
+Type  : Slow 1200mV 0C Model Hold 'Div:comb_4|clk_div'
+Slack : -0.324
+TNS   : -0.324
+
+Type  : Slow 1200mV 0C Model Hold 'SYS_CLK'
+Slack : 0.069
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'DAC_POLLING:comb_5|Div:comb_4|clk_div'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'
+Slack : -3.000
+TNS   : -17.870
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div:comb_4|clk_div'
+Slack : -1.487
+TNS   : -37.175
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DAC_POLLING:comb_5|Div:comb_4|clk_div'
+Slack : -1.487
+TNS   : -22.305
+
+Type  : Fast 1200mV 0C Model Setup 'Div:comb_4|clk_div'
+Slack : -0.878
+TNS   : -10.327
+
+Type  : Fast 1200mV 0C Model Setup 'DAC_POLLING:comb_5|Div:comb_4|clk_div'
+Slack : -0.843
+TNS   : -6.962
+
+Type  : Fast 1200mV 0C Model Setup 'SYS_CLK'
+Slack : -0.228
+TNS   : -0.472
+
+Type  : Fast 1200mV 0C Model Hold 'Div:comb_4|clk_div'
+Slack : -0.323
+TNS   : -0.323
+
+Type  : Fast 1200mV 0C Model Hold 'SYS_CLK'
+Slack : -0.083
+TNS   : -0.083
+
+Type  : Fast 1200mV 0C Model Hold 'DAC_POLLING:comb_5|Div:comb_4|clk_div'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'
+Slack : -3.000
+TNS   : -16.058
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div:comb_4|clk_div'
+Slack : -1.000
+TNS   : -25.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DAC_POLLING:comb_5|Div:comb_4|clk_div'
+Slack : -1.000
+TNS   : -15.000
+
+------------------------------------------------------------

@@ -1,0 +1,14 @@
+
+State Machine - |main|DAC_POLLING:comb_5|current_state
+Name current_state.COUNT current_state.END current_state.SEND current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.SEND 0 0 1 1 
+current_state.END 0 1 0 1 
+current_state.COUNT 1 0 0 1 
+
+State Machine - |main|DAC_POLLING:comb_5|SPI_OUT:comb_5|current_state
+Name current_state.END current_state.SEND_n current_state.SEND current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.SEND 0 0 1 1 
+current_state.SEND_n 0 1 0 1 
+current_state.END 1 0 0 1 
