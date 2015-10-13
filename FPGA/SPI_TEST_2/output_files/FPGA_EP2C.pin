@@ -200,16 +200,16 @@ RESERVED_INPUT               : 129       :        :                   :         
 VCCIO8                       : 130       : power  :                   : 3.3V    : 8         :                
 GND                          : 131       : gnd    :                   :         :           :                
 RESERVED_INPUT               : 132       :        :                   :         : 8         :                
-RESERVED_INPUT               : 133       :        :                   :         : 8         :                
+TEST_IO[7]                   : 133       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 VCCINT                       : 134       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT               : 135       :        :                   :         : 8         :                
-RESERVED_INPUT               : 136       :        :                   :         : 8         :                
-RESERVED_INPUT               : 137       :        :                   :         : 8         :                
-RESERVED_INPUT               : 138       :        :                   :         : 8         :                
+TEST_IO[6]                   : 135       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+TEST_IO[5]                   : 136       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+TEST_IO[4]                   : 137       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+TEST_IO[3]                   : 138       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 VCCIO8                       : 139       : power  :                   : 3.3V    : 8         :                
 GND                          : 140       : gnd    :                   :         :           :                
-RESERVED_INPUT               : 141       :        :                   :         : 8         :                
-RESERVED_INPUT               : 142       :        :                   :         : 8         :                
-RESERVED_INPUT               : 143       :        :                   :         : 8         :                
+TEST_IO[2]                   : 141       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+TEST_IO[1]                   : 142       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
+TEST_IO[0]                   : 143       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 RESERVED_INPUT               : 144       :        :                   :         : 8         :                
 GND                          : EPAD      :        :                   :         :           :                

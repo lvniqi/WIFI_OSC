@@ -57,7 +57,7 @@ module DAC_POLLING(
 				//空闲状态
 				IDLE:
 					//外部使能 进入发送
-					if(en&&spi_isIdle)
+					if(en)
 						next_state = SEND;
 					else
 						next_state = IDLE;
@@ -100,7 +100,7 @@ module DAC_POLLING(
 				COUNT: begin
 					spi_en <= 0;
 					pos <= counter;
-					counter <= counter-1'b1;
+					counter <= counter+1'b1;
 				end
 				END:begin
 					dac_data <= dac_data_t;
@@ -219,7 +219,7 @@ module TEST_DAC_DATA(
 );
 	always@(*)
 		case(pos)
-			3'd0:data<=1024;
+			3'd0:data<=0;
 			3'd1:data<=256;
 			3'd2:data<=512;
 			3'd3:data<=768;

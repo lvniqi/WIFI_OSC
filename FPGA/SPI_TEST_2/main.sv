@@ -4,6 +4,7 @@
 `define ENABLE_DAC_SPI_INTERFACE
 `define ENABLE_AR9331_INTERFACE
 `define ENABLE_74HC4051_INTERFACE
+`define ENABLE_TEST_IO_INTERFACE
 module main(
 	/* Clock inputs, SYS_CLK = 25MHz*/	
 `ifdef ENABLE_CLOCK_INPUTS
@@ -25,8 +26,13 @@ module main(
 
 `ifdef	ENABLE_74HC4051_INTERFACE
 	/* AR9331, WIFI SOC */
-	output [2:0] HC4051_POS
-`endif	
+	output [2:0] HC4051_POS,
+`endif
+
+`ifdef	ENABLE_TEST_IO_INTERFACE
+	/*test I/O 8bit*/
+	inout [7:0] TEST_IO
+`endif
 );
 wire CLK_100M;
 //100M锁相环
@@ -49,6 +55,8 @@ SPI_OUT(
 assign HC4051_POS = 0;*/
 //DAC轮询刷新
 wire DAC_CLK;
+//8个寄存器组
+//reg [11:0] dac_data[2:0];
 Div #(.N(10))(.clk_in(SYS_CLK),.clk_div(DAC_CLK));
 DAC_POLLING(
 	.en(1),
@@ -59,8 +67,21 @@ DAC_POLLING(
 	.sync_n(AD5320_SYNCn),
 	.pos(HC4051_POS)
 );
+//UART测试
+wire [7:0] dout;
+UART(
+	.clk(SYS_CLK),
+	.rst_n(1),
+	.din(dout),
+	//TXD
+	.wr_en(1),
+	.txd(TEST_IO[1]),
+	.txd_busy(TEST_IO[0]),
+	//RXD
+	.rxd(TEST_IO[2]),
+	.rdy_clr(1),
+	.rdy(4),
+	.dout(dout)
+);
+assign TEST_IO[3] = dout[0];
 endmodule 
-
-
-//测试用数据
-//module DAC_POLLING 

@@ -1,5 +1,5 @@
 |main
-SYS_CLK => SYS_CLK.IN2
+SYS_CLK => SYS_CLK.IN3
 AD5320_SCLK <= DAC_POLLING:comb_5.sclk
 AD5320_SDATA <= DAC_POLLING:comb_5.dout
 AD5320_SYNCn <= DAC_POLLING:comb_5.sync_n
@@ -8,6 +8,14 @@ GPIO_9 <= <GND>
 HC4051_POS[0] <= DAC_POLLING:comb_5.pos[0]
 HC4051_POS[1] <= DAC_POLLING:comb_5.pos[1]
 HC4051_POS[2] <= DAC_POLLING:comb_5.pos[2]
+TEST_IO[0] <> UART:comb_6.txd_busy
+TEST_IO[1] <> UART:comb_6.txd
+TEST_IO[2] <> UART:comb_6.rxd
+TEST_IO[3] <> TEST_IO[3]
+TEST_IO[4] <> <UNC>
+TEST_IO[5] <> <UNC>
+TEST_IO[6] <> <UNC>
+TEST_IO[7] <> <UNC>
 
 
 |main|PLL:comb_3
@@ -91,7 +99,8 @@ clk_div <= clk_div~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|DAC_POLLING:comb_5
-en => always1.IN1
+en => Selector1.IN3
+en => Selector0.IN1
 data_in[0][0] => ~NO_FANOUT~
 data_in[0][1] => ~NO_FANOUT~
 data_in[0][2] => ~NO_FANOUT~
@@ -139,11 +148,9 @@ pos[2] <= pos[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|DAC_POLLING:comb_5|TEST_DAC_DATA:comb_3
-pos[0] => Decoder0.IN2
 pos[0] => data[8].DATAIN
-pos[1] => Decoder0.IN1
 pos[1] => data[9].DATAIN
-pos[2] => Decoder0.IN0
+pos[2] => data[10].DATAIN
 data[0] <= <GND>
 data[1] <= <GND>
 data[2] <= <GND>
@@ -154,7 +161,7 @@ data[6] <= <GND>
 data[7] <= <GND>
 data[8] <= pos[0].DB_MAX_OUTPUT_PORT_TYPE
 data[9] <= pos[1].DB_MAX_OUTPUT_PORT_TYPE
-data[10] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+data[10] <= pos[2].DB_MAX_OUTPUT_PORT_TYPE
 data[11] <= <GND>
 
 
@@ -250,5 +257,183 @@ dout <= dout~reg0.DB_MAX_OUTPUT_PORT_TYPE
 sync_n <= sync_n~reg0.DB_MAX_OUTPUT_PORT_TYPE
 isIDLE <= isIDLE.DB_MAX_OUTPUT_PORT_TYPE
 isEND <= isEND.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|UART:comb_6
+clk => clk.IN3
+rst_n => ~NO_FANOUT~
+din[0] => din[0].IN1
+din[1] => din[1].IN1
+din[2] => din[2].IN1
+din[3] => din[3].IN1
+din[4] => din[4].IN1
+din[5] => din[5].IN1
+din[6] => din[6].IN1
+din[7] => din[7].IN1
+wr_en => wr_en.IN1
+txd <= UART_TXD:comb_4.txd
+txd_busy <= UART_TXD:comb_4.txd_busy
+rxd => rxd.IN1
+rdy_clr => rdy_clr.IN1
+rdy <= UART_RXD:comb_5.rdy
+dout[0] <= UART_RXD:comb_5.data
+dout[1] <= UART_RXD:comb_5.data
+dout[2] <= UART_RXD:comb_5.data
+dout[3] <= UART_RXD:comb_5.data
+dout[4] <= UART_RXD:comb_5.data
+dout[5] <= UART_RXD:comb_5.data
+dout[6] <= UART_RXD:comb_5.data
+dout[7] <= UART_RXD:comb_5.data
+
+
+|main|UART:comb_6|UART_BAUD_GEN:comb_3
+clk => tx_acc[0].CLK
+clk => tx_acc[1].CLK
+clk => tx_acc[2].CLK
+clk => tx_acc[3].CLK
+clk => tx_acc[4].CLK
+clk => tx_acc[5].CLK
+clk => tx_acc[6].CLK
+clk => tx_acc[7].CLK
+clk => rx_acc[0].CLK
+clk => rx_acc[1].CLK
+clk => rx_acc[2].CLK
+clk => rx_acc[3].CLK
+rx_en <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+tx_en <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|UART:comb_6|UART_TXD:comb_4
+din[0] => data.DATAB
+din[1] => data.DATAB
+din[2] => data.DATAB
+din[3] => data.DATAB
+din[4] => data.DATAB
+din[5] => data.DATAB
+din[6] => data.DATAB
+din[7] => data.DATAB
+wr_en => state.OUTPUTSELECT
+wr_en => state.OUTPUTSELECT
+wr_en => state.OUTPUTSELECT
+wr_en => state.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => bitpos.OUTPUTSELECT
+wr_en => bitpos.OUTPUTSELECT
+wr_en => bitpos.OUTPUTSELECT
+clk => txd~reg0.CLK
+clk => bitpos[0].CLK
+clk => bitpos[1].CLK
+clk => bitpos[2].CLK
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => data[4].CLK
+clk => data[5].CLK
+clk => data[6].CLK
+clk => data[7].CLK
+clk => state~4.DATAIN
+clken => txd.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => bitpos.OUTPUTSELECT
+clken => bitpos.OUTPUTSELECT
+clken => bitpos.OUTPUTSELECT
+clken => txd.OUTPUTSELECT
+clken => txd.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+txd <= txd~reg0.DB_MAX_OUTPUT_PORT_TYPE
+txd_busy <= txd_busy.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|UART:comb_6|UART_RXD:comb_5
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => always0.IN1
+rxd => always0.IN1
+rdy <= rdy~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rdy_clr => rdy.OUTPUTSELECT
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => data[4]~reg0.CLK
+clk => data[5]~reg0.CLK
+clk => data[6]~reg0.CLK
+clk => data[7]~reg0.CLK
+clk => scratch[0].CLK
+clk => scratch[1].CLK
+clk => scratch[2].CLK
+clk => scratch[3].CLK
+clk => scratch[4].CLK
+clk => scratch[5].CLK
+clk => scratch[6].CLK
+clk => scratch[7].CLK
+clk => bitpos[0].CLK
+clk => bitpos[1].CLK
+clk => bitpos[2].CLK
+clk => bitpos[3].CLK
+clk => sample[0].CLK
+clk => sample[1].CLK
+clk => sample[2].CLK
+clk => sample[3].CLK
+clk => rdy~reg0.CLK
+clk => state~4.DATAIN
+clk_en => state.OUTPUTSELECT
+clk_en => state.OUTPUTSELECT
+clk_en => state.OUTPUTSELECT
+clk_en => rdy.OUTPUTSELECT
+clk_en => data[2]~reg0.ENA
+clk_en => data[1]~reg0.ENA
+clk_en => data[0]~reg0.ENA
+clk_en => data[3]~reg0.ENA
+clk_en => data[4]~reg0.ENA
+clk_en => data[5]~reg0.ENA
+clk_en => data[6]~reg0.ENA
+clk_en => data[7]~reg0.ENA
+clk_en => scratch[0].ENA
+clk_en => scratch[1].ENA
+clk_en => scratch[2].ENA
+clk_en => scratch[3].ENA
+clk_en => scratch[4].ENA
+clk_en => scratch[5].ENA
+clk_en => scratch[6].ENA
+clk_en => scratch[7].ENA
+clk_en => bitpos[0].ENA
+clk_en => bitpos[1].ENA
+clk_en => bitpos[2].ENA
+clk_en => bitpos[3].ENA
+clk_en => sample[0].ENA
+clk_en => sample[1].ENA
+clk_en => sample[2].ENA
+clk_en => sample[3].ENA
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
