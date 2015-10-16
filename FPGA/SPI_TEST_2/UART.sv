@@ -11,7 +11,12 @@ module UART(
 	input rxd,
 	input rdy_clr,
 	output rdy,
-	output [7:0] dout
+	output [7:0] dout,
+	//REG
+	output reg_ready,
+	output [23:0] reg_out,
+	output wire [6:0] reg_address,
+	output wire [15:0] reg_data
 );
 	wire tx_en_clk;
 	wire rx_en_clk;
@@ -36,7 +41,14 @@ module UART(
 		.clk_en(rx_en_clk),
 		.data(dout)
 	);
-	
+	UART2REG(
+		.rdy_in(rdy),
+		.din(dout),
+		.ready(reg_ready),
+		.dout(reg_out),
+		.address(reg_address),
+		.data(reg_data)
+	);
 endmodule 
 
 /*
@@ -62,14 +74,14 @@ always @(posedge clk) begin
 	if (rx_acc == RX_ACC_MAX[RX_ACC_WIDTH - 1:0])
 		rx_acc <= 0;
 	else
-		rx_acc <= rx_acc + 5'b1;
+		rx_acc <= rx_acc + 1;
 end
 
 always @(posedge clk) begin
 	if (tx_acc == TX_ACC_MAX[TX_ACC_WIDTH - 1:0])
 		tx_acc <= 0;
 	else
-		tx_acc <= tx_acc + 9'b1;
+		tx_acc <= tx_acc + 1;
 end
 endmodule
 
@@ -159,11 +171,7 @@ reg [1:0] state = RX_STATE_START;
 reg [3:0] sample = 0;
 reg [3:0] bitpos = 0;
 reg [7:0] scratch = 8'b0;
-
 always @(posedge clk) begin
-	if (rdy_clr)
-		rdy <= 0;
-
 	if (clk_en) begin
 		case (state)
 		RX_STATE_START: begin
@@ -171,6 +179,8 @@ always @(posedge clk) begin
 			* Start counting from the first low sample, once we've
 			* sampled a full bit, start collecting data bits.
 			*/
+			if (rdy_clr)
+				rdy <= 0;
 			if (!rxd || sample != 0)
 				sample <= sample + 4'b1;
 
@@ -214,3 +224,26 @@ always @(posedge clk) begin
 end
 
 endmodule
+//7bit address 16bit data 1bit1 16bit0
+module UART2REG(
+	input rdy_in,
+	input [7:0] din,
+	output reg ready = 0,
+	output wire [23:0] dout,
+	output wire [6:0] address,
+	output wire [15:0] data
+);
+	assign dout = reg_save[31:8];
+	assign address = reg_save[31:25];
+	assign data = reg_save[24:9];
+	reg [31:0] reg_save;
+	always @(posedge rdy_in) begin
+		if(din == 8'b0 && reg_save[7:0] == 8'b0) begin
+			ready <= 1'b1;
+		end
+		else begin
+			reg_save <= {reg_save[23:0],din};
+			ready <= 1'b0;
+		end
+	end
+endmodule 

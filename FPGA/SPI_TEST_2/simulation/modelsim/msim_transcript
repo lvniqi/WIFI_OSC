@@ -1,166 +1,39 @@
-# Reading G:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# Reading G:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
 # do FPGA_EP2C_run_msim_rtl_verilog.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Copying G:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Copying G:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied G:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied G:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+E:/WORKSPACE/FPGA/FPGA_EP2C {E:/WORKSPACE/FPGA/FPGA_EP2C/FPGA2MCU.v}
-# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
-# -- Compiling module SAVE_ADDR
-# -- Compiling module SELECT_ADDR
-# -- Compiling module BUFF_SEND_DATA
-# -- Compiling module BUFF
+# vlog -vlog01compat -work work +incdir+E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2 {E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2/Divs.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Div
+# -- Compiling module Divs_4
+# -- Compiling module Divs_2
 # 
 # Top level modules:
-# 	SAVE_ADDR
-# 	SELECT_ADDR
-# 	BUFF_SEND_DATA
-# 	BUFF
-# vlog -vlog01compat -work work +incdir+E:/WORKSPACE/FPGA/FPGA_EP2C {E:/WORKSPACE/FPGA/FPGA_EP2C/FPGA2AR9331.v}
-# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
-# -- Compiling module FIFO2MCU
+# 	Div
+# 	Divs_4
+# 	Divs_2
+# vlog -vlog01compat -work work +incdir+E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2 {E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2/PLL.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PLL
 # 
 # Top level modules:
-# 	FIFO2MCU
-# 
-# vlog -vlog01compat -work work +incdir+E:/WORKSPACE/FPGA/FPGA_EP2C/simulation/modelsim {E:/WORKSPACE/FPGA/FPGA_EP2C/simulation/modelsim/FPGA_EP2C.vt}
-# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
-# -- Compiling module FPGA_EP2C_vlg_tst
-# 
-# Top level modules:
-# 	FPGA_EP2C_vlg_tst
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  FPGA_EP2C_vlg_tst
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps FPGA_EP2C_vlg_tst 
-# Loading work.FPGA_EP2C_vlg_tst
-# ** Error: (vsim-19) Failed to access library 'cycloneii_ver' at "cycloneii_ver".
-# 
-# No such file or directory. (errno = ENOENT)
-# ** Error: (vsim-3033) E:/WORKSPACE/FPGA/FPGA_EP2C/simulation/modelsim/FPGA_EP2C.vt(58): Instantiation of 'FPGA_EP2C' failed. The design unit was not found.
-# 
-#         Region: /FPGA_EP2C_vlg_tst
-#         Searched libraries:
-#             G:/altera/14.0/modelsim_ase/altera/verilog/altera
-#             G:/altera/14.0/modelsim_ase/altera/verilog/220model
-#             G:/altera/14.0/modelsim_ase/altera/verilog/sgate
-#             G:/altera/14.0/modelsim_ase/altera/verilog/altera_mf
-#             G:/altera/14.0/modelsim_ase/altera/verilog/altera_lnsim
-# ** Error: (vsim-19) Failed to access library 'cycloneii_ver' at "cycloneii_ver".
-# 
-# No such file or directory. (errno = ENOENT)
-#             E:/WORKSPACE/FPGA/FPGA_EP2C/simulation/modelsim/rtl_work
-#             E:/WORKSPACE/FPGA/FPGA_EP2C/simulation/modelsim/rtl_work
-#             E:/WORKSPACE/FPGA/FPGA_EP2C/simulation/modelsim/rtl_work
-# Error loading design
-# Error: Error loading design 
-#        Pausing macro execution 
-# MACRO ./FPGA_EP2C_run_msim_rtl_verilog.do PAUSED at line 13
-vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps work.FIFO2MCU
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps work.FIFO2MCU 
-# Loading work.FIFO2MCU
-force -freeze sim:/FIFO2MCU/ack 1 0
-force -freeze sim:/FIFO2MCU/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/FIFO2MCU/len_in 00000010 0
-add wave -position insertpoint  \
-sim:/FIFO2MCU/current_state
-add wave -position insertpoint  \
-sim:/FIFO2MCU/clk_out \
-sim:/FIFO2MCU/data_out
-run
-run
-add wave -position insertpoint  \
-sim:/FIFO2MCU/ack
-force -freeze sim:/FIFO2MCU/ack St0 0
-run
-run
-run
-run
-force -freeze sim:/FIFO2MCU/clk 1 0, 0 {50 ps} -r 100
-force -freeze sim:/FIFO2MCU/en 1 0
-run
-run
-run
-run
-run
-run
-run
-force -freeze sim:/FIFO2MCU/ack St1 0
-run
-run
-run
-run
-force -freeze sim:/FIFO2MCU/ack St0 0
-run
-run
-run
-run
-run
-force -freeze sim:/FIFO2MCU/ack St1 0
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-force -freeze sim:/FIFO2MCU/ack St0 0
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-force -freeze sim:/FIFO2MCU/ack St1 0
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-noforce sim:/FIFO2MCU/ack
-force -freeze sim:/FIFO2MCU/ack St0 0
-run
-run
-run
-run
-run
-run
-run
-run
+# 	PLL
+# vlog -sv -work work +incdir+E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2 {E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2/DAC_POLLING.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DAC_POLLING
+# ** Error: E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2/DAC_POLLING.sv(25): near ".": syntax error, unexpected '.'
+# -- Compiling module SPI_OUT
+# -- Compiling module TEST_DAC_DATA
+# ** Error: G:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./FPGA_EP2C_run_msim_rtl_verilog.do line 10
+# G:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2 {E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2/DAC_POLLING.sv}"

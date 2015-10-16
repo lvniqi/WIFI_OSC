@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6) Path("E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2/output_files/") File("output_file.jic") MfrSpec(OpMask(1) SEC_Device(EPCS4) Child_OpMask(1 1));
+		Device PartName(EP4CE6) Path("E:/WORKSPACE/WIFI_OSC/FPGA/SPI_TEST_2/output_files/") File("output_file.jic") MfrSpec(OpMask(1) SEC_Device(EPCS4) Child_OpMask(1 3));
 
 ChainEnd;
 

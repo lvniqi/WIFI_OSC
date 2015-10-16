@@ -113,7 +113,7 @@ HC4051_POS[2]                : 42        : output : 3.3-V LVTTL       :         
 RESERVED_INPUT               : 43        :        :                   :         : 3         :                
 RESERVED_INPUT               : 44        :        :                   :         : 3         :                
 VCCINT                       : 45        : power  :                   : 1.2V    :           :                
-RESERVED_INPUT               : 46        :        :                   :         : 3         :                
+AD_CLKA                      : 46        : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : 47        : power  :                   : 3.3V    : 3         :                
 GND                          : 48        : gnd    :                   :         :           :                
 RESERVED_INPUT               : 49        :        :                   :         : 3         :                
@@ -139,7 +139,7 @@ RESERVED_INPUT               : 68        :        :                   :         
 RESERVED_INPUT               : 69        :        :                   :         : 4         :                
 RESERVED_INPUT               : 70        :        :                   :         : 4         :                
 RESERVED_INPUT               : 71        :        :                   :         : 4         :                
-RESERVED_INPUT               : 72        :        :                   :         : 4         :                
+AD_CLKB                      : 72        : output : 3.3-V LVTTL       :         : 4         : Y              
 AD5320_SYNCn                 : 73        : output : 3.3-V LVTTL       :         : 5         : Y              
 AD5320_SCLK                  : 74        : output : 3.3-V LVTTL       :         : 5         : Y              
 AD5320_SDATA                 : 75        : output : 3.3-V LVTTL       :         : 5         : Y              

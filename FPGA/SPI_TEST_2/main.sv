@@ -5,6 +5,7 @@
 `define ENABLE_AR9331_INTERFACE
 `define ENABLE_74HC4051_INTERFACE
 `define ENABLE_TEST_IO_INTERFACE
+`define ENABLE_AD9288_INTERFACE
 module main(
 	/* Clock inputs, SYS_CLK = 25MHz*/	
 `ifdef ENABLE_CLOCK_INPUTS
@@ -31,8 +32,12 @@ module main(
 
 `ifdef	ENABLE_TEST_IO_INTERFACE
 	/*test I/O 8bit*/
-	inout [7:0] TEST_IO
+	inout [7:0] TEST_IO,
 `endif
+`ifdef	ENABLE_AD9288_INTERFACE
+	output AD_CLKA,
+	output AD_CLKB
+`endif	
 );
 wire CLK_100M;
 //100M锁相环
@@ -56,12 +61,23 @@ assign HC4051_POS = 0;*/
 //DAC轮询刷新
 wire DAC_CLK;
 //8个寄存器组
-//reg [11:0] dac_data[2:0];
-Div #(.N(10))(.clk_in(SYS_CLK),.clk_div(DAC_CLK));
+reg [11:0] dac_data[0:7];
+initial begin
+	dac_data[0] <= 1024;
+	dac_data[1] <= 1024;
+	dac_data[2] <= 1536;
+	dac_data[3] <= 2048;
+	dac_data[4] <= 512;
+	dac_data[5] <= 896;
+	dac_data[6] <= 1536;
+	dac_data[7] <= 2048;
+end
+Div #(.N(18))(.clk_in(SYS_CLK),.clk_div(DAC_CLK));
 DAC_POLLING(
 	.en(1),
 	.clk_core(DAC_CLK),
 	.rst_n(1),
+	.data_in(dac_data),
 	.sclk(AD5320_SCLK),
 	.dout(AD5320_SDATA),
 	.sync_n(AD5320_SYNCn),
@@ -69,10 +85,14 @@ DAC_POLLING(
 );
 //UART测试
 wire [7:0] dout;
-UART(
+wire uart2reg_ready;
+wire [6:0] uart2reg_address;
+wire [15:0] uart2reg_data;
+/*UART(
 	.clk(SYS_CLK),
 	.rst_n(1),
 	.din(dout),
+	//.din(uart2reg_dout[23:16]),
 	//TXD
 	.wr_en(1),
 	.txd(TEST_IO[1]),
@@ -80,8 +100,24 @@ UART(
 	//RXD
 	.rxd(TEST_IO[2]),
 	.rdy_clr(1),
-	.rdy(4),
-	.dout(dout)
+	.rdy(TEST_IO[3]),
+	.dout(dout),
+	//REG
+	.reg_ready(uart2reg_ready),
+	.reg_address(uart2reg_address),
+	.reg_data(uart2reg_data)
 );
-assign TEST_IO[3] = dout[0];
+
+always@(posedge uart2reg_ready)begin
+	if(uart2reg_address == 7'hff)begin
+		dac_data[uart2reg_data[14:12]]
+			<= uart2reg_data[11:0];
+	end
+end*/
+
+assign TEST_IO[4] = uart2reg_ready;
+assign TEST_IO[5] = dout[0];
+assign TEST_IO[7] = SYS_CLK;
+assign AD_CLKA = SYS_CLK;
+assign AD_CLKB = SYS_CLK;
 endmodule 

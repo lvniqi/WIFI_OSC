@@ -2,7 +2,7 @@
 //DAC轮询刷新
 module DAC_POLLING(
 	input en,
-	input [11:0] data_in[2:0],
+	input [11:0] data_in[0:7],
 	input clk_core,rst_n,
 	output sclk,dout,sync_n,
 	output [2:0]pos
@@ -17,10 +17,7 @@ module DAC_POLLING(
 	//spi频率
 	wire clk_spi;
 	//dac数据
-	reg [11:0] dac_data = 2048;
-	//测试用 测试dac数据
-	wire [11:0] dac_data_t;
-	TEST_DAC_DATA(.pos(counter),.data(dac_data_t));
+	logic [11:0] dac_data;
 	//4分频器模块
 	Div #(.N(8))(.clk_in(clk_core),.clk_div(clk_spi));
 	//spi运行中状态
@@ -103,7 +100,8 @@ module DAC_POLLING(
 					counter <= counter+1'b1;
 				end
 				END:begin
-					dac_data <= dac_data_t;
+					dac_data <= data_in[counter];
+					//dac_data <= dac_data_t;
 				end
 				default:begin
 					
@@ -113,10 +111,9 @@ module DAC_POLLING(
 	end
 endmodule
 
-`define SPI_LEN 16
-module SPI_OUT( 
+module SPI_OUT #(parameter SPI_LEN=16)( 
 		  input clk,
-        input [`SPI_LEN-1:0]data_in,
+        input [SPI_LEN-1:0]data_in,
 		  input rst_n,
 		  input en,
 		  output reg sclk,dout,sync_n,
@@ -129,8 +126,8 @@ module SPI_OUT(
    parameter [1:0] IDLE=2'b00,SEND=2'b01,SEND_n = 2'b10,END = 2'b11;
    reg [1:0] current_state=IDLE;
 	reg [1:0] next_state=IDLE;
-	reg [4:0] counter=`SPI_LEN;
-	reg [`SPI_LEN-1:0] data_in_save;
+	reg [4:0] counter=SPI_LEN;
+	reg [SPI_LEN-1:0] data_in_save;
 	assign isIDLE = (next_state == IDLE);
 	assign isEND = (next_state == END);
 	//状态转换
@@ -188,7 +185,7 @@ module SPI_OUT(
 			case(next_state)
 				IDLE: begin
 					data_in_save <= data_in;
-					counter <=`SPI_LEN;
+					counter <=SPI_LEN;
 					sclk <= 1'b1;
 					sync_n <= 1'b1;
 				end
@@ -211,21 +208,4 @@ module SPI_OUT(
 			endcase
 		end
 	end
-endmodule 
-	
-module TEST_DAC_DATA(
-	input [2:0] pos,
-	output reg [11:0] data
-);
-	always@(*)
-		case(pos)
-			3'd0:data<=0;
-			3'd1:data<=256;
-			3'd2:data<=512;
-			3'd3:data<=768;
-			3'd4:data<=1024;
-			3'd5:data<=1280;
-			3'd6:data<=1536;
-			3'd7:data<=1792;
-		endcase
 endmodule 
