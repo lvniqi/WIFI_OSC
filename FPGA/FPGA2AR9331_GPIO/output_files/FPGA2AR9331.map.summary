@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sat Sep 12 19:05:11 2015
+Analysis & Synthesis Status : Successful - Mon Oct 19 17:34:02 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : FPGA2AR9331
 Top-level Entity Name : main
 Family : Cyclone II
-Total logic elements : 84
-    Total combinational functions : 68
-    Dedicated logic registers : 58
-Total registers : 58
+Total logic elements : 80
+    Total combinational functions : 72
+    Dedicated logic registers : 49
+Total registers : 49
 Total pins : 11
 Total virtual pins : 0
 Total memory bits : 0

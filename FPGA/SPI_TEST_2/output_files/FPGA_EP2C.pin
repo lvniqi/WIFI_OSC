@@ -116,16 +116,16 @@ VCCINT                       : 45        : power  :                   : 1.2V    
 AD_CLKA                      : 46        : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : 47        : power  :                   : 3.3V    : 3         :                
 GND                          : 48        : gnd    :                   :         :           :                
-RESERVED_INPUT               : 49        :        :                   :         : 3         :                
-RESERVED_INPUT               : 50        :        :                   :         : 3         :                
-RESERVED_INPUT               : 51        :        :                   :         : 3         :                
-RESERVED_INPUT               : 52        :        :                   :         : 3         :                
-RESERVED_INPUT               : 53        :        :                   :         : 3         :                
-RESERVED_INPUT               : 54        :        :                   :         : 4         :                
-RESERVED_INPUT               : 55        :        :                   :         : 4         :                
+AD_DATA_A[7]                 : 49        : input  : 3.3-V LVTTL       :         : 3         : Y              
+AD_DATA_A[6]                 : 50        : input  : 3.3-V LVTTL       :         : 3         : Y              
+AD_DATA_A[5]                 : 51        : input  : 3.3-V LVTTL       :         : 3         : Y              
+AD_DATA_A[4]                 : 52        : input  : 3.3-V LVTTL       :         : 3         : Y              
+AD_DATA_A[3]                 : 53        : input  : 3.3-V LVTTL       :         : 3         : Y              
+AD_DATA_A[2]                 : 54        : input  : 3.3-V LVTTL       :         : 4         : Y              
+AD_DATA_A[1]                 : 55        : input  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : 56        : power  :                   : 3.3V    : 4         :                
 GND                          : 57        : gnd    :                   :         :           :                
-RESERVED_INPUT               : 58        :        :                   :         : 4         :                
+AD_DATA_A[0]                 : 58        : input  : 3.3-V LVTTL       :         : 4         : Y              
 RESERVED_INPUT               : 59        :        :                   :         : 4         :                
 RESERVED_INPUT               : 60        :        :                   :         : 4         :                
 VCCINT                       : 61        : power  :                   : 1.2V    :           :                
@@ -167,10 +167,10 @@ MSEL1                        : 96        :        :                   :         
 MSEL2                        : 97        :        :                   :         : 6         :                
 RESERVED_INPUT               : 98        :        :                   :         : 6         :                
 RESERVED_INPUT               : 99        :        :                   :         : 6         :                
-RESERVED_INPUT               : 100       :        :                   :         : 6         :                
+AR9331_EN                    : 100       : output : 3.3-V LVTTL       :         : 6         : Y              
 RESERVED_INPUT               : 101       :        :                   :         : 6         :                
 VCCINT                       : 102       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT               : 103       :        :                   :         : 6         :                
+AR9331_NEXT                  : 103       : input  : 3.3-V LVTTL       :         : 6         : Y              
 RESERVED_INPUT               : 104       :        :                   :         : 6         :                
 RESERVED_INPUT               : 105       :        :                   :         : 6         :                
 RESERVED_INPUT               : 106       :        :                   :         : 6         :                

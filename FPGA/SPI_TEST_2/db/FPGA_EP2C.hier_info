@@ -1,5 +1,5 @@
 |main
-SYS_CLK => SYS_CLK.IN2
+SYS_CLK => SYS_CLK.IN3
 AD5320_SCLK <= DAC_POLLING:comb_5.sclk
 AD5320_SDATA <= DAC_POLLING:comb_5.dout
 AD5320_SYNCn <= DAC_POLLING:comb_5.sync_n
@@ -8,16 +8,26 @@ GPIO_9 <= <GND>
 HC4051_POS[0] <= DAC_POLLING:comb_5.pos[0]
 HC4051_POS[1] <= DAC_POLLING:comb_5.pos[1]
 HC4051_POS[2] <= DAC_POLLING:comb_5.pos[2]
-TEST_IO[0] <> <UNC>
-TEST_IO[1] <> <UNC>
-TEST_IO[2] <> <UNC>
-TEST_IO[3] <> <UNC>
-TEST_IO[4] <> <GND>
-TEST_IO[5] <> <GND>
-TEST_IO[6] <> <UNC>
+TEST_IO[0] <> TEST_IO[0]
+TEST_IO[1] <> TEST_IO[1]
+TEST_IO[2] <> TEST_IO[2]
+TEST_IO[3] <> TEST_IO[3]
+TEST_IO[4] <> TEST_IO[4]
+TEST_IO[5] <> TEST_IO[5]
+TEST_IO[6] <> TEST_IO[6]
 TEST_IO[7] <> TEST_IO[7]
-AD_CLKA <= SYS_CLK.DB_MAX_OUTPUT_PORT_TYPE
-AD_CLKB <= SYS_CLK.DB_MAX_OUTPUT_PORT_TYPE
+AD_DATA_A[0] => AD_DATA_A[0].IN1
+AD_DATA_A[1] => AD_DATA_A[1].IN1
+AD_DATA_A[2] => AD_DATA_A[2].IN1
+AD_DATA_A[3] => AD_DATA_A[3].IN1
+AD_DATA_A[4] => AD_DATA_A[4].IN1
+AD_DATA_A[5] => AD_DATA_A[5].IN1
+AD_DATA_A[6] => AD_DATA_A[6].IN1
+AD_DATA_A[7] => AD_DATA_A[7].IN1
+AD_CLKA <= ADC:comb_6.clk_a
+AD_CLKB <= <GND>
+AR9331_NEXT => ~NO_FANOUT~
+AR9331_EN <= <GND>
 
 
 |main|PLL:comb_3
@@ -301,5 +311,57 @@ dout <= dout~reg0.DB_MAX_OUTPUT_PORT_TYPE
 sync_n <= sync_n~reg0.DB_MAX_OUTPUT_PORT_TYPE
 isIDLE <= isIDLE.DB_MAX_OUTPUT_PORT_TYPE
 isEND <= isEND.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|ADC:comb_6
+clk => clk.IN1
+data[0] => data[0].IN1
+data[1] => data[1].IN1
+data[2] => data[2].IN1
+data[3] => data[3].IN1
+data[4] => data[4].IN1
+data[5] => data[5].IN1
+data[6] => data[6].IN1
+data[7] => data[7].IN1
+fifo <= <GND>
+trigger <= ADC_TRIGGER:comb_3.trigger
+clk_a <= clk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|ADC:comb_6|ADC_TRIGGER:comb_3
+clk => trigger~reg0.CLK
+data[0] => LessThan0.IN8
+data[0] => LessThan1.IN8
+data[1] => LessThan0.IN7
+data[1] => LessThan1.IN7
+data[2] => LessThan0.IN6
+data[2] => LessThan1.IN6
+data[3] => LessThan0.IN5
+data[3] => LessThan1.IN5
+data[4] => LessThan0.IN4
+data[4] => LessThan1.IN4
+data[5] => LessThan0.IN3
+data[5] => LessThan1.IN3
+data[6] => LessThan0.IN2
+data[6] => LessThan1.IN2
+data[7] => LessThan0.IN1
+data[7] => LessThan1.IN1
+max[0] => LessThan0.IN16
+max[1] => LessThan0.IN15
+max[2] => LessThan0.IN14
+max[3] => LessThan0.IN13
+max[4] => LessThan0.IN12
+max[5] => LessThan0.IN11
+max[6] => LessThan0.IN10
+max[7] => LessThan0.IN9
+min[0] => LessThan1.IN16
+min[1] => LessThan1.IN15
+min[2] => LessThan1.IN14
+min[3] => LessThan1.IN13
+min[4] => LessThan1.IN12
+min[5] => LessThan1.IN11
+min[6] => LessThan1.IN10
+min[7] => LessThan1.IN9
+trigger <= trigger~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

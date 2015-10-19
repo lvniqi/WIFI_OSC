@@ -3,16 +3,16 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'clk'
-Slack : -2.688
-TNS   : -87.806
+Slack : -4.406
+TNS   : -148.009
 
 Type  : Slow Model Setup 'FPGA2AR9331:inst|ctrl_clk'
-Slack : -1.516
-TNS   : -7.895
+Slack : -1.508
+TNS   : -8.245
 
 Type  : Slow Model Hold 'clk'
-Slack : -2.527
-TNS   : -2.527
+Slack : -2.542
+TNS   : -2.542
 
 Type  : Slow Model Hold 'FPGA2AR9331:inst|ctrl_clk'
 Slack : 0.499
@@ -20,23 +20,23 @@ TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clk'
 Slack : -1.777
-TNS   : -75.977
+TNS   : -62.621
 
 Type  : Slow Model Minimum Pulse Width 'FPGA2AR9331:inst|ctrl_clk'
 Slack : -0.742
 TNS   : -11.872
 
 Type  : Fast Model Setup 'clk'
-Slack : -0.288
-TNS   : -4.067
+Slack : -0.796
+TNS   : -21.846
 
 Type  : Fast Model Setup 'FPGA2AR9331:inst|ctrl_clk'
-Slack : 0.128
+Slack : 0.141
 TNS   : 0.000
 
 Type  : Fast Model Hold 'clk'
-Slack : -1.372
-TNS   : -1.750
+Slack : -1.388
+TNS   : -1.388
 
 Type  : Fast Model Hold 'FPGA2AR9331:inst|ctrl_clk'
 Slack : 0.215
@@ -44,7 +44,7 @@ TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clk'
 Slack : -1.222
-TNS   : -51.222
+TNS   : -42.222
 
 Type  : Fast Model Minimum Pulse Width 'FPGA2AR9331:inst|ctrl_clk'
 Slack : -0.500

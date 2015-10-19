@@ -6,6 +6,7 @@
 `define ENABLE_74HC4051_INTERFACE
 `define ENABLE_TEST_IO_INTERFACE
 `define ENABLE_AD9288_INTERFACE
+`define ENABLE_AR9331_INTERFACE
 module main(
 	/* Clock inputs, SYS_CLK = 25MHz*/	
 `ifdef ENABLE_CLOCK_INPUTS
@@ -32,12 +33,18 @@ module main(
 
 `ifdef	ENABLE_TEST_IO_INTERFACE
 	/*test I/O 8bit*/
-	inout [7:0] TEST_IO,
+	inout logic [7:0] TEST_IO,
 `endif
 `ifdef	ENABLE_AD9288_INTERFACE
+	input [7:0] AD_DATA_A,
 	output AD_CLKA,
-	output AD_CLKB
-`endif	
+	output AD_CLKB,
+`endif
+	
+`ifdef	ENABLE_AR9331_INTERFACE
+	input AR9331_NEXT,
+	output AR9331_EN
+`endif
 );
 wire CLK_100M;
 //100M锁相环
@@ -63,7 +70,7 @@ wire DAC_CLK;
 //8个寄存器组
 reg [11:0] dac_data[0:7];
 initial begin
-	dac_data[0] <= 1024;
+	dac_data[0] <= 900;
 	dac_data[1] <= 1024;
 	dac_data[2] <= 1536;
 	dac_data[3] <= 2048;
@@ -115,9 +122,24 @@ always@(posedge uart2reg_ready)begin
 	end
 end*/
 
-assign TEST_IO[4] = uart2reg_ready;
-assign TEST_IO[5] = dout[0];
-assign TEST_IO[7] = SYS_CLK;
-assign AD_CLKA = SYS_CLK;
-assign AD_CLKB = SYS_CLK;
+//assign TEST_IO[4] = uart2reg_ready;
+//assign TEST_IO[5] = dout[0];
+//assign TEST_IO[7] = SYS_CLK;
+ADC(
+.clk(SYS_CLK),
+.data(AD_DATA_A),
+//.trigger(TEST_IO[7]),
+.clk_a(AD_CLKA)
+);
+
+/*FPGA2AR9331 (
+		.clk(DAC_CLK),
+		.en(1'b1),
+		.rst_n(1'b1),
+		.ack(AR9331_NEXT),
+		.clk_out(AR9331_EN),
+		.len_in(30),
+		.data_out(TEST_IO)
+	);*/
+assign TEST_IO = AD_DATA_A;
 endmodule 

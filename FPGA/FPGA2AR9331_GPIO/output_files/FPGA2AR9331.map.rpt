@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA2AR9331
-Sat Sep 12 19:05:11 2015
+Mon Oct 19 17:34:02 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -13,15 +13,14 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |main|FPGA2AR9331:inst|next_state
-  9. State Machine - |main|FPGA2AR9331:inst|current_state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: FPGA2AR9331:inst
- 14. Port Connectivity Checks: "FPGA2AR9331:inst|fifo_control:comb_3"
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. State Machine - |main|FPGA2AR9331:inst|current_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: FPGA2AR9331:inst
+ 13. Port Connectivity Checks: "FPGA2AR9331:inst|fifo_control:comb_3"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -47,15 +46,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 12 19:05:11 2015            ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 19 17:34:02 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; FPGA2AR9331                                      ;
 ; Top-level Entity Name              ; main                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 84                                               ;
-;     Total combinational functions  ; 68                                               ;
-;     Dedicated logic registers      ; 58                                               ;
-; Total registers                    ; 58                                               ;
+; Total logic elements               ; 80                                               ;
+;     Total combinational functions  ; 72                                               ;
+;     Dedicated logic registers      ; 49                                               ;
+; Total registers                    ; 49                                               ;
 ; Total pins                         ; 11                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
@@ -181,28 +180,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 84    ;
+; Estimated Total logic elements              ; 80    ;
 ;                                             ;       ;
-; Total combinational functions               ; 68    ;
+; Total combinational functions               ; 72    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 27    ;
+;     -- 4 input functions                    ; 43    ;
 ;     -- 3 input functions                    ; 6     ;
-;     -- <=2 input functions                  ; 35    ;
+;     -- <=2 input functions                  ; 23    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 51    ;
+;     -- normal mode                          ; 55    ;
 ;     -- arithmetic mode                      ; 17    ;
 ;                                             ;       ;
-; Total registers                             ; 58    ;
-;     -- Dedicated logic registers            ; 58    ;
+; Total registers                             ; 49    ;
+;     -- Dedicated logic registers            ; 49    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 11    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 50    ;
-; Total fan-out                               ; 342   ;
-; Average fan-out                             ; 2.50  ;
+; Maximum fan-out                             ; 41    ;
+; Total fan-out                               ; 365   ;
+; Average fan-out                             ; 2.77  ;
 +---------------------------------------------+-------+
 
 
@@ -211,29 +210,11 @@ applicable agreement for further details.
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
 ; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Library Name ;
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
-; |main                       ; 68 (0)            ; 58 (0)       ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |main                                      ; work         ;
-;    |FPGA2AR9331:inst|       ; 68 (60)           ; 58 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FPGA2AR9331:inst                     ; work         ;
+; |main                       ; 72 (0)            ; 49 (0)       ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |main                                      ; work         ;
+;    |FPGA2AR9331:inst|       ; 72 (64)           ; 49 (41)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FPGA2AR9331:inst                     ; work         ;
 ;       |fifo_control:comb_3| ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|FPGA2AR9331:inst|fifo_control:comb_3 ; work         ;
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |main|FPGA2AR9331:inst|next_state                                                                                                                                                                            ;
-+-----------------------+--------------------+--------------------+---------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------+--------------------+
-; Name                  ; next_state.DELAY_2 ; next_state.DELAY_1 ; next_state.SEND_END ; next_state.SEND_ING_2 ; next_state.SEND_ING_1 ; next_state.SEND_ING_0 ; next_state.SEND_START ; next_state.IDLE ; next_state.DELAY_3 ;
-+-----------------------+--------------------+--------------------+---------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------+--------------------+
-; next_state.IDLE       ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                     ; 0               ; 0                  ;
-; next_state.SEND_START ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 1                     ; 1               ; 0                  ;
-; next_state.SEND_ING_0 ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 1                     ; 0                     ; 1               ; 0                  ;
-; next_state.SEND_ING_1 ; 0                  ; 0                  ; 0                   ; 0                     ; 1                     ; 0                     ; 0                     ; 1               ; 0                  ;
-; next_state.SEND_ING_2 ; 0                  ; 0                  ; 0                   ; 1                     ; 0                     ; 0                     ; 0                     ; 1               ; 0                  ;
-; next_state.SEND_END   ; 0                  ; 0                  ; 1                   ; 0                     ; 0                     ; 0                     ; 0                     ; 1               ; 0                  ;
-; next_state.DELAY_1    ; 0                  ; 1                  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                     ; 1               ; 0                  ;
-; next_state.DELAY_2    ; 1                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                     ; 1               ; 0                  ;
-; next_state.DELAY_3    ; 0                  ; 0                  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                     ; 1               ; 1                  ;
-+-----------------------+--------------------+--------------------+---------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------+--------------------+
 
 
 Encoding Type:  One-Hot
@@ -259,15 +240,11 @@ Encoding Type:  One-Hot
 +---------------------------------------+--------------------+
 ; Register name                         ; Reason for Removal ;
 +---------------------------------------+--------------------+
-; FPGA2AR9331:inst|next_state~2         ; Lost fanout        ;
-; FPGA2AR9331:inst|next_state~3         ; Lost fanout        ;
-; FPGA2AR9331:inst|next_state~4         ; Lost fanout        ;
-; FPGA2AR9331:inst|next_state~6         ; Lost fanout        ;
 ; FPGA2AR9331:inst|current_state~4      ; Lost fanout        ;
 ; FPGA2AR9331:inst|current_state~5      ; Lost fanout        ;
 ; FPGA2AR9331:inst|current_state~6      ; Lost fanout        ;
 ; FPGA2AR9331:inst|current_state~8      ; Lost fanout        ;
-; Total Number of Removed Registers = 8 ;                    ;
+; Total Number of Removed Registers = 4 ;                    ;
 +---------------------------------------+--------------------+
 
 
@@ -276,12 +253,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 58    ;
+; Total registers                              ; 49    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 18    ;
+; Number of registers using Clock Enable       ; 19    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -337,7 +314,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sat Sep 12 19:05:09 2015
+    Info: Processing started: Mon Oct 19 17:33:59 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA2AR9331 -c FPGA2AR9331
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 2 entities, in source file fpga2ar9331.v
@@ -350,6 +327,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file fifo.v
 Critical Warning (10846): Verilog HDL Instantiation warning at FPGA2AR9331.v(29): instance has no name
 Info (12127): Elaborating entity "main" for the top level hierarchy
 Info (12128): Elaborating entity "FPGA2AR9331" for hierarchy "FPGA2AR9331:inst"
+Warning (10235): Verilog HDL Always Construct warning at FPGA2AR9331.v(60): variable "ack_save" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at FPGA2AR9331.v(74): variable "ack_save" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at FPGA2AR9331.v(83): variable "ack_save" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10230): Verilog HDL assignment warning at FPGA2AR9331.v(106): truncated value with size 32 to match size of target (5)
 Warning (10230): Verilog HDL assignment warning at FPGA2AR9331.v(135): truncated value with size 32 to match size of target (5)
 Info (10264): Verilog HDL Case Statement information at FPGA2AR9331.v(102): all case item expressions in this case statement are onehot
@@ -357,17 +337,17 @@ Info (12128): Elaborating entity "fifo_control" for hierarchy "FPGA2AR9331:inst|
 Warning (10230): Verilog HDL assignment warning at FPGA2AR9331.v(146): truncated value with size 32 to match size of target (8)
 Warning (10034): Output port "isfull" at FPGA2AR9331.v(144) has no driver
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 98 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 85 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 499 megabytes
-    Info: Processing ended: Sat Sep 12 19:05:11 2015
-    Info: Elapsed time: 00:00:02
+    Info (21061): Implemented 87 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 487 megabytes
+    Info: Processing ended: Mon Oct 19 17:34:02 2015
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 
