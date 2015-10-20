@@ -2,33 +2,57 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'Div:comb_4|clk_div'
-Slack : -3.435
-TNS   : -55.957
+Type  : Slow 1200mV 85C Model Setup 'comb_3|altpll_component|pll|clk[0]'
+Slack : -4.194
+TNS   : -32.870
+
+Type  : Slow 1200mV 85C Model Setup 'FPGA2AR9331:comb_7|r_clk'
+Slack : -3.956
+TNS   : -149.992
 
 Type  : Slow 1200mV 85C Model Setup 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : -3.019
-TNS   : -38.201
+Slack : -2.703
+TNS   : -35.142
+
+Type  : Slow 1200mV 85C Model Setup 'Div:comb_4|clk_div'
+Slack : -2.070
+TNS   : -32.941
 
 Type  : Slow 1200mV 85C Model Setup 'SYS_CLK'
-Slack : -1.801
-TNS   : -12.816
+Slack : -0.071
+TNS   : -0.071
 
 Type  : Slow 1200mV 85C Model Hold 'Div:comb_4|clk_div'
-Slack : -0.393
-TNS   : -0.393
+Slack : -0.237
+TNS   : -0.237
+
+Type  : Slow 1200mV 85C Model Hold 'comb_3|altpll_component|pll|clk[0]'
+Slack : -0.145
+TNS   : -0.145
 
 Type  : Slow 1200mV 85C Model Hold 'SYS_CLK'
-Slack : 0.037
-TNS   : 0.000
+Slack : -0.074
+TNS   : -0.074
 
 Type  : Slow 1200mV 85C Model Hold 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : 0.453
+Slack : 0.433
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SYS_CLK'
-Slack : -3.000
-TNS   : -17.870
+Type  : Slow 1200mV 85C Model Hold 'FPGA2AR9331:comb_7|r_clk'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'SYS_CLK'
+Slack : 5.345
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'SYS_CLK'
+Slack : 3.061
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FPGA2AR9331:comb_7|r_clk'
+Slack : -3.201
+TNS   : -123.171
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div:comb_4|clk_div'
 Slack : -1.487
@@ -38,33 +62,65 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DAC_POLLING:comb_5|Div:comb_3
 Slack : -1.487
 TNS   : -23.792
 
-Type  : Slow 1200mV 0C Model Setup 'Div:comb_4|clk_div'
-Slack : -3.108
-TNS   : -49.490
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'comb_3|altpll_component|pll|clk[0]'
+Slack : 4.715
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SYS_CLK'
+Slack : 19.599
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'comb_3|altpll_component|pll|clk[0]'
+Slack : -3.682
+TNS   : -28.529
+
+Type  : Slow 1200mV 0C Model Setup 'FPGA2AR9331:comb_7|r_clk'
+Slack : -3.642
+TNS   : -136.305
 
 Type  : Slow 1200mV 0C Model Setup 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : -2.778
-TNS   : -34.472
+Slack : -2.444
+TNS   : -31.791
+
+Type  : Slow 1200mV 0C Model Setup 'Div:comb_4|clk_div'
+Slack : -1.890
+TNS   : -28.418
 
 Type  : Slow 1200mV 0C Model Setup 'SYS_CLK'
-Slack : -1.599
-TNS   : -10.676
+Slack : -0.059
+TNS   : -0.059
+
+Type  : Slow 1200mV 0C Model Hold 'comb_3|altpll_component|pll|clk[0]'
+Slack : -0.268
+TNS   : -0.268
 
 Type  : Slow 1200mV 0C Model Hold 'Div:comb_4|clk_div'
-Slack : -0.324
-TNS   : -0.324
+Slack : -0.138
+TNS   : -0.138
 
 Type  : Slow 1200mV 0C Model Hold 'SYS_CLK'
-Slack : 0.095
-TNS   : 0.000
+Slack : -0.051
+TNS   : -0.051
 
 Type  : Slow 1200mV 0C Model Hold 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : 0.403
+Slack : 0.382
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'
-Slack : -3.000
-TNS   : -17.870
+Type  : Slow 1200mV 0C Model Hold 'FPGA2AR9331:comb_7|r_clk'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'SYS_CLK'
+Slack : 5.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'SYS_CLK'
+Slack : 2.823
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA2AR9331:comb_7|r_clk'
+Slack : -3.201
+TNS   : -123.171
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div:comb_4|clk_div'
 Slack : -1.487
@@ -74,33 +130,65 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DAC_POLLING:comb_5|Div:comb_3|
 Slack : -1.487
 TNS   : -23.792
 
-Type  : Fast 1200mV 0C Model Setup 'Div:comb_4|clk_div'
-Slack : -0.843
-TNS   : -9.548
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'comb_3|altpll_component|pll|clk[0]'
+Slack : 4.716
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'
+Slack : 19.599
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'comb_3|altpll_component|pll|clk[0]'
+Slack : -1.568
+TNS   : -12.163
+
+Type  : Fast 1200mV 0C Model Setup 'FPGA2AR9331:comb_7|r_clk'
+Slack : -1.152
+TNS   : -38.970
 
 Type  : Fast 1200mV 0C Model Setup 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : -0.682
-TNS   : -7.350
+Slack : -0.520
+TNS   : -5.831
+
+Type  : Fast 1200mV 0C Model Setup 'Div:comb_4|clk_div'
+Slack : -0.311
+TNS   : -1.418
 
 Type  : Fast 1200mV 0C Model Setup 'SYS_CLK'
-Slack : -0.203
-TNS   : -0.380
+Slack : 0.188
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Div:comb_4|clk_div'
-Slack : -0.323
-TNS   : -0.323
+Slack : -0.278
+TNS   : -0.278
 
 Type  : Fast 1200mV 0C Model Hold 'SYS_CLK'
-Slack : -0.065
-TNS   : -0.065
+Slack : -0.139
+TNS   : -0.139
+
+Type  : Fast 1200mV 0C Model Hold 'comb_3|altpll_component|pll|clk[0]'
+Slack : 0.064
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'FPGA2AR9331:comb_7|r_clk'
 Slack : 0.187
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'
-Slack : -3.000
-TNS   : -16.058
+Type  : Fast 1200mV 0C Model Recovery 'SYS_CLK'
+Slack : 7.818
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'SYS_CLK'
+Slack : 1.157
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FPGA2AR9331:comb_7|r_clk'
+Slack : -1.000
+TNS   : -69.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div:comb_4|clk_div'
 Slack : -1.000
@@ -109,5 +197,13 @@ TNS   : -26.000
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
 Slack : -1.000
 TNS   : -16.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'comb_3|altpll_component|pll|clk[0]'
+Slack : 4.797
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'
+Slack : 19.201
+TNS   : 0.000
 
 ------------------------------------------------------------

@@ -19,7 +19,7 @@ module DAC_POLLING(
 	//dac数据
 	logic [11:0] dac_data;
 	//4分频器模块
-	Div #(.N(8))(.clk_in(clk_core),.clk_div(clk_spi));
+	Div #(.N(14))(.clk_in(clk_core),.clk_div(clk_spi));
 	//spi运行中状态
 	wire spi_isIdle;
 	wire spi_isEnd;
@@ -85,7 +85,7 @@ module DAC_POLLING(
 		if(!rst_n)begin
 		end
 		else begin
-			case(next_state)
+			case(current_state)
 				IDLE: begin
 					pos <= 7;
 					//dac_data <= 2048;

@@ -79,7 +79,7 @@ initial begin
 	dac_data[6] <= 1536;
 	dac_data[7] <= 2048;
 end
-Div #(.N(18))(.clk_in(SYS_CLK),.clk_div(DAC_CLK));
+Div #(.N(8))(.clk_in(SYS_CLK),.clk_div(DAC_CLK));
 DAC_POLLING(
 	.en(1),
 	.clk_core(DAC_CLK),
@@ -125,21 +125,36 @@ end*/
 //assign TEST_IO[4] = uart2reg_ready;
 //assign TEST_IO[5] = dout[0];
 //assign TEST_IO[7] = SYS_CLK;
+wire rclk;
+wire clear;
+wire [31:0] len;
+wire [7:0] q;
+wire adc_en;
 ADC(
-.clk(SYS_CLK),
-.data(AD_DATA_A),
-//.trigger(TEST_IO[7]),
-.clk_a(AD_CLKA)
+	.clk(SYS_CLK),
+	.data(AD_DATA_A),
+	//.trigger(TEST_IO[7]),
+	.clk_a(AD_CLKA),
+	//FIFO
+	.r_clk(rclk),
+	.clear(clear),
+	.len(len),
+	.data_out(q),
+	.send_en(adc_en)
 );
 
-/*FPGA2AR9331 (
-		.clk(DAC_CLK),
-		.en(1'b1),
+FPGA2AR9331 (
+		.clk(CLK_100M),
+		.en(adc_en),
 		.rst_n(1'b1),
+		.data_in(q),
 		.ack(AR9331_NEXT),
 		.clk_out(AR9331_EN),
-		.len_in(30),
-		.data_out(TEST_IO)
-	);*/
-assign TEST_IO = AD_DATA_A;
+		.len_in(len),
+		.data_out(TEST_IO[7:0]),
+		.r_clk(rclk),
+		.isWAIT(clear)
+	);
+//assign TEST_IO = AD_DATA_A;
+//assign TEST_IO[7] = adc_en;
 endmodule 

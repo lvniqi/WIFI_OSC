@@ -5,29 +5,33 @@
 
 `define DELAY_LEN (1024)
 module FPGA2AR9331(input clk,input rst_n,
-					 //input [7:0]data_in,//tttttttttttttt
+					 input [7:0]data_in,//tttttttttttttt
 					 input en,
 					 input[31:0] len_in,
 					 input ack,
 					 output reg clk_out,
 					 output reg [7:0]data_out,
-					 output [4:0]status
+					 output [4:0]status,
+					 output isWAIT,
+					 //读fifo时钟
+					 output reg r_clk
 					 );
 	//状态
 	parameter [4:0] IDLE = 3'd0,
-					SEND_START = 1,SEND_ING_0 = 2,SEND_ING_1 = 3,
-					SEND_ING_2 = 4,SEND_ING_3 = 5,SEND_END = 6,
-					DELAY_1 = 7,DELAY_2 = 8,DELAY_3 = 9;
+					SEND_START_SAVE = 1,SEND_START = 2,
+					SEND_START_2 = 3,SEND_START_3 = 4,
+					SEND_ING_0 = 5,SEND_ING_1 = 6,SEND_ING_2 = 7,
+					SEND_ING_3 = 8,SEND_ING_4 = 9,
+					SEND_END = 10,DELAY_1 = 11,DELAY_2 = 12,DELAY_3 = 13;
 	reg [4:0] current_state=IDLE,next_state=IDLE;
 	reg ack_save;
 	reg [31:0] len;
 	//计数器延时
 	reg [31:0] delay_counter;
 	assign status = ~current_state;
-	//控制fifo时钟
-	reg ctrl_clk;
-	wire [7:0]data_in;
-	fifo_control(.clk(ctrl_clk),.data(data_in));
+	assign isWAIT = (current_state == DELAY_3);
+	//wire [7:0]data_in;
+	//fifo_control(.clk(r_clk),.data(data_in));
 	//第一个进程，同步时序always模块，用于状态转移
 	always @ (posedge clk or negedge rst_n) begin   
 		if(!rst_n) begin 
@@ -38,18 +42,30 @@ module FPGA2AR9331(input clk,input rst_n,
 			end
 		end
 	//第二个进程，组合逻辑always模块，描述状态转移条件判断
-	always@(posedge clk) begin
+	always@(current_state or en or ack or len or delay_counter) begin
 		next_state = IDLE;
 		case (current_state)
 			//空闲状态
 			IDLE: begin 
 				if(en)
-					next_state = SEND_START;
+					next_state = SEND_START_SAVE;
 				else
 					next_state = IDLE;
 				end
+			//保存数据先
+			SEND_START_SAVE:begin
+				next_state = SEND_START;
+				end
 			//开始发送 发送状态数据
 			SEND_START: begin
+				next_state = SEND_START_2;
+				end
+			//开始发送 发送状态数据
+			SEND_START_2: begin
+				next_state = SEND_START_3;
+				end
+			//开始发送 发送状态数据
+			SEND_START_3: begin
 				next_state = SEND_ING_0;
 				end
 			//读取数据
@@ -67,8 +83,11 @@ module FPGA2AR9331(input clk,input rst_n,
 			SEND_ING_2:begin
 				next_state = SEND_ING_3;
 				end
-			//发送下一个数据
 			SEND_ING_3: begin
+				next_state = SEND_ING_4;
+				end
+			//发送下一个数据
+			SEND_ING_4:begin
 				if(len == 8'b0)
 					next_state = SEND_END;
 				else
@@ -105,31 +124,45 @@ module FPGA2AR9331(input clk,input rst_n,
 		if(!rst_n)begin
 			end
 		else begin
-			case(next_state)
+			case(current_state)
 				IDLE:begin
 					ack_save <= ack;
 					data_out <= 8'hzz;
+					end
+				SEND_START_SAVE:begin
+					ack_save <= ack;
+					//帧头
+					data_out <= 54;
 					delay_counter <= 0;
+					//同步先
+					r_clk <= 1;
 					end
 				SEND_START:begin
 					len <= len_in;
-					//帧头
-					data_out <= 54;
 					clk_out <= 1'b1;
-					ack_save <= ack;
+					//同步先
+					r_clk <= 0;
+					end
+				SEND_START_2:begin
+					//同步先
+					r_clk <= 1;
+					end
+				SEND_START_3:begin
+					//同步先
+					r_clk <= 0;
 					end
 				SEND_ING_0:begin
-					ctrl_clk <= 1;
+					r_clk <= 1;
 					end
 				SEND_ING_1:begin
-					ctrl_clk <= 0;
+					r_clk <= 0;
 					end
 				SEND_ING_2:begin
-					if(ack != ack_save) begin
-						clk_out <= ~clk_out;
+					ack_save <= ack;
+					//if(ack_save != ack)begin
 						len <=  len-1'b1;
-						ack_save <= ack;
-						end
+						clk_out <= ~clk_out;
+					//end
 					data_out <= data_in;
 					end
 				DELAY_1:begin
