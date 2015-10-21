@@ -3,19 +3,29 @@ SYS_CLK => SYS_CLK.IN3
 AD5320_SCLK <= DAC_POLLING:comb_5.sclk
 AD5320_SDATA <= DAC_POLLING:comb_5.dout
 AD5320_SYNCn <= DAC_POLLING:comb_5.sync_n
-GPIO_8 <= <GND>
+GPIO_8 <= adc_en_u.DB_MAX_OUTPUT_PORT_TYPE
 GPIO_9 <= <GND>
+AR9331_NEXT => AR9331_NEXT.IN1
+AR9331_EN <= FPGA2AR9331:comb_413.clk_out
+AR9331_DATA[0] <= <GND>
+AR9331_DATA[1] <= <GND>
+AR9331_DATA[2] <= <GND>
+AR9331_DATA[3] <= <GND>
+AR9331_DATA[4] <= <GND>
+AR9331_DATA[5] <= <GND>
+AR9331_DATA[6] <= <GND>
+AR9331_DATA[7] <= <GND>
 HC4051_POS[0] <= DAC_POLLING:comb_5.pos[0]
 HC4051_POS[1] <= DAC_POLLING:comb_5.pos[1]
 HC4051_POS[2] <= DAC_POLLING:comb_5.pos[2]
-TEST_IO[0] <> FPGA2AR9331:comb_7.data_out
-TEST_IO[1] <> FPGA2AR9331:comb_7.data_out
-TEST_IO[2] <> FPGA2AR9331:comb_7.data_out
-TEST_IO[3] <> FPGA2AR9331:comb_7.data_out
-TEST_IO[4] <> FPGA2AR9331:comb_7.data_out
-TEST_IO[5] <> FPGA2AR9331:comb_7.data_out
-TEST_IO[6] <> FPGA2AR9331:comb_7.data_out
-TEST_IO[7] <> FPGA2AR9331:comb_7.data_out
+TEST_IO[0] <> FPGA2AR9331:comb_413.data_out
+TEST_IO[1] <> FPGA2AR9331:comb_413.data_out
+TEST_IO[2] <> FPGA2AR9331:comb_413.data_out
+TEST_IO[3] <> FPGA2AR9331:comb_413.data_out
+TEST_IO[4] <> FPGA2AR9331:comb_413.data_out
+TEST_IO[5] <> FPGA2AR9331:comb_413.data_out
+TEST_IO[6] <> FPGA2AR9331:comb_413.data_out
+TEST_IO[7] <> FPGA2AR9331:comb_413.data_out
 AD_DATA_A[0] => AD_DATA_A[0].IN1
 AD_DATA_A[1] => AD_DATA_A[1].IN1
 AD_DATA_A[2] => AD_DATA_A[2].IN1
@@ -24,10 +34,10 @@ AD_DATA_A[4] => AD_DATA_A[4].IN1
 AD_DATA_A[5] => AD_DATA_A[5].IN1
 AD_DATA_A[6] => AD_DATA_A[6].IN1
 AD_DATA_A[7] => AD_DATA_A[7].IN1
-AD_CLKA <= ADC:comb_6.clk_a
+AD_CLKA <= ADC:comb_412.clk_a
 AD_CLKB <= <GND>
-AR9331_NEXT => AR9331_NEXT.IN1
-AR9331_EN <= FPGA2AR9331:comb_7.clk_out
+UART_RXD => UART_RXD.IN1
+UART_TXD <= UART:comb_6.txd
 
 
 |main|PLL:comb_3
@@ -278,6 +288,8 @@ data_in[15] => data_in_save.DATAB
 rst_n => next_state.IDLE.OUTPUTSELECT
 rst_n => next_state.SEND.OUTPUTSELECT
 rst_n => next_state.SEND_n.OUTPUTSELECT
+rst_n => next_state.DELAY.OUTPUTSELECT
+rst_n => next_state.DELAY_RELOAD.OUTPUTSELECT
 rst_n => next_state.END.OUTPUTSELECT
 rst_n => current_state~3.DATAIN
 rst_n => dout~reg0.ENA
@@ -304,7 +316,7 @@ rst_n => counter[1].ENA
 rst_n => counter[0].ENA
 rst_n => sclk~reg0.ENA
 rst_n => sync_n~reg0.ENA
-en => Selector2.IN3
+en => Selector2.IN4
 en => Selector0.IN1
 sclk <= sclk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dout <= dout~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -313,7 +325,347 @@ isIDLE <= isIDLE.DB_MAX_OUTPUT_PORT_TYPE
 isEND <= isEND.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6
+|main|UART:comb_6
+clk => clk.IN3
+rst_n => ~NO_FANOUT~
+din[0] => din[0].IN1
+din[1] => din[1].IN1
+din[2] => din[2].IN1
+din[3] => din[3].IN1
+din[4] => din[4].IN1
+din[5] => din[5].IN1
+din[6] => din[6].IN1
+din[7] => din[7].IN1
+wr_en => wr_en.IN1
+txd <= UART_TXD:comb_4.txd
+txd_busy <= UART_TXD:comb_4.txd_busy
+rxd => rxd.IN1
+rdy_clr => rdy_clr.IN1
+rdy <= rdy.DB_MAX_OUTPUT_PORT_TYPE
+dout[0] <= dout[0].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1].DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2].DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3].DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= dout[4].DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= dout[5].DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= dout[6].DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= dout[7].DB_MAX_OUTPUT_PORT_TYPE
+reg_ready <= UART2REG:comb_6.ready
+reg_out[0] <= UART2REG:comb_6.dout
+reg_out[1] <= UART2REG:comb_6.dout
+reg_out[2] <= UART2REG:comb_6.dout
+reg_out[3] <= UART2REG:comb_6.dout
+reg_out[4] <= UART2REG:comb_6.dout
+reg_out[5] <= UART2REG:comb_6.dout
+reg_out[6] <= UART2REG:comb_6.dout
+reg_out[7] <= UART2REG:comb_6.dout
+reg_out[8] <= UART2REG:comb_6.dout
+reg_out[9] <= UART2REG:comb_6.dout
+reg_out[10] <= UART2REG:comb_6.dout
+reg_out[11] <= UART2REG:comb_6.dout
+reg_out[12] <= UART2REG:comb_6.dout
+reg_out[13] <= UART2REG:comb_6.dout
+reg_out[14] <= UART2REG:comb_6.dout
+reg_out[15] <= UART2REG:comb_6.dout
+reg_out[16] <= UART2REG:comb_6.dout
+reg_out[17] <= UART2REG:comb_6.dout
+reg_out[18] <= UART2REG:comb_6.dout
+reg_out[19] <= UART2REG:comb_6.dout
+reg_out[20] <= UART2REG:comb_6.dout
+reg_out[21] <= UART2REG:comb_6.dout
+reg_out[22] <= UART2REG:comb_6.dout
+reg_out[23] <= UART2REG:comb_6.dout
+reg_address[0] <= UART2REG:comb_6.address
+reg_address[1] <= UART2REG:comb_6.address
+reg_address[2] <= UART2REG:comb_6.address
+reg_address[3] <= UART2REG:comb_6.address
+reg_address[4] <= UART2REG:comb_6.address
+reg_address[5] <= UART2REG:comb_6.address
+reg_address[6] <= UART2REG:comb_6.address
+reg_data[0] <= UART2REG:comb_6.data
+reg_data[1] <= UART2REG:comb_6.data
+reg_data[2] <= UART2REG:comb_6.data
+reg_data[3] <= UART2REG:comb_6.data
+reg_data[4] <= UART2REG:comb_6.data
+reg_data[5] <= UART2REG:comb_6.data
+reg_data[6] <= UART2REG:comb_6.data
+reg_data[7] <= UART2REG:comb_6.data
+reg_data[8] <= UART2REG:comb_6.data
+reg_data[9] <= UART2REG:comb_6.data
+reg_data[10] <= UART2REG:comb_6.data
+reg_data[11] <= UART2REG:comb_6.data
+reg_data[12] <= UART2REG:comb_6.data
+reg_data[13] <= UART2REG:comb_6.data
+reg_data[14] <= UART2REG:comb_6.data
+reg_data[15] <= UART2REG:comb_6.data
+
+
+|main|UART:comb_6|UART_BAUD_GEN:comb_3
+clk => tx_acc[0].CLK
+clk => tx_acc[1].CLK
+clk => tx_acc[2].CLK
+clk => tx_acc[3].CLK
+clk => tx_acc[4].CLK
+clk => tx_acc[5].CLK
+clk => tx_acc[6].CLK
+clk => tx_acc[7].CLK
+clk => rx_acc[0].CLK
+clk => rx_acc[1].CLK
+clk => rx_acc[2].CLK
+clk => rx_acc[3].CLK
+rx_en <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+tx_en <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|UART:comb_6|UART_TXD:comb_4
+din[0] => data.DATAB
+din[1] => data.DATAB
+din[2] => data.DATAB
+din[3] => data.DATAB
+din[4] => data.DATAB
+din[5] => data.DATAB
+din[6] => data.DATAB
+din[7] => data.DATAB
+wr_en => state.OUTPUTSELECT
+wr_en => state.OUTPUTSELECT
+wr_en => state.OUTPUTSELECT
+wr_en => state.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => data.OUTPUTSELECT
+wr_en => bitpos.OUTPUTSELECT
+wr_en => bitpos.OUTPUTSELECT
+wr_en => bitpos.OUTPUTSELECT
+clk => txd~reg0.CLK
+clk => bitpos[0].CLK
+clk => bitpos[1].CLK
+clk => bitpos[2].CLK
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => data[4].CLK
+clk => data[5].CLK
+clk => data[6].CLK
+clk => data[7].CLK
+clk => state~4.DATAIN
+clken => txd.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => bitpos.OUTPUTSELECT
+clken => bitpos.OUTPUTSELECT
+clken => bitpos.OUTPUTSELECT
+clken => txd.OUTPUTSELECT
+clken => txd.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+clken => state.OUTPUTSELECT
+txd <= txd~reg0.DB_MAX_OUTPUT_PORT_TYPE
+txd_busy <= txd_busy.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|UART:comb_6|UART_RXD:comb_5
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => scratch.DATAB
+rxd => always0.IN1
+rxd => always0.IN1
+rdy <= rdy~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rdy_clr => rdy.OUTPUTSELECT
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => data[4]~reg0.CLK
+clk => data[5]~reg0.CLK
+clk => data[6]~reg0.CLK
+clk => data[7]~reg0.CLK
+clk => scratch[0].CLK
+clk => scratch[1].CLK
+clk => scratch[2].CLK
+clk => scratch[3].CLK
+clk => scratch[4].CLK
+clk => scratch[5].CLK
+clk => scratch[6].CLK
+clk => scratch[7].CLK
+clk => bitpos[0].CLK
+clk => bitpos[1].CLK
+clk => bitpos[2].CLK
+clk => bitpos[3].CLK
+clk => sample[0].CLK
+clk => sample[1].CLK
+clk => sample[2].CLK
+clk => sample[3].CLK
+clk => rdy~reg0.CLK
+clk => state~4.DATAIN
+clk_en => state.OUTPUTSELECT
+clk_en => state.OUTPUTSELECT
+clk_en => state.OUTPUTSELECT
+clk_en => data[2]~reg0.ENA
+clk_en => data[1]~reg0.ENA
+clk_en => data[0]~reg0.ENA
+clk_en => data[3]~reg0.ENA
+clk_en => data[4]~reg0.ENA
+clk_en => data[5]~reg0.ENA
+clk_en => data[6]~reg0.ENA
+clk_en => data[7]~reg0.ENA
+clk_en => scratch[0].ENA
+clk_en => scratch[1].ENA
+clk_en => scratch[2].ENA
+clk_en => scratch[3].ENA
+clk_en => scratch[4].ENA
+clk_en => scratch[5].ENA
+clk_en => scratch[6].ENA
+clk_en => scratch[7].ENA
+clk_en => bitpos[0].ENA
+clk_en => bitpos[1].ENA
+clk_en => bitpos[2].ENA
+clk_en => bitpos[3].ENA
+clk_en => sample[0].ENA
+clk_en => sample[1].ENA
+clk_en => sample[2].ENA
+clk_en => sample[3].ENA
+clk_en => rdy~reg0.ENA
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|UART:comb_6|UART2REG:comb_6
+rdy_in => reg_save[0].CLK
+rdy_in => reg_save[1].CLK
+rdy_in => reg_save[2].CLK
+rdy_in => reg_save[3].CLK
+rdy_in => reg_save[4].CLK
+rdy_in => reg_save[5].CLK
+rdy_in => reg_save[6].CLK
+rdy_in => reg_save[7].CLK
+rdy_in => reg_save[8].CLK
+rdy_in => reg_save[9].CLK
+rdy_in => reg_save[10].CLK
+rdy_in => reg_save[11].CLK
+rdy_in => reg_save[12].CLK
+rdy_in => reg_save[13].CLK
+rdy_in => reg_save[14].CLK
+rdy_in => reg_save[15].CLK
+rdy_in => reg_save[16].CLK
+rdy_in => reg_save[17].CLK
+rdy_in => reg_save[18].CLK
+rdy_in => reg_save[19].CLK
+rdy_in => reg_save[20].CLK
+rdy_in => reg_save[21].CLK
+rdy_in => reg_save[22].CLK
+rdy_in => reg_save[23].CLK
+rdy_in => reg_save[24].CLK
+rdy_in => reg_save[25].CLK
+rdy_in => reg_save[26].CLK
+rdy_in => reg_save[27].CLK
+rdy_in => reg_save[28].CLK
+rdy_in => reg_save[29].CLK
+rdy_in => reg_save[30].CLK
+rdy_in => reg_save[31].CLK
+rdy_in => ready~reg0.CLK
+din[0] => Equal0.IN7
+din[0] => reg_save[0].DATAIN
+din[1] => Equal0.IN6
+din[1] => reg_save[1].DATAIN
+din[2] => Equal0.IN5
+din[2] => reg_save[2].DATAIN
+din[3] => Equal0.IN4
+din[3] => reg_save[3].DATAIN
+din[4] => Equal0.IN3
+din[4] => reg_save[4].DATAIN
+din[5] => Equal0.IN2
+din[5] => reg_save[5].DATAIN
+din[6] => Equal0.IN1
+din[6] => reg_save[6].DATAIN
+din[7] => Equal0.IN0
+din[7] => reg_save[7].DATAIN
+ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[0] <= reg_save[8].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= reg_save[9].DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= reg_save[10].DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= reg_save[11].DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= reg_save[12].DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= reg_save[13].DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= reg_save[14].DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= reg_save[15].DB_MAX_OUTPUT_PORT_TYPE
+dout[8] <= reg_save[16].DB_MAX_OUTPUT_PORT_TYPE
+dout[9] <= reg_save[17].DB_MAX_OUTPUT_PORT_TYPE
+dout[10] <= reg_save[18].DB_MAX_OUTPUT_PORT_TYPE
+dout[11] <= reg_save[19].DB_MAX_OUTPUT_PORT_TYPE
+dout[12] <= reg_save[20].DB_MAX_OUTPUT_PORT_TYPE
+dout[13] <= reg_save[21].DB_MAX_OUTPUT_PORT_TYPE
+dout[14] <= reg_save[22].DB_MAX_OUTPUT_PORT_TYPE
+dout[15] <= reg_save[23].DB_MAX_OUTPUT_PORT_TYPE
+dout[16] <= reg_save[24].DB_MAX_OUTPUT_PORT_TYPE
+dout[17] <= reg_save[25].DB_MAX_OUTPUT_PORT_TYPE
+dout[18] <= reg_save[26].DB_MAX_OUTPUT_PORT_TYPE
+dout[19] <= reg_save[27].DB_MAX_OUTPUT_PORT_TYPE
+dout[20] <= reg_save[28].DB_MAX_OUTPUT_PORT_TYPE
+dout[21] <= reg_save[29].DB_MAX_OUTPUT_PORT_TYPE
+dout[22] <= reg_save[30].DB_MAX_OUTPUT_PORT_TYPE
+dout[23] <= reg_save[31].DB_MAX_OUTPUT_PORT_TYPE
+address[0] <= reg_save[25].DB_MAX_OUTPUT_PORT_TYPE
+address[1] <= reg_save[26].DB_MAX_OUTPUT_PORT_TYPE
+address[2] <= reg_save[27].DB_MAX_OUTPUT_PORT_TYPE
+address[3] <= reg_save[28].DB_MAX_OUTPUT_PORT_TYPE
+address[4] <= reg_save[29].DB_MAX_OUTPUT_PORT_TYPE
+address[5] <= reg_save[30].DB_MAX_OUTPUT_PORT_TYPE
+address[6] <= reg_save[31].DB_MAX_OUTPUT_PORT_TYPE
+data[0] <= reg_save[9].DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= reg_save[10].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= reg_save[11].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= reg_save[12].DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= reg_save[13].DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= reg_save[14].DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= reg_save[15].DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= reg_save[16].DB_MAX_OUTPUT_PORT_TYPE
+data[8] <= reg_save[17].DB_MAX_OUTPUT_PORT_TYPE
+data[9] <= reg_save[18].DB_MAX_OUTPUT_PORT_TYPE
+data[10] <= reg_save[19].DB_MAX_OUTPUT_PORT_TYPE
+data[11] <= reg_save[20].DB_MAX_OUTPUT_PORT_TYPE
+data[12] <= reg_save[21].DB_MAX_OUTPUT_PORT_TYPE
+data[13] <= reg_save[22].DB_MAX_OUTPUT_PORT_TYPE
+data[14] <= reg_save[23].DB_MAX_OUTPUT_PORT_TYPE
+data[15] <= reg_save[24].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|Div:comb_411
+clk_in => cnt[0].CLK
+clk_in => cnt[1].CLK
+clk_in => cnt[2].CLK
+clk_in => cnt[3].CLK
+clk_in => cnt[4].CLK
+clk_in => cnt[5].CLK
+clk_in => cnt[6].CLK
+clk_in => cnt[7].CLK
+clk_in => cnt[8].CLK
+clk_in => clk_div~reg0.CLK
+clk_div <= clk_div~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|ADC:comb_412
 clk => clk.IN2
 data[0] => data[0].IN2
 data[1] => data[1].IN2
@@ -371,7 +723,7 @@ data_out[7] <= ADC_FIFO_CONTROL:comb_4.data_out
 send_en <= ADC_FIFO_CONTROL:comb_4.isFull
 
 
-|main|ADC:comb_6|ADC_TRIGGER:comb_3
+|main|ADC:comb_412|ADC_TRIGGER:comb_3
 clk => trigger~reg0.CLK
 data[0] => LessThan0.IN8
 data[0] => LessThan1.IN8
@@ -408,7 +760,7 @@ min[7] => LessThan1.IN9
 trigger <= trigger~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4
 clk => clk.IN1
 trigger => trigger_save[0].DATAIN
 data[0] => data[0].IN1
@@ -498,7 +850,7 @@ isFull <= isFull.DB_MAX_OUTPUT_PORT_TYPE
 isW <= isW.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3
 data[0] => data[0].IN1
 data[1] => data[1].IN1
 data[2] => data[2].IN1
@@ -534,7 +886,7 @@ wrusedw[10] <= dcfifo:dcfifo_component.wrusedw
 wrusedw[11] <= dcfifo:dcfifo_component.wrusedw
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component
 data[0] => dcfifo_anf1:auto_generated.data[0]
 data[1] => dcfifo_anf1:auto_generated.data[1]
 data[2] => dcfifo_anf1:auto_generated.data[2]
@@ -586,7 +938,7 @@ wrusedw[10] <= dcfifo_anf1:auto_generated.wrusedw[10]
 wrusedw[11] <= dcfifo_anf1:auto_generated.wrusedw[11]
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated
 data[0] => altsyncram_0011:fifo_ram.data_a[0]
 data[1] => altsyncram_0011:fifo_ram.data_a[1]
 data[2] => altsyncram_0011:fifo_ram.data_a[2]
@@ -667,7 +1019,7 @@ wrusedw[10] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 wrusedw[11] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|a_gray2bin_9ib:wrptr_g_gray2bin
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|a_gray2bin_9ib:wrptr_g_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -697,7 +1049,7 @@ gray[12] => bin[12].DATAIN
 gray[12] => xor11.IN0
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|a_gray2bin_9ib:ws_dgrp_gray2bin
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|a_gray2bin_9ib:ws_dgrp_gray2bin
 bin[0] <= xor0.DB_MAX_OUTPUT_PORT_TYPE
 bin[1] <= xor1.DB_MAX_OUTPUT_PORT_TYPE
 bin[2] <= xor2.DB_MAX_OUTPUT_PORT_TYPE
@@ -727,7 +1079,7 @@ gray[12] => bin[12].DATAIN
 gray[12] => xor11.IN0
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|a_graycounter_6p6:rdptr_g1p
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|a_graycounter_6p6:rdptr_g1p
 clock => counter5a0.CLK
 clock => counter5a1.CLK
 clock => counter5a2.CLK
@@ -775,7 +1127,7 @@ q[11] <= counter5a11.DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= counter5a12.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|a_graycounter_27c:wrptr_g1p
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|a_graycounter_27c:wrptr_g1p
 clock => counter8a0.CLK
 clock => counter8a1.CLK
 clock => counter8a2.CLK
@@ -823,7 +1175,7 @@ q[11] <= counter8a11.DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= counter8a12.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|altsyncram_0011:fifo_ram
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|altsyncram_0011:fifo_ram
 address_a[0] => ram_block11a0.PORTAADDR
 address_a[0] => ram_block11a1.PORTAADDR
 address_a[0] => ram_block11a2.PORTAADDR
@@ -1082,7 +1434,7 @@ wren_a => ram_block11a7.PORTAWE
 wren_a => ram_block11a7.ENA0
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|alt_synch_pipe_g7d:rs_dgwp
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|alt_synch_pipe_g7d:rs_dgwp
 clock => dffpipe_h09:dffpipe5.clock
 d[0] => dffpipe_h09:dffpipe5.d[0]
 d[1] => dffpipe_h09:dffpipe5.d[1]
@@ -1112,7 +1464,7 @@ q[11] <= dffpipe_h09:dffpipe5.q[11]
 q[12] <= dffpipe_h09:dffpipe5.q[12]
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|alt_synch_pipe_g7d:rs_dgwp|dffpipe_h09:dffpipe5
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|alt_synch_pipe_g7d:rs_dgwp|dffpipe_h09:dffpipe5
 clock => dffe6a[12].CLK
 clock => dffe6a[11].CLK
 clock => dffe6a[10].CLK
@@ -1167,7 +1519,7 @@ q[11] <= dffe7a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe7a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|dffpipe_c09:ws_brp
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|dffpipe_c09:ws_brp
 clock => dffe8a[12].CLK
 clock => dffe8a[11].CLK
 clock => dffe8a[10].CLK
@@ -1209,7 +1561,7 @@ q[11] <= dffe8a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe8a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|dffpipe_c09:ws_bwp
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|dffpipe_c09:ws_bwp
 clock => dffe8a[12].CLK
 clock => dffe8a[11].CLK
 clock => dffe8a[10].CLK
@@ -1251,7 +1603,7 @@ q[11] <= dffe8a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe8a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|alt_synch_pipe_h7d:ws_dgrp
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|alt_synch_pipe_h7d:ws_dgrp
 clock => dffpipe_i09:dffpipe9.clock
 d[0] => dffpipe_i09:dffpipe9.d[0]
 d[1] => dffpipe_i09:dffpipe9.d[1]
@@ -1281,7 +1633,7 @@ q[11] <= dffpipe_i09:dffpipe9.q[11]
 q[12] <= dffpipe_i09:dffpipe9.q[12]
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|alt_synch_pipe_h7d:ws_dgrp|dffpipe_i09:dffpipe9
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|alt_synch_pipe_h7d:ws_dgrp|dffpipe_i09:dffpipe9
 clock => dffe10a[12].CLK
 clock => dffe10a[11].CLK
 clock => dffe10a[10].CLK
@@ -1336,7 +1688,7 @@ q[11] <= dffe11a[11].DB_MAX_OUTPUT_PORT_TYPE
 q[12] <= dffe11a[12].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|cmpr_q76:rdempty_eq_comp
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|cmpr_q76:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1366,7 +1718,7 @@ datab[11] => data_wire[7].IN1
 datab[12] => data_wire[8].IN1
 
 
-|main|ADC:comb_6|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|cmpr_q76:wrfull_eq_comp
+|main|ADC:comb_412|ADC_FIFO_CONTROL:comb_4|ADC_FIFO:comb_3|dcfifo:dcfifo_component|dcfifo_anf1:auto_generated|cmpr_q76:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1396,8 +1748,7 @@ datab[11] => data_wire[7].IN1
 datab[12] => data_wire[8].IN1
 
 
-|main|FPGA2AR9331:comb_7
-clk => r_clk~reg0.CLK
+|main|FPGA2AR9331:comb_413
 clk => len[0].CLK
 clk => len[1].CLK
 clk => len[2].CLK
@@ -1430,7 +1781,7 @@ clk => len[28].CLK
 clk => len[29].CLK
 clk => len[30].CLK
 clk => len[31].CLK
-clk => ack_save.CLK
+clk => r_clk~reg0.CLK
 clk => data_out[0]~reg0.CLK
 clk => data_out[0]~en.CLK
 clk => data_out[1]~reg0.CLK
@@ -1447,7 +1798,9 @@ clk => data_out[6]~reg0.CLK
 clk => data_out[6]~en.CLK
 clk => data_out[7]~reg0.CLK
 clk => data_out[7]~en.CLK
+clk => ack_save.CLK
 clk => clk_out~reg0.CLK
+clk => clk_out~en.CLK
 clk => delay_counter[0].CLK
 clk => delay_counter[1].CLK
 clk => delay_counter[2].CLK
@@ -1485,13 +1838,28 @@ clk => current_state[1].CLK
 clk => current_state[2].CLK
 clk => current_state[3].CLK
 clk => current_state[4].CLK
-rst_n => data_out[7].IN1
+rst_n => r_clk~reg0.ACLR
+rst_n => data_out[0]~en.ACLR
+rst_n => data_out[1]~en.ACLR
+rst_n => data_out[2]~en.ACLR
+rst_n => data_out[3]~en.ACLR
+rst_n => data_out[4]~en.ACLR
+rst_n => data_out[5]~en.ACLR
+rst_n => data_out[6]~en.ACLR
+rst_n => data_out[7]~en.ACLR
+rst_n => ack_save.ALOAD
+rst_n => clk_out~en.ACLR
 rst_n => current_state[0].ACLR
 rst_n => current_state[1].ACLR
 rst_n => current_state[2].ACLR
 rst_n => current_state[3].ACLR
 rst_n => current_state[4].ACLR
-rst_n => r_clk~reg0.ENA
+rst_n => next_state[3].OUTPUTSELECT
+rst_n => next_state[2].OUTPUTSELECT
+rst_n => next_state[1].OUTPUTSELECT
+rst_n => next_state[0].OUTPUTSELECT
+rst_n => len[0].ENA
+rst_n => delay_counter[0].ENA
 rst_n => delay_counter[31].ENA
 rst_n => delay_counter[30].ENA
 rst_n => delay_counter[29].ENA
@@ -1523,9 +1891,6 @@ rst_n => delay_counter[4].ENA
 rst_n => delay_counter[3].ENA
 rst_n => delay_counter[2].ENA
 rst_n => delay_counter[1].ENA
-rst_n => delay_counter[0].ENA
-rst_n => clk_out~reg0.ENA
-rst_n => ack_save.ENA
 rst_n => len[31].ENA
 rst_n => len[30].ENA
 rst_n => len[29].ENA
@@ -1557,51 +1922,51 @@ rst_n => len[4].ENA
 rst_n => len[3].ENA
 rst_n => len[2].ENA
 rst_n => len[1].ENA
-rst_n => len[0].ENA
-data_in[0] => Selector66.IN3
-data_in[1] => Selector68.IN3
-data_in[2] => Selector69.IN3
-data_in[3] => Selector70.IN3
-data_in[4] => Selector71.IN3
-data_in[5] => Selector72.IN3
-data_in[6] => Selector73.IN3
-data_in[7] => Selector75.IN3
+data_in[0] => Selector65.IN3
+data_in[1] => Selector67.IN3
+data_in[2] => Selector68.IN3
+data_in[3] => Selector69.IN3
+data_in[4] => Selector70.IN3
+data_in[5] => Selector71.IN3
+data_in[6] => Selector72.IN3
+data_in[7] => Selector74.IN3
 en => Mux3.IN31
-len_in[0] => Selector64.IN4
-len_in[1] => Selector63.IN4
-len_in[2] => Selector62.IN4
-len_in[3] => Selector61.IN4
-len_in[4] => Selector60.IN4
-len_in[5] => Selector59.IN4
-len_in[6] => Selector58.IN4
-len_in[7] => Selector57.IN4
-len_in[8] => Selector56.IN4
-len_in[9] => Selector55.IN4
-len_in[10] => Selector54.IN4
-len_in[11] => Selector53.IN4
-len_in[12] => Selector52.IN4
-len_in[13] => Selector51.IN4
-len_in[14] => Selector50.IN4
-len_in[15] => Selector49.IN4
-len_in[16] => Selector48.IN4
-len_in[17] => Selector47.IN4
-len_in[18] => Selector46.IN4
-len_in[19] => Selector45.IN4
-len_in[20] => Selector44.IN4
-len_in[21] => Selector43.IN4
-len_in[22] => Selector42.IN4
-len_in[23] => Selector41.IN4
-len_in[24] => Selector40.IN4
-len_in[25] => Selector39.IN4
-len_in[26] => Selector38.IN4
-len_in[27] => Selector37.IN4
-len_in[28] => Selector36.IN4
-len_in[29] => Selector35.IN4
-len_in[30] => Selector34.IN4
-len_in[31] => Selector33.IN4
+len_in[0] => Selector63.IN4
+len_in[1] => Selector62.IN4
+len_in[2] => Selector61.IN4
+len_in[3] => Selector60.IN4
+len_in[4] => Selector59.IN4
+len_in[5] => Selector58.IN4
+len_in[6] => Selector57.IN4
+len_in[7] => Selector56.IN4
+len_in[8] => Selector55.IN4
+len_in[9] => Selector54.IN4
+len_in[10] => Selector53.IN4
+len_in[11] => Selector52.IN4
+len_in[12] => Selector51.IN4
+len_in[13] => Selector50.IN4
+len_in[14] => Selector49.IN4
+len_in[15] => Selector48.IN4
+len_in[16] => Selector47.IN4
+len_in[17] => Selector46.IN4
+len_in[18] => Selector45.IN4
+len_in[19] => Selector44.IN4
+len_in[20] => Selector43.IN4
+len_in[21] => Selector42.IN4
+len_in[22] => Selector41.IN4
+len_in[23] => Selector40.IN4
+len_in[24] => Selector39.IN4
+len_in[25] => Selector38.IN4
+len_in[26] => Selector37.IN4
+len_in[27] => Selector36.IN4
+len_in[28] => Selector35.IN4
+len_in[29] => Selector34.IN4
+len_in[30] => Selector33.IN4
+len_in[31] => Selector32.IN4
 ack => always1.IN1
-ack => ack_save.DATAB
-clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ack => ack_save.ADATA
+ack => ack_save.DATAIN
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
 data_out[0] <= data_out[0].DB_MAX_OUTPUT_PORT_TYPE
 data_out[1] <= data_out[1].DB_MAX_OUTPUT_PORT_TYPE
 data_out[2] <= data_out[2].DB_MAX_OUTPUT_PORT_TYPE

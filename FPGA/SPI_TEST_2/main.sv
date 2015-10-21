@@ -7,6 +7,7 @@
 `define ENABLE_TEST_IO_INTERFACE
 `define ENABLE_AD9288_INTERFACE
 `define ENABLE_AR9331_INTERFACE
+`define ENABLE_UART_INTERFACE
 module main(
 	/* Clock inputs, SYS_CLK = 25MHz*/	
 `ifdef ENABLE_CLOCK_INPUTS
@@ -24,6 +25,9 @@ module main(
 	/* AR9331, WIFI SOC */
 	output GPIO_8,
 	output GPIO_9,
+	input AR9331_NEXT,
+	output AR9331_EN,
+	output [7:0] AR9331_DATA,
 `endif
 
 `ifdef	ENABLE_74HC4051_INTERFACE
@@ -35,6 +39,7 @@ module main(
 	/*test I/O 8bit*/
 	inout logic [7:0] TEST_IO,
 `endif
+
 `ifdef	ENABLE_AD9288_INTERFACE
 	input [7:0] AD_DATA_A,
 	output AD_CLKA,
@@ -42,15 +47,18 @@ module main(
 `endif
 	
 `ifdef	ENABLE_AR9331_INTERFACE
-	input AR9331_NEXT,
-	output AR9331_EN
+`endif
+
+`ifdef ENABLE_UART_INTERFACE
+	input UART_RXD,
+	output UART_TXD
 `endif
 );
-wire CLK_100M;
+wire CLK_200M;
 //100M锁相环
 PLL(
 .inclk0(SYS_CLK),
-.c0(CLK_100M)
+.c0(CLK_200M)
 );
 /*//SPI输出
 SPI_OUT(
@@ -91,23 +99,24 @@ DAC_POLLING(
 	.pos(HC4051_POS)
 );
 //UART测试
+reg adc_en_u = 0;
 wire [7:0] dout;
 wire uart2reg_ready;
 wire [6:0] uart2reg_address;
 wire [15:0] uart2reg_data;
-/*UART(
+UART(
 	.clk(SYS_CLK),
 	.rst_n(1),
 	.din(dout),
 	//.din(uart2reg_dout[23:16]),
 	//TXD
 	.wr_en(1),
-	.txd(TEST_IO[1]),
-	.txd_busy(TEST_IO[0]),
+	.txd(UART_TXD),
+	//.txd_busy(TEST_IO[0]),
 	//RXD
-	.rxd(TEST_IO[2]),
+	.rxd(UART_RXD),
 	.rdy_clr(1),
-	.rdy(TEST_IO[3]),
+	//.rdy(TEST_IO[3]),
 	.dout(dout),
 	//REG
 	.reg_ready(uart2reg_ready),
@@ -116,11 +125,14 @@ wire [15:0] uart2reg_data;
 );
 
 always@(posedge uart2reg_ready)begin
-	if(uart2reg_address == 7'hff)begin
+	if(uart2reg_address == 7'h7f)begin
 		dac_data[uart2reg_data[14:12]]
 			<= uart2reg_data[11:0];
 	end
-end*/
+	if(uart2reg_address == 7'h7e)begin
+		adc_en_u <= uart2reg_data[0];
+	end
+end
 
 //assign TEST_IO[4] = uart2reg_ready;
 //assign TEST_IO[5] = dout[0];
@@ -130,8 +142,10 @@ wire clear;
 wire [31:0] len;
 wire [7:0] q;
 wire adc_en;
+wire adc_clk;
+Div #(.N(4))(.clk_in(CLK_200M),.clk_div(adc_clk));
 ADC(
-	.clk(SYS_CLK),
+	.clk(adc_clk),
 	.data(AD_DATA_A),
 	//.trigger(TEST_IO[7]),
 	.clk_a(AD_CLKA),
@@ -144,9 +158,9 @@ ADC(
 );
 
 FPGA2AR9331 (
-		.clk(CLK_100M),
-		.en(adc_en),
-		.rst_n(1'b1),
+		.clk(CLK_200M),
+		.en(adc_en&&adc_en_u),
+		.rst_n(adc_en_u),
 		.data_in(q),
 		.ack(AR9331_NEXT),
 		.clk_out(AR9331_EN),
@@ -154,7 +168,6 @@ FPGA2AR9331 (
 		.data_out(TEST_IO[7:0]),
 		.r_clk(rclk),
 		.isWAIT(clear)
-	);
-//assign TEST_IO = AD_DATA_A;
-//assign TEST_IO[7] = adc_en;
+);
+assign GPIO_8 = adc_en_u;
 endmodule 

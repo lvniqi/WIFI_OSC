@@ -88,7 +88,6 @@ module DAC_POLLING(
 			case(current_state)
 				IDLE: begin
 					pos <= 7;
-					//dac_data <= 2048;
 					spi_en <= 0;
 				end
 				SEND: begin
@@ -123,9 +122,9 @@ module SPI_OUT #(parameter SPI_LEN=16)(
 		  output isEND
 		  );
    //define state
-   parameter [1:0] IDLE=2'b00,SEND=2'b01,SEND_n = 2'b10,END = 2'b11;
-   reg [1:0] current_state=IDLE;
-	reg [1:0] next_state=IDLE;
+   parameter [2:0] IDLE=0,SEND=1,SEND_n = 2,DELAY = 3,DELAY_RELOAD = 4,END = 5;
+   reg [2:0] current_state=IDLE;
+	reg [2:0] next_state=IDLE;
 	reg [4:0] counter=SPI_LEN;
 	reg [SPI_LEN-1:0] data_in_save;
 	assign isIDLE = (next_state == IDLE);
@@ -155,7 +154,7 @@ module SPI_OUT #(parameter SPI_LEN=16)(
 				end
 				SEND:begin
 					if(counter==5'd0)
-						next_state=END;
+						next_state=DELAY;
 					else if(!sclk)//正在发送，进入下一状态
 						next_state = SEND_n;
 					else
@@ -167,6 +166,14 @@ module SPI_OUT #(parameter SPI_LEN=16)(
 					else
 						next_state = SEND_n;
 				end
+				DELAY:begin
+					if(counter>5'd40)
+						next_state=IDLE;
+					else
+						next_state = DELAY_RELOAD;
+				end
+				DELAY_RELOAD:
+					next_state = END;
 				END:begin
 					if(counter>5'd40)
 						next_state=IDLE;
@@ -197,6 +204,16 @@ module SPI_OUT #(parameter SPI_LEN=16)(
 					sclk <= 1'b1;
 					dout <= data_in_save[counter-1];
 					sync_n <= 1'b0;
+				end
+				DELAY:begin
+					sclk <= 1'b1;
+					sync_n <= 1'b1;
+					counter <= counter+1'b1;
+				end
+				DELAY_RELOAD:begin
+					sclk <= 1'b1;
+					sync_n <= 1'b1;
+					counter <= 0;
 				end
 				END:begin
 					sclk <= 1'b1;

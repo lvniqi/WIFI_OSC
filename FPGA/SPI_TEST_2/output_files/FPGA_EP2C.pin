@@ -100,7 +100,7 @@ VCCINT                       : 29        : power  :                   : 1.2V    
 RESERVED_INPUT               : 30        :        :                   :         : 2         :                
 RESERVED_INPUT               : 31        :        :                   :         : 2         :                
 RESERVED_INPUT               : 32        :        :                   :         : 2         :                
-RESERVED_INPUT               : 33        :        :                   :         : 2         :                
+AR9331_DATA[0]               : 33        : output : 3.3-V LVTTL       :         : 2         : N              
 RESERVED_INPUT               : 34        :        :                   :         : 2         :                
 VCCA1                        : 35        : power  :                   : 2.5V    :           :                
 GNDA1                        : 36        : gnd    :                   :         :           :                
@@ -154,8 +154,8 @@ RESERVED_INPUT               : 83        :        :                   :         
 RESERVED_INPUT               : 84        :        :                   :         : 5         :                
 RESERVED_INPUT               : 85        :        :                   :         : 5         :                
 RESERVED_INPUT               : 86        :        :                   :         : 5         :                
-RESERVED_INPUT               : 87        :        :                   :         : 5         :                
-GND+                         : 88        :        :                   :         : 5         :                
+UART_TXD                     : 87        : output : 3.3-V LVTTL       :         : 5         : Y              
+UART_RXD                     : 88        : input  : 3.3-V LVTTL       :         : 5         : Y              
 GND+                         : 89        :        :                   :         : 5         :                
 GND+                         : 90        :        :                   :         : 6         :                
 GND+                         : 91        :        :                   :         : 6         :                
@@ -165,22 +165,22 @@ MSEL0                        : 94        :        :                   :         
 GND                          : 95        : gnd    :                   :         :           :                
 MSEL1                        : 96        :        :                   :         : 6         :                
 MSEL2                        : 97        :        :                   :         : 6         :                
-RESERVED_INPUT               : 98        :        :                   :         : 6         :                
-RESERVED_INPUT               : 99        :        :                   :         : 6         :                
+AR9331_DATA[7]               : 98        : output : 3.3-V LVTTL       :         : 6         : Y              
+AR9331_DATA[6]               : 99        : output : 3.3-V LVTTL       :         : 6         : Y              
 AR9331_EN                    : 100       : output : 3.3-V LVTTL       :         : 6         : Y              
 RESERVED_INPUT               : 101       :        :                   :         : 6         :                
 VCCINT                       : 102       : power  :                   : 1.2V    :           :                
 AR9331_NEXT                  : 103       : input  : 3.3-V LVTTL       :         : 6         : Y              
-RESERVED_INPUT               : 104       :        :                   :         : 6         :                
-RESERVED_INPUT               : 105       :        :                   :         : 6         :                
-RESERVED_INPUT               : 106       :        :                   :         : 6         :                
+AR9331_DATA[5]               : 104       : output : 3.3-V LVTTL       :         : 6         : Y              
+AR9331_DATA[4]               : 105       : output : 3.3-V LVTTL       :         : 6         : Y              
+AR9331_DATA[3]               : 106       : output : 3.3-V LVTTL       :         : 6         : Y              
 VCCA2                        : 107       : power  :                   : 2.5V    :           :                
 GNDA2                        : 108       : gnd    :                   :         :           :                
 VCCD_PLL2                    : 109       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT               : 110       :        :                   :         : 7         :                
 RESERVED_INPUT               : 111       :        :                   :         : 7         :                
-RESERVED_INPUT               : 112       :        :                   :         : 7         :                
-RESERVED_INPUT               : 113       :        :                   :         : 7         :                
+AR9331_DATA[2]               : 112       : output : 3.3-V LVTTL       :         : 7         : Y              
+AR9331_DATA[1]               : 113       : output : 3.3-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT               : 114       :        :                   :         : 7         :                
 RESERVED_INPUT               : 115       :        :                   :         : 7         :                
 VCCINT                       : 116       : power  :                   : 1.2V    :           :                
