@@ -3,326 +3,302 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'comb_3|altpll_component|pll|clk[0]'
-Slack : -5.806
-TNS   : -181.702
+Slack : -6.021
+TNS   : -286.389
 
-Type  : Slow 1200mV 85C Model Setup 'Div:comb_411|clk_div'
-Slack : -5.430
-TNS   : -332.480
+Type  : Slow 1200mV 85C Model Setup 'FPGA2AR9331:comb_546|r_clk'
+Slack : -4.784
+TNS   : -174.550
 
-Type  : Slow 1200mV 85C Model Setup 'FPGA2AR9331:comb_413|r_clk'
-Slack : -4.161
-TNS   : -168.452
+Type  : Slow 1200mV 85C Model Setup 'UART:comb_7|UART2REG:comb_6|ready'
+Slack : -4.747
+TNS   : -469.397
 
-Type  : Slow 1200mV 85C Model Setup 'Div:comb_4|clk_div'
-Slack : -3.385
-TNS   : -60.568
-
-Type  : Slow 1200mV 85C Model Setup 'UART:comb_6|UART2REG:comb_6|ready'
-Slack : -3.135
-TNS   : -265.089
+Type  : Slow 1200mV 85C Model Setup 'Div_c:comb_544|clk_div'
+Slack : -4.521
+TNS   : -398.052
 
 Type  : Slow 1200mV 85C Model Setup 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : -2.994
-TNS   : -56.989
+Slack : -3.181
+TNS   : -64.653
 
-Type  : Slow 1200mV 85C Model Setup 'UART:comb_6|UART_RXD:comb_5|rdy'
-Slack : -2.404
-TNS   : -70.146
+Type  : Slow 1200mV 85C Model Setup 'Div:comb_4|clk_div'
+Slack : -3.098
+TNS   : -62.560
+
+Type  : Slow 1200mV 85C Model Setup 'UART:comb_7|UART_RXD:comb_5|rdy'
+Slack : -0.997
+TNS   : -22.865
 
 Type  : Slow 1200mV 85C Model Setup 'SYS_CLK'
-Slack : -0.150
-TNS   : -0.150
+Slack : -0.146
+TNS   : -0.251
+
+Type  : Slow 1200mV 85C Model Hold 'Div_c:comb_544|clk_div'
+Slack : -0.568
+TNS   : -1.136
 
 Type  : Slow 1200mV 85C Model Hold 'Div:comb_4|clk_div'
-Slack : -0.650
-TNS   : -0.650
+Slack : -0.518
+TNS   : -0.518
 
-Type  : Slow 1200mV 85C Model Hold 'Div:comb_411|clk_div'
-Slack : -0.404
-TNS   : -1.288
+Type  : Slow 1200mV 85C Model Hold 'UART:comb_7|UART2REG:comb_6|ready'
+Slack : -0.273
+TNS   : -0.273
 
 Type  : Slow 1200mV 85C Model Hold 'comb_3|altpll_component|pll|clk[0]'
-Slack : -0.159
-TNS   : -0.306
+Slack : -0.145
+TNS   : -0.289
 
 Type  : Slow 1200mV 85C Model Hold 'SYS_CLK'
-Slack : -0.126
-TNS   : -0.126
+Slack : -0.115
+TNS   : -0.160
 
-Type  : Slow 1200mV 85C Model Hold 'UART:comb_6|UART2REG:comb_6|ready'
-Slack : 0.028
+Type  : Slow 1200mV 85C Model Hold 'UART:comb_7|UART_RXD:comb_5|rdy'
+Slack : 0.442
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
 Slack : 0.453
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'FPGA2AR9331:comb_413|r_clk'
-Slack : 0.453
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'UART:comb_6|UART_RXD:comb_5|rdy'
+Type  : Slow 1200mV 85C Model Hold 'FPGA2AR9331:comb_546|r_clk'
 Slack : 0.453
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'comb_3|altpll_component|pll|clk[0]'
-Slack : -1.214
-TNS   : -16.257
-
-Type  : Slow 1200mV 85C Model Recovery 'Div:comb_411|clk_div'
-Slack : -0.634
-TNS   : -0.634
-
-Type  : Slow 1200mV 85C Model Removal 'Div:comb_411|clk_div'
-Slack : 0.206
-TNS   : 0.000
+Slack : -1.584
+TNS   : -19.065
 
 Type  : Slow 1200mV 85C Model Removal 'comb_3|altpll_component|pll|clk[0]'
-Slack : 0.579
+Slack : 0.774
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div:comb_411|clk_div'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div_c:comb_544|clk_div'
 Slack : -3.201
-TNS   : -204.956
+TNS   : -258.488
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FPGA2AR9331:comb_413|r_clk'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FPGA2AR9331:comb_546|r_clk'
 Slack : -3.201
 TNS   : -123.171
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:comb_6|UART2REG:comb_6|ready'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:comb_7|UART2REG:comb_6|ready'
 Slack : -1.487
-TNS   : -144.239
+TNS   : -168.031
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Div:comb_4|clk_div'
 Slack : -1.487
 TNS   : -49.071
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:comb_6|UART_RXD:comb_5|rdy'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:comb_7|UART_RXD:comb_5|rdy'
 Slack : -1.487
-TNS   : -47.584
+TNS   : -43.123
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
 Slack : -1.487
 TNS   : -37.175
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'adc_en_u'
-Slack : 0.403
+Slack : 0.409
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'comb_3|altpll_component|pll|clk[0]'
-Slack : 2.218
+Slack : 2.196
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SYS_CLK'
-Slack : 19.740
+Slack : 19.737
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'comb_3|altpll_component|pll|clk[0]'
-Slack : -5.264
-TNS   : -152.241
+Slack : -5.324
+TNS   : -244.801
 
-Type  : Slow 1200mV 0C Model Setup 'Div:comb_411|clk_div'
-Slack : -5.054
-TNS   : -304.791
+Type  : Slow 1200mV 0C Model Setup 'UART:comb_7|UART2REG:comb_6|ready'
+Slack : -4.472
+TNS   : -441.355
 
-Type  : Slow 1200mV 0C Model Setup 'FPGA2AR9331:comb_413|r_clk'
-Slack : -3.881
-TNS   : -157.580
+Type  : Slow 1200mV 0C Model Setup 'FPGA2AR9331:comb_546|r_clk'
+Slack : -4.438
+TNS   : -160.156
+
+Type  : Slow 1200mV 0C Model Setup 'Div_c:comb_544|clk_div'
+Slack : -4.222
+TNS   : -363.206
 
 Type  : Slow 1200mV 0C Model Setup 'Div:comb_4|clk_div'
-Slack : -3.217
-TNS   : -54.475
-
-Type  : Slow 1200mV 0C Model Setup 'UART:comb_6|UART2REG:comb_6|ready'
-Slack : -2.895
-TNS   : -244.017
+Slack : -2.897
+TNS   : -56.269
 
 Type  : Slow 1200mV 0C Model Setup 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : -2.699
-TNS   : -51.954
+Slack : -2.838
+TNS   : -59.501
 
-Type  : Slow 1200mV 0C Model Setup 'UART:comb_6|UART_RXD:comb_5|rdy'
-Slack : -2.180
-TNS   : -63.320
+Type  : Slow 1200mV 0C Model Setup 'UART:comb_7|UART_RXD:comb_5|rdy'
+Slack : -0.828
+TNS   : -18.302
 
 Type  : Slow 1200mV 0C Model Setup 'SYS_CLK'
-Slack : -0.029
-TNS   : -0.029
+Slack : -0.094
+TNS   : -0.104
+
+Type  : Slow 1200mV 0C Model Hold 'Div_c:comb_544|clk_div'
+Slack : -0.501
+TNS   : -1.002
 
 Type  : Slow 1200mV 0C Model Hold 'Div:comb_4|clk_div'
-Slack : -0.590
-TNS   : -0.590
-
-Type  : Slow 1200mV 0C Model Hold 'Div:comb_411|clk_div'
-Slack : -0.305
-TNS   : -0.305
+Slack : -0.496
+TNS   : -0.496
 
 Type  : Slow 1200mV 0C Model Hold 'comb_3|altpll_component|pll|clk[0]'
-Slack : -0.280
-TNS   : -0.552
+Slack : -0.269
+TNS   : -0.536
+
+Type  : Slow 1200mV 0C Model Hold 'UART:comb_7|UART2REG:comb_6|ready'
+Slack : -0.123
+TNS   : -0.123
 
 Type  : Slow 1200mV 0C Model Hold 'SYS_CLK'
-Slack : -0.101
-TNS   : -0.101
+Slack : -0.039
+TNS   : -0.052
 
-Type  : Slow 1200mV 0C Model Hold 'UART:comb_6|UART2REG:comb_6|ready'
-Slack : 0.161
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'UART:comb_6|UART_RXD:comb_5|rdy'
-Slack : 0.359
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'FPGA2AR9331:comb_413|r_clk'
-Slack : 0.402
+Type  : Slow 1200mV 0C Model Hold 'UART:comb_7|UART_RXD:comb_5|rdy'
+Slack : 0.344
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : 0.403
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'FPGA2AR9331:comb_546|r_clk'
+Slack : 0.401
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'comb_3|altpll_component|pll|clk[0]'
-Slack : -0.900
-TNS   : -11.823
-
-Type  : Slow 1200mV 0C Model Recovery 'Div:comb_411|clk_div'
-Slack : -0.715
-TNS   : -0.715
-
-Type  : Slow 1200mV 0C Model Removal 'Div:comb_411|clk_div'
-Slack : 0.251
-TNS   : 0.000
+Slack : -1.229
+TNS   : -14.277
 
 Type  : Slow 1200mV 0C Model Removal 'comb_3|altpll_component|pll|clk[0]'
-Slack : 0.399
+Slack : 0.600
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div:comb_411|clk_div'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div_c:comb_544|clk_div'
 Slack : -3.201
-TNS   : -204.956
+TNS   : -258.488
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA2AR9331:comb_413|r_clk'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FPGA2AR9331:comb_546|r_clk'
 Slack : -3.201
 TNS   : -123.171
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:comb_6|UART2REG:comb_6|ready'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:comb_7|UART2REG:comb_6|ready'
 Slack : -1.487
-TNS   : -144.239
+TNS   : -168.031
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Div:comb_4|clk_div'
 Slack : -1.487
 TNS   : -49.071
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:comb_6|UART_RXD:comb_5|rdy'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:comb_7|UART_RXD:comb_5|rdy'
 Slack : -1.487
-TNS   : -47.584
+TNS   : -43.123
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
 Slack : -1.487
 TNS   : -37.175
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'adc_en_u'
-Slack : 0.424
+Slack : 0.432
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'comb_3|altpll_component|pll|clk[0]'
-Slack : 2.215
+Slack : 2.161
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'
-Slack : 19.751
+Slack : 19.750
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'comb_3|altpll_component|pll|clk[0]'
-Slack : -2.295
-TNS   : -71.636
+Slack : -2.303
+TNS   : -112.660
 
-Type  : Fast 1200mV 0C Model Setup 'Div:comb_411|clk_div'
-Slack : -1.906
-TNS   : -89.952
+Type  : Fast 1200mV 0C Model Setup 'UART:comb_7|UART2REG:comb_6|ready'
+Slack : -1.490
+TNS   : -141.343
 
-Type  : Fast 1200mV 0C Model Setup 'FPGA2AR9331:comb_413|r_clk'
-Slack : -1.241
-TNS   : -44.670
+Type  : Fast 1200mV 0C Model Setup 'FPGA2AR9331:comb_546|r_clk'
+Slack : -1.490
+TNS   : -46.792
 
-Type  : Fast 1200mV 0C Model Setup 'Div:comb_4|clk_div'
-Slack : -0.895
-TNS   : -8.912
-
-Type  : Fast 1200mV 0C Model Setup 'UART:comb_6|UART2REG:comb_6|ready'
-Slack : -0.830
-TNS   : -61.200
+Type  : Fast 1200mV 0C Model Setup 'Div_c:comb_544|clk_div'
+Slack : -1.404
+TNS   : -96.766
 
 Type  : Fast 1200mV 0C Model Setup 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : -0.715
-TNS   : -10.437
+Slack : -0.835
+TNS   : -13.545
 
-Type  : Fast 1200mV 0C Model Setup 'UART:comb_6|UART_RXD:comb_5|rdy'
-Slack : -0.476
-TNS   : -11.995
+Type  : Fast 1200mV 0C Model Setup 'Div:comb_4|clk_div'
+Slack : -0.812
+TNS   : -9.374
 
 Type  : Fast 1200mV 0C Model Setup 'SYS_CLK'
-Slack : 0.151
+Slack : 0.143
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'Div:comb_411|clk_div'
-Slack : -0.481
-TNS   : -5.226
+Type  : Fast 1200mV 0C Model Setup 'UART:comb_7|UART_RXD:comb_5|rdy'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Div_c:comb_544|clk_div'
+Slack : -0.550
+TNS   : -1.100
 
 Type  : Fast 1200mV 0C Model Hold 'Div:comb_4|clk_div'
-Slack : -0.401
-TNS   : -0.401
+Slack : -0.310
+TNS   : -0.310
+
+Type  : Fast 1200mV 0C Model Hold 'UART:comb_7|UART2REG:comb_6|ready'
+Slack : -0.246
+TNS   : -0.246
 
 Type  : Fast 1200mV 0C Model Hold 'SYS_CLK'
-Slack : -0.134
-TNS   : -0.238
-
-Type  : Fast 1200mV 0C Model Hold 'UART:comb_6|UART2REG:comb_6|ready'
-Slack : -0.097
-TNS   : -0.097
+Slack : -0.165
+TNS   : -0.282
 
 Type  : Fast 1200mV 0C Model Hold 'comb_3|altpll_component|pll|clk[0]'
-Slack : 0.058
+Slack : 0.062
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'UART:comb_6|UART_RXD:comb_5|rdy'
-Slack : 0.097
+Type  : Fast 1200mV 0C Model Hold 'UART:comb_7|UART_RXD:comb_5|rdy'
+Slack : 0.090
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
-Slack : 0.187
+Slack : 0.186
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'FPGA2AR9331:comb_413|r_clk'
-Slack : 0.187
+Type  : Fast 1200mV 0C Model Hold 'FPGA2AR9331:comb_546|r_clk'
+Slack : 0.186
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'comb_3|altpll_component|pll|clk[0]'
-Slack : -0.531
-TNS   : -6.979
-
-Type  : Fast 1200mV 0C Model Recovery 'Div:comb_411|clk_div'
-Slack : 0.356
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Removal 'Div:comb_411|clk_div'
-Slack : -0.191
-TNS   : -0.191
+Slack : -0.719
+TNS   : -8.369
 
 Type  : Fast 1200mV 0C Model Removal 'comb_3|altpll_component|pll|clk[0]'
-Slack : 0.394
+Slack : 0.454
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div:comb_411|clk_div'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div_c:comb_544|clk_div'
 Slack : -1.000
-TNS   : -124.000
+TNS   : -160.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:comb_6|UART2REG:comb_6|ready'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:comb_7|UART2REG:comb_6|ready'
 Slack : -1.000
-TNS   : -97.000
+TNS   : -113.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FPGA2AR9331:comb_413|r_clk'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FPGA2AR9331:comb_546|r_clk'
 Slack : -1.000
 TNS   : -69.000
 
@@ -330,20 +306,20 @@ Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Div:comb_4|clk_div'
 Slack : -1.000
 TNS   : -33.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:comb_6|UART_RXD:comb_5|rdy'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:comb_7|UART_RXD:comb_5|rdy'
 Slack : -1.000
-TNS   : -32.000
+TNS   : -29.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DAC_POLLING:comb_5|Div:comb_3|clk_div'
 Slack : -1.000
 TNS   : -25.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'adc_en_u'
-Slack : 0.451
+Slack : 0.454
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'comb_3|altpll_component|pll|clk[0]'
-Slack : 2.295
+Slack : 2.270
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SYS_CLK'

@@ -100,7 +100,7 @@ VCCINT                       : 29        : power  :                   : 1.2V    
 RESERVED_INPUT               : 30        :        :                   :         : 2         :                
 RESERVED_INPUT               : 31        :        :                   :         : 2         :                
 RESERVED_INPUT               : 32        :        :                   :         : 2         :                
-AR9331_DATA[0]               : 33        : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT               : 33        :        :                   :         : 2         :                
 RESERVED_INPUT               : 34        :        :                   :         : 2         :                
 VCCA1                        : 35        : power  :                   : 2.5V    :           :                
 GNDA1                        : 36        : gnd    :                   :         :           :                
@@ -134,7 +134,7 @@ GND                          : 63        : gnd    :                   :         
 RESERVED_INPUT               : 64        :        :                   :         : 4         :                
 RESERVED_INPUT               : 65        :        :                   :         : 4         :                
 RESERVED_INPUT               : 66        :        :                   :         : 4         :                
-RESERVED_INPUT               : 67        :        :                   :         : 4         :                
+AR9331_DATA[0]               : 67        : output : 3.3-V LVTTL       :         : 4         : N              
 RESERVED_INPUT               : 68        :        :                   :         : 4         :                
 RESERVED_INPUT               : 69        :        :                   :         : 4         :                
 RESERVED_INPUT               : 70        :        :                   :         : 4         :                
@@ -147,7 +147,7 @@ RESERVED_INPUT               : 76        :        :                   :         
 RESERVED_INPUT               : 77        :        :                   :         : 5         :                
 VCCINT                       : 78        : power  :                   : 1.2V    :           :                
 GND                          : 79        : gnd    :                   :         :           :                
-RESERVED_INPUT               : 80        :        :                   :         : 5         :                
+CH1_AC_DC                    : 80        : output : 3.3-V LVTTL       :         : 5         : Y              
 VCCIO5                       : 81        : power  :                   : 3.3V    : 5         :                
 GND                          : 82        : gnd    :                   :         :           :                
 RESERVED_INPUT               : 83        :        :                   :         : 5         :                

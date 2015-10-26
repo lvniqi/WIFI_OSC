@@ -47,6 +47,7 @@ module main(
 `endif
 	
 `ifdef	ENABLE_AR9331_INTERFACE
+	output CH1_AC_DC,
 `endif
 
 `ifdef ENABLE_UART_INTERFACE
@@ -60,33 +61,13 @@ PLL(
 .inclk0(SYS_CLK),
 .c0(CLK_200M)
 );
-/*//SPI输出
-SPI_OUT(
-	.clk(SYS_CLK),
-	.en(1),
-	.rst_n(1),
-	.data_in(2048),
-	.sclk(AD5320_SCLK),
-	.dout(AD5320_SDATA),
-	.sync_n(AD5320_SYNCn),
-	.isIDLE(GPIO_8),
-	.isEND(GPIO_9)
-	);
-assign HC4051_POS = 0;*/
 //DAC轮询刷新
 wire DAC_CLK;
-//8个寄存器组
+//8个寄存器组 用于DAC输出
 reg [11:0] dac_data[0:7];
-initial begin
-	dac_data[0] <= 900;
-	dac_data[1] <= 1024;
-	dac_data[2] <= 1536;
-	dac_data[3] <= 2048;
-	dac_data[4] <= 512;
-	dac_data[5] <= 896;
-	dac_data[6] <= 1536;
-	dac_data[7] <= 2048;
-end
+//2个寄存器组 用于ADC频率选择
+reg [15:0] adc_freq[0:1];
+//DAC分频器
 Div #(.N(8))(.clk_in(SYS_CLK),.clk_div(DAC_CLK));
 DAC_POLLING(
 	.en(1),
@@ -102,17 +83,33 @@ DAC_POLLING(
 reg adc_en_u = 0;
 wire [7:0] dout;
 wire uart2reg_ready;
-wire [6:0] uart2reg_address;
+//wire [6:0] uart2reg_address;
+wire [7:0] uart2reg_address;
+wire [7:0] uart2reg_sub_address;
 wire [15:0] uart2reg_data;
+
+
+wire [7:0] txd_din;
+wire txd_busy;
+wire txd_en;
+//REG_SEND
+REG2UART(
+	.en(1),
+	.clk(SYS_CLK),
+	.address(8'hf3),
+	.regs(48'hfb03040506cc),
+	.dout(txd_din),
+	.o_en(txd_en),
+	.busy(txd_busy)
+);
 UART(
 	.clk(SYS_CLK),
 	.rst_n(1),
-	.din(dout),
-	//.din(uart2reg_dout[23:16]),
+	.din(txd_din),
 	//TXD
-	.wr_en(1),
+	.wr_en(txd_en),
 	.txd(UART_TXD),
-	//.txd_busy(TEST_IO[0]),
+	.txd_busy(txd_busy),
 	//RXD
 	.rxd(UART_RXD),
 	.rdy_clr(1),
@@ -121,15 +118,23 @@ UART(
 	//REG
 	.reg_ready(uart2reg_ready),
 	.reg_address(uart2reg_address),
+	.reg_sub_address(uart2reg_sub_address),
 	.reg_data(uart2reg_data)
 );
-
+//寄存器写入模块
 always@(posedge uart2reg_ready)begin
-	if(uart2reg_address == 7'h7f)begin
-		dac_data[uart2reg_data[14:12]]
+	//DAC寄存器
+	if(uart2reg_address == 8'hff)begin
+		dac_data[uart2reg_sub_address[2:0]]
 			<= uart2reg_data[11:0];
 	end
-	if(uart2reg_address == 7'h7e)begin
+	//ADC频率
+	if(uart2reg_address == 8'hfe)begin
+		adc_freq[uart2reg_sub_address[0]]
+			<= uart2reg_data[15:0];
+	end
+	//复位
+	if(uart2reg_address == 8'h00)begin
 		adc_en_u <= uart2reg_data[0];
 	end
 end
@@ -143,11 +148,13 @@ wire [31:0] len;
 wire [7:0] q;
 wire adc_en;
 wire adc_clk;
-Div #(.N(4))(.clk_in(CLK_200M),.clk_div(adc_clk));
+wire adc_trigger;
+Div_c(.clk_in(CLK_200M),.clk_div(adc_clk),.div_step(adc_freq[0]));
 ADC(
 	.clk(adc_clk),
 	.data(AD_DATA_A),
-	//.trigger(TEST_IO[7]),
+	.trigger(adc_trigger),
+	//.is_ingore(adc_trigger),
 	.clk_a(AD_CLKA),
 	//FIFO
 	.r_clk(rclk),
@@ -165,9 +172,10 @@ FPGA2AR9331 (
 		.ack(AR9331_NEXT),
 		.clk_out(AR9331_EN),
 		.len_in(len),
-		.data_out(TEST_IO[7:0]),
+		.data_out(TEST_IO),
 		.r_clk(rclk),
 		.isWAIT(clear)
 );
-assign GPIO_8 = adc_en_u;
+assign GPIO_8 = 1'b1;
+assign CH1_AC_DC = 1;
 endmodule 

@@ -83,6 +83,8 @@ module DAC_POLLING(
 	//第三个进程，同步时序always模块，格式化描述次态寄存器输出
 	always@(posedge clk_core or negedge rst_n)begin
 		if(!rst_n)begin
+			pos <= 7;
+			spi_en <= 0;
 		end
 		else begin
 			case(current_state)
@@ -187,6 +189,10 @@ module SPI_OUT #(parameter SPI_LEN=16)(
 	//第三个进程，同步时序always模块，格式化描述次态寄存器输出
 	always@(posedge clk or negedge rst_n)begin
 		if(!rst_n)begin
+			data_in_save <= data_in;
+			counter <=SPI_LEN;
+			sclk <= 1'b1;
+			sync_n <= 1'b1;
 		end
 		else begin
 			case(next_state)

@@ -14,8 +14,8 @@ module UART(
 	output [7:0] dout,
 	//REG
 	output reg_ready,
-	output [23:0] reg_out,
-	output wire [6:0] reg_address,
+	output wire [7:0] reg_address,
+	output wire [7:0] reg_sub_address,
 	output wire [15:0] reg_data
 );
 	wire tx_en_clk;
@@ -45,8 +45,8 @@ module UART(
 		.rdy_in(rdy),
 		.din(dout),
 		.ready(reg_ready),
-		.dout(reg_out),
 		.address(reg_address),
+		.sub_address(reg_sub_address),
 		.data(reg_data)
 	);
 endmodule 
@@ -224,21 +224,22 @@ always @(posedge clk) begin
 end
 
 endmodule
-//7bit address 16bit data 1bit1 16bit0
+
+//8bit address 8bit subaddress 16bit data
 module UART2REG(
 	input rdy_in,
 	input [7:0] din,
 	output reg ready = 0,
-	output wire [23:0] dout,
-	output wire [6:0] address,
+	output wire [7:0] address,
+	output wire [7:0] sub_address,
 	output wire [15:0] data
 );
-	assign dout = reg_save[31:8];
-	assign address = reg_save[31:25];
-	assign data = reg_save[24:9];
 	reg [31:0] reg_save;
+	assign address = {reg_save[31:25],din[7]};
+	assign sub_address = {reg_save[23:17],din[6]};
+	assign data = {reg_save[15:9],din[5],reg_save[7:1],din[4]};
 	always @(posedge rdy_in) begin
-		if(din == 8'b0 && reg_save[7:0] == 8'b0) begin
+		if(din[3:0] == 4'hf) begin
 			ready <= 1'b1;
 		end
 		else begin
@@ -246,4 +247,103 @@ module UART2REG(
 			ready <= 1'b0;
 		end
 	end
+endmodule 
+
+//1byte address 6byte data 1byte flag
+module REG2UART(
+	input en,
+	input clk,
+	input [7:0] address,
+	input [47:0] regs,
+	output [7:0] dout,
+	input busy,
+	output o_en=0,
+	output isBusy
+);
+	//状态机
+	reg [2:0] current_state=IDLE;
+	reg [2:0] next_state=IDLE;
+	//计数器
+	reg [3:0] counter = 7;
+	//数据
+	reg [7:0] data[0:7];
+	
+	parameter IDLE	= 0;
+	parameter SAVEING_DATA = 1;
+	parameter SENDING_START = 2;
+	parameter SENDING_ADD = 3;
+	parameter SENDING_END = 5;
+	
+	//状态转换
+	always_ff@(posedge clk)begin
+		current_state <= next_state;
+	end
+	//第二个进程，组合逻辑always模块，描述状态转移条件判断
+	always_comb begin
+		next_state = IDLE;
+		case(current_state)
+			IDLE:
+				if(en)
+					next_state = SAVEING_DATA;
+				else
+					next_state = IDLE;
+			SAVEING_DATA:
+				next_state = SENDING_START;
+			SENDING_START:
+				if(busy)
+					next_state = SENDING_ADD;
+				else
+					next_state = SENDING_START;
+			SENDING_ADD:
+				next_state = SENDING_END;
+			SENDING_END:
+				if(!busy)begin
+					if(counter >= 8)
+						next_state = IDLE;
+					else 
+						next_state = SENDING_START;
+				end
+				else
+					next_state = SENDING_END;
+			default:
+				next_state = IDLE;
+		endcase
+	end
+	
+	always_ff@(posedge clk)begin
+		case(current_state)
+			IDLE:begin
+				o_en <= 0;
+				counter <= 0;
+				isBusy <= 0;
+			end
+			SAVEING_DATA:begin
+				data[0] <= {address[7:1],1'b0};
+				data[1] <= {regs[47:41],1'b0};
+				data[2] <= {regs[39:33],1'b0};
+				data[3] <= {regs[31:25],1'b0};
+				data[4] <= {regs[23:17],1'b0};
+				data[5] <= {regs[15:9],1'b0};
+				data[6] <= {regs[7:1],1'b0};
+				data[7] <= {address[0],regs[40],
+								regs[32],regs[24],
+								regs[16],regs[8],
+								regs[0],1'b1};
+				
+				counter <= 0;
+				isBusy <= 1;
+			end
+			SENDING_START:begin
+				o_en <= 1;
+				dout <= data[counter];
+			end
+			SENDING_ADD:begin
+				o_en <= 0;
+				counter <= counter+1'b1;
+			end
+			SENDING_END:begin
+			end
+		endcase
+	end
+	
 endmodule 
