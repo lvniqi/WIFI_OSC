@@ -12,6 +12,7 @@ module ADC(
 	output [31:0] len,
 	output [7:0] data_out,
 	output send_en
+	//测频器
 );
 	//上升下降沿触发器
 	ADC_TRIGGER(

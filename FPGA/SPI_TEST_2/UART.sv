@@ -3,21 +3,29 @@ module UART(
 	input clk,
 	input rst_n,
 	//TXD
-	input [7:0] din,
-	input wr_en,
+	//input [7:0] din,
+	//input wr_en,
 	output txd,
-	output txd_busy,
+	//output txd_busy,
 	//RXD
 	input rxd,
 	input rdy_clr,
 	output rdy,
 	output [7:0] dout,
-	//REG
+	//REG2UART
+	input reg_o_en,
+	input [7:0] reg_o_address,
+	input [47:0] reg_o_regs,
+	output reg_o_busy,
+	//UART2REG
 	output reg_ready,
 	output wire [7:0] reg_address,
 	output wire [7:0] reg_sub_address,
 	output wire [15:0] reg_data
 );
+	wire [7:0] din;
+	wire wr_en;
+	wire txd_busy;
 	wire tx_en_clk;
 	wire rx_en_clk;
 	UART_BAUD_GEN(
@@ -40,6 +48,17 @@ module UART(
 		.clk(clk),
 		.clk_en(rx_en_clk),
 		.data(dout)
+	);
+	//REG_SEND
+	REG2UART(
+		.en(reg_o_en),
+		.clk(clk),
+		.address(reg_o_address),
+		.regs(reg_o_regs),
+		.dout(din),
+		.o_en(wr_en),
+		.busy(txd_busy),
+		.isBusy(reg_o_busy)
 	);
 	UART2REG(
 		.rdy_in(rdy),

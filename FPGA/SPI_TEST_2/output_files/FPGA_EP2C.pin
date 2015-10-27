@@ -110,7 +110,7 @@ HC4051_POS[1]                : 39        : output : 3.3-V LVTTL       :         
 VCCIO3                       : 40        : power  :                   : 3.3V    : 3         :                
 GND                          : 41        : gnd    :                   :         :           :                
 HC4051_POS[2]                : 42        : output : 3.3-V LVTTL       :         : 3         : Y              
-RESERVED_INPUT               : 43        :        :                   :         : 3         :                
+AR9331_DATA[0]               : 43        : output : 3.3-V LVTTL       :         : 3         : N              
 RESERVED_INPUT               : 44        :        :                   :         : 3         :                
 VCCINT                       : 45        : power  :                   : 1.2V    :           :                
 AD_CLKA                      : 46        : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -134,7 +134,7 @@ GND                          : 63        : gnd    :                   :         
 RESERVED_INPUT               : 64        :        :                   :         : 4         :                
 RESERVED_INPUT               : 65        :        :                   :         : 4         :                
 RESERVED_INPUT               : 66        :        :                   :         : 4         :                
-AR9331_DATA[0]               : 67        : output : 3.3-V LVTTL       :         : 4         : N              
+RESERVED_INPUT               : 67        :        :                   :         : 4         :                
 RESERVED_INPUT               : 68        :        :                   :         : 4         :                
 RESERVED_INPUT               : 69        :        :                   :         : 4         :                
 RESERVED_INPUT               : 70        :        :                   :         : 4         :                

@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="FPGA_EP2C">
-		<CBX_INST_ENTRY INSTANCE_NAME="|main|ADC:comb_545|ADC_FIFO_CONTROL:comb_5|ADC_FIFO:comb_3|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_anf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|ADC:comb_643|ADC_FIFO_CONTROL:comb_5|ADC_FIFO:comb_3|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_anf1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

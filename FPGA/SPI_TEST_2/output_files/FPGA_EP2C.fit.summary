@@ -1,14 +1,14 @@
-Fitter Status : Successful - Mon Oct 26 18:19:53 2015
+Fitter Status : Successful - Tue Oct 27 16:49:13 2015
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : FPGA_EP2C
 Top-level Entity Name : main
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 775 / 6,272 ( 12 % )
-    Total combinational functions : 597 / 6,272 ( 10 % )
-    Dedicated logic registers : 590 / 6,272 ( 9 % )
-Total registers : 590
+Total logic elements : 891 / 6,272 ( 14 % )
+    Total combinational functions : 688 / 6,272 ( 11 % )
+    Dedicated logic registers : 696 / 6,272 ( 11 % )
+Total registers : 696
 Total pins : 40 / 92 ( 43 % )
 Total virtual pins : 0
 Total memory bits : 32,768 / 276,480 ( 12 % )

@@ -88,38 +88,33 @@ wire [7:0] uart2reg_address;
 wire [7:0] uart2reg_sub_address;
 wire [15:0] uart2reg_data;
 
-
-wire [7:0] txd_din;
-wire txd_busy;
-wire txd_en;
-//REG_SEND
-REG2UART(
-	.en(1),
-	.clk(SYS_CLK),
-	.address(8'hf3),
-	.regs(48'hfb03040506cc),
-	.dout(txd_din),
-	.o_en(txd_en),
-	.busy(txd_busy)
-);
+reg [47:0]regs;
+wire REGS_CLK;
+Div #(.N(1000))(.clk_in(SYS_CLK),.clk_div(REGS_CLK));
+always@(posedge REGS_CLK)begin
+	regs <= regs+1'b1;
+end
+wire reg_o_busy;
 UART(
 	.clk(SYS_CLK),
 	.rst_n(1),
-	.din(txd_din),
 	//TXD
-	.wr_en(txd_en),
 	.txd(UART_TXD),
-	.txd_busy(txd_busy),
 	//RXD
 	.rxd(UART_RXD),
 	.rdy_clr(1),
 	//.rdy(TEST_IO[3]),
-	.dout(dout),
-	//REG
+	//.dout(dout),
+	//UART2REG
 	.reg_ready(uart2reg_ready),
 	.reg_address(uart2reg_address),
 	.reg_sub_address(uart2reg_sub_address),
-	.reg_data(uart2reg_data)
+	.reg_data(uart2reg_data),
+	//REG2UART
+	.reg_o_en(1),
+	.reg_o_address(8'hc3),
+	.reg_o_regs(regs),
+	.reg_o_busy(reg_o_busy)
 );
 //寄存器写入模块
 always@(posedge uart2reg_ready)begin
