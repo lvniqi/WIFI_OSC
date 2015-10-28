@@ -88,12 +88,7 @@ wire [7:0] uart2reg_address;
 wire [7:0] uart2reg_sub_address;
 wire [15:0] uart2reg_data;
 
-reg [47:0]regs;
-wire REGS_CLK;
-Div #(.N(1000))(.clk_in(SYS_CLK),.clk_div(REGS_CLK));
-always@(posedge REGS_CLK)begin
-	regs <= regs+1'b1;
-end
+logic [47:0]regs;
 wire reg_o_busy;
 UART(
 	.clk(SYS_CLK),
@@ -144,19 +139,21 @@ wire [7:0] q;
 wire adc_en;
 wire adc_clk;
 wire adc_trigger;
-Div_c(.clk_in(CLK_200M),.clk_div(adc_clk),.div_step(adc_freq[0]));
 ADC(
-	.clk(adc_clk),
+	.clk(CLK_200M),
 	.data(AD_DATA_A),
 	.trigger(adc_trigger),
 	//.is_ingore(adc_trigger),
-	.clk_a(AD_CLKA),
+	.adc_freq(adc_freq[0]),
+	.clk_o(AD_CLKA),
 	//FIFO
 	.r_clk(rclk),
 	.clear(clear),
 	.len(len),
 	.data_out(q),
-	.send_en(adc_en)
+	.send_en(adc_en),
+	//freq
+	.freq_data(regs)
 );
 
 FPGA2AR9331 (
@@ -171,6 +168,7 @@ FPGA2AR9331 (
 		.r_clk(rclk),
 		.isWAIT(clear)
 );
+
 assign GPIO_8 = 1'b1;
 assign CH1_AC_DC = 1;
 endmodule 

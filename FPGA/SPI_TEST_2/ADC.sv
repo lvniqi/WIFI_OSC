@@ -2,7 +2,9 @@ module ADC(
 	input clk,
 	input [7:0]data,
 	output fifo,
-	output clk_a,
+	output clk_o,
+	//分频系数
+	input [15:0] adc_freq,	
 	//触发器
 	output trigger,
 	output is_ingore,
@@ -11,26 +13,41 @@ module ADC(
 	input clear,
 	output [31:0] len,
 	output [7:0] data_out,
-	output send_en
+	output send_en,
 	//测频器
+	output [47:0] freq_data,
+	output freq_busy
 );
+	wire adc_clk;
+	wire main_clk;
+	//ADC时钟
+	Div_c(.clk_in(clk),.clk_div(adc_clk),.div_step(adc_freq));
+	//主时钟1MHZ
+	Div #(.N(200))(.clk_in(clk),.clk_div(main_clk));
 	//上升下降沿触发器
 	ADC_TRIGGER(
-	.clk(clk),
+	.clk(adc_clk),
 	.data(data),
 	.max(150),
 	.min(100),
 	.trigger(trigger)
 	);
+	//测频模块
+	GET_FREQ(
+	.clk_main(main_clk),
+	.clk_test(trigger),
+	.freq_data(freq_data),
+	.isBusy(freq_busy)
+	);
 	//判断是否忽略触发器
 	ADC_TRIGGER_I(
-	.clk(clk),
+	.clk(main_clk),
 	.trigger(trigger),
 	.is_ingore(is_ingore)
 	);
 	//FIFO控制块
 	ADC_FIFO_CONTROL(
-	.clk(clk),
+	.clk(adc_clk),
 	.data(data),
 	//触发
 	.trigger(trigger),
@@ -42,7 +59,7 @@ module ADC(
 	.len(len),
 	.isFull(send_en)
 	);
-	assign clk_a = clk;
+	assign clk_o = adc_clk;
 endmodule
 //触发器模块
 module ADC_TRIGGER(
@@ -60,7 +77,7 @@ module ADC_TRIGGER(
 	end
 endmodule 
 //忽略触发器？
-module ADC_TRIGGER_I#(parameter DELAY = 2500000)(
+module ADC_TRIGGER_I#(parameter DELAY = 100000)(
 	input clk,
 	input trigger,
 	output reg is_ingore
@@ -189,5 +206,84 @@ module ADC_FIFO_CONTROL #(parameter LEN=3000)(
 			end
 		endcase
 	end
+endmodule 
+//测频模块状态机
+module GET_FREQ(
+	input en,rst_n,
+	input clk_main,clk_test,
+	output [47:0] freq_data,
+	output isBusy
+);
+	reg freq_control = 0;
+	wire freq_ready;
+	wire clk_en;
+	//开关时钟20HZ
+	Div #(.N(50000))(.clk_in(clk_main),.clk_div(clk_en));
+	GET_FREQ_EQUAL(
+	//.en(freq_control),
+	.en(1),
+	.clk_en(clk_en),
+	.clk_base(clk_main),
+	.clk_test(clk_test),
+	.base_count(freq_data[47:24]),
+	.test_count(freq_data[23:0]),
+	.isReady(freq_ready)
+	);
+	//状态机
+	reg [1:0] current_state=IDLE;
+	reg [1:0] next_state=IDLE;
+	parameter IDLE	= 0;
+	//状态转换
+	always_ff@(posedge clk_main)begin
+		current_state <= next_state;
+	end
 	
+endmodule 
+//等精度测频模块
+module GET_FREQ_EQUAL(
+					input en,input clk_en,
+					input clk_base,input clk_test,
+					output reg[23:0] base_count,
+					output reg[23:0] test_count,
+					output reg isReady = 0);
+	reg[23:0] base_count_hide;
+	reg[23:0] test_count_hide;
+	reg isCount = 0;
+	//门控
+	always@(posedge clk_test)begin
+		if(clk_en)
+			isCount <= 1;
+		else begin
+			isCount <= 0;
+		end
+	end
+	//标准时钟计数
+	always@(posedge clk_base)begin
+		if(isCount)begin
+			base_count_hide<= base_count_hide+1;
+		end
+		else 
+			base_count_hide <= 0;
+		
+	end
+	//测试时钟计数
+	always@(posedge clk_test)begin
+		if(isCount)begin
+			test_count_hide<= test_count_hide+1;
+		end
+		else 
+			test_count_hide = 0;
+		
+	end
+	//保存数据
+	always@(negedge isCount or negedge en)begin
+		if(!en)begin
+			isReady <= 0;
+		end
+		else begin
+			test_count  <= test_count_hide;
+			base_count  <= base_count_hide;
+			isReady <= 1;
+		end
+	end
 endmodule 

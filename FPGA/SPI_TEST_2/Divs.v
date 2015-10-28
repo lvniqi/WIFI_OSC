@@ -4,7 +4,7 @@
 module Div(input clk_in,output reg clk_div);
 	//分频数
 	parameter N=8;
-	reg [8:0]cnt=0;
+	reg [23:0]cnt=0;
 	always@(posedge clk_in)begin
 		if(cnt==N/2-1) begin
 			clk_div <= !clk_div;

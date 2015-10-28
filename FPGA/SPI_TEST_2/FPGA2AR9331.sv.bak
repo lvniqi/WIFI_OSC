@@ -3,7 +3,7 @@
 * module SAVE_ADDR
 * */
 
-`define DELAY_LEN (2000)
+`define DELAY_LEN (1000)
 module FPGA2AR9331(input clk,input rst_n,
 					 input [7:0]data_in,//tttttttttttttt
 					 input en,
